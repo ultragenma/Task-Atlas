@@ -433,4 +433,4 @@ P0の各familyについて、3〜5種類の物体役割、2〜3種類のscene、
 - `data/research/task_keyword_candidates.json`: P0/P1/P2の20件の初期keyword family。作成済みだが、未レビューの提案seed
 - `README.md`: 調査成果物への導線
 
-Gitの初期化、commit、remote設定、GitHub repo作成、pushは今回の作業では行っていない。
+本ファイルは日本語の調査ソース記録である。公開リポジトリ [ultragenma/Task-Atlas](https://github.com/ultragenma/Task-Atlas) は作成済みで、`main` ブランチへpush済みである。

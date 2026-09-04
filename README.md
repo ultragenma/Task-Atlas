@@ -1,48 +1,49 @@
 # Physical AI Task Atlas
 
-Physical AI向けのタスク候補を、物体・シーン・状態・目的・スキルの関係から探索するローカルWeb MVPです。
+> An evidence-aware local explorer for turning everyday activity into reviewable Physical AI task candidates.
 
-この初期版は、YCB Object Setを一覧の入口にし、`006_mustard_bottle`について意味情報を深く持たせています。タスク候補は確定した頻度統計ではなく、Evidenceと`review_status`を伴うレビュー前のseedとして扱います。
+[日本語版 README](README.ja.md) · [Research snapshot (JA)](report-source.md) · [Contributing](#contributing) · [License status](#license-status)
 
-## 起動
+Physical AI Task Atlas is a small, dependency-free MVP for exploring task candidates through relationships between objects, scenes, states, intents, skills, and evidence. It starts with the [YCB Object Set](https://www.ycbbenchmarks.com/object-set-purchase-links/) and a deeply annotated mustard-bottle slice, while keeping research-derived keywords explicitly provisional.
 
-要件はNode.js 18以上です。外部パッケージは使いません。
+## Highlights
+
+- Browse and search 77 YCB object records.
+- Explore a local relationship graph from object to scene, state, intent, task, and skill.
+- Inspect 23 mustard-bottle task instances with templates, initial and goal conditions, and required skills.
+- Rank candidates using explicit hypotheses for human frequency, scene naturalness, robot feasibility, collection cost, and coverage value.
+- Surface evidence level and review status rather than presenting seeds as established facts.
+- Export task instances as JSON or CSV.
+- Validate seed data, research candidates, and API behavior with built-in Node.js tooling.
+
+## Quick start
+
+Requirements: Node.js 18 or newer. This project has zero runtime dependencies.
 
 ```bash
-npm run validate
-npm test
+npm run check
 npm start
 ```
 
-ブラウザで <http://localhost:3000> を開いてください。開発中は次のコマンドでファイル変更時に再起動できます。
+Then open <http://localhost:3000>. For local development with automatic server restart:
 
 ```bash
 npm run dev
 ```
 
-## MVPでできること
+## Research snapshot
 
-- YCBの77物体を検索・選択
-- mustard bottleからScene / State / Intent / Task / Skillへ近傍グラフを展開
-- 20件のmustard TaskInstanceを、テンプレート・初期条件・目標条件・必要スキル付きで表示
-- 人間頻度、シーン自然さ、ロボット実行可能性、収集コスト、カバレッジ価値などでランキング
-- Evidence levelとレビュー状態の表示
-- TaskInstanceのJSON / CSV export
-- seed JSONとJSON Schemaの整合性チェック
+The first research pass connects Physical AI task design and data collection with everyday activity taxonomies and time-use statistics. Its output is a proposed, review-before-use seed—not an observed frequency table.
 
-## ディレクトリ
+- [Research report (Japanese source)](report-source.md): task-definition patterns, collection practices, dataset and time-use sources, and interpretation limits.
+- [Keyword candidates](data/research/task_keyword_candidates.json): 20 task families prioritized as P0, P1, and P2.
+- [Candidate schema](schemas/task_keyword_candidates.schema.json): the contract for those research records.
 
-```text
-data/seeds/       MVPの手作業seed
-schemas/          seed itemのJSON Schema
-scripts/          seed validation
-backend/          Node標準HTTP APIと静的ファイル配信
-frontend/         vanilla JSの探索UI
-tests/            Node test runnerによるAPI・データテスト
-docs/             構成、オントロジー、Evidence方針
-```
+The candidate `skills` vocabulary is not yet a foreign-key reference to `data/seeds/skills.json`. A reviewed mapping is a future step.
 
 ## API
+
+All endpoints are served locally by `npm start`.
 
 ```text
 GET /api/objects
@@ -59,28 +60,58 @@ GET /api/export/tasks.csv
 GET /api/health
 ```
 
-`POST /api/proposals` と `POST /api/reviews` は、永続化をまだ行わないMVPのため未実装です。レビュー済みと見なせないseedは `proposed` のまま表示されます。
+`POST /api/proposals` and `POST /api/reviews` are intentionally not implemented: this MVP has no persistence or review workflow yet. Unreviewed records remain `proposed`.
 
-## データの位置付け
+## Repository layout
 
-YCBのID・名称はYCB BenchmarksのObject Set一覧を入口にしています。外部データを自動取得する処理はまだなく、`data/seeds/objects.json`はUI検証用のローカルmetadataです。公式モデルや画像は同梱していません。
+```text
+backend/             Node.js HTTP API and static-file server
+frontend/            Vanilla JavaScript exploration UI
+data/seeds/          Curated MVP seed data
+data/research/       Proposed research-derived keyword seeds
+schemas/             JSON Schemas for seed and research records
+scripts/             Data validation scripts
+tests/               Node.js API and data tests
+docs/                Architecture, ontology, and evidence policy
+report-source.md     Research snapshot and source notes
+```
 
-- YCB Object Set: <https://www.ycbbenchmarks.com/object-set-purchase-links/>
-- YCB論文: <https://arxiv.org/abs/1502.03143>
-- BEHAVIOR Knowledgebase: <https://behavior.stanford.edu/behavior_components/behavior_knowledgebase.html>
+## Data and evidence policy
 
-Task候補の頻度スコアは観測値ではありません。MVPでは`evidence-mvp-seed`を付与し、頻度・自然さ・実行可能性の仮説をレビュー前の候補として明示しています。
+The YCB identifiers and names in `data/seeds/objects.json` are local metadata for UI validation; this repository does not bundle official YCB models or images. See the [YCB paper](https://arxiv.org/abs/1502.03143) and [YCB Object Set](https://www.ycbbenchmarks.com/object-set-purchase-links/).
 
-## 調査スナップショット
+Task-candidate scores are hypotheses, not measured population frequencies or benchmarks. The MVP marks them with `evidence-mvp-seed`, retains a review status, and separates `population_frequency`, `dataset_recurrence`, and `research_signal` in the research materials. The detailed rules are in [docs/evidence_policy.md](docs/evidence_policy.md).
 
-Physical AIのタスク定義・収集方法・生活時間統計をもとにした初期調査は、[report-source.md](report-source.md) にまとめています。P0/P1/P2の20 familyからなるキーワード候補は [data/research/task_keyword_candidates.json](data/research/task_keyword_candidates.json) に作成済みです。この候補は未確定のレビュー前seedであり、`family.skills` は既存の `data/seeds/skills.json` を参照する外部キーではなく、将来mappingする再利用可能skill語彙候補です。
+The ontology is designed to be compatible with richer task definitions such as [BEHAVIOR](https://behavior.stanford.edu/behavior_components/behavior_knowledgebase.html), while remaining intentionally lightweight at this stage.
 
-Gitの初期化、commit、remote設定、GitHubへのpushは保留中です。
+## Development and checks
 
-## 今後の拡張
+Run the complete local verification suite:
 
-1. YCB metadata importerとライセンス・取得日管理
-2. BEHAVIOR synset / BDDLとのmapping
-3. SQLite永続化とproposal/review workflow
-4. 実測Evidenceの取り込みとスコアの出所表示
-5. TaskInstanceからデータ収集仕様・シミュレータ形式へのexport
+```bash
+npm run check
+```
+
+This runs seed validation, research-candidate validation, and the Node.js test suite. Individual commands are also available:
+
+```bash
+npm run validate
+npm run validate:research
+npm test
+```
+
+## Roadmap
+
+1. Add YCB metadata import with license and access-date tracking.
+2. Map task definitions to BEHAVIOR synsets and BDDL-style conditions.
+3. Introduce SQLite persistence and a proposal/review workflow.
+4. Attach measured evidence and provenance to each score.
+5. Export task instances as collection specifications and simulator-ready formats.
+
+## Contributing
+
+Contributions are welcome, especially source-backed task definitions, evidence reviews, schema feedback, and improvements to validation. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request; it explains how to state the source, release/version, access date, and whether a proposed record is measured evidence or a hypothesis.
+
+## License status
+
+No license file is currently included in this repository. Reuse terms have not yet been declared; do not assume an open-source license applies.
