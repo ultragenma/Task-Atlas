@@ -1,0 +1,44 @@
+[
+  {
+    "id":"evidence_ycb_object",
+    "evidence_level":"C",
+    "source_name":"YCB Object and Model Set",
+    "source_version":"2020-12 object set listing",
+    "source_locator":"https://www.ycbbenchmarks.com/object-set-purchase-links/",
+    "observed_count":null,
+    "population_or_scene":"YCB object catalog",
+    "collection_method":"curated object-set metadata",
+    "confidence":0.98,
+    "reviewer":null,
+    "reviewed_at":null,
+    "notes":"Supports object identity and catalog membership only; it does not support task frequency."
+  },
+  {
+    "id":"evidence_mvp_seed",
+    "evidence_level":"F",
+    "source_name":"Physical AI Task Atlas MVP handoff seed",
+    "source_version":"2026-09-04",
+    "source_locator":"physical_ai_task_atlas_handoff_ja.md §9",
+    "observed_count":null,
+    "population_or_scene":null,
+    "collection_method":"manual design seed derived from the handoff memo",
+    "confidence":0.35,
+    "reviewer":null,
+    "reviewed_at":null,
+    "notes":"Unverified candidate proposal. Scores are prioritization hypotheses, not population observations. Human review is required before treating this as confirmed data."
+  },
+  {
+    "id":"evidence_behavior_context",
+    "evidence_level":"C",
+    "source_name":"BEHAVIOR Knowledgebase",
+    "source_version":null,
+    "source_locator":"https://behavior.stanford.edu/behavior_components/behavior_knowledgebase.html",
+    "observed_count":null,
+    "population_or_scene":"Everyday activity definitions",
+    "collection_method":"task and object knowledgebase",
+    "confidence":0.82,
+    "reviewer":null,
+    "reviewed_at":null,
+    "notes":"Contextual source earmarked for future synset and task mapping; not a direct observation for the mustard seeds."
+  }
+]

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Physical AI Task Atlas — evidence-aware task exploration">
+    <title>Physical AI Task Atlas</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">✦</div>
+          <div>
+            <p class="eyebrow">PHYSICAL AI / TASK EXPLORER</p>
+            <h1>Task Atlas</h1>
+          </div>
+        </div>
+        <form id="search-form" class="global-search" role="search">
+          <label class="sr-only" for="search-input">オブジェクト・タスクを検索</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="object / scene / task を検索" autocomplete="off">
+          <button type="submit">検索</button>
+        </form>
+        <div class="top-actions">
+          <a class="export-link" href="/api/export/tasks.json" download>JSON export</a>
+          <a class="export-link" href="/api/export/tasks.csv" download>CSV</a>
+          <span id="api-status" class="status-pill status-loading">connecting</span>
+        </div>
+      </header>
+
+      <div class="app-grid">
+        <aside class="sidebar panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">CATALOG ENTRY</p>
+              <h2>YCB Objects</h2>
+            </div>
+            <span id="object-count" class="count-badge">—</span>
+          </div>
+          <p class="muted sidebar-copy">標準物体を入口に、日常行動からロボットスキルまでたどります。</p>
+          <div id="object-list" class="object-list" aria-live="polite">
+            <div class="loading-state">オブジェクトを読み込み中…</div>
+          </div>
+        </aside>
+
+        <main class="main-column">
+          <section id="object-hero" class="object-hero panel">
+            <div class="hero-copy">
+              <p class="eyebrow">SELECTED OBJECT / OBJECT INSTANCE</p>
+              <h2 id="hero-title">Mustard bottle</h2>
+              <p id="hero-subtitle" class="hero-subtitle">006_mustard_bottle · マスタードボトル</p>
+              <p id="hero-description" class="muted">オブジェクトを選択すると、タスク候補の意味ネットワークを展開できます。</p>
+              <div id="hero-tags" class="tag-row"></div>
+            </div>
+            <div class="hero-metrics">
+              <div class="metric-card">
+                <span class="metric-label">Task instances</span>
+                <strong id="hero-task-count">—</strong>
+                <small>seeded candidates</small>
+              </div>
+              <div class="metric-card accent-metric">
+                <span class="metric-label">Review state</span>
+                <strong id="hero-review">—</strong>
+                <small>evidence-aware</small>
+              </div>
+            </div>
+          </section>
+
+          <section class="graph-panel panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">LAZY NEIGHBORHOOD GRAPH</p>
+                <h2>Explore the task neighborhood</h2>
+              </div>
+              <button id="reset-graph" class="ghost-button" type="button">中心へ戻る</button>
+            </div>
+            <p class="muted graph-help">中央の物体から分類ノードをクリックして展開。Taskを選ぶと右側に仕様が表示されます。</p>
+            <div class="graph-viewport" id="graph-viewport">
+              <svg id="graph-svg" role="img" aria-label="物体とタスクの近傍グラフ"></svg>
+              <div id="graph-empty" class="empty-overlay hidden">表示できる近傍がありません。</div>
+            </div>
+            <div class="legend" aria-label="グラフ凡例">
+              <span><i class="legend-dot object-dot"></i>Object</span>
+              <span><i class="legend-dot group-dot"></i>Explore group</span>
+              <span><i class="legend-dot task-dot"></i>Task</span>
+              <span><i class="legend-dot context-dot"></i>Context</span>
+            </div>
+          </section>
+
+          <section class="task-panel panel">
+            <div class="section-heading task-heading">
+              <div>
+                <p class="eyebrow">GROUNDED TASK INSTANCES</p>
+                <h2>Candidate tasks</h2>
+              </div>
+              <label class="rank-control">
+                <span>Rank by</span>
+                <select id="rank-select">
+                  <option value="human_frequency">人間頻度（仮説）</option>
+                  <option value="scene_probability">シーン自然さ</option>
+                  <option value="robot_feasibility">ロボット実行可能性</option>
+                  <option value="collection_cost">収集コスト（低い順）</option>
+                  <option value="coverage_value">カバレッジ価値</option>
+                  <option value="transfer_value">転用価値</option>
+                </select>
+              </label>
+            </div>
+            <div class="task-list-meta">
+              <span id="task-list-count">—</span>
+              <span class="proposed-note">全件 proposed / 未検証 seed</span>
+            </div>
+            <div id="task-list" class="task-list" aria-live="polite">
+              <div class="loading-state">タスクを読み込み中…</div>
+            </div>
+          </section>
+        </main>
+
+        <aside class="inspector panel" aria-live="polite">
+          <div class="inspector-label">
+            <span class="eyebrow">INSPECTOR</span>
+            <span id="inspector-type" class="node-type">OBJECT</span>
+          </div>
+          <div id="inspector-content">
+            <div class="inspector-placeholder">
+              <span class="placeholder-icon">◎</span>
+              <h2>Select a node</h2>
+              <p class="muted">グラフまたはタスクリストからノードを選択すると、条件・スキル・Evidenceを確認できます。</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <span>Physical AI Task Atlas · MVP 0.1</span>
+        <span>Possibility ≠ frequency · Proposed data stays proposed</span>
+      </footer>
+    </div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

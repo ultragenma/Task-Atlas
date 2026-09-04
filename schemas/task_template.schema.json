@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://physical-ai-task-atlas.local/schema/task_template.schema.json",
+  "title": "TaskTemplate",
+  "type": "object",
+  "required": ["id", "node_type", "name_en", "name_ja", "verb", "roles", "preconditions", "goals", "skills", "review_status"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+    "node_type": {"type": "string", "enum": ["TaskTemplate"]},
+    "name_en": {"type": "string", "minLength": 1},
+    "name_ja": {"type": "string", "minLength": 1},
+    "verb": {"type": "string", "minLength": 1},
+    "roles": {"type": "object"},
+    "compatible_scenes": {"type": "array", "items": {"type": "string"}},
+    "preconditions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "goals": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "skills": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "failure_modes": {"type": "array", "items": {"type": "string"}},
+    "safety_tags": {"type": "array", "items": {"type": "string"}},
+    "review_status": {"type": "string", "enum": ["proposed", "reviewed", "deprecated"]}
+  }
+}

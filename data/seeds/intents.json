@@ -1,0 +1,14 @@
+[
+  {"id":"intent_prepare_food","node_type":"Intent","name_en":"Prepare food","name_ja":"食事を準備する","description":"Make food ready to eat."},
+  {"id":"intent_serve_food","node_type":"Intent","name_en":"Serve food","name_ja":"料理を提供する","description":"Present food or a condiment for consumption."},
+  {"id":"intent_store","node_type":"Intent","name_en":"Store","name_ja":"収納する","description":"Put an item in an appropriate storage location."},
+  {"id":"intent_retrieve","node_type":"Intent","name_en":"Retrieve","name_ja":"取り出す","description":"Bring an item out of storage or a receptacle."},
+  {"id":"intent_transport","node_type":"Intent","name_en":"Transport","name_ja":"運ぶ","description":"Move an item between locations."},
+  {"id":"intent_handover","node_type":"Intent","name_en":"Handover","name_ja":"手渡す","description":"Transfer an item to another person or agent."},
+  {"id":"intent_restock","node_type":"Intent","name_en":"Restock","name_ja":"補充する","description":"Place goods into a display or inventory position."},
+  {"id":"intent_inspect","node_type":"Intent","name_en":"Inspect","name_ja":"確認する","description":"Determine an item's state or contents."},
+  {"id":"intent_clean","node_type":"Intent","name_en":"Clean","name_ja":"掃除する","description":"Remove residue or soil from an item or surface."},
+  {"id":"intent_organize","node_type":"Intent","name_en":"Organize","name_ja":"整頓する","description":"Arrange related items into a useful configuration."},
+  {"id":"intent_discard","node_type":"Intent","name_en":"Discard","name_ja":"廃棄する","description":"Move an item to an appropriate waste stream."},
+  {"id":"intent_recover_from_error","node_type":"Intent","name_en":"Recover from an error","name_ja":"異常から復旧する","description":"Return an item or scene to a safe useful state."}
+]

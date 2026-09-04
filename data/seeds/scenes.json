@@ -1,0 +1,13 @@
+[
+  {"id":"scene_home_kitchen","node_type":"SceneType","name_en":"Home kitchen","name_ja":"家庭のキッチン","description":"A domestic food-preparation workspace.","tags":["home","food"]},
+  {"id":"scene_dining_table","node_type":"SceneType","name_en":"Dining table","name_ja":"食卓","description":"A table where food is served and eaten.","tags":["home","dining"]},
+  {"id":"scene_refrigerator","node_type":"SceneType","name_en":"Refrigerator","name_ja":"冷蔵庫","description":"Cold-storage compartment with shelves and a door.","tags":["storage","cold"]},
+  {"id":"scene_pantry","node_type":"SceneType","name_en":"Pantry","name_ja":"食品庫","description":"Ambient food-storage area.","tags":["storage","home"]},
+  {"id":"scene_restaurant_kitchen","node_type":"SceneType","name_en":"Restaurant kitchen","name_ja":"飲食店のキッチン","description":"A professional food-preparation workspace.","tags":["commercial","food"]},
+  {"id":"scene_restaurant_table","node_type":"SceneType","name_en":"Restaurant table","name_ja":"飲食店のテーブル","description":"A table in a food-service setting.","tags":["commercial","dining"]},
+  {"id":"scene_supermarket_shelf","node_type":"SceneType","name_en":"Supermarket shelf","name_ja":"スーパーの商品棚","description":"A retail shelf for packaged goods.","tags":["retail","display"]},
+  {"id":"scene_shopping_cart","node_type":"SceneType","name_en":"Shopping cart","name_ja":"買い物かご","description":"A receptacle used to transport shopping items.","tags":["retail","transport"]},
+  {"id":"scene_checkout_counter","node_type":"SceneType","name_en":"Checkout counter","name_ja":"レジ台","description":"A counter where items are presented for checkout.","tags":["retail","transaction"]},
+  {"id":"scene_trash_sorting_area","node_type":"SceneType","name_en":"Trash sorting area","name_ja":"ごみ分別場所","description":"An area for sorting and discarding waste.","tags":["waste","sorting"]},
+  {"id":"scene_kitchen_counter","node_type":"SceneType","name_en":"Kitchen counter","name_ja":"キッチンカウンター","description":"A counter used for preparation and temporary placement.","tags":["home","food"]}
+]

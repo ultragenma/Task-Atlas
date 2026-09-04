@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://physical-ai-task-atlas.local/schema/object.schema.json",
+  "title": "ObjectInstance",
+  "type": "object",
+  "required": ["id", "ycb_id", "node_type", "canonical_name", "name_ja", "category", "affordances", "review_status"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+    "ycb_id": {"type": "string", "pattern": "^[0-9]{3}_[a-z0-9_]+$"},
+    "node_type": {"type": "string", "enum": ["ObjectInstance"]},
+    "canonical_name": {"type": "string", "minLength": 1},
+    "name_ja": {"type": "string", "minLength": 1},
+    "category": {"type": "string", "minLength": 1},
+    "general_concept_id": {"type": "string"},
+    "affordances": {"type": "array", "items": {"type": "string"}},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "description": {"type": "string"},
+    "review_status": {"type": "string", "enum": ["proposed", "reviewed", "deprecated"]}
+  }
+}
