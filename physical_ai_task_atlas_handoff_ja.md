@@ -1,5 +1,12 @@
 # Physical AI Task Atlas 構想・実装引き継ぎメモ
 
+> **Historical handoff note.** This file preserves the original design context.
+> Its single-hierarchy diagrams, score-ranking proposals, and A–F evidence-level
+> proposal are superseded. The maintained model uses a typed graph, contextual
+> assessment, optional procedures, and claim-scoped sources; see the
+> [foundation contract](docs/foundation-contract.md), [architecture](docs/architecture.md),
+> and [evidence policy](docs/evidence_policy.md).
+
 更新日: 2026-09-04  
 文書種別: Codex向け設計・実装引き継ぎ  
 仮称: **Physical AI Task Atlas**（略称候補: PATA）

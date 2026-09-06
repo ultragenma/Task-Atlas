@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://physical-ai-task-atlas.local/schema/task_planning.schema.json",
+  "title": "TaskPlanning",
+  "type": "object",
+  "required": ["id", "task_id", "requirements", "procedures", "collection"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "task_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["key", "value", "reason"],
+        "properties": {
+          "key": {
+            "type": "string",
+            "enum": [
+              "contents",
+              "role",
+              "scene_id",
+              "object",
+              "capability",
+              "condition"
+            ]
+          },
+          "value": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "procedures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "steps", "requirements", "review_status"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "label": { "type": "string", "minLength": 1 },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["skill_id", "description"],
+              "properties": {
+                "skill_id": { "type": "string", "minLength": 1 },
+                "description": { "type": "string", "minLength": 1 }
+              }
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["key", "value", "reason"],
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "enum": [
+                    "contents",
+                    "role",
+                    "scene_id",
+                    "object",
+                    "capability",
+                    "condition"
+                  ]
+                },
+                "value": { "type": "string", "minLength": 1 },
+                "reason": { "type": "string", "minLength": 1 }
+              }
+            }
+          },
+          "review_status": {
+            "type": "string",
+            "enum": ["proposed", "reviewed", "deprecated"]
+          }
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "required": [
+        "success_criteria",
+        "setup",
+        "reset",
+        "quality_checks",
+        "failure_modes",
+        "consumables",
+        "time_estimates"
+      ],
+      "properties": {
+        "success_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "setup": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "reset": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "quality_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "failure_modes": { "type": "array", "items": { "type": "string" } },
+        "consumables": { "type": "array", "items": { "type": "string" } },
+        "time_estimates": {
+          "type": "object",
+          "required": [
+            "setup_minutes",
+            "execution_minutes",
+            "reset_minutes",
+            "review_minutes"
+          ],
+          "properties": {
+            "setup_minutes": { "type": "null" },
+            "execution_minutes": { "type": "null" },
+            "reset_minutes": { "type": "null" },
+            "review_minutes": { "type": "null" }
+          }
+        }
+      }
+    }
+  }
+}

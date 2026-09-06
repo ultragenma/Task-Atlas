@@ -1,117 +1,74 @@
 # Physical AI Task Atlas
 
-> An evidence-aware local explorer for turning everyday activity into reviewable Physical AI task candidates.
+> Explore everyday activity as a context-dependent task graph, then turn a selected candidate into a reviewable collection card.
 
-[日本語版 README](README.ja.md) · [Research snapshot (JA)](report-source.md) · [Contributing](#contributing) · [License status](#license-status)
+[日本語](README.ja.md) · [Documentation](docs/README.md) · [Mustard walkthrough](docs/walkthrough.md) · [Contributing](CONTRIBUTING.md)
 
-Physical AI Task Atlas is a small, dependency-free MVP for exploring task candidates through relationships between objects, scenes, states, intents, skills, and evidence. It starts with the [YCB Object Set](https://www.ycbbenchmarks.com/object-set-purchase-links/) and a deeply annotated mustard-bottle slice, while keeping research-derived keywords explicitly provisional.
+Task Atlas begins with the YCB object catalog and a mustard-bottle slice. It is a local, dependency-free application for asking better questions before collecting data: what goal makes sense in this scene and role, what is present or missing, what claims support the candidate, and what would a collection session require?
 
-## Highlights
+It does not present a fixed task hierarchy, a required action sequence, a universal evidence grade, an ungrounded frequency score, or record counts as proof of progress.
 
-- Browse and search 77 YCB object records.
-- Explore a local relationship graph from object to scene, state, intent, task, and skill.
-- Inspect 23 mustard-bottle task instances with templates, initial and goal conditions, and required skills.
-- Rank candidates using explicit hypotheses for human frequency, scene naturalness, robot feasibility, collection cost, and coverage value.
-- Surface evidence level and review status rather than presenting seeds as established facts.
-- Export task instances as JSON or CSV.
-- Validate seed data, research candidates, and API behavior with built-in Node.js tooling.
+## What it models
 
-## Quick start
+- A typed graph connecting objects, scenes, states, roles, intents, tasks, skills, claims, and sources.
+- Context-dependent assessment: `ready`, `needs_changes`, `unknown`, or `blocked`.
+- Goals separated from optional proposed procedures.
+- Claim-scoped sources: each source supports a stated claim within a stated scope.
+- Frequency that is directly observed, explicitly derived, or unknown. Unknown is preserved rather than estimated.
+- Collection cards containing the setup, reset, quality checks, consumables, failure modes, required resources, context assumptions, and unresolved requirements needed for a real trial.
 
-Requirements: Node.js 18 or newer. This project has zero runtime dependencies.
+The [foundation contract](docs/foundation-contract.md) defines the `0.2` data and HTTP interface. It is the authoritative specification for context semantics, assessments, planning records, claims, and exports.
+
+## Start locally
+
+Use Node.js 18 or newer. There are no runtime package dependencies.
 
 ```bash
 npm run check
 npm start
 ```
 
-Then open <http://localhost:3000>. For local development with automatic server restart:
+Open <http://localhost:3000>. During development, `npm run dev` restarts the server when files change.
 
-```bash
-npm run dev
-```
+The GitHub Actions workflow runs `npm run check` on Node.js 22 and 24 for pushes and pull requests.
 
-## Research snapshot
+## Try the core question
 
-The first research pass connects Physical AI task design and data collection with everyday activity taxonomies and time-use statistics. Its output is a proposed, review-before-use seed—not an observed frequency table.
+Select `ycb_006_mustard_bottle`, then compare candidates under different context declarations:
 
-- [Research report (Japanese source)](report-source.md): task-definition patterns, collection practices, dataset and time-use sources, and interpretation limits.
-- [Keyword candidates](data/research/task_keyword_candidates.json): 20 task families prioritized as P0, P1, and P2.
-- [Candidate schema](schemas/task_keyword_candidates.schema.json): the contract for those research records.
+- A home meal context with a full bottle can surface preparation and dispensing candidates.
+- An empty, post-meal context shifts attention to checking, replacement, disposal, and cleaning.
+- A retail shelf changes when the role changes from customer to staff: purchase-oriented candidates differ from restocking, facing, and inventory work.
+- A missing plate or hot dog keeps a dispensing candidate visible in explore mode and names the preparation needed to make it ready.
 
-The candidate `skills` vocabulary is not yet a foreign-key reference to `data/seeds/skills.json`. A reviewed mapping is a future step.
+Use the [walkthrough](docs/walkthrough.md) for the exact API calls and the collection-card handoff. The card is a plan for a simulation or teleoperation session; it makes no claim that a robot has already succeeded.
 
-## API
-
-All endpoints are served locally by `npm start`.
+## API at a glance
 
 ```text
-GET /api/objects
-GET /api/objects/{id}
-GET /api/nodes/{id}/neighbors
-GET /api/tasks
-GET /api/tasks/{id}
-GET /api/tasks/generate?object_id=...&scene_id=...
-GET /api/scenes
-GET /api/skills
-GET /api/search?q=...
+GET /api/context-options
+GET /api/tasks?...context
+GET /api/tasks/{id}?...context
+GET /api/tasks/{id}/collection-card?...context&procedure_id=...
+GET /api/nodes/{id}/neighbors?lens=all|context|goals|execution
 GET /api/export/tasks.json
 GET /api/export/tasks.csv
-GET /api/health
 ```
 
-`POST /api/proposals` and `POST /api/reviews` are intentionally not implemented: this MVP has no persistence or review workflow yet. Unreviewed records remain `proposed`.
+See [architecture](docs/architecture.md) for component boundaries and [the foundation contract](docs/foundation-contract.md) for parameter and response details. Previous `0.1` clients that depend on task `scores`, ranking parameters, or a global evidence level must migrate to assessments and claim records.
 
-## Repository layout
+## Documentation
 
-```text
-backend/             Node.js HTTP API and static-file server
-frontend/            Vanilla JavaScript exploration UI
-data/seeds/          Curated MVP seed data
-data/research/       Proposed research-derived keyword seeds
-schemas/             JSON Schemas for seed and research records
-scripts/             Data validation scripts
-tests/               Node.js API and data tests
-docs/                Architecture, ontology, and evidence policy
-report-source.md     Research snapshot and source notes
-```
+- [Architecture](docs/architecture.md): typed graph, context assessment, and collection-card workflow.
+- [Ontology](docs/ontology.md): record distinctions and context semantics.
+- [Evidence and claim policy](docs/evidence_policy.md): scope-aware support and unknown frequency.
+- [Mustard walkthrough](docs/walkthrough.md): use the vertical slice from exploration to collection preparation.
+- [Research source report (Japanese)](report-source.md): source notes and research context. Historical proposals are marked as superseded where applicable.
 
-## Data and evidence policy
+## Contribute
 
-The YCB identifiers and names in `data/seeds/objects.json` are local metadata for UI validation; this repository does not bundle official YCB models or images. See the [YCB paper](https://arxiv.org/abs/1502.03143) and [YCB Object Set](https://www.ycbbenchmarks.com/object-set-purchase-links/).
+Contributions should make a claim, its scope, its supporting source, and its remaining uncertainty inspectable. Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a data, schema, API, or documentation change.
 
-Task-candidate scores are hypotheses, not measured population frequencies or benchmarks. The MVP marks them with `evidence-mvp-seed`, retains a review status, and separates `population_frequency`, `dataset_recurrence`, and `research_signal` in the research materials. The detailed rules are in [docs/evidence_policy.md](docs/evidence_policy.md).
+## License
 
-The ontology is designed to be compatible with richer task definitions such as [BEHAVIOR](https://behavior.stanford.edu/behavior_components/behavior_knowledgebase.html), while remaining intentionally lightweight at this stage.
-
-## Development and checks
-
-Run the complete local verification suite:
-
-```bash
-npm run check
-```
-
-This runs seed validation, research-candidate validation, and the Node.js test suite. Individual commands are also available:
-
-```bash
-npm run validate
-npm run validate:research
-npm test
-```
-
-## Roadmap
-
-1. Add YCB metadata import with license and access-date tracking.
-2. Map task definitions to BEHAVIOR synsets and BDDL-style conditions.
-3. Introduce SQLite persistence and a proposal/review workflow.
-4. Attach measured evidence and provenance to each score.
-5. Export task instances as collection specifications and simulator-ready formats.
-
-## Contributing
-
-Contributions are welcome, especially source-backed task definitions, evidence reviews, schema feedback, and improvements to validation. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request; it explains how to state the source, release/version, access date, and whether a proposed record is measured evidence or a hypothesis.
-
-## License status
-
-No license file is currently included in this repository. Reuse terms have not yet been declared; do not assume an open-source license applies.
+No license file is currently included. Reuse terms have not been declared.

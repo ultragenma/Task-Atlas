@@ -1,27 +1,25 @@
-# Documentation index
+# Documentation
 
-This directory is the English-language entry point for the design, data model, and evidence practices behind Physical AI Task Atlas.
+The maintained product documentation is English-first. The repository's top page links to a synchronized Japanese overview.
 
-## Core documentation
+## Start here
 
-- [Architecture](architecture.md) — MVP components, API boundaries, and data flow.
-- [Ontology and ID rules](ontology.md) — distinctions between objects, states, intents, templates, instances, skills, and evidence.
-- [Evidence policy](evidence_policy.md) — how claims, sources, review status, and scores should be interpreted.
+- [Foundation contract](foundation-contract.md) — the `0.2` normative data and HTTP contract.
+- [Architecture](architecture.md) — typed graph, context assessment, API boundaries, and collection-card workflow.
+- [Ontology and ID rules](ontology.md) — distinctions among goals, procedures, capabilities, claims, and sources.
+- [Evidence and claim policy](evidence_policy.md) — claim-scoped support and explicit unknown frequency.
+- [Mustard walkthrough](walkthrough.md) — a concrete exploration-to-collection path.
 
-## Research and project context
+## Migration from 0.1
 
-- [Research source report (Japanese)](../report-source.md) — the current canonical research record. It is written in Japanese and documents the source-backed snapshot, version caveats, and the interpretation limits of task keywords.
-- [Project handoff (Japanese)](../physical_ai_task_atlas_handoff_ja.md) — implementation and product-design handoff notes for future work.
-- [Task keyword candidates](../data/research/task_keyword_candidates.json) — 20 proposed P0/P1/P2 task families. These are review seeds, not approved templates or measured frequency statistics.
-- [Task keyword candidate schema](../schemas/task_keyword_candidates.schema.json) — JSON Schema for the research candidate file.
+The prior MVP exposed per-task `scores`, ranking controls, and a global evidence-level presentation. Version `0.2` removes those concepts. Clients and data contributions should use context assessment, claim records, source scope, planning requirements, and optional procedures. Unknown is a first-class value; it is not a zero, a default score, or an inferred ranking.
 
-## Seed schemas
+## Research and historical notes
 
-- [Object schema](../schemas/object.schema.json)
-- [Task template schema](../schemas/task_template.schema.json)
-- [Task instance schema](../schemas/task_instance.schema.json)
-- [Evidence schema](../schemas/evidence.schema.json)
+- [Research source report (Japanese)](../report-source.md) contains the source-backed research record. Portions describing fixed rankings or earlier evidence proposals are historical and are superseded by the foundation contract.
+- [Project handoff (Japanese)](../physical_ai_task_atlas_handoff_ja.md) preserves earlier product notes. Its historical status banner points to the current model.
+- [Research keyword candidates](../data/research/task_keyword_candidates.json) remain review inputs; they are not collection-ready tasks or frequency statistics.
 
-## Working with the docs
+## Contribution and checks
 
-Start with the ontology before adding IDs or relationships, then follow the evidence policy when adding a source-backed claim. Contributors should run `npm run check` after changing data or schemas; see [CONTRIBUTING.md](../CONTRIBUTING.md) for the complete contribution workflow.
+Read [CONTRIBUTING.md](../CONTRIBUTING.md). Run `npm run check` after changing data, schemas, API behavior, or documentation. GitHub Actions runs the same command on Node.js 22 and 24 for pushes and pull requests.

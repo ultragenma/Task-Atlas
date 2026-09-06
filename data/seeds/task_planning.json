@@ -1,0 +1,1672 @@
+[
+  {
+    "id": "planning_apply_mustard_hotdog",
+    "task_id": "task_apply_mustard_hotdog",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_dining_table",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_closed_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: closed(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_contains_ycb_006_mustard_bottle_mustard",
+        "reason": "Required initial predicate: contains(ycb_006_mustard_bottle, mustard)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_dining_table",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, dining_table)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_near_food_hotdog_dining_table",
+        "reason": "Required initial predicate: near(food_hotdog, dining_table)"
+      },
+      {
+        "key": "object",
+        "value": "material_mustard",
+        "reason": "Task binding resource: material_mustard"
+      },
+      {
+        "key": "object",
+        "value": "food_hotdog",
+        "reason": "Task binding resource: food_hotdog"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "articulated_closure",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "deformable_squeezing",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "material_flow",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      },
+      {
+        "key": "contents",
+        "value": "full",
+        "reason": "Bottle contents determine whether this activity applies."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Mustard reaches the specified food target and the bottle is closed."
+      ],
+      "setup": [
+        "Place a prepared food target and closed filled bottle in the scene."
+      ],
+      "reset": ["Replace food, remove mustard residue, and close the bottle."],
+      "quality_checks": ["Confirm deposit is on the intended food target."],
+      "failure_modes": ["Target miss or material spill."],
+      "consumables": ["Mustard", "prepared food", "cleaning material"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_apply_mustard_sandwich",
+    "task_id": "task_apply_mustard_sandwich",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_home_kitchen",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_closed_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: closed(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_contains_ycb_006_mustard_bottle_mustard",
+        "reason": "Required initial predicate: contains(ycb_006_mustard_bottle, mustard)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_kitchen_counter",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, kitchen_counter)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_near_food_sandwich_kitchen_counter",
+        "reason": "Required initial predicate: near(food_sandwich, kitchen_counter)"
+      },
+      {
+        "key": "object",
+        "value": "material_mustard",
+        "reason": "Task binding resource: material_mustard"
+      },
+      {
+        "key": "object",
+        "value": "food_sandwich",
+        "reason": "Task binding resource: food_sandwich"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "articulated_closure",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "deformable_squeezing",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "material_flow",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      },
+      {
+        "key": "contents",
+        "value": "full",
+        "reason": "Bottle contents determine whether this activity applies."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Mustard reaches the specified food target and the bottle is closed."
+      ],
+      "setup": [
+        "Place a prepared food target and closed filled bottle in the scene."
+      ],
+      "reset": ["Replace food, remove mustard residue, and close the bottle."],
+      "quality_checks": ["Confirm deposit is on the intended food target."],
+      "failure_modes": ["Target miss or material spill."],
+      "consumables": ["Mustard", "prepared food", "cleaning material"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_handover_mustard_to_person",
+    "task_id": "task_handover_mustard_to_person",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_dining_table",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_dining_table",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, dining_table)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_recipient_present",
+        "reason": "Required initial predicate: recipient_present"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: reachable(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "object",
+        "value": "adult_diner",
+        "reason": "Task binding resource: adult_diner"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "human_handover",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Recipient has stable possession before robot release."
+      ],
+      "setup": [
+        "Position a consenting recipient and a closed bottle in the handover zone."
+      ],
+      "reset": ["Return bottle to table and clear the handover zone."],
+      "quality_checks": ["Review recipient grasp and release timing."],
+      "failure_modes": ["Early release or unsafe contact."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_return_mustard_to_refrigerator",
+    "task_id": "task_return_mustard_to_refrigerator",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_dining_table",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_dining_table",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, dining_table)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_closed_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: closed(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_closed_refrigerator",
+        "reason": "Required initial predicate: closed(refrigerator)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: reachable(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "object",
+        "value": "scene_refrigerator",
+        "reason": "Task binding resource: scene_refrigerator"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "articulated_closure",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [
+      {
+        "id": "procedure_open_storage_first",
+        "label": "Open refrigerator before picking up bottle",
+        "requirements": [
+          {
+            "key": "condition",
+            "value": "refrigerator_door_clear",
+            "reason": "Door can be opened and held safely before transport."
+          }
+        ],
+        "review_status": "proposed",
+        "steps": [
+          {
+            "skill_id": "skill_open",
+            "description": "Open the refrigerator door."
+          },
+          {
+            "skill_id": "skill_grasp",
+            "description": "Pick up the closed mustard bottle."
+          },
+          {
+            "skill_id": "skill_place",
+            "description": "Place it upright on the cleared shelf."
+          },
+          {
+            "skill_id": "skill_close",
+            "description": "Close the refrigerator door."
+          }
+        ]
+      },
+      {
+        "id": "procedure_carry_bottle_first",
+        "label": "Pick up bottle before opening refrigerator",
+        "requirements": [
+          {
+            "key": "condition",
+            "value": "bottle_safe_to_hold_while_opening",
+            "reason": "Platform can retain the bottle while operating the door."
+          }
+        ],
+        "review_status": "proposed",
+        "steps": [
+          {
+            "skill_id": "skill_grasp",
+            "description": "Pick up the closed mustard bottle."
+          },
+          {
+            "skill_id": "skill_open",
+            "description": "Open the refrigerator while retaining the bottle."
+          },
+          {
+            "skill_id": "skill_place",
+            "description": "Place it upright on the cleared shelf."
+          },
+          {
+            "skill_id": "skill_close",
+            "description": "Close the refrigerator door."
+          }
+        ]
+      }
+    ],
+    "collection": {
+      "success_criteria": [
+        "Bottle is upright inside storage and its door is closed."
+      ],
+      "setup": [
+        "Clear a reachable refrigerator shelf and place a closed bottle at start."
+      ],
+      "reset": ["Return bottle to start and close storage."],
+      "quality_checks": [
+        "Verify full insertion, upright pose, and unobstructed door."
+      ],
+      "failure_modes": ["Bottle fall or door obstruction."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_retrieve_mustard_from_refrigerator",
+    "task_id": "task_retrieve_mustard_from_refrigerator",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_refrigerator",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_inside_ycb_006_mustard_bottle_refrigerator",
+        "reason": "Required initial predicate: inside(ycb_006_mustard_bottle, refrigerator)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_upright_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: upright(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_closed_refrigerator",
+        "reason": "Required initial predicate: closed(refrigerator)"
+      },
+      {
+        "key": "object",
+        "value": "scene_refrigerator",
+        "reason": "Task binding resource: scene_refrigerator"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "articulated_closure",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is outside storage and storage door is closed."
+      ],
+      "setup": [
+        "Place closed bottle upright on a refrigerator shelf and close the door."
+      ],
+      "reset": ["Return bottle to shelf and close door."],
+      "quality_checks": ["Verify correct object and no displaced shelf items."],
+      "failure_modes": ["Drop or open door."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_transport_mustard_to_dining_table",
+    "task_id": "task_transport_mustard_to_dining_table",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_home_kitchen",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_kitchen_counter",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, kitchen_counter)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_closed_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: closed(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: reachable(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "object",
+        "value": "scene_kitchen_counter",
+        "reason": "Task binding resource: scene_kitchen_counter"
+      },
+      {
+        "key": "object",
+        "value": "scene_dining_table",
+        "reason": "Task binding resource: scene_dining_table"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is stable at the designated destination surface."
+      ],
+      "setup": ["Place closed bottle at source and clear destination."],
+      "reset": ["Return bottle to source."],
+      "quality_checks": ["Verify location, orientation, and edge clearance."],
+      "failure_modes": ["Drop or wrong surface."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_right_fallen_mustard",
+    "task_id": "task_right_fallen_mustard",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_kitchen_counter",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_fallen_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: fallen(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_kitchen_counter",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, kitchen_counter)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: reachable(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "object",
+        "value": "scene_kitchen_counter",
+        "reason": "Task binding resource: scene_kitchen_counter"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": ["Bottle is upright, stable, and not leaking."],
+      "setup": [
+        "Place closed bottle in a fallen pose on the designated support."
+      ],
+      "reset": ["Restore fallen starting pose after inspection."],
+      "quality_checks": ["Inspect for leakage before and after recovery."],
+      "failure_modes": ["Bottle rolls, falls, or leaks."],
+      "consumables": ["Cleaning material"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_close_mustard_cap",
+    "task_id": "task_close_mustard_cap",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_dining_table",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_open_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: open(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_part_attached_mustard_cap_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: part_attached(mustard_cap, ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_dining_table",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, dining_table)"
+      },
+      {
+        "key": "object",
+        "value": "mustard_cap",
+        "reason": "Task binding resource: mustard_cap"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "articulated_closure",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": ["Cap is closed and bottle does not leak upright."],
+      "setup": ["Set the retained cap to an open starting position."],
+      "reset": ["Reopen cap to the starting position."],
+      "quality_checks": ["Verify closure engagement and bottle stability."],
+      "failure_modes": ["Misalignment, detachment, or incomplete closure."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_open_mustard_cap",
+    "task_id": "task_open_mustard_cap",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_dining_table",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_closed_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: closed(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_dining_table",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, dining_table)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: reachable(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "object",
+        "value": "mustard_cap",
+        "reason": "Task binding resource: mustard_cap"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "articulated_closure",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": ["Cap is open, retained, and bottle remains stable."],
+      "setup": ["Place a closed bottle upright on its support."],
+      "reset": ["Close cap and restore starting pose."],
+      "quality_checks": ["Verify opening without support loss."],
+      "failure_modes": ["Cap detaches or bottle tips."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_clean_mustard_spill",
+    "task_id": "task_clean_mustard_spill",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_kitchen_counter",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_spill_present_spill_mustard",
+        "reason": "Required initial predicate: spill_present(spill_mustard)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_surface_dirty_kitchen_counter",
+        "reason": "Required initial predicate: surface_dirty(kitchen_counter)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_wipe_tool_available",
+        "reason": "Required initial predicate: wipe_tool_available"
+      },
+      {
+        "key": "object",
+        "value": "spill_mustard",
+        "reason": "Task binding resource: spill_mustard"
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "Task binding resource: wipe_tool"
+      },
+      {
+        "key": "object",
+        "value": "scene_kitchen_counter",
+        "reason": "Task binding resource: scene_kitchen_counter"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "wiping",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": ["Visible spill is removed and waste is contained."],
+      "setup": [
+        "Apply bounded spill; provide clean wipe and waste receptacle."
+      ],
+      "reset": ["Clean and dry surface; replenish wipe."],
+      "quality_checks": ["Inspect spill boundary for residue."],
+      "failure_modes": ["Residue, spread, or cross-contamination."],
+      "consumables": ["Mustard", "wipe tool", "waste receptacle"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_inspect_mustard_level",
+    "task_id": "task_inspect_mustard_level",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_home_kitchen",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_visible_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: visible(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_kitchen_counter",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, kitchen_counter)"
+      },
+      {
+        "key": "object",
+        "value": "fill_level",
+        "reason": "Task binding resource: fill_level"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "The requested state is recorded with method and uncertainty."
+      ],
+      "setup": ["Make bottle visible and declare inspection method."],
+      "reset": ["Clear record and restore bottle position."],
+      "quality_checks": ["Record result as observed or inconclusive."],
+      "failure_modes": ["State asserted without observation."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_discard_empty_mustard",
+    "task_id": "task_discard_empty_mustard",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_trash_sorting_area",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_empty_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: empty(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_sorting_counter",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, sorting_counter)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_destination_available",
+        "reason": "Required initial predicate: destination_available"
+      },
+      {
+        "key": "object",
+        "value": "waste_receptacle",
+        "reason": "Task binding resource: waste_receptacle"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      },
+      {
+        "key": "contents",
+        "value": "empty",
+        "reason": "Bottle contents determine whether this activity applies."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Empty bottle is in the designated, rule-confirmed receptacle."
+      ],
+      "setup": ["Provide labeled waste receptacle and confirm local rule."],
+      "reset": ["Recover bottle safely or replace it."],
+      "quality_checks": ["Record disposal rule used for the run."],
+      "failure_modes": ["Wrong or unverified waste stream."],
+      "consumables": ["Empty mustard bottle"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_separate_mustard_cap",
+    "task_id": "task_separate_mustard_cap",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_trash_sorting_area",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_empty_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: empty(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_detachable_ycb_006_mustard_bottle_mustard_cap",
+        "reason": "Required initial predicate: detachable(ycb_006_mustard_bottle, mustard_cap)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_sorting_counter",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, sorting_counter)"
+      },
+      {
+        "key": "object",
+        "value": "mustard_cap",
+        "reason": "Task binding resource: mustard_cap"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "articulated_closure",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      },
+      {
+        "key": "contents",
+        "value": "empty",
+        "reason": "Bottle contents determine whether this activity applies."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": ["Bottle and cap reach the specified sorting state."],
+      "setup": [
+        "Provide an empty bottle with detachable cap and local sorting rule."
+      ],
+      "reset": ["Reattach cap or replace bottle."],
+      "quality_checks": ["Verify cap material and local sorting requirement."],
+      "failure_modes": ["Breakage or assumed sorting rule."],
+      "consumables": ["Empty mustard bottle"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_restock_mustard_shelf",
+    "task_id": "task_restock_mustard_shelf",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_supermarket_shelf",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_held_by_ycb_006_mustard_bottle_stocker",
+        "reason": "Required initial predicate: held_by(ycb_006_mustard_bottle, stocker)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_display_space_available",
+        "reason": "Required initial predicate: display_space_available"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_mustard_display_shelf",
+        "reason": "Required initial predicate: reachable(mustard_display_shelf)"
+      },
+      {
+        "key": "object",
+        "value": "mustard_display_shelf",
+        "reason": "Task binding resource: mustard_display_shelf"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The role changes the intended activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is upright on assigned shelf with label facing forward."
+      ],
+      "setup": ["Clear shelf facing and provide a retail bottle."],
+      "reset": ["Remove bottle and restore shelf facing."],
+      "quality_checks": [
+        "Verify location, label orientation, and edge clearance."
+      ],
+      "failure_modes": ["Wrong facing or obstruction."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_face_mustard_label",
+    "task_id": "task_face_mustard_label",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_supermarket_shelf",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_shelf_ycb_006_mustard_bottle_mustard_display_shelf",
+        "reason": "Required initial predicate: on_shelf(ycb_006_mustard_bottle, mustard_display_shelf)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_label_back_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: label_back(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: reachable(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "object",
+        "value": "mustard_display_shelf",
+        "reason": "Task binding resource: mustard_display_shelf"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The role changes the intended activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is upright and its label faces the defined shelf front."
+      ],
+      "setup": ["Place bottle on shelf with label turned away from reference."],
+      "reset": ["Restore initial orientation."],
+      "quality_checks": ["Compare label with shelf-front reference."],
+      "failure_modes": ["Ambiguous orientation or fall."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_place_mustard_in_shopping_cart",
+    "task_id": "task_place_mustard_in_shopping_cart",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_shopping_cart",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_held_by_ycb_006_mustard_bottle_shopper",
+        "reason": "Required initial predicate: held_by(ycb_006_mustard_bottle, shopper)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_shopping_cart_available",
+        "reason": "Required initial predicate: shopping_cart_available"
+      },
+      {
+        "key": "condition",
+        "value": "initial_destination_open",
+        "reason": "Required initial predicate: destination_open"
+      },
+      {
+        "key": "object",
+        "value": "shopping_cart",
+        "reason": "Task binding resource: shopping_cart"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "customer",
+        "reason": "The role changes the intended activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is stable inside the designated receptacle."
+      ],
+      "setup": ["Provide empty cart and closed bottle."],
+      "reset": ["Return bottle and empty receptacle."],
+      "quality_checks": ["Verify containment and safe protrusion clearance."],
+      "failure_modes": ["Drop or wrong receptacle."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_present_mustard_at_checkout",
+    "task_id": "task_present_mustard_at_checkout",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_checkout_counter",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_inside_ycb_006_mustard_bottle_shopping_cart",
+        "reason": "Required initial predicate: inside(ycb_006_mustard_bottle, shopping_cart)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_checkout_counter_available",
+        "reason": "Required initial predicate: checkout_counter_available"
+      },
+      {
+        "key": "condition",
+        "value": "initial_cashier_present",
+        "reason": "Required initial predicate: cashier_present"
+      },
+      {
+        "key": "object",
+        "value": "scene_checkout_counter",
+        "reason": "Task binding resource: scene_checkout_counter"
+      },
+      {
+        "key": "object",
+        "value": "shopping_cart",
+        "reason": "Task binding resource: shopping_cart"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "customer",
+        "reason": "The role changes the intended activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is stable in the designated checkout presentation zone."
+      ],
+      "setup": ["Mark presentation zone and place bottle in customer reach."],
+      "reset": ["Return bottle and clear counter."],
+      "quality_checks": ["Verify scanner and worker zones remain clear."],
+      "failure_modes": ["Equipment obstruction or fall."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_organize_mustard_with_condiments",
+    "task_id": "task_organize_mustard_with_condiments",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_dining_table",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_multiple_related_items",
+        "reason": "Required initial predicate: multiple_related_items"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_dining_table",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, dining_table)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_condiment_group",
+        "reason": "Required initial predicate: reachable(condiment_group)"
+      },
+      {
+        "key": "object",
+        "value": "condiment_group",
+        "reason": "Task binding resource: condiment_group"
+      },
+      {
+        "key": "object",
+        "value": "condiment_area",
+        "reason": "Task binding resource: condiment_area"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle follows the stated grouping rule and remains stable."
+      ],
+      "setup": ["Place mustard with other condiments and state grouping rule."],
+      "reset": ["Restore scattered starting arrangement."],
+      "quality_checks": [
+        "Verify rule compliance rather than visual preference."
+      ],
+      "failure_modes": ["Unspecified rule or unstable placement."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_pick_up_dropped_mustard",
+    "task_id": "task_pick_up_dropped_mustard",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_kitchen_counter",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_fallen_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: fallen(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_floor_or_low_surface",
+        "reason": "Required initial predicate: floor_or_low_surface"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: reachable(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "object",
+        "value": "safe_surface",
+        "reason": "Task binding resource: safe_surface"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is recovered to the specified safe surface."
+      ],
+      "setup": [
+        "Place closed bottle in marked recovery pose and clear hazards."
+      ],
+      "reset": ["Restore marked starting pose after inspection."],
+      "quality_checks": ["Inspect bottle and scene for damage or leakage."],
+      "failure_modes": ["Collision, fall, or leak."],
+      "consumables": ["Cleaning material"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_wipe_mustard_bottle",
+    "task_id": "task_wipe_mustard_bottle",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_home_kitchen",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_dirty_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: dirty(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_sticky_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: sticky(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_wipe_tool_available",
+        "reason": "Required initial predicate: wipe_tool_available"
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "Task binding resource: wipe_tool"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "wiping",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Defined exterior residue is removed with the cap closed."
+      ],
+      "setup": ["Apply removable residue and provide clean wipe."],
+      "reset": ["Clean bottle, discard wipe, and reapply residue if needed."],
+      "quality_checks": ["Inspect cap, label, and grip surfaces."],
+      "failure_modes": ["Cap opening, label damage, or residue spread."],
+      "consumables": ["Wipe tool", "cleaning material"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_inspect_mustard_leak",
+    "task_id": "task_inspect_mustard_leak",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_kitchen_counter",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_visible_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: visible(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_kitchen_counter",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, kitchen_counter)"
+      },
+      {
+        "key": "object",
+        "value": "leak_state",
+        "reason": "Task binding resource: leak_state"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "The requested state is recorded with method and uncertainty."
+      ],
+      "setup": ["Make bottle visible and declare inspection method."],
+      "reset": ["Clear record and restore bottle position."],
+      "quality_checks": ["Record result as observed or inconclusive."],
+      "failure_modes": ["State asserted without observation."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_store_mustard_in_pantry",
+    "task_id": "task_store_mustard_in_pantry",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_pantry",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_on_top_of_ycb_006_mustard_bottle_kitchen_counter",
+        "reason": "Required initial predicate: on_top_of(ycb_006_mustard_bottle, kitchen_counter)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_closed_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: closed(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_pantry_space_available",
+        "reason": "Required initial predicate: pantry_space_available"
+      },
+      {
+        "key": "object",
+        "value": "scene_pantry",
+        "reason": "Task binding resource: scene_pantry"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is upright inside storage and its door is closed."
+      ],
+      "setup": [
+        "Clear a reachable refrigerator shelf and place a closed bottle at start."
+      ],
+      "reset": ["Return bottle to start and close storage."],
+      "quality_checks": [
+        "Verify full insertion, upright pose, and unobstructed door."
+      ],
+      "failure_modes": ["Bottle fall or door obstruction."],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  },
+  {
+    "id": "planning_recover_mustard_from_edge",
+    "task_id": "task_recover_mustard_from_edge",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_kitchen_counter",
+        "reason": "The candidate is scoped to this scene context."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The YCB mustard bottle is the task theme."
+      },
+      {
+        "key": "condition",
+        "value": "initial_tilted_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: tilted(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_near_edge_ycb_006_mustard_bottle_kitchen_counter",
+        "reason": "Required initial predicate: near_edge(ycb_006_mustard_bottle, kitchen_counter)"
+      },
+      {
+        "key": "condition",
+        "value": "initial_reachable_ycb_006_mustard_bottle",
+        "reason": "Required initial predicate: reachable(ycb_006_mustard_bottle)"
+      },
+      {
+        "key": "object",
+        "value": "safe_surface",
+        "reason": "Task binding resource: safe_surface"
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "Needed by the proposed task design."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "This seed is framed as a household activity."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "Bottle is recovered to the specified safe surface."
+      ],
+      "setup": [
+        "Place closed bottle in marked recovery pose and clear hazards."
+      ],
+      "reset": ["Restore marked starting pose after inspection."],
+      "quality_checks": ["Inspect bottle and scene for damage or leakage."],
+      "failure_modes": ["Collision, fall, or leak."],
+      "consumables": ["Cleaning material"],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    }
+  }
+]

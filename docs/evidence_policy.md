@@ -1,22 +1,32 @@
-# Evidence policy
+# Evidence and claim policy
 
-## レベル
+Task Atlas records evidence as support for a particular claim. It does not assign sources a universal A–F rank, and it does not turn source presence into a numeric task score.
 
-| Level | 意味 |
-| --- | --- |
-| A | 代表性のある生活時間調査で直接観測 |
-| B | 自然な映像・実演データで反復観測 |
-| C | 査読済みまたは広く利用されるタスク定義に存在 |
-| D | 製品説明・レシピ・作業手順などに存在 |
-| E | 人間の専門家またはレビュー担当者が妥当と確認 |
-| F | LLMまたは初期seedのみの未検証候補 |
+## Claims are the unit of support
 
-MVPのmustard taskは、引き継ぎメモから作った候補seedであり、人口における行動頻度を直接観測していない。そのためTaskInstanceは`review_status: proposed`、Evidenceは`level: F`として扱う。画面でも「未検証」を表示し、スコアを確定事実のように見せない。
+Each claim states a subject, claim type, statement, status, optional value and unit, scope, limitations, and source IDs. A claim can be `proposed`, `unknown`, or `supported`.
 
-## 記録する項目
+| Claim | Suitable source | What it does not establish |
+| --- | --- | --- |
+| A food-preparation activity appears in a surveyed population | Time-use survey with its population, period, and activity definition | Frequency of a particular mustard action |
+| A mustard-bottle record exists in a catalog | Catalog metadata | Human prevalence or robot success |
+| A proposed collection setup needs a plate | Design/planning record | That the setup has been run successfully |
+| A robot completed an interaction | Run record or evaluated experiment | Cross-robot generality |
 
-Evidenceには最低限、source name、version、locator、observed count、population/scene、collection method、confidence、reviewer、reviewed_at、notesを残す。値がない場合はnullを使用し、推定値と直接観測値を混同しない。
+A source record must describe its type, the claim types it can support, scope, and limitations. Preserve a stable locator, release or paper version, and access date when available. Cite a source only where its supported claim type and scope match the claim.
 
-## スコアの扱い
+## Frequency is explicit or unknown
 
-スコアは探索の優先順位を作るための補助情報であり、評価結果ではない。実測値を取り込むまでは、画面に「seed仮説」と表示する。データソースのバージョン、ライセンス、取得日はインポータの追加時に必須にする。
+`population_frequency` has a value only when the source, target population, activity granularity, and measurement meaning are recorded. A derived relation to a higher-level activity is kept as a distinct claim with its limitation. Dataset recurrence and research attention are different signals and must not be relabeled as population frequency.
+
+The UI and exports show direct observations, derived indicators, and unknowns as different states. They do not compute a global priority, confidence, or frequency score from unrelated evidence.
+
+## Proposed procedures and collection work
+
+Procedures are proposed designs, with their own requirements and review status. They may cite planning sources, but no procedure implies that it is the only valid execution order or that it has been demonstrated. Use a collection card to expose what a future trial must settle: setup, reset, quality checks, failure modes, consumables, timing fields, and unresolved requirements.
+
+When a simulation or teleoperation attempt reveals a missing condition or a reset burden, add a narrow claim or planning update describing the observation, its scope, and its limitation. Do not generalize one run into a robot-capability claim.
+
+## Review practice
+
+Review the source-to-claim connection, not a source's prestige in isolation. A review should answer: what does this source support, for whom or where, at what granularity, and what remains unknown? See the [contribution guide](../CONTRIBUTING.md) for the required provenance fields and [foundation contract](foundation-contract.md) for the record shape.

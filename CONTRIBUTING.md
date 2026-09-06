@@ -1,60 +1,32 @@
 # Contributing to Physical AI Task Atlas
 
-Thank you for helping make Physical AI task definitions easier to inspect, compare, and reuse.
+Thank you for helping make task candidates inspectable before they become data-collection work.
 
-## Before you start
+## Before opening a change
 
-- Use Node.js 18 or later. This repository has no runtime package dependencies.
-- Read the [documentation index](docs/README.md), especially the ontology and evidence policy.
-- Run the full local check before opening a pull request:
-
-  ```bash
-  npm run check
-  ```
-
-## Data and research contributions
-
-Task and research candidates are evidence-aware records, not facts by default. In particular, entries in `data/research/task_keyword_candidates.json` are **proposed seeds**: they are review inputs, not validated task templates, measured human-frequency rankings, or production labels.
-
-For every new or changed research-backed claim, retain enough provenance for another contributor to verify it:
-
-- a stable source URL or identifier;
-- source title, publisher or author, and access date when available;
-- dataset release, paper version, or snapshot version when applicable;
-- the meaning of the signal (`population_frequency`, `dataset_recurrence`, or `research_signal`), without converting one into another;
-- an explicit `derived_task_hypothesis` when a task suggestion is inferred rather than directly reported by a source.
-
-Do not merge counts from different dataset releases. Do not treat activity-time statistics as direct measurements of robot action frequency.
-
-## Naming and schema rules
-
-- Use lowercase `snake_case` IDs.
-- Keep the established prefixes: `scene_`, `state_`, `intent_`, and `skill_`.
-- Name reusable task templates with a verb-led ID such as `apply_condiment`.
-- Name task instances with their bindings, such as `{verb}_{object}_{target}`.
-- Keep display names separate from identifiers; use `name_en` and `name_ja` when both are needed.
-- Update or add the relevant JSON Schema and validation coverage when introducing a new data shape.
-
-See [docs/ontology.md](docs/ontology.md) for the complete vocabulary and ID guidance.
-
-## Tests and validation
-
-Run `npm run check` for all changes. It validates MVP seed data, validates research candidates, and runs the Node.js test suite.
-
-For a focused iteration, you may also run:
+Use Node.js 18 or later, read the [foundation contract](docs/foundation-contract.md), and run:
 
 ```bash
-npm run validate
-npm run validate:research
-npm test
+npm run check
 ```
 
-Add or update tests when changing API behavior, validation rules, schemas, or data relationships. Keep changes small enough that a reviewer can trace a claim from source to record to UI behavior.
+GitHub Actions runs this check on Node.js 22 and 24 for every push and pull request.
 
-## Issues and pull requests
+## Data model rules
 
-Use GitHub Issues for a clear bug, data-quality concern, source correction, task proposal, or design discussion. Include a minimal reproduction or source links where relevant.
+Contributions should preserve these distinctions:
 
-Pull requests should describe the user-facing or data-model effect, identify affected schemas and source records, and state the commands run. Keep unrelated refactors out of the same pull request. Never add or choose a license on behalf of the project; raise it as an issue for maintainers to decide.
+- A task is a goal with initial and success states. A procedure is an optional, reviewable way to pursue that goal.
+- Requirements and declared context determine an assessment. Do not add a weighted score or silently infer an absent condition.
+- Record a source against the individual claim it supports, including the source type, scope, limitations, stable locator, and version or access date where available.
+- Record population frequency only with its target population, measurement period, activity granularity, meaning, and source. Keep derived relationships and unknown values explicit.
+- Keep concept suitability, asset compatibility, and robot execution as separate claims.
+- A collection card is a preparation specification, not evidence of a successful robot run.
 
-Write commit messages in English, using a concise imperative summary, for example: `Add provenance fields to research seeds`.
+For a changed schema, update the validator and focused tests. Use stable lowercase `snake_case` IDs and keep display strings separate from IDs; see [ontology](docs/ontology.md).
+
+## Pull requests
+
+Describe the behavior a reviewer can inspect, the affected records or endpoints, and the commands you ran. Keep claims and source changes small enough to trace from source to record to UI or export. Write commit messages in English with a concise imperative summary, for example: `Add a scoped asset-compatibility claim`.
+
+Maintainers decide repository licensing. Do not add a license file as an incidental part of an unrelated contribution.

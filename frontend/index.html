@@ -1,140 +1,133 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Physical AI Task Atlas — evidence-aware task exploration">
-    <title>Physical AI Task Atlas</title>
+    <meta name="description" content="Evidence-aware Physical AI task exploration.">
+    <title>Task Atlas</title>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <div class="app-shell">
-      <header class="topbar">
-        <div class="brand-lockup">
-          <div class="brand-mark" aria-hidden="true">✦</div>
-          <div>
-            <p class="eyebrow">PHYSICAL AI / TASK EXPLORER</p>
-            <h1>Task Atlas</h1>
-          </div>
-        </div>
-        <form id="search-form" class="global-search" role="search">
-          <label class="sr-only" for="search-input">オブジェクト・タスクを検索</label>
-          <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="search-input" type="search" placeholder="object / scene / task を検索" autocomplete="off">
-          <button type="submit">検索</button>
+    <div class="shell">
+      <header>
+        <a class="brand" href="#top">
+          <b aria-hidden="true">✦</b>
+          <span><small>PHYSICAL AI / TASK EXPLORER</small>Task Atlas</span>
+        </a>
+        <form id="search-form" role="search">
+          <label class="sr-only" for="search">Search</label>
+          <input id="search" type="search" placeholder="Search object, scene, or task">
+          <button type="submit" data-copy data-copy-en="Search" data-copy-ja="検索">Search</button>
         </form>
-        <div class="top-actions">
-          <a class="export-link" href="/api/export/tasks.json" download>JSON export</a>
-          <a class="export-link" href="/api/export/tasks.csv" download>CSV</a>
-          <span id="api-status" class="status-pill status-loading">connecting</span>
-        </div>
+        <button id="language" class="quiet" type="button">日本語</button>
+        <a class="quiet" href="https://github.com/ultragenma/Task-Atlas/blob/main/README.ja.md">JA docs</a>
+        <span id="status">Connecting</span>
       </header>
 
-      <div class="app-grid">
-        <aside class="sidebar panel">
-          <div class="panel-heading">
+      <main id="top">
+        <aside class="panel catalog">
+          <div class="heading">
             <div>
-              <p class="eyebrow">CATALOG ENTRY</p>
-              <h2>YCB Objects</h2>
+              <small>CATALOG ENTRY</small>
+              <h2 data-copy data-copy-en="YCB objects" data-copy-ja="YCBオブジェクト">YCB objects</h2>
             </div>
-            <span id="object-count" class="count-badge">—</span>
+            <b id="object-count">—</b>
           </div>
-          <p class="muted sidebar-copy">標準物体を入口に、日常行動からロボットスキルまでたどります。</p>
-          <div id="object-list" class="object-list" aria-live="polite">
-            <div class="loading-state">オブジェクトを読み込み中…</div>
-          </div>
+          <p data-copy data-copy-en="Start from an object, then inspect its contexts, goals, and execution questions." data-copy-ja="物体を入口に、文脈・目標・実行上の問いをたどります。">Start from an object, then inspect its contexts, goals, and execution questions.</p>
+          <div id="objects"></div>
         </aside>
 
-        <main class="main-column">
-          <section id="object-hero" class="object-hero panel">
-            <div class="hero-copy">
-              <p class="eyebrow">SELECTED OBJECT / OBJECT INSTANCE</p>
-              <h2 id="hero-title">Mustard bottle</h2>
-              <p id="hero-subtitle" class="hero-subtitle">006_mustard_bottle · マスタードボトル</p>
-              <p id="hero-description" class="muted">オブジェクトを選択すると、タスク候補の意味ネットワークを展開できます。</p>
-              <div id="hero-tags" class="tag-row"></div>
+        <section class="content">
+          <section class="panel hero">
+            <div>
+              <small>SELECTED OBJECT</small>
+              <h1 id="hero-title">Task exploration</h1>
+              <p id="hero-subtitle">Choose a catalog object to begin.</p>
+              <p id="hero-description">Goals, context, procedures, and evidence remain separately reviewable.</p>
+              <div id="hero-tags"></div>
             </div>
-            <div class="hero-metrics">
-              <div class="metric-card">
-                <span class="metric-label">Task instances</span>
-                <strong id="hero-task-count">—</strong>
-                <small>seeded candidates</small>
-              </div>
-              <div class="metric-card accent-metric">
-                <span class="metric-label">Review state</span>
-                <strong id="hero-review">—</strong>
-                <small>evidence-aware</small>
-              </div>
-            </div>
+            <aside>
+              <span data-copy data-copy-en="Semantic zoom" data-copy-ja="セマンティックズーム">Semantic zoom</span>
+              <strong data-copy data-copy-en="changes the view, not a single ontology tree." data-copy-ja="単一のオントロジーツリーではなく見方を変えます。">changes the view, not a single ontology tree.</strong>
+            </aside>
           </section>
 
-          <section class="graph-panel panel">
-            <div class="section-heading">
+          <section class="panel context">
+            <div class="heading">
               <div>
-                <p class="eyebrow">LAZY NEIGHBORHOOD GRAPH</p>
-                <h2>Explore the task neighborhood</h2>
+                <small>CONTEXT</small>
+                <h2 data-copy data-copy-en="What is true right now?" data-copy-ja="いま何が成り立っていますか？">What is true right now?</h2>
               </div>
-              <button id="reset-graph" class="ghost-button" type="button">中心へ戻る</button>
+              <div class="switch">
+                <button type="button" data-mode="explore" class="on" data-copy data-copy-en="Explore" data-copy-ja="探索">Explore</button>
+                <button type="button" data-mode="ready" data-copy data-copy-en="Ready only" data-copy-ja="準備完了のみ">Ready only</button>
+              </div>
             </div>
-            <p class="muted graph-help">中央の物体から分類ノードをクリックして展開。Taskを選ぶと右側に仕様が表示されます。</p>
-            <div class="graph-viewport" id="graph-viewport">
-              <svg id="graph-svg" role="img" aria-label="物体とタスクの近傍グラフ"></svg>
-              <div id="graph-empty" class="empty-overlay hidden">表示できる近傍がありません。</div>
+            <p data-copy data-copy-en="Omitted fields mean unknown. “None” means you have checked and found none." data-copy-ja="未選択は不明を意味します。「なし」は確認済みのなしです。">Omitted fields mean unknown. “None” means you have checked and found none.</p>
+            <div class="select-grid">
+              <label><span data-copy data-copy-en="Scene" data-copy-ja="シーン">Scene</span><select id="scene"></select></label>
+              <label><span data-copy data-copy-en="Contents" data-copy-ja="内容物">Contents</span><select id="contents"></select></label>
+              <label><span data-copy data-copy-en="Role" data-copy-ja="役割">Role</span><select id="role"></select></label>
+              <label><span data-copy data-copy-en="Asset profile" data-copy-ja="アセットプロファイル">Asset profile</span><select id="profile"></select></label>
             </div>
-            <div class="legend" aria-label="グラフ凡例">
-              <span><i class="legend-dot object-dot"></i>Object</span>
-              <span><i class="legend-dot group-dot"></i>Explore group</span>
-              <span><i class="legend-dot task-dot"></i>Task</span>
-              <span><i class="legend-dot context-dot"></i>Context</span>
-            </div>
+            <details>
+              <summary data-copy data-copy-en="Resources, capabilities, and confirmed conditions" data-copy-ja="資源・能力・確認済み条件">Resources, capabilities, and confirmed conditions</summary>
+              <div id="checks"></div>
+            </details>
+            <label><span data-copy data-copy-en="Known safety blockers" data-copy-ja="既知の安全ブロッカー">Known safety blockers</span><select id="blockers" multiple size="3"></select></label>
           </section>
 
-          <section class="task-panel panel">
-            <div class="section-heading task-heading">
+          <section class="panel graph">
+            <div class="heading">
               <div>
-                <p class="eyebrow">GROUNDED TASK INSTANCES</p>
-                <h2>Candidate tasks</h2>
+                <small>RELATIONSHIP GRAPH</small>
+                <h2 data-copy data-copy-en="Explore from any node" data-copy-ja="任意のノードから探索">Explore from any node</h2>
               </div>
-              <label class="rank-control">
-                <span>Rank by</span>
-                <select id="rank-select">
-                  <option value="human_frequency">人間頻度（仮説）</option>
-                  <option value="scene_probability">シーン自然さ</option>
-                  <option value="robot_feasibility">ロボット実行可能性</option>
-                  <option value="collection_cost">収集コスト（低い順）</option>
-                  <option value="coverage_value">カバレッジ価値</option>
-                  <option value="transfer_value">転用価値</option>
-                </select>
-              </label>
+              <button id="back" class="quiet" type="button" disabled data-copy data-copy-en="Back" data-copy-ja="戻る">Back</button>
             </div>
-            <div class="task-list-meta">
-              <span id="task-list-count">—</span>
-              <span class="proposed-note">全件 proposed / 未検証 seed</span>
+            <div class="lenses">
+              <span data-copy data-copy-en="Lens" data-copy-ja="レンズ">Lens</span>
+              <button type="button" data-lens="all" class="on">All</button>
+              <button type="button" data-lens="context" data-copy data-copy-en="Context" data-copy-ja="文脈">Context</button>
+              <button type="button" data-lens="goals" data-copy data-copy-en="Goals" data-copy-ja="目標">Goals</button>
+              <button type="button" data-lens="execution" data-copy data-copy-en="Execution" data-copy-ja="実行">Execution</button>
             </div>
-            <div id="task-list" class="task-list" aria-live="polite">
-              <div class="loading-state">タスクを読み込み中…</div>
+            <nav id="crumbs" aria-label="Graph navigation"></nav>
+            <p data-copy data-copy-en="Select any object, concept, affordance, scene, state, intent, skill, or task to recenter the graph." data-copy-ja="物体・概念・アフォーダンス・シーン・状態・目的・スキル・タスクのどれでも中心にできます。">Select any object, concept, affordance, scene, state, intent, skill, or task to recenter the graph.</p>
+            <div class="graph-wrap">
+              <svg id="graph" role="img" aria-label="Relationship graph"></svg>
+              <span id="empty">No neighboring nodes are available.</span>
             </div>
           </section>
-        </main>
 
-        <aside class="inspector panel" aria-live="polite">
-          <div class="inspector-label">
-            <span class="eyebrow">INSPECTOR</span>
-            <span id="inspector-type" class="node-type">OBJECT</span>
-          </div>
-          <div id="inspector-content">
-            <div class="inspector-placeholder">
-              <span class="placeholder-icon">◎</span>
-              <h2>Select a node</h2>
-              <p class="muted">グラフまたはタスクリストからノードを選択すると、条件・スキル・Evidenceを確認できます。</p>
+          <section class="panel tasks">
+            <div class="heading">
+              <div>
+                <small>CANDIDATE TASKS</small>
+                <h2 data-copy data-copy-en="Candidates for this context" data-copy-ja="この文脈の候補">Candidates for this context</h2>
+              </div>
+              <b id="task-count">—</b>
+            </div>
+            <p id="mode-note"></p>
+            <div id="task-list"></div>
+          </section>
+        </section>
+
+        <aside class="panel inspector">
+          <div class="heading"><small>INSPECTOR</small><b id="inspector-type">—</b></div>
+          <div id="inspector">
+            <div class="placeholder">
+              <b aria-hidden="true">◎</b>
+              <h2 data-copy data-copy-en="Select a node" data-copy-ja="ノードを選択">Select a node</h2>
+              <p data-copy data-copy-en="The inspector separates a task’s goal, requirements, possible procedures, and claim-specific support." data-copy-ja="タスクの目標、要件、複数の手順案、主張ごとの根拠を分けて表示します。">The inspector separates a task’s goal, requirements, possible procedures, and claim-specific support.</p>
             </div>
           </div>
         </aside>
-      </div>
+      </main>
 
-      <footer class="footer">
-        <span>Physical AI Task Atlas · MVP 0.1</span>
-        <span>Possibility ≠ frequency · Proposed data stays proposed</span>
+      <footer>
+        <span>Physical AI Task Atlas</span>
+        <span data-copy data-copy-en="Possibility, observed frequency, asset compatibility, and robot execution are separate claims." data-copy-ja="可能性、観測頻度、アセット適合性、ロボット実行は別々の主張です。">Possibility, observed frequency, asset compatibility, and robot execution are separate claims.</span>
       </footer>
     </div>
     <script src="/app.js" defer></script>

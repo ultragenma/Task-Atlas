@@ -1,8 +1,8 @@
 {
   "name": "physical-ai-task-atlas",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "A local, evidence-aware explorer for Physical AI task candidates.",
+  "description": "Explore Physical AI tasks by context, inspect claim-specific evidence, and export collection plans.",
   "type": "commonjs",
   "engines": {
     "node": ">=18"

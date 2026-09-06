@@ -1,5 +1,12 @@
 # Physical AI Task Atlas 調査メモ
 
+> **Historical research note.** This document preserves the initial research
+> snapshot and its proposed priority vocabulary. Its descriptions of a fixed
+> hierarchy, P0/P1/P2 priority, or score-oriented selection are historical, not
+> the current product contract. For the maintained model, see the English-first
+> [foundation contract](docs/foundation-contract.md), [evidence policy](docs/evidence_policy.md),
+> and [mustard walkthrough](docs/walkthrough.md).
+
 更新日: 2026-09-05  
 状態: 初回リサーチスナップショット／キーワード候補は `proposed`  
 対象: Physical AI のタスク定義、収集単位、人間の日常行動、ロボティクス研究で反復するタスク
