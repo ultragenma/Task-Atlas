@@ -362,7 +362,11 @@
       "Put the cap back on the mustard bottle.",
       "マスタードのキャップを閉めてください。"
     ],
-    "skills": ["skill_grasp", "skill_close", "skill_verify"],
+    "skills": [
+      "skill_grasp",
+      "skill_close",
+      "skill_verify"
+    ],
     "review_status": "proposed",
     "notes": "Proposed task candidate. Claim-specific support is recorded in claims.json."
   },
@@ -400,7 +404,11 @@
       "Open the mustard bottle before using it.",
       "マスタードのキャップを開けてください。"
     ],
-    "skills": ["skill_grasp", "skill_open", "skill_verify"],
+    "skills": [
+      "skill_grasp",
+      "skill_open",
+      "skill_verify"
+    ],
     "review_status": "proposed",
     "notes": "Proposed task candidate. Claim-specific support is recorded in claims.json."
   },
@@ -482,7 +490,11 @@
       "Inspect the mustard level.",
       "マスタードの残量を確認してください。"
     ],
-    "skills": ["skill_locate", "skill_inspect", "skill_verify"],
+    "skills": [
+      "skill_locate",
+      "skill_inspect",
+      "skill_verify"
+    ],
     "review_status": "proposed",
     "notes": "Proposed task candidate. Claim-specific support is recorded in claims.json."
   },
@@ -543,7 +555,11 @@
       "theme": "ycb_006_mustard_bottle",
       "part": "mustard_cap"
     },
-    "state_ids": ["state_empty", "state_closed", "state_on_surface"],
+    "state_ids": [
+      "state_empty",
+      "state_closed",
+      "state_on_surface"
+    ],
     "initial_state": [
       "empty(ycb_006_mustard_bottle)",
       "detachable(ycb_006_mustard_bottle, mustard_cap)",
@@ -876,7 +892,11 @@
       "Clean the outside of the mustard bottle.",
       "マスタードボトルの外側を拭いてください。"
     ],
-    "skills": ["skill_grasp", "skill_wipe", "skill_verify"],
+    "skills": [
+      "skill_grasp",
+      "skill_wipe",
+      "skill_verify"
+    ],
     "review_status": "proposed",
     "notes": "Proposed task candidate. Claim-specific support is recorded in claims.json."
   },
@@ -912,7 +932,11 @@
       "Inspect whether the mustard is leaking.",
       "マスタードの漏れを確認してください。"
     ],
-    "skills": ["skill_locate", "skill_inspect", "skill_verify"],
+    "skills": [
+      "skill_locate",
+      "skill_inspect",
+      "skill_verify"
+    ],
     "review_status": "proposed",
     "notes": "Proposed task candidate. Claim-specific support is recorded in claims.json."
   },
@@ -1009,5 +1033,1187 @@
     ],
     "review_status": "proposed",
     "notes": "Proposed task candidate. Claim-specific support is recorded in claims.json."
+  },
+  {
+    "id": "task_mustard_l1_01",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Inspect mustard nozzle condition",
+    "name_ja": "マスタードの注出口を点検する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_01",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "cap_present(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "nozzle_condition_recorded(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_inspect"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_02",
+    "node_type": "TaskInstance",
+    "template_id": "open_container",
+    "name_en": "Open the mustard cap for dispensing",
+    "name_ja": "マスタードのキャップを開ける",
+    "intent_id": "intent_prepare_food",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "closed(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "open(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_grasp",
+      "skill_open"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_03",
+    "node_type": "TaskInstance",
+    "template_id": "close_container",
+    "name_en": "Close the mustard cap after use",
+    "name_ja": "使用後にマスタードのキャップを閉める",
+    "intent_id": "intent_store",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_03",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "open(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "closed(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_open"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_04",
+    "node_type": "TaskInstance",
+    "template_id": "apply_condiment",
+    "name_en": "Dispense a measured mustard portion",
+    "name_ja": "決めた量のマスタードを出す",
+    "intent_id": "intent_prepare_food",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "open(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "portion_deposited(mustard)"
+    ],
+    "skills": [
+      "skill_orient",
+      "skill_squeeze",
+      "skill_dispense"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_05",
+    "node_type": "TaskInstance",
+    "template_id": "align_display_item",
+    "name_en": "Align the bottle for label reading",
+    "name_ja": "ラベルを読める向きにボトルを合わせる",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "label_occluded(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "label_facing_operator(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_orient",
+      "skill_align"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_06",
+    "node_type": "TaskInstance",
+    "template_id": "clean_object_surface",
+    "name_en": "Wipe residue from the mustard tip",
+    "name_ja": "マスタードの先端の残留物を拭き取る",
+    "intent_id": "intent_clean",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_01",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "residue_on_nozzle(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "no_visible_residue(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_wipe"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_07",
+    "node_type": "TaskInstance",
+    "template_id": "transport_object",
+    "name_en": "Move mustard from prep area to tray",
+    "name_ja": "準備場所からトレーへマスタードを運ぶ",
+    "intent_id": "intent_transport",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "on_surface(ycb_006_mustard_bottle,prep_area)"
+    ],
+    "goal_state": [
+      "on_surface(ycb_006_mustard_bottle,ingredient_tray)"
+    ],
+    "skills": [
+      "skill_grasp",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_08",
+    "node_type": "TaskInstance",
+    "template_id": "handover_object",
+    "name_en": "Hand the mustard bottle to a diner",
+    "name_ja": "マスタードを食事相手へ手渡す",
+    "intent_id": "intent_handover",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_03",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "on_surface(ycb_006_mustard_bottle,serving_board)"
+    ],
+    "goal_state": [
+      "held_by(diner,ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_grasp",
+      "skill_handover",
+      "skill_release"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_09",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Check remaining mustard contents",
+    "name_ja": "残っているマスタード量を確認する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "bottle_present(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "contents_state_recorded(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_inspect"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_10",
+    "node_type": "TaskInstance",
+    "template_id": "place_in_receptacle",
+    "name_en": "Place mustard upright after dispensing",
+    "name_ja": "使用後のマスタードを立てて置く",
+    "intent_id": "intent_store",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "held(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "upright(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_place",
+      "skill_release"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_11",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Locate mustard within a prep station",
+    "name_ja": "準備台のマスタードを見つける",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_01",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "mustard_in_station(prep_area)"
+    ],
+    "goal_state": [
+      "mustard_located(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_inspect"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_12",
+    "node_type": "TaskInstance",
+    "template_id": "organize_related_objects",
+    "name_en": "Stage mustard beside a meal component",
+    "name_ja": "食材の横にマスタードを準備する",
+    "intent_id": "intent_prepare_food",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "meal_component_present(ingredient_tray)"
+    ],
+    "goal_state": [
+      "mustard_staged_for_meal(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_place",
+      "skill_align"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_13",
+    "node_type": "TaskInstance",
+    "template_id": "right_object",
+    "name_en": "Stabilize the bottle before squeezing",
+    "name_ja": "絞る前にボトルを安定させる",
+    "intent_id": "intent_prepare_food",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_03",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "unstable(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "stable(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_grasp",
+      "skill_recover"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_14",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Verify mustard placement on the tray",
+    "name_ja": "トレー上のマスタード配置を確認する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "mustard_on_tray(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "placement_verified(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_inspect"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l1_15",
+    "node_type": "TaskInstance",
+    "template_id": "organize_related_objects",
+    "name_en": "Prepare a mustard serving set",
+    "name_ja": "マスタードの配膳セットを準備する",
+    "intent_id": "intent_serve_food",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l1_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "bottle_and_tray_available"
+    ],
+    "goal_state": [
+      "serving_set_ready(mustard)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_place",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_01",
+    "node_type": "TaskInstance",
+    "template_id": "restock_shelf",
+    "name_en": "Replenish a condiment service tray",
+    "name_ja": "調味料の配膳トレーを補充する",
+    "intent_id": "intent_restock",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_01",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "service_tray_low(mustard)"
+    ],
+    "goal_state": [
+      "service_tray_replenished(mustard)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_navigate_or_reach",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_02",
+    "node_type": "TaskInstance",
+    "template_id": "organize_related_objects",
+    "name_en": "Arrange mustard with other table condiments",
+    "name_ja": "他の調味料とマスタードを食卓に整える",
+    "intent_id": "intent_organize",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "condiments_mixed_on_tray"
+    ],
+    "goal_state": [
+      "condiments_grouped_for_service(mustard)"
+    ],
+    "skills": [
+      "skill_sort",
+      "skill_place",
+      "skill_align"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_03",
+    "node_type": "TaskInstance",
+    "template_id": "transport_object",
+    "name_en": "Deliver mustard for a meal order",
+    "name_ja": "注文された食事にマスタードを届ける",
+    "intent_id": "intent_serve_food",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "order_requests_mustard"
+    ],
+    "goal_state": [
+      "mustard_at_order_station(mustard)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_navigate_or_reach",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_04",
+    "node_type": "TaskInstance",
+    "template_id": "handover_object",
+    "name_en": "Present mustard at a service handoff",
+    "name_ja": "サービス受け渡し場所でマスタードを提示する",
+    "intent_id": "intent_handover",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "mustard_at_order_station(mustard)"
+    ],
+    "goal_state": [
+      "mustard_presented_to_recipient(mustard)"
+    ],
+    "skills": [
+      "skill_handover",
+      "skill_release"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_05",
+    "node_type": "TaskInstance",
+    "template_id": "align_display_item",
+    "name_en": "Face mustard labels on a retail shelf",
+    "name_ja": "小売棚のマスタードラベルを正面に向ける",
+    "intent_id": "intent_restock",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_03",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "retail_bottles_misaligned"
+    ],
+    "goal_state": [
+      "mustard_labels_faced_forward(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_align"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_06",
+    "node_type": "TaskInstance",
+    "template_id": "transfer_to_checkout",
+    "name_en": "Place mustard in a checkout staging area",
+    "name_ja": "会計準備場所にマスタードを置く",
+    "intent_id": "intent_transport",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_03",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "shopping_item_held(mustard)"
+    ],
+    "goal_state": [
+      "mustard_staged_for_checkout(mustard)"
+    ],
+    "skills": [
+      "skill_navigate_or_reach",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_07",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Inspect a shelf position after replenishment",
+    "name_ja": "補充後の商品棚位置を点検する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "shelf_replenished(mustard)"
+    ],
+    "goal_state": [
+      "shelf_position_verified(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_08",
+    "node_type": "TaskInstance",
+    "template_id": "handover_object",
+    "name_en": "Handover mustard at a collection point",
+    "name_ja": "受け渡し地点でマスタードを手渡す",
+    "intent_id": "intent_handover",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "mustard_at_handoff_point"
+    ],
+    "goal_state": [
+      "mustard_received_by_person"
+    ],
+    "skills": [
+      "skill_handover",
+      "skill_release"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_09",
+    "node_type": "TaskInstance",
+    "template_id": "transport_object",
+    "name_en": "Collect a used mustard bottle from a table",
+    "name_ja": "使用済みマスタードをテーブルから回収する",
+    "intent_id": "intent_transport",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_01",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "used_bottle_on_table(mustard)"
+    ],
+    "goal_state": [
+      "used_bottle_at_collection(mustard)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_grasp",
+      "skill_navigate_or_reach"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_10",
+    "node_type": "TaskInstance",
+    "template_id": "separate_container_parts",
+    "name_en": "Separate the mustard cap for sorting",
+    "name_ja": "分別のためマスタードのキャップを外す",
+    "intent_id": "intent_discard",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "cap_attached(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "cap_separated(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_grasp",
+      "skill_separate"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_11",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Verify a condiment order before handoff",
+    "name_ja": "手渡し前に調味料の注文を確認する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "order_recorded(mustard)"
+    ],
+    "goal_state": [
+      "order_verified(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "atomic",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_12",
+    "node_type": "TaskInstance",
+    "template_id": "recover_dropped_object",
+    "name_en": "Recover a bottle knocked from a service tray",
+    "name_ja": "配膳トレーから落ちたボトルを回収する",
+    "intent_id": "intent_recover_from_error",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "fallen(ycb_006_mustard_bottle)"
+    ],
+    "goal_state": [
+      "safe_on_surface(ycb_006_mustard_bottle)"
+    ],
+    "skills": [
+      "skill_recover",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_13",
+    "node_type": "TaskInstance",
+    "template_id": "transport_object",
+    "name_en": "Move a restock case near the shelf",
+    "name_ja": "補充ケースを棚の近くへ運ぶ",
+    "intent_id": "intent_restock",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_03",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "case_at_backroom(mustard)"
+    ],
+    "goal_state": [
+      "case_near_shelf(mustard)"
+    ],
+    "skills": [
+      "skill_grasp",
+      "skill_navigate_or_reach",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_14",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Record a mustard shelf check",
+    "name_ja": "マスタード棚の確認結果を記録する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "shelf_observed(mustard)"
+    ],
+    "goal_state": [
+      "shelf_check_recorded(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l2_15",
+    "node_type": "TaskInstance",
+    "template_id": "handover_object",
+    "name_en": "Complete a condiment handoff workflow",
+    "name_ja": "調味料の受け渡しワークフローを完了する",
+    "intent_id": "intent_serve_food",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l2_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "service_request_open(mustard)"
+    ],
+    "goal_state": [
+      "service_request_closed(mustard)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_handover",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_01",
+    "node_type": "TaskInstance",
+    "template_id": "clean_spill",
+    "name_en": "Recover mustard after a spill event",
+    "name_ja": "こぼれたマスタードの後始末をする",
+    "intent_id": "intent_recover_from_error",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_01",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "mustard_spill_near_bottle"
+    ],
+    "goal_state": [
+      "spill_removed_and_bottle_safe"
+    ],
+    "skills": [
+      "skill_recover",
+      "skill_wipe",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_02",
+    "node_type": "TaskInstance",
+    "template_id": "clean_object_surface",
+    "name_en": "Clean a mustard bottle for reuse",
+    "name_ja": "再利用のためマスタードボトルを清掃する",
+    "intent_id": "intent_clean",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "residue_on_bottle(mustard)"
+    ],
+    "goal_state": [
+      "bottle_surface_clean(mustard)"
+    ],
+    "skills": [
+      "skill_wipe",
+      "skill_inspect"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_03",
+    "node_type": "TaskInstance",
+    "template_id": "discard_container",
+    "name_en": "Sort an empty mustard bottle",
+    "name_ja": "空のマスタードボトルを分別する",
+    "intent_id": "intent_discard",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_03",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "empty_bottle(mustard)"
+    ],
+    "goal_state": [
+      "bottle_in_correct_waste_stream(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_sort",
+      "skill_discard"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_04",
+    "node_type": "TaskInstance",
+    "template_id": "restock_shelf",
+    "name_en": "Replenish mustard inventory from a case",
+    "name_ja": "ケースからマスタード在庫を補充する",
+    "intent_id": "intent_restock",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "inventory_case_available(mustard)"
+    ],
+    "goal_state": [
+      "inventory_slot_replenished(mustard)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_navigate_or_reach",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_05",
+    "node_type": "TaskInstance",
+    "template_id": "organize_related_objects",
+    "name_en": "Close a mustard service station",
+    "name_ja": "マスタードのサービスステーションを片付ける",
+    "intent_id": "intent_store",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "service_station_active(mustard)"
+    ],
+    "goal_state": [
+      "service_station_closed(mustard)"
+    ],
+    "skills": [
+      "skill_place",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_06",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Inspect contamination risk before reuse",
+    "name_ja": "再利用前に汚染リスクを点検する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "cleaning_complete(mustard)"
+    ],
+    "goal_state": [
+      "reuse_check_recorded(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_07",
+    "node_type": "TaskInstance",
+    "template_id": "transport_object",
+    "name_en": "Move a cleaned bottle to reuse storage",
+    "name_ja": "清掃済みボトルを再利用保管場所へ運ぶ",
+    "intent_id": "intent_store",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "clean_bottle_on_station(mustard)"
+    ],
+    "goal_state": [
+      "clean_bottle_in_reuse_storage(mustard)"
+    ],
+    "skills": [
+      "skill_grasp",
+      "skill_navigate_or_reach",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_08",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Inspect damaged mustard packaging on receipt",
+    "name_ja": "入荷時に破損したマスタード包装を点検する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "delivery_case_received(mustard)"
+    ],
+    "goal_state": [
+      "packaging_condition_recorded(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_09",
+    "node_type": "TaskInstance",
+    "template_id": "place_in_receptacle",
+    "name_en": "Quarantine a leaking mustard bottle",
+    "name_ja": "漏れているマスタードボトルを隔離する",
+    "intent_id": "intent_recover_from_error",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_01",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "leak_detected(mustard)"
+    ],
+    "goal_state": [
+      "leaking_bottle_isolated(mustard)"
+    ],
+    "skills": [
+      "skill_grasp",
+      "skill_place",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_10",
+    "node_type": "TaskInstance",
+    "template_id": "restock_shelf",
+    "name_en": "Prepare replacement mustard for service",
+    "name_ja": "交換用マスタードをサービス用に準備する",
+    "intent_id": "intent_restock",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "replacement_bottle_available(mustard)"
+    ],
+    "goal_state": [
+      "replacement_ready_at_station(mustard)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_navigate_or_reach",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_11",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Audit condiment station closeout",
+    "name_ja": "調味料ステーションの終了状態を監査する",
+    "intent_id": "intent_inspect",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "station_closeout_started(mustard)"
+    ],
+    "goal_state": [
+      "station_closeout_verified(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_12",
+    "node_type": "TaskInstance",
+    "template_id": "clean_spill",
+    "name_en": "Wipe a contaminated service surface",
+    "name_ja": "汚染されたサービス面を拭き取る",
+    "intent_id": "intent_clean",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_02",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "mustard_residue_on_surface"
+    ],
+    "goal_state": [
+      "service_surface_clean"
+    ],
+    "skills": [
+      "skill_wipe",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "compound",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_13",
+    "node_type": "TaskInstance",
+    "template_id": "transport_object",
+    "name_en": "Transport sorted mustard waste",
+    "name_ja": "分別済みマスタード廃棄物を運ぶ",
+    "intent_id": "intent_discard",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_03",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "sorted_waste_at_point(mustard)"
+    ],
+    "goal_state": [
+      "waste_at_collection_bin(mustard)"
+    ],
+    "skills": [
+      "skill_navigate_or_reach",
+      "skill_place"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_14",
+    "node_type": "TaskInstance",
+    "template_id": "inspect_container_state",
+    "name_en": "Verify stock rotation for mustard",
+    "name_ja": "マスタード在庫の先入れ先出しを確認する",
+    "intent_id": "intent_restock",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_04",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "stock_rows_present(mustard)"
+    ],
+    "goal_state": [
+      "stock_rotation_verified(mustard)"
+    ],
+    "skills": [
+      "skill_inspect",
+      "skill_align",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
+  },
+  {
+    "id": "task_mustard_l3_15",
+    "node_type": "TaskInstance",
+    "template_id": "organize_related_objects",
+    "name_en": "Restore a complete mustard service cycle",
+    "name_ja": "マスタードのサービスサイクルを復旧する",
+    "intent_id": "intent_serve_food",
+    "object_id": "ycb_006_mustard_bottle",
+    "scene_id": "scene_mustard_l3_05",
+    "bindings": {
+      "theme": "ycb_006_mustard_bottle"
+    },
+    "initial_state": [
+      "service_cycle_incomplete(mustard)"
+    ],
+    "goal_state": [
+      "service_cycle_ready(mustard)"
+    ],
+    "skills": [
+      "skill_locate",
+      "skill_place",
+      "skill_verify"
+    ],
+    "review_status": "proposed",
+    "granularity": "workflow",
+    "notes": "Proposed mustard-origin expansion candidate; collection evidence is pending review."
   }
 ]

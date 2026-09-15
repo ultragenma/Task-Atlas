@@ -1,0 +1,482 @@
+[
+  {
+    "id": "mustard_expansion_relation_1_01",
+    "source": "task_mustard_l1_01",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "derived_from",
+    "rationale": "Loop 1 expands the mustard anchor into a derived from candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_02",
+    "source": "task_mustard_l1_02",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "contextualizes",
+    "rationale": "Loop 1 expands the mustard anchor into a contextualizes candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_03",
+    "source": "task_mustard_l1_03",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "part_of",
+    "rationale": "Loop 1 expands the mustard anchor into a part of candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_04",
+    "source": "task_mustard_l1_04",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "extends_goal",
+    "rationale": "Loop 1 expands the mustard anchor into a extends goal candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_05",
+    "source": "task_mustard_l1_05",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "derived_from",
+    "rationale": "Loop 1 expands the mustard anchor into a derived from candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_06",
+    "source": "task_mustard_l1_06",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "contextualizes",
+    "rationale": "Loop 1 expands the mustard anchor into a contextualizes candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_07",
+    "source": "task_mustard_l1_07",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "part_of",
+    "rationale": "Loop 1 expands the mustard anchor into a part of candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_08",
+    "source": "task_mustard_l1_08",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "extends_goal",
+    "rationale": "Loop 1 expands the mustard anchor into a extends goal candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_09",
+    "source": "task_mustard_l1_09",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "derived_from",
+    "rationale": "Loop 1 expands the mustard anchor into a derived from candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_10",
+    "source": "task_mustard_l1_10",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "contextualizes",
+    "rationale": "Loop 1 expands the mustard anchor into a contextualizes candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_11",
+    "source": "task_mustard_l1_11",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "part_of",
+    "rationale": "Loop 1 expands the mustard anchor into a part of candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_12",
+    "source": "task_mustard_l1_12",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "extends_goal",
+    "rationale": "Loop 1 expands the mustard anchor into a extends goal candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_13",
+    "source": "task_mustard_l1_13",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "derived_from",
+    "rationale": "Loop 1 expands the mustard anchor into a derived from candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_14",
+    "source": "task_mustard_l1_14",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "contextualizes",
+    "rationale": "Loop 1 expands the mustard anchor into a contextualizes candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_15",
+    "source": "task_mustard_l1_15",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "part_of",
+    "rationale": "Loop 1 expands the mustard anchor into a part of candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_16",
+    "source": "scene_mustard_l1_01",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "extends_goal",
+    "rationale": "Loop 1 expands the mustard anchor into a extends goal candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_17",
+    "source": "scene_mustard_l1_02",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "derived_from",
+    "rationale": "Loop 1 expands the mustard anchor into a derived from candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_18",
+    "source": "scene_mustard_l1_03",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "contextualizes",
+    "rationale": "Loop 1 expands the mustard anchor into a contextualizes candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_19",
+    "source": "scene_mustard_l1_04",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "part_of",
+    "rationale": "Loop 1 expands the mustard anchor into a part of candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_1_20",
+    "source": "scene_mustard_l1_05",
+    "target": "task_apply_mustard_hotdog",
+    "relation": "extends_goal",
+    "rationale": "Loop 1 expands the mustard anchor into a extends goal candidate for review.",
+    "iteration": 1
+  },
+  {
+    "id": "mustard_expansion_relation_2_01",
+    "source": "task_mustard_l2_01",
+    "target": "task_mustard_l1_01",
+    "relation": "contextualizes",
+    "rationale": "Loop 2 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_02",
+    "source": "task_mustard_l2_02",
+    "target": "task_mustard_l1_02",
+    "relation": "part_of",
+    "rationale": "Loop 2 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_03",
+    "source": "task_mustard_l2_03",
+    "target": "task_mustard_l1_03",
+    "relation": "extends_goal",
+    "rationale": "Loop 2 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_04",
+    "source": "task_mustard_l2_04",
+    "target": "task_mustard_l1_04",
+    "relation": "derived_from",
+    "rationale": "Loop 2 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_05",
+    "source": "task_mustard_l2_05",
+    "target": "task_mustard_l1_05",
+    "relation": "contextualizes",
+    "rationale": "Loop 2 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_06",
+    "source": "task_mustard_l2_06",
+    "target": "task_mustard_l1_06",
+    "relation": "part_of",
+    "rationale": "Loop 2 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_07",
+    "source": "task_mustard_l2_07",
+    "target": "task_mustard_l1_07",
+    "relation": "extends_goal",
+    "rationale": "Loop 2 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_08",
+    "source": "task_mustard_l2_08",
+    "target": "task_mustard_l1_08",
+    "relation": "derived_from",
+    "rationale": "Loop 2 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_09",
+    "source": "task_mustard_l2_09",
+    "target": "task_mustard_l1_09",
+    "relation": "contextualizes",
+    "rationale": "Loop 2 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_10",
+    "source": "task_mustard_l2_10",
+    "target": "task_mustard_l1_10",
+    "relation": "part_of",
+    "rationale": "Loop 2 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_11",
+    "source": "task_mustard_l2_11",
+    "target": "task_mustard_l1_11",
+    "relation": "extends_goal",
+    "rationale": "Loop 2 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_12",
+    "source": "task_mustard_l2_12",
+    "target": "task_mustard_l1_12",
+    "relation": "derived_from",
+    "rationale": "Loop 2 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_13",
+    "source": "task_mustard_l2_13",
+    "target": "task_mustard_l1_13",
+    "relation": "contextualizes",
+    "rationale": "Loop 2 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_14",
+    "source": "task_mustard_l2_14",
+    "target": "task_mustard_l1_14",
+    "relation": "part_of",
+    "rationale": "Loop 2 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_15",
+    "source": "task_mustard_l2_15",
+    "target": "task_mustard_l1_15",
+    "relation": "extends_goal",
+    "rationale": "Loop 2 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_16",
+    "source": "scene_mustard_l2_01",
+    "target": "scene_mustard_l1_01",
+    "relation": "derived_from",
+    "rationale": "Loop 2 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_17",
+    "source": "scene_mustard_l2_02",
+    "target": "scene_mustard_l1_02",
+    "relation": "contextualizes",
+    "rationale": "Loop 2 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_18",
+    "source": "scene_mustard_l2_03",
+    "target": "scene_mustard_l1_03",
+    "relation": "part_of",
+    "rationale": "Loop 2 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_19",
+    "source": "scene_mustard_l2_04",
+    "target": "scene_mustard_l1_04",
+    "relation": "extends_goal",
+    "rationale": "Loop 2 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_2_20",
+    "source": "scene_mustard_l2_05",
+    "target": "scene_mustard_l1_05",
+    "relation": "derived_from",
+    "rationale": "Loop 2 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 2
+  },
+  {
+    "id": "mustard_expansion_relation_3_01",
+    "source": "task_mustard_l3_01",
+    "target": "task_mustard_l2_01",
+    "relation": "part_of",
+    "rationale": "Loop 3 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_02",
+    "source": "task_mustard_l3_02",
+    "target": "task_mustard_l2_02",
+    "relation": "extends_goal",
+    "rationale": "Loop 3 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_03",
+    "source": "task_mustard_l3_03",
+    "target": "task_mustard_l2_03",
+    "relation": "derived_from",
+    "rationale": "Loop 3 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_04",
+    "source": "task_mustard_l3_04",
+    "target": "task_mustard_l2_04",
+    "relation": "contextualizes",
+    "rationale": "Loop 3 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_05",
+    "source": "task_mustard_l3_05",
+    "target": "task_mustard_l2_05",
+    "relation": "part_of",
+    "rationale": "Loop 3 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_06",
+    "source": "task_mustard_l3_06",
+    "target": "task_mustard_l2_06",
+    "relation": "extends_goal",
+    "rationale": "Loop 3 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_07",
+    "source": "task_mustard_l3_07",
+    "target": "task_mustard_l2_07",
+    "relation": "derived_from",
+    "rationale": "Loop 3 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_08",
+    "source": "task_mustard_l3_08",
+    "target": "task_mustard_l2_08",
+    "relation": "contextualizes",
+    "rationale": "Loop 3 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_09",
+    "source": "task_mustard_l3_09",
+    "target": "task_mustard_l2_09",
+    "relation": "part_of",
+    "rationale": "Loop 3 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_10",
+    "source": "task_mustard_l3_10",
+    "target": "task_mustard_l2_10",
+    "relation": "extends_goal",
+    "rationale": "Loop 3 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_11",
+    "source": "task_mustard_l3_11",
+    "target": "task_mustard_l2_11",
+    "relation": "derived_from",
+    "rationale": "Loop 3 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_12",
+    "source": "task_mustard_l3_12",
+    "target": "task_mustard_l2_12",
+    "relation": "contextualizes",
+    "rationale": "Loop 3 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_13",
+    "source": "task_mustard_l3_13",
+    "target": "task_mustard_l2_13",
+    "relation": "part_of",
+    "rationale": "Loop 3 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_14",
+    "source": "task_mustard_l3_14",
+    "target": "task_mustard_l2_14",
+    "relation": "extends_goal",
+    "rationale": "Loop 3 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_15",
+    "source": "task_mustard_l3_15",
+    "target": "task_mustard_l2_15",
+    "relation": "derived_from",
+    "rationale": "Loop 3 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_16",
+    "source": "scene_mustard_l3_01",
+    "target": "scene_mustard_l2_01",
+    "relation": "contextualizes",
+    "rationale": "Loop 3 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_17",
+    "source": "scene_mustard_l3_02",
+    "target": "scene_mustard_l2_02",
+    "relation": "part_of",
+    "rationale": "Loop 3 branches from the preceding loop so this part of candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_18",
+    "source": "scene_mustard_l3_03",
+    "target": "scene_mustard_l2_03",
+    "relation": "extends_goal",
+    "rationale": "Loop 3 branches from the preceding loop so this extends goal candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_19",
+    "source": "scene_mustard_l3_04",
+    "target": "scene_mustard_l2_04",
+    "relation": "derived_from",
+    "rationale": "Loop 3 branches from the preceding loop so this derived from candidate preserves a traceable design decision.",
+    "iteration": 3
+  },
+  {
+    "id": "mustard_expansion_relation_3_20",
+    "source": "scene_mustard_l3_05",
+    "target": "scene_mustard_l2_05",
+    "relation": "contextualizes",
+    "rationale": "Loop 3 branches from the preceding loop so this contextualizes candidate preserves a traceable design decision.",
+    "iteration": 3
+  }
+]

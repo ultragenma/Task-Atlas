@@ -84,6 +84,8 @@ function apiHandler(request, response, url) {
         task_templates: store.data.taskTemplates.length,
         task_instances: store.data.tasks.length,
         evidence: store.data.evidence.length,
+        expansion_loops: store.data.expansionLoops.length,
+        expansion_relations: store.data.expansionRelations.length,
       },
     });
   }
@@ -215,6 +217,8 @@ function apiHandler(request, response, url) {
     return sendJson(response, 200, { data: store.getSkills() });
   if (pathname === "/api/templates")
     return sendJson(response, 200, { data: store.getTemplates() });
+  if (pathname === "/api/expansion-loops")
+    return sendJson(response, 200, { data: store.getExpansionLoops() });
 
   if (pathname === "/api/search") {
     const query = url.searchParams.get("q") || "";
@@ -235,6 +239,9 @@ function apiHandler(request, response, url) {
         planning: store.data.planning,
         claims: store.data.claims,
         sources: store.data.evidence,
+        scenes: store.data.scenes,
+        expansion_loops: store.data.expansionLoops,
+        expansion_relations: store.data.expansionRelations,
       },
       null,
       2,

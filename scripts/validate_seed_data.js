@@ -37,6 +37,59 @@ const CAPABILITIES = new Set([
   "human_handover",
   "wiping",
 ]);
+const MUSTARD_OBJECT_ID = "ycb_006_mustard_bottle";
+const EXPANSION_ITERATIONS = Object.freeze([1, 2, 3]);
+const GENERIC_GOAL_PREDICATES = new Set([
+  "complete",
+  "completed",
+  "done",
+  "goal",
+  "ok",
+  "success",
+  "successful",
+]);
+const FREQUENCY_VALUE_FIELDS = Object.freeze([
+  "frequency",
+  "frequency_value",
+  "frequency_score",
+  "frequency_rank",
+]);
+const EXPANSION_BASELINE_NODE_IDS = new Set([
+  "task_apply_mustard_hotdog",
+  "task_apply_mustard_sandwich",
+  "task_handover_mustard_to_person",
+  "task_return_mustard_to_refrigerator",
+  "task_retrieve_mustard_from_refrigerator",
+  "task_transport_mustard_to_dining_table",
+  "task_right_fallen_mustard",
+  "task_close_mustard_cap",
+  "task_open_mustard_cap",
+  "task_clean_mustard_spill",
+  "task_inspect_mustard_level",
+  "task_discard_empty_mustard",
+  "task_separate_mustard_cap",
+  "task_restock_mustard_shelf",
+  "task_face_mustard_label",
+  "task_place_mustard_in_shopping_cart",
+  "task_present_mustard_at_checkout",
+  "task_organize_mustard_with_condiments",
+  "task_pick_up_dropped_mustard",
+  "task_wipe_mustard_bottle",
+  "task_inspect_mustard_leak",
+  "task_store_mustard_in_pantry",
+  "task_recover_mustard_from_edge",
+  "scene_home_kitchen",
+  "scene_dining_table",
+  "scene_refrigerator",
+  "scene_pantry",
+  "scene_restaurant_kitchen",
+  "scene_restaurant_table",
+  "scene_supermarket_shelf",
+  "scene_shopping_cart",
+  "scene_checkout_counter",
+  "scene_trash_sorting_area",
+  "scene_kitchen_counter",
+]);
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -110,7 +163,252 @@ function defaultData() {
     evidence: load("evidence.json"),
     planning: load("task_planning.json"),
     claims: load("claims.json"),
+    expansionLoops: load("expansion_loops.json"),
+    expansionRelations: load("expansion_relations.json"),
   };
+}
+function goalPredicate(value) {
+  if (typeof value !== "string") return null;
+  const match = /^\s*([a-z][a-z0-9_]*)\s*(?:\([^)]*\))?\s*$/.exec(value);
+  return match ? match[1] : null;
+}
+function validateExpansion(data, maps, errors) {
+  const loops = data.expansionLoops;
+  const relations = data.expansionRelations;
+  if (!Array.isArray(loops)) {
+    errors.push("expansion_loops: expected array");
+    return;
+  }
+  if (!Array.isArray(relations)) {
+    errors.push("expansion_relations: expected array");
+    return;
+  }
+  if (loops.length !== EXPANSION_ITERATIONS.length)
+    errors.push("expansion_loops: expected exactly 3 loops");
+  const loopIds = new Set();
+  const nodesByIteration = new Map();
+  const iterationByNode = new Map();
+  const expansionNodeIds = new Set();
+  for (const [index, loop] of loops.entries()) {
+    const at = `expansion_loops[${index}]`;
+    if (!loop || typeof loop !== "object") {
+      errors.push(`${at}: malformed loop`);
+      continue;
+    }
+    if (!/^[a-z0-9_]+$/.test(loop.id || ""))
+      errors.push(`${at}: invalid id`);
+    else if (loopIds.has(loop.id)) errors.push(`${at}: duplicate id ${loop.id}`);
+    else loopIds.add(loop.id);
+    if (
+      !Number.isInteger(loop.iteration) ||
+      !EXPANSION_ITERATIONS.includes(loop.iteration)
+    )
+      errors.push(`${at}: iteration must be 1, 2, or 3`);
+    if (!Array.isArray(loop.node_ids)) {
+      errors.push(`${at}: node_ids must be an array`);
+      continue;
+    }
+    if (loop.node_ids.length !== 20)
+      errors.push(`${at}: expected exactly 20 node_ids`);
+    const loopNodes = new Set();
+    for (const nodeId of loop.node_ids) {
+      if (loopNodes.has(nodeId)) errors.push(`${at}: duplicate node_id ${nodeId}`);
+      loopNodes.add(nodeId);
+      if (expansionNodeIds.has(nodeId))
+        errors.push(`${at}: node_id ${nodeId} appears in multiple loops`);
+      expansionNodeIds.add(nodeId);
+      const task = maps.tasks.get(nodeId);
+      const scene = maps.scenes.get(nodeId);
+      if (!task && !scene)
+        errors.push(`${at}: unknown task/scene node ${nodeId}`);
+      if (task && scene)
+        errors.push(`${at}: node ${nodeId} resolves to both task and scene`);
+      const record = task || scene;
+      if (record && record.review_status !== "proposed")
+        errors.push(`${at}: node ${nodeId} must have review_status proposed`);
+      if (record && (typeof record.granularity !== "string" || !record.granularity.trim()))
+        errors.push(`${at}: node ${nodeId} must have a non-empty granularity`);
+      if (record && "scores" in record)
+        errors.push(`${at}: node ${nodeId} has obsolete scores`);
+      if (task) {
+        if (task.object_id !== MUSTARD_OBJECT_ID)
+          errors.push(`${at}: task node ${nodeId} must use the mustard object`);
+        const predicates = (task.goal_state || []).map(goalPredicate);
+        if (!predicates.some((predicate) => predicate && !GENERIC_GOAL_PREDICATES.has(predicate)))
+          errors.push(`${at}: task node ${nodeId} must have a semantic goal state`);
+        for (const field of FREQUENCY_VALUE_FIELDS) {
+          if (
+            field in task &&
+            task[field] !== null &&
+            task[field] !== undefined &&
+            task[field] !== "unknown"
+          )
+            errors.push(`${at}: task node ${nodeId} must not carry a frequency value`);
+        }
+      }
+      if (EXPANSION_BASELINE_NODE_IDS.has(nodeId))
+        errors.push(`${at}: node_id ${nodeId} is not a new expansion node`);
+    }
+    if (
+      Number.isInteger(loop.iteration) &&
+      EXPANSION_ITERATIONS.includes(loop.iteration)
+    ) {
+      if (nodesByIteration.has(loop.iteration))
+        errors.push(`${at}: duplicate iteration ${loop.iteration}`);
+      nodesByIteration.set(loop.iteration, loopNodes);
+      for (const nodeId of loopNodes) {
+        if (iterationByNode.has(nodeId))
+          errors.push(`${at}: node_id ${nodeId} has multiple iterations`);
+        iterationByNode.set(nodeId, loop.iteration);
+      }
+    }
+  }
+  if (expansionNodeIds.size !== 60)
+    errors.push("expansion_loops: expected 60 unique new node_ids");
+  const expansionTasks = [...expansionNodeIds].filter((id) => maps.tasks.has(id));
+  const expansionScenes = [...expansionNodeIds].filter((id) => maps.scenes.has(id));
+  if (expansionTasks.length !== 45)
+    errors.push("expansion_loops: expected exactly 45 task nodes");
+  if (expansionScenes.length !== 15)
+    errors.push("expansion_loops: expected exactly 15 scene nodes");
+  const taskGranularities = new Set(
+    expansionTasks.map((id) => maps.tasks.get(id)?.granularity).filter(Boolean),
+  );
+  const sceneGranularities = new Set(
+    expansionScenes.map((id) => maps.scenes.get(id)?.granularity).filter(Boolean),
+  );
+  if (taskGranularities.size < 2)
+    errors.push("expansion_loops: task nodes must use varied granularity");
+  if (sceneGranularities.size < 2)
+    errors.push("expansion_loops: scene nodes must use varied granularity");
+  const expansionTemplateIds = new Set(
+    expansionTasks.map((id) => maps.tasks.get(id)?.template_id).filter(Boolean),
+  );
+  const expansionIntentIds = new Set(
+    expansionTasks.map((id) => maps.tasks.get(id)?.intent_id).filter(Boolean),
+  );
+  if (expansionTemplateIds.size < 3)
+    errors.push("expansion_loops: task nodes must use at least 3 templates");
+  if (expansionIntentIds.size < 3)
+    errors.push("expansion_loops: task nodes must use at least 3 intents");
+  const semanticGoalPredicates = new Set(
+    expansionTasks
+      .flatMap((id) => maps.tasks.get(id)?.goal_state || [])
+      .map(goalPredicate)
+      .filter((predicate) => predicate && !GENERIC_GOAL_PREDICATES.has(predicate)),
+  );
+  if (semanticGoalPredicates.size < 4)
+    errors.push("expansion_loops: task nodes must expose varied semantic goals");
+  for (const iteration of EXPANSION_ITERATIONS)
+    if (!nodesByIteration.has(iteration))
+      errors.push(`expansion_loops: missing iteration ${iteration}`);
+
+  const relationIds = new Set();
+  const nodeExists = (id) => maps.tasks.has(id) || maps.scenes.has(id);
+  const validRelations = [];
+  for (const [index, relation] of relations.entries()) {
+    const at = `expansion_relations[${index}]`;
+    if (!relation || typeof relation !== "object") {
+      errors.push(`${at}: malformed relation`);
+      continue;
+    }
+    if (!/^[a-z0-9_]+$/.test(relation.id || ""))
+      errors.push(`${at}: invalid id`);
+    else if (relationIds.has(relation.id))
+      errors.push(`${at}: duplicate id ${relation.id}`);
+    else relationIds.add(relation.id);
+    if (!nodeExists(relation.source)) errors.push(`${at}: unknown source ${relation.source}`);
+    if (!nodeExists(relation.target)) errors.push(`${at}: unknown target ${relation.target}`);
+    if (relation.source === relation.target)
+      errors.push(`${at}: source and target must differ`);
+    if (
+      typeof relation.relation !== "string" ||
+      !/^[a-z][a-z0-9_]*$/.test(relation.relation)
+    )
+      errors.push(`${at}: relation must be a lower_snake_case label`);
+    if (
+      typeof relation.rationale !== "string" ||
+      relation.rationale.trim().length < 20
+    )
+      errors.push(`${at}: rationale must be a non-empty sentence of at least 20 characters`);
+    if (
+      !Number.isInteger(relation.iteration) ||
+      !EXPANSION_ITERATIONS.includes(relation.iteration)
+    )
+      errors.push(`${at}: iteration must be 1, 2, or 3`);
+    const currentNodes = nodesByIteration.get(relation.iteration);
+    if (!currentNodes)
+      errors.push(`${at}: iteration must resolve to an expansion loop`);
+    else if (!currentNodes.has(relation.source) && !currentNodes.has(relation.target))
+      errors.push(`${at}: relation must touch its iteration's loop`);
+    if (
+      nodeExists(relation.source) &&
+      nodeExists(relation.target) &&
+      relation.source !== relation.target
+    )
+      validRelations.push(relation);
+  }
+  for (const iteration of [2, 3]) {
+    const currentNodes = nodesByIteration.get(iteration);
+    const previousNodes = nodesByIteration.get(iteration - 1);
+    if (!currentNodes || !previousNodes) continue;
+    for (const nodeId of currentNodes) {
+      const connected = validRelations.some(
+        (relation) =>
+          (relation.source === nodeId && previousNodes.has(relation.target)) ||
+          (relation.target === nodeId && previousNodes.has(relation.source)),
+      );
+      if (!connected)
+        errors.push(
+          `expansion node ${nodeId}: iteration ${iteration} node must connect to immediate previous iteration ${iteration - 1}`,
+        );
+    }
+  }
+  const mustardGraphNodeIds = new Set(
+    data.tasks
+      .filter((task) => task.object_id === MUSTARD_OBJECT_ID)
+      .flatMap((task) => [task.id, task.scene_id]),
+  );
+  const loopOneNodes = nodesByIteration.get(1);
+  if (
+    loopOneNodes &&
+    !validRelations.some(
+      (relation) =>
+        (loopOneNodes.has(relation.source) &&
+          mustardGraphNodeIds.has(relation.target) &&
+          !expansionNodeIds.has(relation.target)) ||
+        (loopOneNodes.has(relation.target) &&
+          mustardGraphNodeIds.has(relation.source) &&
+          !expansionNodeIds.has(relation.source)),
+    )
+  )
+    errors.push(
+      "expansion_loops: loop 1 must anchor to a reachable existing mustard graph node",
+    );
+
+  for (const taskId of expansionTasks) {
+    const frequencyClaims = data.claims.filter(
+      (claim) =>
+        claim.subject_id === taskId &&
+        claim.claim_type === "population_frequency",
+    );
+    if (frequencyClaims.length !== 1) {
+      errors.push(
+        `${taskId}: expansion task must have exactly one population_frequency claim`,
+      );
+    } else {
+      const [frequencyClaim] = frequencyClaims;
+      if (
+        frequencyClaim.status !== "unknown" ||
+        frequencyClaim.value !== null ||
+        frequencyClaim.unit !== null ||
+        (frequencyClaim.source_ids || []).length
+      )
+        errors.push(
+          `${taskId}: expansion population frequency must remain unknown with null value/unit and no sources`,
+        );
+    }
+  }
 }
 function validateRequirements(requirements, at, maps, errors) {
   if (!Array.isArray(requirements)) {
@@ -209,6 +507,7 @@ function validateData(data = defaultData()) {
     if ("scores" in task)
       errors.push(`${task.id}: obsolete scores are not allowed`);
   }
+  validateExpansion(data, maps, errors);
   for (const source of Array.isArray(data.evidence) ? data.evidence : []) {
     const allowedClaims = SOURCE_ALLOWED_CLAIMS[source.source_type];
     if (!allowedClaims)

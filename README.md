@@ -2,7 +2,7 @@
 
 > Explore everyday activity as a context-dependent task graph, then turn a selected candidate into a reviewable collection card.
 
-[日本語](README.ja.md) · [Documentation](docs/README.md) · [Mustard walkthrough](docs/walkthrough.md) · [Contributing](CONTRIBUTING.md)
+[日本語](README.ja.md) · [Documentation](docs/README.md) · [Mustard walkthrough](docs/walkthrough.md) · [Mustard expansion](docs/mustard-expansion.md) · [Contributing](CONTRIBUTING.md)
 
 Task Atlas begins with the YCB object catalog and a mustard-bottle slice. It is a local, dependency-free application for asking better questions before collecting data: what goal makes sense in this scene and role, what is present or missing, what claims support the candidate, and what would a collection session require?
 
@@ -16,6 +16,7 @@ It does not present a fixed task hierarchy, a required action sequence, a univer
 - Claim-scoped sources: each source supports a stated claim within a stated scope.
 - Frequency that is directly observed, explicitly derived, or unknown. Unknown is preserved rather than estimated.
 - Collection cards containing the setup, reset, quality checks, consumables, failure modes, required resources, context assumptions, and unresolved requirements needed for a real trial.
+- A three-loop mustard expansion with 20 new task or scene nodes per loop and explicit cross-loop relationship rationales.
 
 The [foundation contract](docs/foundation-contract.md) defines the `0.2` data and HTTP interface. It is the authoritative specification for context semantics, assessments, planning records, claims, and exports.
 
@@ -51,6 +52,7 @@ GET /api/tasks?...context
 GET /api/tasks/{id}?...context
 GET /api/tasks/{id}/collection-card?...context&procedure_id=...
 GET /api/nodes/{id}/neighbors?lens=all|context|goals|execution
+GET /api/expansion-loops
 GET /api/export/tasks.json
 GET /api/export/tasks.csv
 ```
@@ -63,6 +65,7 @@ See [architecture](docs/architecture.md) for component boundaries and [the found
 - [Ontology](docs/ontology.md): record distinctions and context semantics.
 - [Evidence and claim policy](docs/evidence_policy.md): scope-aware support and unknown frequency.
 - [Mustard walkthrough](docs/walkthrough.md): use the vertical slice from exploration to collection preparation.
+- [Mustard expansion](docs/mustard-expansion.md): the three proposed-design loops and their relationship contract.
 - [Research source report (Japanese)](report-source.md): source notes and research context. Historical proposals are marked as superseded where applicable.
 
 ## Contribute

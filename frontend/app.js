@@ -48,6 +48,10 @@
       consumables: "Consumables",
       download: "Download collection card",
       unknownAffordances: "No affordances have been reviewed.",
+      granularity: "Granularity",
+      expansionRound: "Round",
+      expansionEmpty: "No nodes were returned for this round.",
+      relatedBy: "Related by",
     },
     ja: {
       unspecified: "未指定（不明）",
@@ -95,6 +99,10 @@
       consumables: "消耗品",
       download: "収集カードをダウンロード",
       unknownAffordances: "アフォーダンスはまだレビューされていません。",
+      granularity: "粒度",
+      expansionRound: "ラウンド",
+      expansionEmpty: "このラウンドのノードは返却されませんでした。",
+      relatedBy: "関係",
     },
   };
 
@@ -112,6 +120,9 @@
     lens: "all",
     requestVersion: 0,
     graphVersion: 0,
+    expansionLoops: [],
+    expansionRelations: [],
+    selectedExpansionRound: 0,
     contextOptions: null,
     context: {
       scene_id: "",
@@ -152,6 +163,10 @@
     inspector: byId("inspector"),
     search: byId("search"),
     language: byId("language"),
+    expansion: byId("expansion-loops"),
+    expansionCount: byId("expansion-count"),
+    expansionRounds: byId("expansion-rounds"),
+    expansionNodes: byId("expansion-nodes"),
   };
 
   const text = (key) => UI[state.language][key] || UI.en[key] || key;
@@ -184,6 +199,12 @@
         item?.name_en ||
         item?.id
       : item?.name_en || item?.label || item?.name_ja || item?.id;
+  const granularityOf = (item) =>
+    item?.granularity ||
+    item?.granularity_label ||
+    item?.metadata?.granularity ||
+    item?.meta?.granularity ||
+    "";
 
   function contextQuery() {
     const query = new URLSearchParams();
@@ -210,6 +231,16 @@
     if (!response.ok)
       throw new Error(payload.error || `Request failed: ${response.status}`);
     return payload.data === undefined ? payload : payload.data;
+  }
+
+  async function apiEnvelope(path) {
+    const response = await fetch(path, {
+      headers: { Accept: "application/json" },
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok)
+      throw new Error(payload.error || `Request failed: ${response.status}`);
+    return payload;
   }
 
   function renderError(target, reason) {
@@ -240,6 +271,7 @@
     renderTasks(state.tasks);
     if (state.taskDetail) renderTaskInspector(state.taskDetail);
     if (state.graph) renderGraph();
+    renderExpansionLoops();
   }
 
   function populateSelect(select, items, selected, includeUnspecified = true) {
@@ -467,6 +499,13 @@
     }</section>`;
   }
 
+  function granularitySection(item) {
+    const granularity = granularityOf(item);
+    return granularity
+      ? section(text("granularity"), [readable(granularity)])
+      : "";
+  }
+
   function renderObjectInspector(detail) {
     const object = detail.object;
     elements.inspectorType.textContent = "OBJECT";
@@ -481,6 +520,7 @@
           `Concept: ${detail.general_concept?.name_en || object.general_concept_id || "unknown"}`,
         ],
       )}
+      ${granularitySection(object)}
       <aside class="warning">${escapeHtml(text("catalogCaveat"))}</aside>`;
   }
 
@@ -578,6 +618,7 @@
       <i class="assessment unknown">${escapeHtml(readable(activeAssessment.execution_status || "unverified"))}</i></p>
       ${section(text("goals"), [...(task.goal_state || []), ...(collection.success_criteria || [])], text("goalMissing"))}
       ${section(text("initial"), task.initial_state || [], text("initialUnknown"))}
+      ${granularitySection(task)}
       ${section(
         text("capabilities"),
         (detail.skills || task.skills || []).map((skill) =>
@@ -623,6 +664,84 @@
     return "context-node";
   }
 
+  function expansionLoopsFrom(payload) {
+    const data = payload?.data ?? payload;
+    const loops = Array.isArray(data) ? data : data?.loops || [];
+    const relations = payload?.relations || data?.relations || [];
+    return {
+      loops: Array.isArray(loops) ? loops.slice(0, 3) : [],
+      relations: Array.isArray(relations) ? relations : [],
+    };
+  }
+
+  function expansionNodes(loop) {
+    const nodes = loop?.nodes || loop?.items || loop?.data || [];
+    return Array.isArray(nodes) ? nodes : [];
+  }
+
+  function renderExpansionLoops() {
+    const loops = state.expansionLoops;
+    if (!elements.expansion) return;
+    elements.expansion.hidden = loops.length === 0;
+    if (!loops.length) return;
+    const roundIndex = Math.min(state.selectedExpansionRound, loops.length - 1);
+    state.selectedExpansionRound = roundIndex;
+    const activeLoop = loops[roundIndex];
+    const nodes = expansionNodes(activeLoop);
+    elements.expansionCount.textContent = `${loops.length}/3`;
+    elements.expansionRounds.innerHTML = `<label><span>${escapeHtml(text("expansionRound"))}</span><select id="expansion-round-select">${loops
+      .map((loop, index) => {
+        const round =
+          loop.iteration ?? loop.round ?? loop.round_index ?? loop.index ?? index + 1;
+        const title = label(loop);
+        return `<option value="${index}" ${index === roundIndex ? "selected" : ""}>${escapeHtml(`${text("expansionRound")} ${round}${title ? ` — ${title}` : ""}`)}</option>`;
+      })
+      .join("")}</select></label>`;
+    elements.expansionNodes.innerHTML = nodes.length
+      ? nodes
+          .map((node) => {
+            const relation = state.expansionRelations.find(
+              (edge) =>
+                edge.source === node.id ||
+                edge.target === node.id ||
+                edge.from === node.id ||
+                edge.to === node.id,
+            );
+            const relationLabel = relation &&
+              (relation.relation || relation.type || relation.label);
+            const type = readable(node.node_type || node.type || "node");
+            const granularity = granularityOf(node);
+            return `<button type="button" class="expansion-node" data-expansion-node="${escapeHtml(node.id)}">
+              <b>${escapeHtml(label(node))}</b>
+              <small>${escapeHtml([type, granularity && `${text("granularity")}: ${readable(granularity)}`].filter(Boolean).join(" · "))}</small>
+              ${relationLabel ? `<small>${escapeHtml(`${text("relatedBy")}: ${readable(relationLabel)}`)}</small>` : ""}
+            </button>`;
+          })
+          .join("")
+      : `<div class="message">${escapeHtml(text("expansionEmpty"))}</div>`;
+    byId("expansion-round-select")?.addEventListener("change", (event) => {
+      state.selectedExpansionRound = Number(event.target.value);
+      renderExpansionLoops();
+    });
+    elements.expansionNodes
+      .querySelectorAll("[data-expansion-node]")
+      .forEach((button) =>
+        button.addEventListener("click", () =>
+          navigateExpansionNode(button.dataset.expansionNode),
+        ),
+      );
+  }
+
+  async function navigateExpansionNode(id) {
+    const node = state.expansionLoops
+      .flatMap(expansionNodes)
+      .find((candidate) => candidate.id === id);
+    const type = String(node?.node_type || node?.type || "").toLowerCase();
+    if (type.includes("task")) return selectTask(id);
+    if (type.includes("object")) return selectObject(id);
+    await navigateNode(id, node);
+  }
+
   function renderGraph() {
     const graph = state.graph;
     if (!graph?.nodes?.length) {
@@ -661,7 +780,7 @@
         <rect x="${position.x - 108}" y="${position.y - 24}" width="216" height="48" rx="10"></rect>
         <text x="${position.x - 96}" y="${position.y - 3}">${escapeHtml(String(label(node)).slice(0, 32))}</text>
         <text class="node-sub" x="${position.x - 96}" y="${position.y + 14}" font-size="9" fill="#9bb1c4">
-          ${escapeHtml(readable(node.node_type || "node"))}
+          ${escapeHtml([readable(node.node_type || "node"), granularityOf(node) && readable(granularityOf(node))].filter(Boolean).join(" · "))}
         </text>
       </g>`;
       })
@@ -728,8 +847,9 @@
     }
   }
 
-  async function navigateNode(id) {
-    const node = state.graph?.nodes?.find((candidate) => candidate.id === id);
+  async function navigateNode(id, knownNode = null) {
+    const node =
+      knownNode || state.graph?.nodes?.find((candidate) => candidate.id === id);
     if (node?.node_type === "TaskInstance") return selectTask(id);
     if (node?.node_type === "ObjectInstance") return selectObject(id);
     const version = state.graphVersion + 1;
@@ -738,7 +858,7 @@
     elements.inspectorType.textContent = readable(
       node?.node_type || "node",
     ).toUpperCase();
-    elements.inspector.innerHTML = `<h2>${escapeHtml(label(node || { id }))}</h2><p>${escapeHtml(text("graphHint"))}</p>`;
+    elements.inspector.innerHTML = `<h2>${escapeHtml(label(node || { id }))}</h2>${granularitySection(node)}<p>${escapeHtml(text("graphHint"))}</p>`;
   }
 
   async function selectObject(id, { preserveTask = false } = {}) {
@@ -819,6 +939,22 @@
       URL.revokeObjectURL(link.href);
     } catch (reason) {
       renderError(elements.inspector, reason);
+    }
+  }
+
+  async function loadExpansionLoops() {
+    try {
+      const payload = await apiEnvelope("/api/expansion-loops");
+      const { loops, relations } = expansionLoopsFrom(payload);
+      state.expansionLoops = loops;
+      state.expansionRelations = relations;
+      state.selectedExpansionRound = 0;
+      renderExpansionLoops();
+    } catch {
+      // This frontend can ship before the optional expansion data route. Keep the
+      // existing explorer usable until the backend exposes its three-loop data.
+      state.expansionLoops = [];
+      renderExpansionLoops();
     }
   }
 
@@ -926,6 +1062,7 @@
         objects.find((object) => object.ycb_id === "006_mustard_bottle") ||
         objects[0];
       if (initial) await selectObject(initial.id);
+      loadExpansionLoops();
     } catch (reason) {
       elements.status.textContent = "Offline";
       elements.status.className = "bad";

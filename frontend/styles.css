@@ -289,7 +289,8 @@ main {
 }
 .context,
 .graph,
-.tasks {
+.tasks,
+.expansion {
   padding: 20px;
 }
 .switch,
@@ -297,6 +298,60 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+}
+.expansion-rounds {
+  margin: 12px 0 8px;
+}
+.expansion-rounds label {
+  display: grid;
+  gap: 5px;
+  max-width: 390px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.expansion-rounds select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  background: #0a1b2d;
+}
+.expansion-nodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  gap: 7px;
+  max-height: 360px;
+  overflow: auto;
+  padding: 2px 3px 2px 0;
+}
+.expansion-node {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text);
+  text-align: left;
+  background: #050f1a55;
+}
+.expansion-node:hover {
+  border-color: #55dfc788;
+  background: #55dfc712;
+}
+.expansion-node b,
+.expansion-node small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.expansion-node b {
+  font-size: 11px;
+}
+.expansion-node small {
+  color: var(--muted);
+  font-size: 9px;
 }
 .switch .on,
 .lenses .on {

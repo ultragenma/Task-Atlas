@@ -723,6 +723,61 @@ test("graph traversal is bidirectional and lenses filter typed relationships", a
   }
 });
 
+test("mustard expansion exposes three linked proposed-design loops and bidirectional relations", async () => {
+  const response = await request("/api/expansion-loops");
+  assert.equal(response.status, 200);
+  const expansion = json(response).data;
+  assert.ok(Array.isArray(expansion.loops));
+  assert.ok(Array.isArray(expansion.relations));
+  assert.equal(expansion.loops.length, 3);
+  const allNodes = new Set();
+  const nodesByIteration = new Map();
+  for (const loop of expansion.loops) {
+    assert.ok(Number.isInteger(loop.iteration));
+    assert.equal(loop.node_ids.length, 20);
+    const loopNodes = new Set(loop.node_ids);
+    assert.equal(loopNodes.size, 20);
+    for (const id of loopNodes) assert.ok(!allNodes.has(id), `${id} is unique`);
+    for (const id of loopNodes) allNodes.add(id);
+    nodesByIteration.set(loop.iteration, loopNodes);
+    for (const id of loopNodes) {
+      const task = store.maps.tasks.get(id);
+      if (task) assert.equal(task.review_status, "proposed");
+    }
+  }
+  assert.equal(allNodes.size, 60);
+  assert.deepEqual([...nodesByIteration.keys()].sort(), [1, 2, 3]);
+  for (const relation of expansion.relations) {
+    assert.ok(relation.relation.trim());
+    assert.ok(relation.rationale.trim());
+    assert.ok(
+      allNodes.has(relation.source) || store.maps.tasks.has(relation.source) || store.maps.scenes.has(relation.source),
+    );
+    assert.ok(
+      allNodes.has(relation.target) || store.maps.tasks.has(relation.target) || store.maps.scenes.has(relation.target),
+    );
+    if (relation.iteration > 1) {
+      const previous = [...nodesByIteration.entries()]
+        .filter(([iteration]) => iteration < relation.iteration)
+        .flatMap(([, ids]) => [...ids]);
+      assert.ok(previous.includes(relation.source) || previous.includes(relation.target));
+    }
+    for (const [center, neighbor] of [
+      [relation.source, relation.target],
+      [relation.target, relation.source],
+    ]) {
+      const graphResponse = await request(
+        `/api/nodes/${encodeURIComponent(center)}/neighbors?lens=all`,
+      );
+      assert.equal(graphResponse.status, 200);
+      assert.ok(
+        json(graphResponse).data.nodes.some((node) => node.id === neighbor),
+        `${center} must traverse to ${neighbor}`,
+      );
+    }
+  }
+});
+
 test("graph nodes are navigable, unknown graph identities fail, and groups/entities honor lenses", async () => {
   const mustard = json(await request("/api/objects?q=mustard")).data.find(
     (object) => /mustard/i.test(textOf(object)),
@@ -979,6 +1034,13 @@ test("API and exports keep claims unranked and evidence claim-specific", async (
   );
 });
 
+test("task JSON export includes expansion loops, relations, and scenes without scores", async () => {
+  const payload = json(await request("/api/export/tasks.json"));
+  for (const key of ["expansion_loops", "expansion_relations", "scenes"])
+    assert.ok(Array.isArray(payload[key]), `task export includes ${key}`);
+  assert.doesNotMatch(JSON.stringify(payload), /"scores?"\s*:/i);
+});
+
 test("seed validator rejects schema, graph-reference, claim, and measurement mutations", () => {
   const cloneData = () => JSON.parse(JSON.stringify(defaultData()));
   const isInvalid = (data) => !validateData(data).valid;
@@ -1117,6 +1179,43 @@ test("seed validator rejects schema, graph-reference, claim, and measurement mut
   assert.ok(
     validateData(measuredTooEarly).errors.some((error) =>
       /setup_minutes must be null until measured/.test(error),
+    ),
+  );
+
+  const repeatedExpansionNode = cloneData();
+  repeatedExpansionNode.expansionLoops[1].node_ids[0] =
+    repeatedExpansionNode.expansionLoops[0].node_ids[0];
+  assert.ok(
+    validateData(repeatedExpansionNode).errors.some((error) =>
+      /appears in multiple loops/.test(error),
+    ),
+  );
+
+  const reviewedExpansionTask = cloneData();
+  const expansionTaskId = reviewedExpansionTask.expansionLoops
+    .flatMap((loop) => loop.node_ids)
+    .find((id) => reviewedExpansionTask.tasks.some((task) => task.id === id));
+  reviewedExpansionTask.tasks.find((task) => task.id === expansionTaskId).review_status =
+    "supported";
+  assert.ok(
+    validateData(reviewedExpansionTask).errors.some((error) =>
+      /must have review_status proposed/.test(error),
+    ),
+  );
+
+  const unsupportedExpansionEndpoint = cloneData();
+  unsupportedExpansionEndpoint.expansionRelations[0].target = "task_missing";
+  assert.ok(
+    validateData(unsupportedExpansionEndpoint).errors.some((error) =>
+      /unknown target/.test(error),
+    ),
+  );
+
+  const undocumentedExpansionRationale = cloneData();
+  undocumentedExpansionRationale.expansionRelations[0].rationale = "";
+  assert.ok(
+    validateData(undocumentedExpansionRationale).errors.some((error) =>
+      /rationale must be a non-empty string/.test(error),
     ),
   );
 });

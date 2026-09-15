@@ -7,7 +7,9 @@
     "status": "supported",
     "value": "listed",
     "unit": null,
-    "source_ids": ["evidence_ycb_object"],
+    "source_ids": [
+      "evidence_ycb_object"
+    ],
     "scope": "YCB catalog identity.",
     "limitations": "Catalog identity does not establish a task or execution result."
   },
@@ -19,7 +21,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -67,7 +71,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -115,7 +121,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -163,7 +171,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -211,7 +221,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -259,7 +271,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -307,7 +321,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -355,7 +371,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -403,7 +421,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -451,7 +471,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -499,7 +521,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -547,7 +571,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -595,7 +621,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -643,7 +671,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -691,7 +721,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -739,7 +771,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -787,7 +821,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -835,7 +871,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -883,7 +921,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -931,7 +971,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -979,7 +1021,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -1027,7 +1071,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -1075,7 +1121,9 @@
     "status": "proposed",
     "value": null,
     "unit": null,
-    "source_ids": ["evidence_task_atlas_design"],
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
     "scope": "Mustard planning seed.",
     "limitations": "Requires review and a collection trial."
   },
@@ -1114,5 +1162,2255 @@
     "source_ids": [],
     "scope": "No simulator or asset configuration is attached.",
     "limitations": "YCB identity alone does not validate task assets."
+  },
+  {
+    "id": "claim_task_mustard_l1_01_task_suitability",
+    "subject_id": "task_mustard_l1_01",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_01_population_frequency",
+    "subject_id": "task_mustard_l1_01",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_01_robot_execution",
+    "subject_id": "task_mustard_l1_01",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_01_asset_compatibility",
+    "subject_id": "task_mustard_l1_01",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_02_task_suitability",
+    "subject_id": "task_mustard_l1_02",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_02_population_frequency",
+    "subject_id": "task_mustard_l1_02",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_02_robot_execution",
+    "subject_id": "task_mustard_l1_02",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_02_asset_compatibility",
+    "subject_id": "task_mustard_l1_02",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_03_task_suitability",
+    "subject_id": "task_mustard_l1_03",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_03_population_frequency",
+    "subject_id": "task_mustard_l1_03",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_03_robot_execution",
+    "subject_id": "task_mustard_l1_03",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_03_asset_compatibility",
+    "subject_id": "task_mustard_l1_03",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_04_task_suitability",
+    "subject_id": "task_mustard_l1_04",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_04_population_frequency",
+    "subject_id": "task_mustard_l1_04",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_04_robot_execution",
+    "subject_id": "task_mustard_l1_04",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_04_asset_compatibility",
+    "subject_id": "task_mustard_l1_04",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_05_task_suitability",
+    "subject_id": "task_mustard_l1_05",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_05_population_frequency",
+    "subject_id": "task_mustard_l1_05",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_05_robot_execution",
+    "subject_id": "task_mustard_l1_05",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_05_asset_compatibility",
+    "subject_id": "task_mustard_l1_05",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_06_task_suitability",
+    "subject_id": "task_mustard_l1_06",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_06_population_frequency",
+    "subject_id": "task_mustard_l1_06",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_06_robot_execution",
+    "subject_id": "task_mustard_l1_06",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_06_asset_compatibility",
+    "subject_id": "task_mustard_l1_06",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_07_task_suitability",
+    "subject_id": "task_mustard_l1_07",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_07_population_frequency",
+    "subject_id": "task_mustard_l1_07",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_07_robot_execution",
+    "subject_id": "task_mustard_l1_07",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_07_asset_compatibility",
+    "subject_id": "task_mustard_l1_07",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_08_task_suitability",
+    "subject_id": "task_mustard_l1_08",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_08_population_frequency",
+    "subject_id": "task_mustard_l1_08",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_08_robot_execution",
+    "subject_id": "task_mustard_l1_08",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_08_asset_compatibility",
+    "subject_id": "task_mustard_l1_08",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_09_task_suitability",
+    "subject_id": "task_mustard_l1_09",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_09_population_frequency",
+    "subject_id": "task_mustard_l1_09",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_09_robot_execution",
+    "subject_id": "task_mustard_l1_09",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_09_asset_compatibility",
+    "subject_id": "task_mustard_l1_09",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_10_task_suitability",
+    "subject_id": "task_mustard_l1_10",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_10_population_frequency",
+    "subject_id": "task_mustard_l1_10",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_10_robot_execution",
+    "subject_id": "task_mustard_l1_10",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_10_asset_compatibility",
+    "subject_id": "task_mustard_l1_10",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_11_task_suitability",
+    "subject_id": "task_mustard_l1_11",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_11_population_frequency",
+    "subject_id": "task_mustard_l1_11",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_11_robot_execution",
+    "subject_id": "task_mustard_l1_11",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_11_asset_compatibility",
+    "subject_id": "task_mustard_l1_11",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_12_task_suitability",
+    "subject_id": "task_mustard_l1_12",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_12_population_frequency",
+    "subject_id": "task_mustard_l1_12",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_12_robot_execution",
+    "subject_id": "task_mustard_l1_12",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_12_asset_compatibility",
+    "subject_id": "task_mustard_l1_12",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_13_task_suitability",
+    "subject_id": "task_mustard_l1_13",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_13_population_frequency",
+    "subject_id": "task_mustard_l1_13",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_13_robot_execution",
+    "subject_id": "task_mustard_l1_13",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_13_asset_compatibility",
+    "subject_id": "task_mustard_l1_13",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_14_task_suitability",
+    "subject_id": "task_mustard_l1_14",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_14_population_frequency",
+    "subject_id": "task_mustard_l1_14",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_14_robot_execution",
+    "subject_id": "task_mustard_l1_14",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_14_asset_compatibility",
+    "subject_id": "task_mustard_l1_14",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_15_task_suitability",
+    "subject_id": "task_mustard_l1_15",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 1.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_15_population_frequency",
+    "subject_id": "task_mustard_l1_15",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_15_robot_execution",
+    "subject_id": "task_mustard_l1_15",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l1_15_asset_compatibility",
+    "subject_id": "task_mustard_l1_15",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 1 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_01_task_suitability",
+    "subject_id": "task_mustard_l2_01",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_01_population_frequency",
+    "subject_id": "task_mustard_l2_01",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_01_robot_execution",
+    "subject_id": "task_mustard_l2_01",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_01_asset_compatibility",
+    "subject_id": "task_mustard_l2_01",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_02_task_suitability",
+    "subject_id": "task_mustard_l2_02",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_02_population_frequency",
+    "subject_id": "task_mustard_l2_02",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_02_robot_execution",
+    "subject_id": "task_mustard_l2_02",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_02_asset_compatibility",
+    "subject_id": "task_mustard_l2_02",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_03_task_suitability",
+    "subject_id": "task_mustard_l2_03",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_03_population_frequency",
+    "subject_id": "task_mustard_l2_03",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_03_robot_execution",
+    "subject_id": "task_mustard_l2_03",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_03_asset_compatibility",
+    "subject_id": "task_mustard_l2_03",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_04_task_suitability",
+    "subject_id": "task_mustard_l2_04",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_04_population_frequency",
+    "subject_id": "task_mustard_l2_04",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_04_robot_execution",
+    "subject_id": "task_mustard_l2_04",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_04_asset_compatibility",
+    "subject_id": "task_mustard_l2_04",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_05_task_suitability",
+    "subject_id": "task_mustard_l2_05",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_05_population_frequency",
+    "subject_id": "task_mustard_l2_05",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_05_robot_execution",
+    "subject_id": "task_mustard_l2_05",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_05_asset_compatibility",
+    "subject_id": "task_mustard_l2_05",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_06_task_suitability",
+    "subject_id": "task_mustard_l2_06",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_06_population_frequency",
+    "subject_id": "task_mustard_l2_06",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_06_robot_execution",
+    "subject_id": "task_mustard_l2_06",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_06_asset_compatibility",
+    "subject_id": "task_mustard_l2_06",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_07_task_suitability",
+    "subject_id": "task_mustard_l2_07",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_07_population_frequency",
+    "subject_id": "task_mustard_l2_07",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_07_robot_execution",
+    "subject_id": "task_mustard_l2_07",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_07_asset_compatibility",
+    "subject_id": "task_mustard_l2_07",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_08_task_suitability",
+    "subject_id": "task_mustard_l2_08",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_08_population_frequency",
+    "subject_id": "task_mustard_l2_08",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_08_robot_execution",
+    "subject_id": "task_mustard_l2_08",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_08_asset_compatibility",
+    "subject_id": "task_mustard_l2_08",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_09_task_suitability",
+    "subject_id": "task_mustard_l2_09",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_09_population_frequency",
+    "subject_id": "task_mustard_l2_09",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_09_robot_execution",
+    "subject_id": "task_mustard_l2_09",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_09_asset_compatibility",
+    "subject_id": "task_mustard_l2_09",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_10_task_suitability",
+    "subject_id": "task_mustard_l2_10",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_10_population_frequency",
+    "subject_id": "task_mustard_l2_10",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_10_robot_execution",
+    "subject_id": "task_mustard_l2_10",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_10_asset_compatibility",
+    "subject_id": "task_mustard_l2_10",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_11_task_suitability",
+    "subject_id": "task_mustard_l2_11",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_11_population_frequency",
+    "subject_id": "task_mustard_l2_11",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_11_robot_execution",
+    "subject_id": "task_mustard_l2_11",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_11_asset_compatibility",
+    "subject_id": "task_mustard_l2_11",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_12_task_suitability",
+    "subject_id": "task_mustard_l2_12",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_12_population_frequency",
+    "subject_id": "task_mustard_l2_12",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_12_robot_execution",
+    "subject_id": "task_mustard_l2_12",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_12_asset_compatibility",
+    "subject_id": "task_mustard_l2_12",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_13_task_suitability",
+    "subject_id": "task_mustard_l2_13",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_13_population_frequency",
+    "subject_id": "task_mustard_l2_13",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_13_robot_execution",
+    "subject_id": "task_mustard_l2_13",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_13_asset_compatibility",
+    "subject_id": "task_mustard_l2_13",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_14_task_suitability",
+    "subject_id": "task_mustard_l2_14",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_14_population_frequency",
+    "subject_id": "task_mustard_l2_14",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_14_robot_execution",
+    "subject_id": "task_mustard_l2_14",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_14_asset_compatibility",
+    "subject_id": "task_mustard_l2_14",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_15_task_suitability",
+    "subject_id": "task_mustard_l2_15",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 2.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_15_population_frequency",
+    "subject_id": "task_mustard_l2_15",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_15_robot_execution",
+    "subject_id": "task_mustard_l2_15",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l2_15_asset_compatibility",
+    "subject_id": "task_mustard_l2_15",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 2 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_01_task_suitability",
+    "subject_id": "task_mustard_l3_01",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_01_population_frequency",
+    "subject_id": "task_mustard_l3_01",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_01_robot_execution",
+    "subject_id": "task_mustard_l3_01",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_01_asset_compatibility",
+    "subject_id": "task_mustard_l3_01",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_02_task_suitability",
+    "subject_id": "task_mustard_l3_02",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_02_population_frequency",
+    "subject_id": "task_mustard_l3_02",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_02_robot_execution",
+    "subject_id": "task_mustard_l3_02",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_02_asset_compatibility",
+    "subject_id": "task_mustard_l3_02",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_03_task_suitability",
+    "subject_id": "task_mustard_l3_03",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_03_population_frequency",
+    "subject_id": "task_mustard_l3_03",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_03_robot_execution",
+    "subject_id": "task_mustard_l3_03",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_03_asset_compatibility",
+    "subject_id": "task_mustard_l3_03",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_04_task_suitability",
+    "subject_id": "task_mustard_l3_04",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_04_population_frequency",
+    "subject_id": "task_mustard_l3_04",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_04_robot_execution",
+    "subject_id": "task_mustard_l3_04",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_04_asset_compatibility",
+    "subject_id": "task_mustard_l3_04",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_05_task_suitability",
+    "subject_id": "task_mustard_l3_05",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_05_population_frequency",
+    "subject_id": "task_mustard_l3_05",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_05_robot_execution",
+    "subject_id": "task_mustard_l3_05",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_05_asset_compatibility",
+    "subject_id": "task_mustard_l3_05",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_06_task_suitability",
+    "subject_id": "task_mustard_l3_06",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_06_population_frequency",
+    "subject_id": "task_mustard_l3_06",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_06_robot_execution",
+    "subject_id": "task_mustard_l3_06",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_06_asset_compatibility",
+    "subject_id": "task_mustard_l3_06",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_07_task_suitability",
+    "subject_id": "task_mustard_l3_07",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_07_population_frequency",
+    "subject_id": "task_mustard_l3_07",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_07_robot_execution",
+    "subject_id": "task_mustard_l3_07",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_07_asset_compatibility",
+    "subject_id": "task_mustard_l3_07",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_08_task_suitability",
+    "subject_id": "task_mustard_l3_08",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_08_population_frequency",
+    "subject_id": "task_mustard_l3_08",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_08_robot_execution",
+    "subject_id": "task_mustard_l3_08",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_08_asset_compatibility",
+    "subject_id": "task_mustard_l3_08",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_09_task_suitability",
+    "subject_id": "task_mustard_l3_09",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_09_population_frequency",
+    "subject_id": "task_mustard_l3_09",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_09_robot_execution",
+    "subject_id": "task_mustard_l3_09",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_09_asset_compatibility",
+    "subject_id": "task_mustard_l3_09",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_10_task_suitability",
+    "subject_id": "task_mustard_l3_10",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_10_population_frequency",
+    "subject_id": "task_mustard_l3_10",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_10_robot_execution",
+    "subject_id": "task_mustard_l3_10",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_10_asset_compatibility",
+    "subject_id": "task_mustard_l3_10",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_11_task_suitability",
+    "subject_id": "task_mustard_l3_11",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_11_population_frequency",
+    "subject_id": "task_mustard_l3_11",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_11_robot_execution",
+    "subject_id": "task_mustard_l3_11",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_11_asset_compatibility",
+    "subject_id": "task_mustard_l3_11",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_12_task_suitability",
+    "subject_id": "task_mustard_l3_12",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_12_population_frequency",
+    "subject_id": "task_mustard_l3_12",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_12_robot_execution",
+    "subject_id": "task_mustard_l3_12",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_12_asset_compatibility",
+    "subject_id": "task_mustard_l3_12",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_13_task_suitability",
+    "subject_id": "task_mustard_l3_13",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_13_population_frequency",
+    "subject_id": "task_mustard_l3_13",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_13_robot_execution",
+    "subject_id": "task_mustard_l3_13",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_13_asset_compatibility",
+    "subject_id": "task_mustard_l3_13",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_14_task_suitability",
+    "subject_id": "task_mustard_l3_14",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_14_population_frequency",
+    "subject_id": "task_mustard_l3_14",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_14_robot_execution",
+    "subject_id": "task_mustard_l3_14",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_14_asset_compatibility",
+    "subject_id": "task_mustard_l3_14",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_15_task_suitability",
+    "subject_id": "task_mustard_l3_15",
+    "claim_type": "task_suitability",
+    "statement": "This is a proposed mustard-origin task design from expansion loop 3.",
+    "status": "proposed",
+    "value": "proposed",
+    "unit": null,
+    "source_ids": [
+      "evidence_task_atlas_design"
+    ],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_15_population_frequency",
+    "subject_id": "task_mustard_l3_15",
+    "claim_type": "population_frequency",
+    "statement": "No population measurement is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_15_robot_execution",
+    "subject_id": "task_mustard_l3_15",
+    "claim_type": "robot_execution",
+    "statement": "No robot execution result is attached to this proposed expansion candidate.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
+  },
+  {
+    "id": "claim_task_mustard_l3_15_asset_compatibility",
+    "subject_id": "task_mustard_l3_15",
+    "claim_type": "asset_compatibility",
+    "statement": "Compatibility with a specific robot asset remains unverified.",
+    "status": "unknown",
+    "value": null,
+    "unit": null,
+    "source_ids": [],
+    "scope": "Mustard expansion loop 3 proposed design scope.",
+    "limitations": "This claim is a review input and does not establish observed frequency, successful execution, or generality."
   }
 ]

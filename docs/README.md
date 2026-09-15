@@ -9,6 +9,7 @@ The maintained product documentation is English-first. The repository's top page
 - [Ontology and ID rules](ontology.md) — distinctions among goals, procedures, capabilities, claims, and sources.
 - [Evidence and claim policy](evidence_policy.md) — claim-scoped support and explicit unknown frequency.
 - [Mustard walkthrough](walkthrough.md) — a concrete exploration-to-collection path.
+- [Mustard expansion](mustard-expansion.md) — three 20-node proposed-design loops and their explicit links.
 
 ## Migration from 0.1
 

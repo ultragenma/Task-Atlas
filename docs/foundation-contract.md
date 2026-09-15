@@ -55,6 +55,30 @@ Task records do not carry a second task-level evidence list. Resolve support
 through the task's claims and each claim's `source_ids`; this keeps catalog
 identity, task suitability, frequency, execution, and asset claims distinct.
 
+## Mustard expansion
+
+The mustard expansion is a proposed-design scope, not an observation of task
+frequency or evidence of robot execution. It adds exactly three iterations with
+20 unique new task or scene nodes each. `data/seeds/expansion_loops.json` is:
+
+```text
+[{ id, iteration, node_ids }]
+```
+
+`iteration` is 1, 2, or 3; every `node_ids` entry resolves to a task or scene
+seed record, appears in only one loop, and does not reuse a pre-expansion node.
+`data/seeds/expansion_relations.json` is:
+
+```text
+[{ id, source, target, relation, rationale, iteration }]
+```
+
+Relation endpoints resolve to task or scene IDs. A relation has a non-empty
+relationship label and rationale. Each later iteration has a relation to a node
+from an earlier loop, so the expansion is connected across iterations without
+claiming an execution order or observed prevalence. Expansion records, tasks,
+and scenes must not expose obsolete `scores`.
+
 ## Context and assessment
 
 The following query parameters apply to task lists, task detail, generation, and
@@ -104,7 +128,8 @@ Existing endpoints remain available with updated semantics:
 - `GET /api/tasks/:id?...` returns the existing detail envelope plus `planning`, `claims`, `assessment`, and `procedures`. Each procedure includes its own assessment.
 - `GET /api/tasks/:id/collection-card?...&procedure_id=...` returns `data` with schema version, task identity, context, initial/goal states, required resources, assessment, chosen procedure (or null), alternative procedures, collection fields, claims, sources, and unresolved requirements. An invalid procedure ID is a client error.
 - `GET /api/nodes/:id/neighbors?lens=all|context|goals|execution` provides typed neighbors filtered by lens. Object class and affordance nodes support reverse traversal.
-- `GET /api/export/tasks.json` and `.csv` preserve unknown evidence values and do not expose obsolete scores or A–F grades.
+- `GET /api/expansion-loops` returns `{ loops, relations }` for the mustard expansion.
+- `GET /api/export/tasks.json` includes tasks, planning, claims, sources, scenes, expansion loops, and expansion relations; the JSON and CSV exports preserve unknown evidence values and do not expose obsolete scores or A–F grades.
 
 Unsupported query enum values are client errors. Unknown task and graph identities
 remain 404. Template proposals for other catalog objects remain incomplete and

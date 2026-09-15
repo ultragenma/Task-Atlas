@@ -82,10 +82,20 @@
       "setup": [
         "Place a prepared food target and closed filled bottle in the scene."
       ],
-      "reset": ["Replace food, remove mustard residue, and close the bottle."],
-      "quality_checks": ["Confirm deposit is on the intended food target."],
-      "failure_modes": ["Target miss or material spill."],
-      "consumables": ["Mustard", "prepared food", "cleaning material"],
+      "reset": [
+        "Replace food, remove mustard residue, and close the bottle."
+      ],
+      "quality_checks": [
+        "Confirm deposit is on the intended food target."
+      ],
+      "failure_modes": [
+        "Target miss or material spill."
+      ],
+      "consumables": [
+        "Mustard",
+        "prepared food",
+        "cleaning material"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -177,10 +187,20 @@
       "setup": [
         "Place a prepared food target and closed filled bottle in the scene."
       ],
-      "reset": ["Replace food, remove mustard residue, and close the bottle."],
-      "quality_checks": ["Confirm deposit is on the intended food target."],
-      "failure_modes": ["Target miss or material spill."],
-      "consumables": ["Mustard", "prepared food", "cleaning material"],
+      "reset": [
+        "Replace food, remove mustard residue, and close the bottle."
+      ],
+      "quality_checks": [
+        "Confirm deposit is on the intended food target."
+      ],
+      "failure_modes": [
+        "Target miss or material spill."
+      ],
+      "consumables": [
+        "Mustard",
+        "prepared food",
+        "cleaning material"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -247,9 +267,15 @@
       "setup": [
         "Position a consenting recipient and a closed bottle in the handover zone."
       ],
-      "reset": ["Return bottle to table and clear the handover zone."],
-      "quality_checks": ["Review recipient grasp and release timing."],
-      "failure_modes": ["Early release or unsafe contact."],
+      "reset": [
+        "Return bottle to table and clear the handover zone."
+      ],
+      "quality_checks": [
+        "Review recipient grasp and release timing."
+      ],
+      "failure_modes": [
+        "Early release or unsafe contact."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -383,11 +409,15 @@
       "setup": [
         "Clear a reachable refrigerator shelf and place a closed bottle at start."
       ],
-      "reset": ["Return bottle to start and close storage."],
+      "reset": [
+        "Return bottle to start and close storage."
+      ],
       "quality_checks": [
         "Verify full insertion, upright pose, and unobstructed door."
       ],
-      "failure_modes": ["Bottle fall or door obstruction."],
+      "failure_modes": [
+        "Bottle fall or door obstruction."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -455,9 +485,15 @@
       "setup": [
         "Place closed bottle upright on a refrigerator shelf and close the door."
       ],
-      "reset": ["Return bottle to shelf and close door."],
-      "quality_checks": ["Verify correct object and no displaced shelf items."],
-      "failure_modes": ["Drop or open door."],
+      "reset": [
+        "Return bottle to shelf and close door."
+      ],
+      "quality_checks": [
+        "Verify correct object and no displaced shelf items."
+      ],
+      "failure_modes": [
+        "Drop or open door."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -522,10 +558,18 @@
       "success_criteria": [
         "Bottle is stable at the designated destination surface."
       ],
-      "setup": ["Place closed bottle at source and clear destination."],
-      "reset": ["Return bottle to source."],
-      "quality_checks": ["Verify location, orientation, and edge clearance."],
-      "failure_modes": ["Drop or wrong surface."],
+      "setup": [
+        "Place closed bottle at source and clear destination."
+      ],
+      "reset": [
+        "Return bottle to source."
+      ],
+      "quality_checks": [
+        "Verify location, orientation, and edge clearance."
+      ],
+      "failure_modes": [
+        "Drop or wrong surface."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -582,14 +626,24 @@
     ],
     "procedures": [],
     "collection": {
-      "success_criteria": ["Bottle is upright, stable, and not leaking."],
+      "success_criteria": [
+        "Bottle is upright, stable, and not leaking."
+      ],
       "setup": [
         "Place closed bottle in a fallen pose on the designated support."
       ],
-      "reset": ["Restore fallen starting pose after inspection."],
-      "quality_checks": ["Inspect for leakage before and after recovery."],
-      "failure_modes": ["Bottle rolls, falls, or leaks."],
-      "consumables": ["Cleaning material"],
+      "reset": [
+        "Restore fallen starting pose after inspection."
+      ],
+      "quality_checks": [
+        "Inspect for leakage before and after recovery."
+      ],
+      "failure_modes": [
+        "Bottle rolls, falls, or leaks."
+      ],
+      "consumables": [
+        "Cleaning material"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -650,11 +704,21 @@
     ],
     "procedures": [],
     "collection": {
-      "success_criteria": ["Cap is closed and bottle does not leak upright."],
-      "setup": ["Set the retained cap to an open starting position."],
-      "reset": ["Reopen cap to the starting position."],
-      "quality_checks": ["Verify closure engagement and bottle stability."],
-      "failure_modes": ["Misalignment, detachment, or incomplete closure."],
+      "success_criteria": [
+        "Cap is closed and bottle does not leak upright."
+      ],
+      "setup": [
+        "Set the retained cap to an open starting position."
+      ],
+      "reset": [
+        "Reopen cap to the starting position."
+      ],
+      "quality_checks": [
+        "Verify closure engagement and bottle stability."
+      ],
+      "failure_modes": [
+        "Misalignment, detachment, or incomplete closure."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -716,11 +780,21 @@
     ],
     "procedures": [],
     "collection": {
-      "success_criteria": ["Cap is open, retained, and bottle remains stable."],
-      "setup": ["Place a closed bottle upright on its support."],
-      "reset": ["Close cap and restore starting pose."],
-      "quality_checks": ["Verify opening without support loss."],
-      "failure_modes": ["Cap detaches or bottle tips."],
+      "success_criteria": [
+        "Cap is open, retained, and bottle remains stable."
+      ],
+      "setup": [
+        "Place a closed bottle upright on its support."
+      ],
+      "reset": [
+        "Close cap and restore starting pose."
+      ],
+      "quality_checks": [
+        "Verify opening without support loss."
+      ],
+      "failure_modes": [
+        "Cap detaches or bottle tips."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -792,14 +866,26 @@
     ],
     "procedures": [],
     "collection": {
-      "success_criteria": ["Visible spill is removed and waste is contained."],
+      "success_criteria": [
+        "Visible spill is removed and waste is contained."
+      ],
       "setup": [
         "Apply bounded spill; provide clean wipe and waste receptacle."
       ],
-      "reset": ["Clean and dry surface; replenish wipe."],
-      "quality_checks": ["Inspect spill boundary for residue."],
-      "failure_modes": ["Residue, spread, or cross-contamination."],
-      "consumables": ["Mustard", "wipe tool", "waste receptacle"],
+      "reset": [
+        "Clean and dry surface; replenish wipe."
+      ],
+      "quality_checks": [
+        "Inspect spill boundary for residue."
+      ],
+      "failure_modes": [
+        "Residue, spread, or cross-contamination."
+      ],
+      "consumables": [
+        "Mustard",
+        "wipe tool",
+        "waste receptacle"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -858,10 +944,18 @@
       "success_criteria": [
         "The requested state is recorded with method and uncertainty."
       ],
-      "setup": ["Make bottle visible and declare inspection method."],
-      "reset": ["Clear record and restore bottle position."],
-      "quality_checks": ["Record result as observed or inconclusive."],
-      "failure_modes": ["State asserted without observation."],
+      "setup": [
+        "Make bottle visible and declare inspection method."
+      ],
+      "reset": [
+        "Clear record and restore bottle position."
+      ],
+      "quality_checks": [
+        "Record result as observed or inconclusive."
+      ],
+      "failure_modes": [
+        "State asserted without observation."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -926,11 +1020,21 @@
       "success_criteria": [
         "Empty bottle is in the designated, rule-confirmed receptacle."
       ],
-      "setup": ["Provide labeled waste receptacle and confirm local rule."],
-      "reset": ["Recover bottle safely or replace it."],
-      "quality_checks": ["Record disposal rule used for the run."],
-      "failure_modes": ["Wrong or unverified waste stream."],
-      "consumables": ["Empty mustard bottle"],
+      "setup": [
+        "Provide labeled waste receptacle and confirm local rule."
+      ],
+      "reset": [
+        "Recover bottle safely or replace it."
+      ],
+      "quality_checks": [
+        "Record disposal rule used for the run."
+      ],
+      "failure_modes": [
+        "Wrong or unverified waste stream."
+      ],
+      "consumables": [
+        "Empty mustard bottle"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -996,14 +1100,24 @@
     ],
     "procedures": [],
     "collection": {
-      "success_criteria": ["Bottle and cap reach the specified sorting state."],
+      "success_criteria": [
+        "Bottle and cap reach the specified sorting state."
+      ],
       "setup": [
         "Provide an empty bottle with detachable cap and local sorting rule."
       ],
-      "reset": ["Reattach cap or replace bottle."],
-      "quality_checks": ["Verify cap material and local sorting requirement."],
-      "failure_modes": ["Breakage or assumed sorting rule."],
-      "consumables": ["Empty mustard bottle"],
+      "reset": [
+        "Reattach cap or replace bottle."
+      ],
+      "quality_checks": [
+        "Verify cap material and local sorting requirement."
+      ],
+      "failure_modes": [
+        "Breakage or assumed sorting rule."
+      ],
+      "consumables": [
+        "Empty mustard bottle"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -1062,12 +1176,18 @@
       "success_criteria": [
         "Bottle is upright on assigned shelf with label facing forward."
       ],
-      "setup": ["Clear shelf facing and provide a retail bottle."],
-      "reset": ["Remove bottle and restore shelf facing."],
+      "setup": [
+        "Clear shelf facing and provide a retail bottle."
+      ],
+      "reset": [
+        "Remove bottle and restore shelf facing."
+      ],
       "quality_checks": [
         "Verify location, label orientation, and edge clearance."
       ],
-      "failure_modes": ["Wrong facing or obstruction."],
+      "failure_modes": [
+        "Wrong facing or obstruction."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -1127,10 +1247,18 @@
       "success_criteria": [
         "Bottle is upright and its label faces the defined shelf front."
       ],
-      "setup": ["Place bottle on shelf with label turned away from reference."],
-      "reset": ["Restore initial orientation."],
-      "quality_checks": ["Compare label with shelf-front reference."],
-      "failure_modes": ["Ambiguous orientation or fall."],
+      "setup": [
+        "Place bottle on shelf with label turned away from reference."
+      ],
+      "reset": [
+        "Restore initial orientation."
+      ],
+      "quality_checks": [
+        "Compare label with shelf-front reference."
+      ],
+      "failure_modes": [
+        "Ambiguous orientation or fall."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -1190,10 +1318,18 @@
       "success_criteria": [
         "Bottle is stable inside the designated receptacle."
       ],
-      "setup": ["Provide empty cart and closed bottle."],
-      "reset": ["Return bottle and empty receptacle."],
-      "quality_checks": ["Verify containment and safe protrusion clearance."],
-      "failure_modes": ["Drop or wrong receptacle."],
+      "setup": [
+        "Provide empty cart and closed bottle."
+      ],
+      "reset": [
+        "Return bottle and empty receptacle."
+      ],
+      "quality_checks": [
+        "Verify containment and safe protrusion clearance."
+      ],
+      "failure_modes": [
+        "Drop or wrong receptacle."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -1258,10 +1394,18 @@
       "success_criteria": [
         "Bottle is stable in the designated checkout presentation zone."
       ],
-      "setup": ["Mark presentation zone and place bottle in customer reach."],
-      "reset": ["Return bottle and clear counter."],
-      "quality_checks": ["Verify scanner and worker zones remain clear."],
-      "failure_modes": ["Equipment obstruction or fall."],
+      "setup": [
+        "Mark presentation zone and place bottle in customer reach."
+      ],
+      "reset": [
+        "Return bottle and clear counter."
+      ],
+      "quality_checks": [
+        "Verify scanner and worker zones remain clear."
+      ],
+      "failure_modes": [
+        "Equipment obstruction or fall."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -1326,12 +1470,18 @@
       "success_criteria": [
         "Bottle follows the stated grouping rule and remains stable."
       ],
-      "setup": ["Place mustard with other condiments and state grouping rule."],
-      "reset": ["Restore scattered starting arrangement."],
+      "setup": [
+        "Place mustard with other condiments and state grouping rule."
+      ],
+      "reset": [
+        "Restore scattered starting arrangement."
+      ],
       "quality_checks": [
         "Verify rule compliance rather than visual preference."
       ],
-      "failure_modes": ["Unspecified rule or unstable placement."],
+      "failure_modes": [
+        "Unspecified rule or unstable placement."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -1394,10 +1544,18 @@
       "setup": [
         "Place closed bottle in marked recovery pose and clear hazards."
       ],
-      "reset": ["Restore marked starting pose after inspection."],
-      "quality_checks": ["Inspect bottle and scene for damage or leakage."],
-      "failure_modes": ["Collision, fall, or leak."],
-      "consumables": ["Cleaning material"],
+      "reset": [
+        "Restore marked starting pose after inspection."
+      ],
+      "quality_checks": [
+        "Inspect bottle and scene for damage or leakage."
+      ],
+      "failure_modes": [
+        "Collision, fall, or leak."
+      ],
+      "consumables": [
+        "Cleaning material"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -1461,11 +1619,22 @@
       "success_criteria": [
         "Defined exterior residue is removed with the cap closed."
       ],
-      "setup": ["Apply removable residue and provide clean wipe."],
-      "reset": ["Clean bottle, discard wipe, and reapply residue if needed."],
-      "quality_checks": ["Inspect cap, label, and grip surfaces."],
-      "failure_modes": ["Cap opening, label damage, or residue spread."],
-      "consumables": ["Wipe tool", "cleaning material"],
+      "setup": [
+        "Apply removable residue and provide clean wipe."
+      ],
+      "reset": [
+        "Clean bottle, discard wipe, and reapply residue if needed."
+      ],
+      "quality_checks": [
+        "Inspect cap, label, and grip surfaces."
+      ],
+      "failure_modes": [
+        "Cap opening, label damage, or residue spread."
+      ],
+      "consumables": [
+        "Wipe tool",
+        "cleaning material"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -1524,10 +1693,18 @@
       "success_criteria": [
         "The requested state is recorded with method and uncertainty."
       ],
-      "setup": ["Make bottle visible and declare inspection method."],
-      "reset": ["Clear record and restore bottle position."],
-      "quality_checks": ["Record result as observed or inconclusive."],
-      "failure_modes": ["State asserted without observation."],
+      "setup": [
+        "Make bottle visible and declare inspection method."
+      ],
+      "reset": [
+        "Clear record and restore bottle position."
+      ],
+      "quality_checks": [
+        "Record result as observed or inconclusive."
+      ],
+      "failure_modes": [
+        "State asserted without observation."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -1590,11 +1767,15 @@
       "setup": [
         "Clear a reachable refrigerator shelf and place a closed bottle at start."
       ],
-      "reset": ["Return bottle to start and close storage."],
+      "reset": [
+        "Return bottle to start and close storage."
+      ],
       "quality_checks": [
         "Verify full insertion, upright pose, and unobstructed door."
       ],
-      "failure_modes": ["Bottle fall or door obstruction."],
+      "failure_modes": [
+        "Bottle fall or door obstruction."
+      ],
       "consumables": [],
       "time_estimates": {
         "setup_minutes": null,
@@ -1657,10 +1838,18 @@
       "setup": [
         "Place closed bottle in marked recovery pose and clear hazards."
       ],
-      "reset": ["Restore marked starting pose after inspection."],
-      "quality_checks": ["Inspect bottle and scene for damage or leakage."],
-      "failure_modes": ["Collision, fall, or leak."],
-      "consumables": ["Cleaning material"],
+      "reset": [
+        "Restore marked starting pose after inspection."
+      ],
+      "quality_checks": [
+        "Inspect bottle and scene for damage or leakage."
+      ],
+      "failure_modes": [
+        "Collision, fall, or leak."
+      ],
+      "consumables": [
+        "Cleaning material"
+      ],
       "time_estimates": {
         "setup_minutes": null,
         "execution_minutes": null,
@@ -1668,5 +1857,2810 @@
         "review_minutes": null
       }
     }
+  },
+  {
+    "id": "planning_task_mustard_l1_01",
+    "task_id": "task_mustard_l1_01",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_01",
+        "reason": "The proposed inspect mustard nozzle condition candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_01",
+        "reason": "The initial state must be declared for inspect mustard nozzle condition."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "nozzle_condition_recorded(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_01 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_01 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: nozzle_condition_recorded(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_02",
+    "task_id": "task_mustard_l1_02",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_02",
+        "reason": "The proposed open the mustard cap for dispensing candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_02",
+        "reason": "The initial state must be declared for open the mustard cap for dispensing."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "open(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: open(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_03",
+    "task_id": "task_mustard_l1_03",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_03",
+        "reason": "The proposed close the mustard cap after use candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_03",
+        "reason": "The initial state must be declared for close the mustard cap after use."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "closed(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_03 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_03 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: closed(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_04",
+    "task_id": "task_mustard_l1_04",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_04",
+        "reason": "The proposed dispense a measured mustard portion candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_04",
+        "reason": "The initial state must be declared for dispense a measured mustard portion."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "portion_deposited(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: portion_deposited(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_05",
+    "task_id": "task_mustard_l1_05",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_05",
+        "reason": "The proposed align the bottle for label reading candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_05",
+        "reason": "The initial state must be declared for align the bottle for label reading."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "label_facing_operator(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: label_facing_operator(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_06",
+    "task_id": "task_mustard_l1_06",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_01",
+        "reason": "The proposed wipe residue from the mustard tip candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_06",
+        "reason": "The initial state must be declared for wipe residue from the mustard tip."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "no_visible_residue(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_01 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_01 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: no_visible_residue(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_07",
+    "task_id": "task_mustard_l1_07",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_02",
+        "reason": "The proposed move mustard from prep area to tray candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_07",
+        "reason": "The initial state must be declared for move mustard from prep area to tray."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "on_surface(ycb_006_mustard_bottle,ingredient_tray)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: on_surface(ycb_006_mustard_bottle,ingredient_tray)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l1_08",
+    "task_id": "task_mustard_l1_08",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_03",
+        "reason": "The proposed hand the mustard bottle to a diner candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_08",
+        "reason": "The initial state must be declared for hand the mustard bottle to a diner."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "held_by(diner,ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_03 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_03 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: held_by(diner,ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l1_09",
+    "task_id": "task_mustard_l1_09",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_04",
+        "reason": "The proposed check remaining mustard contents candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_09",
+        "reason": "The initial state must be declared for check remaining mustard contents."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "contents_state_recorded(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: contents_state_recorded(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_10",
+    "task_id": "task_mustard_l1_10",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_05",
+        "reason": "The proposed place mustard upright after dispensing candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_10",
+        "reason": "The initial state must be declared for place mustard upright after dispensing."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "upright(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: upright(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_11",
+    "task_id": "task_mustard_l1_11",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_01",
+        "reason": "The proposed locate mustard within a prep station candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_11",
+        "reason": "The initial state must be declared for locate mustard within a prep station."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "mustard_located(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_01 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_01 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: mustard_located(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_12",
+    "task_id": "task_mustard_l1_12",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_02",
+        "reason": "The proposed stage mustard beside a meal component candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_12",
+        "reason": "The initial state must be declared for stage mustard beside a meal component."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "mustard_staged_for_meal(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: mustard_staged_for_meal(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l1_13",
+    "task_id": "task_mustard_l1_13",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_03",
+        "reason": "The proposed stabilize the bottle before squeezing candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_13",
+        "reason": "The initial state must be declared for stabilize the bottle before squeezing."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "stable(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_03 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_03 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: stable(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_14",
+    "task_id": "task_mustard_l1_14",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_04",
+        "reason": "The proposed verify mustard placement on the tray candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_14",
+        "reason": "The initial state must be declared for verify mustard placement on the tray."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "placement_verified(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: placement_verified(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l1_15",
+    "task_id": "task_mustard_l1_15",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l1_05",
+        "reason": "The proposed prepare a mustard serving set candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l1_15",
+        "reason": "The initial state must be declared for prepare a mustard serving set."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "serving_set_ready(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l1_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l1_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: serving_set_ready(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 1,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l2_01",
+    "task_id": "task_mustard_l2_01",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_01",
+        "reason": "The proposed replenish a condiment service tray candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_01",
+        "reason": "The initial state must be declared for replenish a condiment service tray."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "service_tray_replenished(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_01 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_01 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: service_tray_replenished(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l2_02",
+    "task_id": "task_mustard_l2_02",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_02",
+        "reason": "The proposed arrange mustard with other table condiments candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_02",
+        "reason": "The initial state must be declared for arrange mustard with other table condiments."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "condiments_grouped_for_service(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: condiments_grouped_for_service(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l2_03",
+    "task_id": "task_mustard_l2_03",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_02",
+        "reason": "The proposed deliver mustard for a meal order candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_03",
+        "reason": "The initial state must be declared for deliver mustard for a meal order."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "mustard_at_order_station(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: mustard_at_order_station(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l2_04",
+    "task_id": "task_mustard_l2_04",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_02",
+        "reason": "The proposed present mustard at a service handoff candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_04",
+        "reason": "The initial state must be declared for present mustard at a service handoff."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "mustard_presented_to_recipient(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: mustard_presented_to_recipient(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l2_05",
+    "task_id": "task_mustard_l2_05",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_03",
+        "reason": "The proposed face mustard labels on a retail shelf candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_05",
+        "reason": "The initial state must be declared for face mustard labels on a retail shelf."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "mustard_labels_faced_forward(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_03 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_03 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: mustard_labels_faced_forward(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l2_06",
+    "task_id": "task_mustard_l2_06",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_03",
+        "reason": "The proposed place mustard in a checkout staging area candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_06",
+        "reason": "The initial state must be declared for place mustard in a checkout staging area."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "mustard_staged_for_checkout(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_03 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_03 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: mustard_staged_for_checkout(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l2_07",
+    "task_id": "task_mustard_l2_07",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_04",
+        "reason": "The proposed inspect a shelf position after replenishment candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_07",
+        "reason": "The initial state must be declared for inspect a shelf position after replenishment."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "shelf_position_verified(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: shelf_position_verified(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l2_08",
+    "task_id": "task_mustard_l2_08",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_05",
+        "reason": "The proposed handover mustard at a collection point candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_08",
+        "reason": "The initial state must be declared for handover mustard at a collection point."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "mustard_received_by_person"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: mustard_received_by_person."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l2_09",
+    "task_id": "task_mustard_l2_09",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_01",
+        "reason": "The proposed collect a used mustard bottle from a table candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_09",
+        "reason": "The initial state must be declared for collect a used mustard bottle from a table."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "used_bottle_at_collection(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_01 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_01 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: used_bottle_at_collection(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l2_10",
+    "task_id": "task_mustard_l2_10",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_02",
+        "reason": "The proposed separate the mustard cap for sorting candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_10",
+        "reason": "The initial state must be declared for separate the mustard cap for sorting."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "cap_separated(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: cap_separated(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l2_11",
+    "task_id": "task_mustard_l2_11",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_04",
+        "reason": "The proposed verify a condiment order before handoff candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_11",
+        "reason": "The initial state must be declared for verify a condiment order before handoff."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "order_verified(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: order_verified(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "atomic"
+  },
+  {
+    "id": "planning_task_mustard_l2_12",
+    "task_id": "task_mustard_l2_12",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_05",
+        "reason": "The proposed recover a bottle knocked from a service tray candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_12",
+        "reason": "The initial state must be declared for recover a bottle knocked from a service tray."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "safe_on_surface(ycb_006_mustard_bottle)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: safe_on_surface(ycb_006_mustard_bottle)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l2_13",
+    "task_id": "task_mustard_l2_13",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_03",
+        "reason": "The proposed move a restock case near the shelf candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_13",
+        "reason": "The initial state must be declared for move a restock case near the shelf."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "case_near_shelf(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_03 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_03 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: case_near_shelf(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l2_14",
+    "task_id": "task_mustard_l2_14",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_04",
+        "reason": "The proposed record a mustard shelf check candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_14",
+        "reason": "The initial state must be declared for record a mustard shelf check."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "shelf_check_recorded(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: shelf_check_recorded(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l2_15",
+    "task_id": "task_mustard_l2_15",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l2_05",
+        "reason": "The proposed complete a condiment handoff workflow candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "service_tray",
+        "reason": "The candidate requires service_tray to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "staff",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l2_15",
+        "reason": "The initial state must be declared for complete a condiment handoff workflow."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "service_request_closed(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l2_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l2_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: service_request_closed(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 2,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_01",
+    "task_id": "task_mustard_l3_01",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_01",
+        "reason": "The proposed recover mustard after a spill event candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_01",
+        "reason": "The initial state must be declared for recover mustard after a spill event."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "spill_removed_and_bottle_safe"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_01 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_01 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: spill_removed_and_bottle_safe."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_02",
+    "task_id": "task_mustard_l3_02",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_02",
+        "reason": "The proposed clean a mustard bottle for reuse candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_02",
+        "reason": "The initial state must be declared for clean a mustard bottle for reuse."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "bottle_surface_clean(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: bottle_surface_clean(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_03",
+    "task_id": "task_mustard_l3_03",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_03",
+        "reason": "The proposed sort an empty mustard bottle candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_03",
+        "reason": "The initial state must be declared for sort an empty mustard bottle."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "bottle_in_correct_waste_stream(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_03 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_03 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: bottle_in_correct_waste_stream(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_04",
+    "task_id": "task_mustard_l3_04",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_04",
+        "reason": "The proposed replenish mustard inventory from a case candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_04",
+        "reason": "The initial state must be declared for replenish mustard inventory from a case."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "inventory_slot_replenished(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: inventory_slot_replenished(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_05",
+    "task_id": "task_mustard_l3_05",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_05",
+        "reason": "The proposed close a mustard service station candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_05",
+        "reason": "The initial state must be declared for close a mustard service station."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "service_station_closed(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: service_station_closed(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_06",
+    "task_id": "task_mustard_l3_06",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_02",
+        "reason": "The proposed inspect contamination risk before reuse candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_06",
+        "reason": "The initial state must be declared for inspect contamination risk before reuse."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "reuse_check_recorded(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: reuse_check_recorded(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_07",
+    "task_id": "task_mustard_l3_07",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_05",
+        "reason": "The proposed move a cleaned bottle to reuse storage candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_07",
+        "reason": "The initial state must be declared for move a cleaned bottle to reuse storage."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "clean_bottle_in_reuse_storage(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: clean_bottle_in_reuse_storage(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_08",
+    "task_id": "task_mustard_l3_08",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_04",
+        "reason": "The proposed inspect damaged mustard packaging on receipt candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_08",
+        "reason": "The initial state must be declared for inspect damaged mustard packaging on receipt."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "packaging_condition_recorded(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: packaging_condition_recorded(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_09",
+    "task_id": "task_mustard_l3_09",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_01",
+        "reason": "The proposed quarantine a leaking mustard bottle candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_09",
+        "reason": "The initial state must be declared for quarantine a leaking mustard bottle."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "leaking_bottle_isolated(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_01 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_01 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: leaking_bottle_isolated(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_10",
+    "task_id": "task_mustard_l3_10",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_04",
+        "reason": "The proposed prepare replacement mustard for service candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_10",
+        "reason": "The initial state must be declared for prepare replacement mustard for service."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "replacement_ready_at_station(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: replacement_ready_at_station(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_11",
+    "task_id": "task_mustard_l3_11",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_05",
+        "reason": "The proposed audit condiment station closeout candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_11",
+        "reason": "The initial state must be declared for audit condiment station closeout."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "station_closeout_verified(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: station_closeout_verified(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_12",
+    "task_id": "task_mustard_l3_12",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_02",
+        "reason": "The proposed wipe a contaminated service surface candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "rigid_manipulation",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_12",
+        "reason": "The initial state must be declared for wipe a contaminated service surface."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "service_surface_clean"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_02 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_02 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: service_surface_clean."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "compound"
+  },
+  {
+    "id": "planning_task_mustard_l3_13",
+    "task_id": "task_mustard_l3_13",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_03",
+        "reason": "The proposed transport sorted mustard waste candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_13",
+        "reason": "The initial state must be declared for transport sorted mustard waste."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "waste_at_collection_bin(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_03 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_03 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: waste_at_collection_bin(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_14",
+    "task_id": "task_mustard_l3_14",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_04",
+        "reason": "The proposed verify stock rotation for mustard candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_14",
+        "reason": "The initial state must be declared for verify stock rotation for mustard."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "stock_rotation_verified(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_04 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_04 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: stock_rotation_verified(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
+  },
+  {
+    "id": "planning_task_mustard_l3_15",
+    "task_id": "task_mustard_l3_15",
+    "requirements": [
+      {
+        "key": "scene_id",
+        "value": "scene_mustard_l3_05",
+        "reason": "The proposed restore a complete mustard service cycle candidate is scoped to this scene."
+      },
+      {
+        "key": "object",
+        "value": "ycb_006_mustard_bottle",
+        "reason": "The candidate requires ycb_006_mustard_bottle to be declared before collection."
+      },
+      {
+        "key": "object",
+        "value": "wipe_tool",
+        "reason": "The candidate requires wipe_tool to be declared before collection."
+      },
+      {
+        "key": "capability",
+        "value": "visual_inspection",
+        "reason": "The capability is a planning requirement, not evidence of robot execution."
+      },
+      {
+        "key": "role",
+        "value": "home_user",
+        "reason": "The actor role scopes the proposed collection context."
+      },
+      {
+        "key": "condition",
+        "value": "initial_state_declared_task_mustard_l3_15",
+        "reason": "The initial state must be declared for restore a complete mustard service cycle."
+      }
+    ],
+    "procedures": [],
+    "collection": {
+      "success_criteria": [
+        "service_cycle_ready(mustard)"
+      ],
+      "setup": [
+        "Prepare the scene_mustard_l3_05 context and declare the required resources."
+      ],
+      "reset": [
+        "Restore the scene_mustard_l3_05 context and return the mustard asset to its starting state."
+      ],
+      "quality_checks": [
+        "Verify the observable goal state: service_cycle_ready(mustard)."
+      ],
+      "failure_modes": [
+        "Target state is ambiguous, unsafe, or not observable.",
+        "A required resource or condition is absent from the declared context."
+      ],
+      "consumables": [],
+      "time_estimates": {
+        "setup_minutes": null,
+        "execution_minutes": null,
+        "reset_minutes": null,
+        "review_minutes": null
+      }
+    },
+    "expansion_iteration": 3,
+    "granularity": "workflow"
   }
 ]

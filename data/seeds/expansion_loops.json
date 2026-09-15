@@ -1,0 +1,83 @@
+[
+  {
+    "id": "mustard_expansion_loop_1",
+    "iteration": 1,
+    "title": "Object interactions and meal preparation",
+    "node_ids": [
+      "task_mustard_l1_01",
+      "task_mustard_l1_02",
+      "task_mustard_l1_03",
+      "task_mustard_l1_04",
+      "task_mustard_l1_05",
+      "task_mustard_l1_06",
+      "task_mustard_l1_07",
+      "task_mustard_l1_08",
+      "task_mustard_l1_09",
+      "task_mustard_l1_10",
+      "task_mustard_l1_11",
+      "task_mustard_l1_12",
+      "task_mustard_l1_13",
+      "task_mustard_l1_14",
+      "task_mustard_l1_15",
+      "scene_mustard_l1_01",
+      "scene_mustard_l1_02",
+      "scene_mustard_l1_03",
+      "scene_mustard_l1_04",
+      "scene_mustard_l1_05"
+    ]
+  },
+  {
+    "id": "mustard_expansion_loop_2",
+    "iteration": 2,
+    "title": "Service and retail workflows",
+    "node_ids": [
+      "task_mustard_l2_01",
+      "task_mustard_l2_02",
+      "task_mustard_l2_03",
+      "task_mustard_l2_04",
+      "task_mustard_l2_05",
+      "task_mustard_l2_06",
+      "task_mustard_l2_07",
+      "task_mustard_l2_08",
+      "task_mustard_l2_09",
+      "task_mustard_l2_10",
+      "task_mustard_l2_11",
+      "task_mustard_l2_12",
+      "task_mustard_l2_13",
+      "task_mustard_l2_14",
+      "task_mustard_l2_15",
+      "scene_mustard_l2_01",
+      "scene_mustard_l2_02",
+      "scene_mustard_l2_03",
+      "scene_mustard_l2_04",
+      "scene_mustard_l2_05"
+    ]
+  },
+  {
+    "id": "mustard_expansion_loop_3",
+    "iteration": 3,
+    "title": "Recovery, reuse, and operations",
+    "node_ids": [
+      "task_mustard_l3_01",
+      "task_mustard_l3_02",
+      "task_mustard_l3_03",
+      "task_mustard_l3_04",
+      "task_mustard_l3_05",
+      "task_mustard_l3_06",
+      "task_mustard_l3_07",
+      "task_mustard_l3_08",
+      "task_mustard_l3_09",
+      "task_mustard_l3_10",
+      "task_mustard_l3_11",
+      "task_mustard_l3_12",
+      "task_mustard_l3_13",
+      "task_mustard_l3_14",
+      "task_mustard_l3_15",
+      "scene_mustard_l3_01",
+      "scene_mustard_l3_02",
+      "scene_mustard_l3_03",
+      "scene_mustard_l3_04",
+      "scene_mustard_l3_05"
+    ]
+  }
+]

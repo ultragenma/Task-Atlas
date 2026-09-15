@@ -20,6 +20,19 @@ const SEED_FILES = Object.freeze({
   evidence: "evidence.json",
   planning: "task_planning.json",
   claims: "claims.json",
+  expansionLoops: "expansion_loops.json",
+  expansionRelations: "expansion_relations.json",
+});
+const DEFAULT_CONTEXT = Object.freeze({
+  scene_id: null,
+  contents: "unknown",
+  role: "unknown",
+  profile: "unknown",
+  mode: "explore",
+  available_objects: { provided: false, values: [] },
+  capabilities: { provided: false, values: [] },
+  confirmed_conditions: { provided: false, values: [] },
+  blocked_conditions: { provided: false, values: [] },
 });
 
 function readSeed(filename, fallback = []) {
@@ -89,6 +102,8 @@ function createStore() {
     evidence: asMap(data.evidence),
     planning: asMap(data.planning),
     claims: asMap(data.claims),
+    expansionLoops: asMap(data.expansionLoops),
+    expansionRelations: asMap(data.expansionRelations),
   };
   const planningFor = (id) =>
     maps.planning.get(id) ||
@@ -129,7 +144,7 @@ function createStore() {
           },
     );
 
-  function taskSummary(task, context) {
+  function taskSummary(task, context = DEFAULT_CONTEXT) {
     return {
       id: task.id,
       node_type: task.node_type,
@@ -145,6 +160,7 @@ function createStore() {
       review_status: task.review_status,
       state_ids: task.state_ids || [],
       skills: task.skills || [],
+      ...(task.granularity ? { granularity: task.granularity } : {}),
       assessment: assessmentFor(task, context),
     };
   }
@@ -544,7 +560,26 @@ function createStore() {
           addEdge(edges, claim.id, sourceId, "supported_by");
         }
       }
+    addExpansionRelations(nodes, edges, taskId, lens, context);
     return { center_id: taskId, lens, nodes, edges, expanded: [] };
+  }
+  function expansionNode(id, context = DEFAULT_CONTEXT) {
+    const record = maps.tasks.get(id) || maps.scenes.get(id);
+    if (!record) return null;
+    return nodeFromRecord(
+      record,
+      maps.tasks.has(id) ? taskSummary(record, context) : {},
+    );
+  }
+  function addExpansionRelations(nodes, edges, nodeId, lens, context) {
+    if (lens !== "all") return;
+    for (const relation of data.expansionRelations.filter(
+      (item) => item.source === nodeId || item.target === nodeId,
+    )) {
+      addNode(nodes, expansionNode(relation.source, context));
+      addNode(nodes, expansionNode(relation.target, context));
+      addEdge(edges, relation.source, relation.target, relation.relation);
+    }
   }
   function entityNeighborhood(nodeId, lens, context) {
     const record = [
@@ -614,6 +649,7 @@ function createStore() {
       addNode(nodes, nodeFromRecord(task, taskSummary(task, context)));
       addEdge(edges, nodeId, task.id, "participates_in");
     }
+    addExpansionRelations(nodes, edges, nodeId, lens, context);
     if (maps.claims.has(nodeId))
       for (const sourceId of record.source_ids || []) {
         addNode(
@@ -694,7 +730,24 @@ function createStore() {
     return { center_id: nodeId, lens, nodes, edges, expanded: [] };
   }
   function neighbors(nodeId, lens, context) {
-    if (maps.objects.has(nodeId)) return objectNeighborhood(nodeId, lens);
+    if (maps.objects.has(nodeId)) {
+      const graph = objectNeighborhood(nodeId, lens);
+      if (lens === "all") {
+        const taskIds = new Set(
+          data.tasks
+            .filter((task) => task.object_id === nodeId)
+            .map((task) => task.id),
+        );
+        for (const relation of data.expansionRelations.filter(
+          (item) => taskIds.has(item.source) || taskIds.has(item.target),
+        )) {
+          addNode(graph.nodes, expansionNode(relation.source, context));
+          addNode(graph.nodes, expansionNode(relation.target, context));
+          addEdge(graph.edges, relation.source, relation.target, relation.relation);
+        }
+      }
+      return graph;
+    }
     if (maps.tasks.has(nodeId)) return taskNeighborhood(nodeId, lens, context);
     const group =
       /^group:([^:]+):(affordances|states|scenes|intents|tasks|skills)$/.exec(
@@ -818,6 +871,17 @@ function createStore() {
       )
       .slice(0, 80);
   }
+  function getExpansionLoops() {
+    return {
+      loops: data.expansionLoops.map((loop) => ({
+        ...clone(loop),
+        nodes: (loop.node_ids || [])
+          .map((id) => expansionNode(id))
+          .filter(Boolean),
+      })),
+      relations: clone(data.expansionRelations),
+    };
+  }
   return {
     root: ROOT,
     data,
@@ -839,6 +903,7 @@ function createStore() {
     getSkills: () => clone(data.skills),
     getTemplates: () => clone(data.taskTemplates),
     getEvidence: () => clone(data.evidence),
+    getExpansionLoops,
   };
 }
 function csvCell(value) {
