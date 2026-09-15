@@ -6,6 +6,7 @@ const {
   mergeAssessments,
   deriveOptions,
 } = require("./assessment");
+const { syncSeedGraph } = require("./neo4j");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const SEED_DIR = path.join(ROOT, "data", "seeds");
@@ -91,6 +92,7 @@ function createStore() {
       readSeed(filename),
     ]),
   );
+  const graphSync = syncSeedGraph(data).catch((error) => ({ enabled: true, synced: false, error: error.message }));
   const maps = {
     objects: asMap(data.objects),
     scenes: asMap(data.scenes),
@@ -885,6 +887,7 @@ function createStore() {
   return {
     root: ROOT,
     data,
+    graphSync,
     maps,
     listObjects,
     getObject,

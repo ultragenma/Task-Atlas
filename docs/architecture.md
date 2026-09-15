@@ -9,7 +9,7 @@ typed seed records
   ├─ claim records and source records
   └─ collection requirements
              ↓ validation at startup
-in-memory store and assessment engine
+graph repository (Neo4j, with JSON-compatible local fallback) and assessment engine
   ├─ typed graph lenses
   ├─ context-aware task assessment
   ├─ optional procedure assessment
@@ -44,7 +44,9 @@ The task API receives a declared context: scene, contents, role, confirmed objec
 
 ## API boundaries
 
-The server owns seed loading, validation, graph traversal, assessment, and export. The browser owns context selection and presentation. There is no persistence or claim-review workflow yet.
+The server owns seed loading, graph import, graph traversal, assessment, and export. The browser owns context selection and presentation. With `GRAPH_STORE=neo4j`, startup imports the typed seed graph into Neo4j; without it, the deterministic JSON-compatible store remains available for local development and tests.
+
+Start the persistence layer with `docker compose up -d`, then run `GRAPH_STORE=neo4j NEO4J_PASSWORD=taskatlas npm start`. The API contract remains stable during this migration.
 
 | Endpoint | Responsibility |
 | --- | --- |

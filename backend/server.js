@@ -86,6 +86,7 @@ function apiHandler(request, response, url) {
         evidence: store.data.evidence.length,
         expansion_loops: store.data.expansionLoops.length,
         expansion_relations: store.data.expansionRelations.length,
+        graph_store: process.env.GRAPH_STORE === "neo4j" ? "neo4j" : "json-compatible",
       },
     });
   }
