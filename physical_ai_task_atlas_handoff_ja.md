@@ -1,5 +1,7 @@
 # Physical AI Task Atlas 構想・実装引き継ぎメモ
 
+[English](physical_ai_task_atlas_handoff_en.md) · 日本語
+
 > **Historical handoff note.** This file preserves the original design context.
 > Its single-hierarchy diagrams, score-ranking proposals, and A–F evidence-level
 > proposal are superseded. The maintained model uses a typed graph, contextual
