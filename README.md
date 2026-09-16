@@ -74,4 +74,4 @@ Contributions should make a claim, its scope, its supporting source, and its rem
 
 ## License
 
-No license file is currently included. Reuse terms have not been declared.
+Licensed under the [MIT License](LICENSE). Referenced third-party datasets and assets retain their own licenses.

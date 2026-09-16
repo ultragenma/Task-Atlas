@@ -2,6 +2,7 @@
   "name": "physical-ai-task-atlas",
   "version": "0.2.0",
   "private": true,
+  "license": "MIT",
   "description": "Explore Physical AI tasks by context, inspect claim-specific evidence, and export collection plans.",
   "type": "commonjs",
   "engines": {

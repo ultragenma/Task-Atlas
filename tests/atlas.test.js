@@ -10,7 +10,7 @@ let baseUrl;
 function request(pathname) {
   return new Promise((resolve, reject) => {
     const requestUrl = new URL(pathname, baseUrl);
-    const client = http.get(requestUrl, (response) => {
+    const client = http.get(requestUrl, { agent: false }, (response) => {
       let body = "";
       response.setEncoding("utf8");
       response.on("data", (chunk) => {
@@ -1215,7 +1215,7 @@ test("seed validator rejects schema, graph-reference, claim, and measurement mut
   undocumentedExpansionRationale.expansionRelations[0].rationale = "";
   assert.ok(
     validateData(undocumentedExpansionRationale).errors.some((error) =>
-      /rationale must be a non-empty string/.test(error),
+      /rationale must be a non-empty sentence of at least 20 characters/.test(error),
     ),
   );
 });
