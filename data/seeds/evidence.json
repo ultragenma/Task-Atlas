@@ -1,5 +1,19 @@
 [
   {
+    "id": "evidence_ycb_task_design",
+    "source_name": "Task Atlas catalog-wide task proposals",
+    "source_type": "design_seed",
+    "supported_claim_types": ["task_suitability"],
+    "source_version": "2026-09-17",
+    "source_locator": "data/seeds/ycb_batches/",
+    "observed_count": null,
+    "scope": "Proposed collection designs for objects in the repository's YCB catalog, authored by gpt-5.6-luna with max reasoning effort.",
+    "limitations": "LLM proposals reviewed for internal consistency only; no population measurements, robot execution results, or asset validation.",
+    "reviewer": null,
+    "reviewed_at": null,
+    "notes": "Generation instructions and review criteria are documented in docs/ycb-coverage.md."
+  },
+  {
     "id": "evidence_ycb_object",
     "source_name": "YCB Object and Model Set",
     "source_type": "catalog",

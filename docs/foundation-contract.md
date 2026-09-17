@@ -36,6 +36,13 @@ requirements are cumulative (AND). Time estimates are null until measured.
 The planning records and procedures are proposed designs. `skills` on a task or
 template denotes an unordered capability inventory, not a required execution order.
 
+Task initial/goal states and planning requirements are authoritative for each
+instance. Template predicates describe reusable patterns; the runtime does not
+perform logical inheritance or infer unlisted requirements from a template.
+Specializations must keep their concrete setup and acceptance conditions explicit.
+The `deformable_manipulation` capability covers flexible geometry handling such as
+rope or chain placement and is unsupported by the rigid-only simulation profile.
+
 `data/seeds/claims.json` is an array:
 
 ```text
@@ -54,6 +61,16 @@ invented confidence. Existing numeric task scores are removed.
 Task records do not carry a second task-level evidence list. Resolve support
 through the task's claims and each claim's `source_ids`; this keeps catalog
 identity, task suitability, frequency, execution, and asset claims distinct.
+
+## Catalog-wide task bundles
+
+`data/seeds/ycb_batches/*.json` extends the original seeds with `tasks`, `planning`,
+and `claims` arrays, plus optional `scenes` and `templates`. The same sorted loader
+is used by validation and the runtime. IDs remain globally unique. The catalog-wide
+coverage test requires every catalog object to have a collection task and to be
+reachable through shared scenes, intents, templates, or skills. Bundle tasks carry
+generation provenance and remain proposed; the design source is scoped to this
+catalog-wide expansion, not to empirical performance or frequency.
 
 ## Mustard expansion
 
@@ -129,10 +146,10 @@ Existing endpoints remain available with updated semantics:
 - `GET /api/tasks/:id/collection-card?...&procedure_id=...` returns `data` with schema version, task identity, context, initial/goal states, required resources, assessment, chosen procedure (or null), alternative procedures, collection fields, claims, sources, and unresolved requirements. An invalid procedure ID is a client error.
 - `GET /api/nodes/:id/neighbors?lens=all|context|goals|execution` provides typed neighbors filtered by lens. Object class and affordance nodes support reverse traversal.
 - `GET /api/expansion-loops` returns `{ loops, relations }` for the mustard expansion.
-- `GET /api/export/tasks.json` includes tasks, planning, claims, sources, scenes, expansion loops, and expansion relations; the JSON and CSV exports preserve unknown evidence values and do not expose obsolete scores or A–F grades.
+- `GET /api/export/tasks.json` includes tasks, task templates, planning, claims, sources, scenes, expansion loops, and expansion relations; the JSON and CSV exports preserve unknown evidence values and do not expose obsolete scores or A–F grades.
 
 Unsupported query enum values are client errors. Unknown task and graph identities
-remain 404. Template proposals for other catalog objects remain incomplete and
+remain 404. Fallback template proposals for objects without seeded tasks remain incomplete and
 unknown until role bindings and conditions are reviewed; they cannot be exported
 as if they were complete collection cards.
 

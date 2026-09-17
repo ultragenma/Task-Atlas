@@ -16,6 +16,7 @@ Task AtlasはYCBの物体カタログとマスタードボトルのvertical slic
 - 各Claimのスコープに対応したSource
 - 直接観測・明示的な導出・不明を区別する頻度情報。不明は推定値に置き換えません
 - Setup、reset、quality check、consumable、failure mode、必要物体、文脈仮定、未解決要件を含む収集カード
+- [YCBカタログ全体のタスク提案](docs/ycb-coverage.md)：シーン・目的・スキル・テンプレートを共有するグラフと、未確認事項を明記した収集計画
 
 `0.2`のデータ・HTTP interfaceは[foundation contract](docs/foundation-contract.md)が正本です。文脈の意味、assessment、planning record、claim、exportの仕様を定義しています。
 

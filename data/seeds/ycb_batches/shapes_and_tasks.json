@@ -1,0 +1,3292 @@
+{
+  "tasks": [
+    {
+      "id": "task_ycb_053_mini_soccer_ball",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_place_in_receptacle",
+      "name_en": "Store the mini soccer ball in a clear box",
+      "name_ja": "ミニサッカーボールを透明ボックスに収納する",
+      "intent_id": "intent_store",
+      "object_id": "ycb_053_mini_soccer_ball",
+      "scene_id": "scene_ycb_storage_shelf",
+      "bindings": {
+        "theme": "ycb_053_mini_soccer_ball",
+        "destination": "ycb_068_clear_box"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "on_top_of(ycb_053_mini_soccer_ball, storage_shelf)",
+        "open(ycb_068_clear_box)",
+        "clear(ycb_068_clear_box)",
+        "reachable(ycb_053_mini_soccer_ball)"
+      ],
+      "goal_state": [
+        "inside(ycb_053_mini_soccer_ball, ycb_068_clear_box)",
+        "fully_contained(ycb_053_mini_soccer_ball)",
+        "stable(ycb_068_clear_box)"
+      ],
+      "instruction_variants": [
+        "Put the mini soccer ball in the clear storage box.",
+        "Store the mini soccer ball in the open clear box.",
+        "ミニサッカーボールを透明な収納ボックスに入れてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_054_softball",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_handover_object",
+      "name_en": "Hand the softball to a player",
+      "name_ja": "ソフトボールをプレーヤーに手渡す",
+      "intent_id": "intent_handover",
+      "object_id": "ycb_054_softball",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "ycb_054_softball",
+        "recipient": "adult_player"
+      },
+      "state_ids": ["state_on_surface", "state_held"],
+      "initial_state": [
+        "on_top_of(ycb_054_softball, play_table)",
+        "recipient_present",
+        "recipient_ready(adult_player)",
+        "reachable(ycb_054_softball)",
+        "safe_grasp(ycb_054_softball)",
+        "clear(handover_zone)"
+      ],
+      "goal_state": [
+        "held_by(ycb_054_softball, adult_player)",
+        "theme_released_by(robot)",
+        "safe_handover(ycb_054_softball)"
+      ],
+      "instruction_variants": [
+        "Hand the softball to the player.",
+        "Offer the softball to the ready player.",
+        "ソフトボールをプレーヤーに手渡してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_055_baseball",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_related_objects",
+      "name_en": "Organize the baseball with other sports balls",
+      "name_ja": "野球ボールを他の球技用ボールと整頓する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_055_baseball",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "baseball_group",
+        "focus": "ycb_055_baseball",
+        "destination": "play_setup_zone"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "multiple_related_items",
+        "on_top_of(ycb_055_baseball, play_table)",
+        "grouping_rule_declared(baseball_group)",
+        "reachable(baseball_group)"
+      ],
+      "goal_state": [
+        "grouped_by_use(baseball_group)",
+        "on_top_of(ycb_055_baseball, play_setup_zone)",
+        "stable(baseball_group)"
+      ],
+      "instruction_variants": [
+        "Arrange the baseball with the other sports balls.",
+        "Put the baseball in the declared sports-ball group.",
+        "野球ボールを他の球技用ボールと整頓してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_056_tennis_ball",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_retrieve_from_storage",
+      "name_en": "Retrieve the tennis ball from the clear box",
+      "name_ja": "透明ボックスからテニスボールを取り出す",
+      "intent_id": "intent_retrieve",
+      "object_id": "ycb_056_tennis_ball",
+      "scene_id": "scene_ycb_storage_shelf",
+      "bindings": {
+        "theme": "ycb_056_tennis_ball",
+        "source": "ycb_068_clear_box"
+      },
+      "state_ids": [
+        "state_inside_receptacle",
+        "state_open",
+        "state_held",
+        "state_closed"
+      ],
+      "initial_state": [
+        "inside(ycb_056_tennis_ball, ycb_068_clear_box)",
+        "open(ycb_068_clear_box)",
+        "reachable(ycb_068_clear_box)",
+        "closure_retained(ycb_068_clear_box)"
+      ],
+      "goal_state": [
+        "held_by(ycb_056_tennis_ball, robot)",
+        "outside(ycb_056_tennis_ball, ycb_068_clear_box)",
+        "closed(ycb_068_clear_box)"
+      ],
+      "instruction_variants": [
+        "Take the tennis ball out of the clear box.",
+        "Retrieve the tennis ball and close the storage box.",
+        "透明ボックスからテニスボールを取り出して、ボックスを閉じてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_open",
+        "skill_reach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_close",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_057_racquetball",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_recover_dropped_object",
+      "name_en": "Recover the dropped racquetball to the play table",
+      "name_ja": "落ちたラケットボールを遊び台へ戻す",
+      "intent_id": "intent_recover_from_error",
+      "object_id": "ycb_057_racquetball",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "ycb_057_racquetball",
+        "destination": "play_table"
+      },
+      "state_ids": ["state_fallen", "state_on_surface"],
+      "initial_state": [
+        "fallen(ycb_057_racquetball)",
+        "visible(ycb_057_racquetball)",
+        "reachable(ycb_057_racquetball)",
+        "clear(play_table)"
+      ],
+      "goal_state": [
+        "held_by(ycb_057_racquetball, robot)",
+        "on_top_of(ycb_057_racquetball, play_table)",
+        "safe(ycb_057_racquetball)"
+      ],
+      "instruction_variants": [
+        "Recover the dropped racquetball onto the play table.",
+        "Pick up the racquetball and return it to the safe table.",
+        "落ちたラケットボールを拾って安全な遊び台に戻してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_recover",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_058_golf_ball",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_place_in_receptacle",
+      "name_en": "Put the golf ball in the clear box",
+      "name_ja": "ゴルフボールを透明ボックスに入れる",
+      "intent_id": "intent_store",
+      "object_id": "ycb_058_golf_ball",
+      "scene_id": "scene_ycb_storage_shelf",
+      "bindings": {
+        "theme": "ycb_058_golf_ball",
+        "destination": "ycb_068_clear_box"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "on_top_of(ycb_058_golf_ball, storage_shelf)",
+        "open(ycb_068_clear_box)",
+        "clear(ycb_068_clear_box)",
+        "small_item_zone_clear",
+        "reachable(ycb_058_golf_ball)"
+      ],
+      "goal_state": [
+        "inside(ycb_058_golf_ball, ycb_068_clear_box)",
+        "fully_contained(ycb_058_golf_ball)",
+        "stable(ycb_068_clear_box)"
+      ],
+      "instruction_variants": [
+        "Place the golf ball inside the clear box.",
+        "Store the small golf ball in the open storage box.",
+        "ゴルフボールを透明ボックスの中に入れてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_059_chain",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_place_in_receptacle",
+      "name_en": "Place the chain in the clear box without pinching a link",
+      "name_ja": "チェーンのリンクを挟まずに透明ボックスへ収める",
+      "intent_id": "intent_store",
+      "object_id": "ycb_059_chain",
+      "scene_id": "scene_ycb_workshop",
+      "bindings": {
+        "theme": "ycb_059_chain",
+        "destination": "ycb_068_clear_box"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "on_top_of(ycb_059_chain, workshop_surface)",
+        "open(ycb_068_clear_box)",
+        "links_free_of_pinch(ycb_059_chain)",
+        "reachable(ycb_059_chain)"
+      ],
+      "goal_state": [
+        "inside(ycb_059_chain, ycb_068_clear_box)",
+        "no_link_pinch(ycb_059_chain)",
+        "stable(ycb_068_clear_box)"
+      ],
+      "instruction_variants": [
+        "Put the chain in the clear box without trapping a link.",
+        "Store the chain so every link is inside the box.",
+        "リンクを挟まないようにチェーンを透明ボックスへ入れてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_060_washers",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_related_objects",
+      "name_en": "Sort the washers into the declared hardware group",
+      "name_ja": "ワッシャーを指定された金具グループに整理する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_060_washers",
+      "scene_id": "scene_ycb_workshop",
+      "bindings": {
+        "theme": "washer_group",
+        "focus": "ycb_060_washers",
+        "destination": "washer_sorting_zone"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "multiple_related_items",
+        "on_top_of(ycb_060_washers, workshop_surface)",
+        "mixed_by_orientation(ycb_060_washers)",
+        "grouping_rule_declared(washer_group)",
+        "reachable(ycb_060_washers)",
+        "reachable(washer_group)"
+      ],
+      "goal_state": [
+        "grouped_by_type(washer_group)",
+        "on_top_of(ycb_060_washers, washer_sorting_zone)",
+        "stable(washer_group)"
+      ],
+      "instruction_variants": [
+        "Sort the washers into the marked hardware group.",
+        "Arrange all washers in the declared sorting zone.",
+        "ワッシャーを指定された整理場所に分類してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_061_foam_brick",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_related_objects",
+      "name_en": "Arrange the foam brick with the building blocks",
+      "name_ja": "フォームレンガを組み立て用ブロックと整える",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_061_foam_brick",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "foam_block_group",
+        "focus": "ycb_061_foam_brick",
+        "destination": "building_zone"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "multiple_related_items",
+        "on_top_of(ycb_061_foam_brick, play_table)",
+        "clear(building_zone)",
+        "grouping_rule_declared(foam_block_group)",
+        "reachable(ycb_061_foam_brick)",
+        "reachable(foam_block_group)"
+      ],
+      "goal_state": [
+        "grouped_by_use(foam_block_group)",
+        "on_top_of(ycb_061_foam_brick, building_zone)",
+        "stable(foam_block_group)"
+      ],
+      "instruction_variants": [
+        "Arrange the foam brick with the building blocks.",
+        "Move the foam brick into the declared building area.",
+        "フォームレンガを組み立て用ブロックの場所に整えてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_062_dice",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_transport_object",
+      "name_en": "Bring the die from storage to the play table",
+      "name_ja": "さいころを収納場所から遊び台へ運ぶ",
+      "intent_id": "intent_transport",
+      "object_id": "ycb_062_dice",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "ycb_062_dice",
+        "source": "game_storage_surface",
+        "destination": "play_table"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_062_dice, game_storage_surface)",
+        "clear(play_table)",
+        "game_setup_zone_marked",
+        "reachable(ycb_062_dice)",
+        "reachable(play_table)"
+      ],
+      "goal_state": [
+        "on_top_of(ycb_062_dice, play_table)",
+        "stable(ycb_062_dice)",
+        "visible_to_player(ycb_062_dice)"
+      ],
+      "instruction_variants": [
+        "Bring the die from storage to the play table.",
+        "Set the die in the marked game area without rolling it away.",
+        "さいころを収納場所から遊び台の指定位置へ運んでください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_navigate_or_reach",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_063_marbles",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_place_in_receptacle",
+      "name_en": "Place the marbles in a protected clear box",
+      "name_ja": "ビー玉を保護した透明ボックスに入れる",
+      "intent_id": "intent_store",
+      "object_id": "ycb_063_marbles",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "ycb_063_marbles",
+        "destination": "ycb_068_clear_box"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "on_top_of(ycb_063_marbles, play_table)",
+        "open(ycb_068_clear_box)",
+        "impact_protected(ycb_068_clear_box)",
+        "no_loose_debris(ycb_068_clear_box)",
+        "reachable(ycb_063_marbles)"
+      ],
+      "goal_state": [
+        "inside(ycb_063_marbles, ycb_068_clear_box)",
+        "no_impact(ycb_063_marbles)",
+        "stable(ycb_068_clear_box)"
+      ],
+      "instruction_variants": [
+        "Put the marbles into the padded clear box without impact.",
+        "Store all marbles safely in the open clear box.",
+        "ビー玉をぶつけないように透明ボックスへ入れてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_064_rope",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_store_in_ambient_storage",
+      "name_en": "Store the rope in the household storage shelf",
+      "name_ja": "ロープを家庭用収納棚に片付ける",
+      "intent_id": "intent_store",
+      "object_id": "ycb_064_rope",
+      "scene_id": "scene_ycb_storage_shelf",
+      "bindings": {
+        "theme": "ycb_064_rope",
+        "destination": "ycb_storage_shelf_fixture"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "on_top_of(ycb_064_rope, utility_surface)",
+        "loosely_coiled(ycb_064_rope)",
+        "storage_space_available",
+        "ambient_storage_policy_confirmed",
+        "reachable(ycb_064_rope)",
+        "reachable(ycb_storage_shelf_fixture)"
+      ],
+      "goal_state": [
+        "inside(ycb_064_rope, ycb_storage_shelf_fixture)",
+        "contained_without_entangling(ycb_064_rope)",
+        "stable(ycb_064_rope)"
+      ],
+      "instruction_variants": [
+        "Put the loosely coiled rope on the storage shelf.",
+        "Store the rope so no loop hangs into the walkway.",
+        "ロープを通路にはみ出さないよう収納棚に片付けてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_navigate_or_reach",
+        "skill_place",
+        "skill_release",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_065_cups",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_related_objects",
+      "name_en": "Nest the cups into a stable stack",
+      "name_ja": "カップセットを安定した入れ子に整える",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_065_cups",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "cup_stack",
+        "focus": "ycb_065_cups",
+        "destination": "cup_storage_zone"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "multiple_related_items",
+        "cups_separated(ycb_065_cups)",
+        "on_top_of(ycb_065_cups, play_table)",
+        "nesting_order_declared(ycb_065_cups)",
+        "clear(cup_storage_zone)",
+        "reachable(ycb_065_cups)",
+        "reachable(cup_stack)"
+      ],
+      "goal_state": [
+        "nested(ycb_065_cups)",
+        "grouped_by_use(ycb_065_cups)",
+        "stable(cup_stack)"
+      ],
+      "instruction_variants": [
+        "Nest the cups from largest to smallest.",
+        "Make a stable nested stack from the cup set.",
+        "カップを大きい順に重ねて安定した入れ子にしてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_066_blank_credit_card",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_place_in_receptacle",
+      "name_en": "Store the blank credit card in the clear box",
+      "name_ja": "無地のクレジットカードを透明ボックスに保管する",
+      "intent_id": "intent_store",
+      "object_id": "ycb_066_blank_credit_card",
+      "scene_id": "scene_ycb_workshop",
+      "bindings": {
+        "theme": "ycb_066_blank_credit_card",
+        "destination": "ycb_068_clear_box"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "flat(ycb_066_blank_credit_card)",
+        "on_top_of(ycb_066_blank_credit_card, workshop_surface)",
+        "open(ycb_068_clear_box)",
+        "clear(ycb_068_clear_box)",
+        "reachable(ycb_066_blank_credit_card)"
+      ],
+      "goal_state": [
+        "inside(ycb_066_blank_credit_card, ycb_068_clear_box)",
+        "flat(ycb_066_blank_credit_card)",
+        "stable(ycb_066_blank_credit_card)"
+      ],
+      "instruction_variants": [
+        "Put the blank card flat inside the clear box.",
+        "Store the non-functional blank credit card in the box.",
+        "無地のカードを平らなまま透明ボックスに入れてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Use a non-functional replica or blank training asset; no payment activity is part of this proposal."
+    },
+    {
+      "id": "task_ycb_067_rope",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_handover_object",
+      "name_en": "Hand the second rope to a person",
+      "name_ja": "別のロープ個体を人へ手渡す",
+      "intent_id": "intent_handover",
+      "object_id": "ycb_067_rope",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "ycb_067_rope",
+        "recipient": "adult_user"
+      },
+      "state_ids": ["state_on_surface", "state_held"],
+      "initial_state": [
+        "on_top_of(ycb_067_rope, play_table)",
+        "recipient_present",
+        "recipient_ready(adult_user)",
+        "ends_visible(ycb_067_rope)",
+        "no_loop_around_recipient",
+        "reachable(ycb_067_rope)",
+        "safe_grasp(ycb_067_rope)"
+      ],
+      "goal_state": [
+        "held_by(ycb_067_rope, adult_user)",
+        "theme_released_by(robot)",
+        "no_loop_around_recipient"
+      ],
+      "instruction_variants": [
+        "Hand the rope to the ready adult.",
+        "Offer the second rope without wrapping it around the recipient.",
+        "別のロープを相手に絡ませず手渡してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release",
+        "skill_inspect"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_068_clear_box",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_store_in_ambient_storage",
+      "name_en": "Store the clear box on the household storage shelf",
+      "name_ja": "透明ボックスを家庭用収納棚へ収納する",
+      "intent_id": "intent_store",
+      "object_id": "ycb_068_clear_box",
+      "scene_id": "scene_ycb_storage_shelf",
+      "bindings": {
+        "theme": "ycb_068_clear_box",
+        "destination": "ycb_storage_shelf_fixture"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "on_top_of(ycb_068_clear_box, utility_surface)",
+        "empty_or_contents_secured(ycb_068_clear_box)",
+        "storage_space_available",
+        "ambient_storage_policy_confirmed",
+        "reachable(ycb_068_clear_box)",
+        "reachable(ycb_storage_shelf_fixture)"
+      ],
+      "goal_state": [
+        "inside(ycb_068_clear_box, ycb_storage_shelf_fixture)",
+        "upright(ycb_068_clear_box)",
+        "stable(ycb_068_clear_box)"
+      ],
+      "instruction_variants": [
+        "Put the clear box upright on the household storage shelf.",
+        "Store the clear box without letting its contents shift.",
+        "透明ボックスを中身が動かないよう収納棚に立てて片付けてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_navigate_or_reach",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_069_box_lid",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_close_container",
+      "name_en": "Close the clear box with its lid",
+      "name_ja": "透明ボックスにふたを取り付けて閉める",
+      "intent_id": "intent_store",
+      "object_id": "ycb_069_box_lid",
+      "scene_id": "scene_ycb_workshop",
+      "bindings": {
+        "theme": "ycb_068_clear_box",
+        "part": "ycb_069_box_lid"
+      },
+      "state_ids": ["state_open", "state_closed"],
+      "initial_state": [
+        "open(ycb_068_clear_box)",
+        "closure_attached(ycb_069_box_lid)",
+        "contents_below_rim(ycb_068_clear_box)",
+        "reachable(ycb_069_box_lid)"
+      ],
+      "goal_state": [
+        "closed(ycb_068_clear_box)",
+        "lid_seated(ycb_069_box_lid)",
+        "contents_not_pinched(ycb_068_clear_box)"
+      ],
+      "instruction_variants": [
+        "Close the clear box with its matching lid.",
+        "Seat the box lid without pinching anything inside.",
+        "透明ボックスのふたを中身を挟まずに閉めてください。"
+      ],
+      "skills": ["skill_grasp", "skill_close", "skill_verify"],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_070_colored_wood_blocks",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_related_objects",
+      "name_en": "Sort the colored wood blocks by color",
+      "name_ja": "色付き木ブロックを色ごとに整列する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_070_colored_wood_blocks",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "colored_block_group",
+        "focus": "ycb_070_colored_wood_blocks",
+        "destination": "color_sort_zones"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "mixed_by_color(ycb_070_colored_wood_blocks)",
+        "multiple_related_items",
+        "on_top_of(ycb_070_colored_wood_blocks, play_table)",
+        "clear(color_sort_zones)",
+        "grouping_rule_declared(colored_block_group)",
+        "reachable(ycb_070_colored_wood_blocks)",
+        "reachable(colored_block_group)"
+      ],
+      "goal_state": [
+        "grouped_by_color(colored_block_group)",
+        "on_top_of(ycb_070_colored_wood_blocks, color_sort_zones)",
+        "stable(colored_block_group)"
+      ],
+      "instruction_variants": [
+        "Sort the colored wood blocks into their matching color zones.",
+        "Arrange every wood block by the declared color rule.",
+        "色付き木ブロックを対応する色の場所に分類してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_071_nine_hole_peg_test",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_transport_object",
+      "name_en": "Set the nine-hole peg test on the assessment station",
+      "name_ja": "ナインホールペグテストを評価台に設置する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_071_nine_hole_peg_test",
+      "scene_id": "scene_ycb_workshop",
+      "bindings": {
+        "theme": "ycb_071_nine_hole_peg_test",
+        "source": "storage_surface",
+        "destination": "assessment_station"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_071_nine_hole_peg_test, storage_surface)",
+        "clear(assessment_station)",
+        "apparatus_secure(ycb_071_nine_hole_peg_test)",
+        "holes_unobstructed(ycb_071_nine_hole_peg_test)",
+        "reachable(ycb_071_nine_hole_peg_test)",
+        "reachable(assessment_station)"
+      ],
+      "goal_state": [
+        "on_top_of(ycb_071_nine_hole_peg_test, assessment_station)",
+        "stable(ycb_071_nine_hole_peg_test)",
+        "holes_visible(ycb_071_nine_hole_peg_test)"
+      ],
+      "instruction_variants": [
+        "Set the nine-hole peg test on the clear assessment station.",
+        "Move the peg-test apparatus into its usable position.",
+        "ナインホールペグテストを使える向きで評価台に置いてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_navigate_or_reach",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_072_toy_airplane",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_handover_object",
+      "name_en": "Hand the toy airplane to the player",
+      "name_ja": "おもちゃの飛行機をプレーヤーに手渡す",
+      "intent_id": "intent_handover",
+      "object_id": "ycb_072_toy_airplane",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "ycb_072_toy_airplane",
+        "recipient": "child_player"
+      },
+      "state_ids": ["state_on_surface", "state_held"],
+      "initial_state": [
+        "on_top_of(ycb_072_toy_airplane, play_table)",
+        "recipient_present",
+        "recipient_ready(child_player)",
+        "wings_clear(ycb_072_toy_airplane)",
+        "reachable(ycb_072_toy_airplane)",
+        "safe_grasp(ycb_072_toy_airplane)"
+      ],
+      "goal_state": [
+        "held_by(ycb_072_toy_airplane, child_player)",
+        "theme_released_by(robot)",
+        "safe_handover(ycb_072_toy_airplane)"
+      ],
+      "instruction_variants": [
+        "Hand the toy airplane to the ready player.",
+        "Offer the airplane by its body; do not throw it.",
+        "おもちゃの飛行機を投げずにプレーヤーへ手渡してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_073_lego_duplo",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_related_objects",
+      "name_en": "Organize the Lego Duplo pieces in the construction zone",
+      "name_ja": "レゴデュプロを組み立てゾーンに整理する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_073_lego_duplo",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "lego_construction_set",
+        "focus": "ycb_073_lego_duplo",
+        "destination": "construction_zone"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "multiple_related_items",
+        "mixed_pieces(ycb_073_lego_duplo)",
+        "on_top_of(ycb_073_lego_duplo, play_table)",
+        "clear(construction_zone)",
+        "adult_supervision_present",
+        "reachable(ycb_073_lego_duplo)",
+        "reachable(lego_construction_set)"
+      ],
+      "goal_state": [
+        "grouped_by_use(lego_construction_set)",
+        "on_top_of(ycb_073_lego_duplo, construction_zone)",
+        "stable(lego_construction_set)"
+      ],
+      "instruction_variants": [
+        "Organize the Lego Duplo pieces in the construction zone.",
+        "Move all Duplo pieces into the supervised building area.",
+        "レゴデュプロを見守りのある組み立てゾーンに整理してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_074_t_shirt",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_place_in_receptacle",
+      "name_en": "Store the folded T-shirt in the clear box",
+      "name_ja": "たたんだTシャツを透明ボックスに収納する",
+      "intent_id": "intent_store",
+      "object_id": "ycb_074_t_shirt",
+      "scene_id": "scene_ycb_storage_shelf",
+      "bindings": {
+        "theme": "ycb_074_t_shirt",
+        "destination": "ycb_068_clear_box"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "folded(ycb_074_t_shirt)",
+        "dry(ycb_074_t_shirt)",
+        "on_top_of(ycb_074_t_shirt, folding_surface)",
+        "open(ycb_068_clear_box)",
+        "reachable(ycb_074_t_shirt)"
+      ],
+      "goal_state": [
+        "inside(ycb_074_t_shirt, ycb_068_clear_box)",
+        "folded(ycb_074_t_shirt)",
+        "no_overhang(ycb_074_t_shirt)"
+      ],
+      "instruction_variants": [
+        "Put the folded T-shirt inside the clear storage box.",
+        "Store the dry folded shirt without trapping an edge.",
+        "たたんだTシャツを端を挟まず透明ボックスに収納してください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "The shirt is pre-folded; folding itself is not claimed by this task."
+    },
+    {
+      "id": "task_ycb_075_magazine",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_transport_object",
+      "name_en": "Bring the magazine to the dining table for reading",
+      "name_ja": "雑誌を読書用に食卓へ運ぶ",
+      "intent_id": "intent_transport",
+      "object_id": "ycb_075_magazine",
+      "scene_id": "scene_dining_table",
+      "bindings": {
+        "theme": "ycb_075_magazine",
+        "source": "kitchen_counter",
+        "destination": "dining_table"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_075_magazine, kitchen_counter)",
+        "pages_dry(ycb_075_magazine)",
+        "clear(dining_table)",
+        "reachable(ycb_075_magazine)",
+        "reachable(dining_table)",
+        "reachable(dining_table)"
+      ],
+      "goal_state": [
+        "on_top_of(ycb_075_magazine, dining_table)",
+        "cover_up(ycb_075_magazine)",
+        "stable(ycb_075_magazine)"
+      ],
+      "instruction_variants": [
+        "Bring the magazine to the dining table for reading.",
+        "Place the dry magazine flat in the reading area.",
+        "雑誌を読書用の食卓の場所へ平らに置いてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_navigate_or_reach",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    },
+    {
+      "id": "task_ycb_076_timer",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_transport_object",
+      "name_en": "Position the timer on the kitchen counter",
+      "name_ja": "タイマーをキッチンカウンターに配置する",
+      "intent_id": "intent_prepare_food",
+      "object_id": "ycb_076_timer",
+      "scene_id": "scene_kitchen_counter",
+      "bindings": {
+        "theme": "ycb_076_timer",
+        "source": "dining_table",
+        "destination": "kitchen_counter"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_076_timer, dining_table)",
+        "timer_powered_off_or_safe(ycb_076_timer)",
+        "display_intact(ycb_076_timer)",
+        "clear(kitchen_counter)",
+        "reachable(ycb_076_timer)",
+        "reachable(kitchen_counter)"
+      ],
+      "goal_state": [
+        "on_top_of(ycb_076_timer, kitchen_counter)",
+        "display_visible(ycb_076_timer)",
+        "not_running(ycb_076_timer)",
+        "stable(ycb_076_timer)"
+      ],
+      "instruction_variants": [
+        "Place the timer on the kitchen counter with its display visible.",
+        "Move the timer into position without starting or changing it.",
+        "タイマーを作動させたり設定を変えたりせず、表示が見えるようカウンターに置いてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_navigate_or_reach",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Powered-state handling is deliberately bounded to an off or otherwise safe timer; no button operation is claimed."
+    },
+    {
+      "id": "task_ycb_077_rubiks_cube",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_handover_object",
+      "name_en": "Hand the Rubik's Cube to the puzzle player",
+      "name_ja": "ルービックキューブをパズルのプレーヤーに手渡す",
+      "intent_id": "intent_handover",
+      "object_id": "ycb_077_rubiks_cube",
+      "scene_id": "scene_ycb_playroom",
+      "bindings": {
+        "theme": "ycb_077_rubiks_cube",
+        "recipient": "puzzle_player"
+      },
+      "state_ids": ["state_on_surface", "state_held"],
+      "initial_state": [
+        "on_top_of(ycb_077_rubiks_cube, play_table)",
+        "recipient_present",
+        "recipient_ready(puzzle_player)",
+        "clear(handover_zone)",
+        "reachable(ycb_077_rubiks_cube)",
+        "safe_grasp(ycb_077_rubiks_cube)"
+      ],
+      "goal_state": [
+        "held_by(ycb_077_rubiks_cube, puzzle_player)",
+        "theme_released_by(robot)",
+        "safe_handover(ycb_077_rubiks_cube)"
+      ],
+      "instruction_variants": [
+        "Hand the Rubik's Cube to the ready puzzle player.",
+        "Offer the cube and release only after the player has grasped it.",
+        "ルービックキューブを相手が確実に持ってから手を離してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1",
+      "notes": "Proposed design only; task-specific claims are carried in this bundle."
+    }
+  ],
+  "planning": [
+    {
+      "id": "planning_task_ycb_053_mini_soccer_ball",
+      "task_id": "task_ycb_053_mini_soccer_ball",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_storage_shelf", "reason": "The task uses the shared non-food household storage context."},
+        {"key": "object", "value": "ycb_053_mini_soccer_ball", "reason": "The mini soccer ball is the task theme."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The clear box is the declared receptacle."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_053_mini_soccer_ball_storage_shelf", "reason": "The ball starts on the storage shelf."},
+        {"key": "condition", "value": "initial_open_ycb_068_clear_box", "reason": "The receptacle must be open before placement."},
+        {"key": "condition", "value": "clear_receptacle_ycb_068_clear_box", "reason": "The clear box must have room for the ball."},
+        {"key": "condition", "value": "initial_reachable_ycb_053_mini_soccer_ball", "reason": "The ball must be reachable for the declared placement template."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The proposed design needs grasp, lift, and controlled placement."},
+        {"key": "role", "value": "home_user", "reason": "This is household storage of a non-food sports item."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_053_mini_soccer_ball is fully inside ycb_068_clear_box, does not protrude, and the box is stable."],
+        "setup": ["On scene_ycb_storage_shelf, place ycb_053_mini_soccer_ball on the shelf and place an empty ycb_068_clear_box open within reach; keep its lid aside."],
+        "reset": ["Remove ycb_053_mini_soccer_ball from ycb_068_clear_box, restore it on the storage shelf, and reopen the empty box."],
+        "quality_checks": ["Check that ycb_053_mini_soccer_ball is the intended ball, fully contained, not rolling, and shows no new scuffing."],
+        "failure_modes": ["The mini soccer ball rolls past the opening, remains partly outside, collides with the box, or tips the box."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_054_softball",
+      "task_id": "task_ycb_054_softball",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The task uses the shared non-food play context."},
+        {"key": "object", "value": "ycb_054_softball", "reason": "The softball is the handover theme."},
+        {"key": "object", "value": "adult_player", "reason": "A ready adult recipient is required for safe handover."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_054_softball_play_table", "reason": "The softball starts on the play table."},
+        {"key": "condition", "value": "initial_recipient_present", "reason": "The intended recipient must be present."},
+        {"key": "condition", "value": "recipient_ready_adult_player", "reason": "The recipient must signal readiness before release."},
+        {"key": "condition", "value": "initial_reachable_ycb_054_softball", "reason": "The softball must be reachable for the declared handover template."},
+        {"key": "condition", "value": "initial_safe_grasp_ycb_054_softball", "reason": "A safe grasp region must be available before handover."},
+        {"key": "condition", "value": "clear_handover_zone", "reason": "The handover path must be free of collision hazards."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must acquire and present the softball."},
+        {"key": "capability", "value": "human_handover", "reason": "The task ends with a controlled transfer to a person."},
+        {"key": "role", "value": "home_user", "reason": "This is a supervised household play interaction."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["The adult_player securely holds ycb_054_softball after the robot releases it, with no drop or unintended throw."],
+        "setup": ["Place ycb_054_softball on the play table, provide a clear handover zone, and have adult_player present with an open ready hand; do not use a throwing motion."],
+        "reset": ["Have adult_player release ycb_054_softball, return it to the play table, and confirm the handover zone is clear."],
+        "quality_checks": ["Verify that ycb_054_softball was offered at a safe height, the recipient grasped it before release, and no hand or ball collision occurred."],
+        "failure_modes": ["Premature release, dropped softball, recipient not ready, unsafe hand contact, or an unintended throw."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_055_baseball",
+      "task_id": "task_ycb_055_baseball",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The task uses the shared play context for a sports-ball setup."},
+        {"key": "object", "value": "ycb_055_baseball", "reason": "The baseball is the focus item."},
+        {"key": "object", "value": "baseball_group", "reason": "The grouping target contains the related sports items."},
+        {"key": "object", "value": "play_setup_zone", "reason": "The declared destination zone receives the baseball."},
+        {"key": "condition", "value": "initial_multiple_related_items", "reason": "Other related sports balls must be present to make grouping meaningful."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_055_baseball_play_table", "reason": "The baseball starts on the play table."},
+        {"key": "condition", "value": "grouping_rule_declared_baseball_group", "reason": "The grouping rule must be explicit rather than a visual preference."},
+        {"key": "condition", "value": "initial_reachable_baseball_group", "reason": "The declared baseball group must be reachable for organization."},
+        {"key": "condition", "value": "clear_play_setup_zone", "reason": "The destination must be available."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The proposed design needs controlled handling of the baseball."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The item must be distinguished and checked against the declared group."},
+        {"key": "role", "value": "home_user", "reason": "This is household organization before play."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_055_baseball is in the declared baseball_group at play_setup_zone, and every required related ball remains stable and accounted for."],
+        "setup": ["Place ycb_055_baseball with at least two labeled sports-ball props on the play table, declare the baseball grouping rule, and mark play_setup_zone."],
+        "reset": ["Return ycb_055_baseball and the related balls to their original mixed positions while preserving their identities."],
+        "quality_checks": ["Count the group members, confirm ycb_055_baseball is not confused with another ball, and check that no adjacent item was displaced."],
+        "failure_modes": ["Baseball assigned to the wrong group, an item omitted, a neighboring ball displaced, or the final group left unstable."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_056_tennis_ball",
+      "task_id": "task_ycb_056_tennis_ball",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_storage_shelf", "reason": "The task uses the shared household storage context."},
+        {"key": "object", "value": "ycb_056_tennis_ball", "reason": "The tennis ball is the retrieval theme."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The clear box is the storage source."},
+        {"key": "condition", "value": "initial_inside_ycb_056_tennis_ball_ycb_068_clear_box", "reason": "The tennis ball starts inside the clear box."},
+        {"key": "condition", "value": "initial_open_ycb_068_clear_box", "reason": "The source must be open for retrieval."},
+        {"key": "condition", "value": "reachable_ycb_068_clear_box", "reason": "The source must be accessible."},
+        {"key": "condition", "value": "closure_retained_ycb_068_clear_box", "reason": "The box closure must remain available for closeout."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must reach, grasp, and lift the ball."},
+        {"key": "capability", "value": "articulated_closure", "reason": "The proposed design includes closing the clear box afterward."},
+        {"key": "role", "value": "home_user", "reason": "This is retrieval of a stored household play item."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_056_tennis_ball is outside ycb_068_clear_box and held by the robot, while the clear box is closed without disturbing other contents."],
+        "setup": ["Place only the designated ycb_056_tennis_ball inside an open ycb_068_clear_box on the storage shelf, keep its closure retained, and leave the retrieval path clear."],
+        "reset": ["Return ycb_056_tennis_ball to ycb_068_clear_box, reopen the box, and restore the starting placement."],
+        "quality_checks": ["Verify that the retrieved item is ycb_056_tennis_ball, the ball was not dropped, and ycb_068_clear_box is fully closed afterward."],
+        "failure_modes": ["Wrong ball retrieved, ball dropped inside or outside the box, closure collision, or box left open."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_057_racquetball",
+      "task_id": "task_ycb_057_racquetball",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The task uses the shared play context."},
+        {"key": "object", "value": "ycb_057_racquetball", "reason": "The racquetball is the recovery theme."},
+        {"key": "object", "value": "play_table", "reason": "The play table is the safe destination surface."},
+        {"key": "condition", "value": "initial_fallen_ycb_057_racquetball", "reason": "The ball must begin in a deliberately fallen state."},
+        {"key": "condition", "value": "visible_ycb_057_racquetball", "reason": "The recovery target must be observable."},
+        {"key": "condition", "value": "reachable_ycb_057_racquetball", "reason": "The dropped ball must be safely reachable."},
+        {"key": "condition", "value": "clear_play_table", "reason": "The destination must be clear before recovery."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The ball must be acquired and placed."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The recovery must localize the fallen ball and verify its safe state."},
+        {"key": "role", "value": "home_user", "reason": "This is a supervised recovery after a play item falls."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_057_racquetball is recovered from its fallen location and rests stably on play_table without rolling away."],
+        "setup": ["Place ycb_057_racquetball visibly on a safe floor mat beside the play table, away from furniture edges and foot traffic."],
+        "reset": ["Remove ycb_057_racquetball from play_table, restore the marked fallen pose on the mat, and clear the table again."],
+        "quality_checks": ["Check that ycb_057_racquetball is the intended ball, the grasp did not push it under furniture, and the final placement is stable."],
+        "failure_modes": ["Ball pushed under furniture, ball rolls away during recovery, dropped again, or contaminated floor contact is transferred to the play table."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_058_golf_ball",
+      "task_id": "task_ycb_058_golf_ball",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_storage_shelf", "reason": "The task uses the shared household storage context."},
+        {"key": "object", "value": "ycb_058_golf_ball", "reason": "The golf ball is the small-item storage theme."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The clear box is the receptacle."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_058_golf_ball_storage_shelf", "reason": "The golf ball starts on the shelf."},
+        {"key": "condition", "value": "initial_open_ycb_068_clear_box", "reason": "The receptacle must be open."},
+        {"key": "condition", "value": "clear_receptacle_ycb_068_clear_box", "reason": "The box must have available space."},
+        {"key": "condition", "value": "small_item_zone_clear", "reason": "The small ball must not be placed among obstructing loose items."},
+        {"key": "condition", "value": "initial_reachable_ycb_058_golf_ball", "reason": "The golf ball must be reachable for the declared placement template."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The proposed design needs precise small-object placement."},
+        {"key": "role", "value": "home_user", "reason": "This is household storage of a sports item."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_058_golf_ball is fully contained in ycb_068_clear_box and cannot roll out when the box is left stable."],
+        "setup": ["Place ycb_058_golf_ball on the storage shelf, open an empty ycb_068_clear_box nearby, and mark a clear small-item placement zone."],
+        "reset": ["Remove ycb_058_golf_ball from ycb_068_clear_box and return it to the marked shelf position."],
+        "quality_checks": ["Confirm the correct small ball is contained, the box is stable, and no opening remains through which it can roll."],
+        "failure_modes": ["Golf ball rolls past the opening, remains partly exposed, is confused with another small ball, or tips the box."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_059_chain",
+      "task_id": "task_ycb_059_chain",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_workshop", "reason": "The chain needs the shared non-food workshop context."},
+        {"key": "object", "value": "ycb_059_chain", "reason": "The chain is the flexible-item storage theme."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The clear box is the storage receptacle."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_059_chain_workshop_surface", "reason": "The chain starts on the workshop surface."},
+        {"key": "condition", "value": "initial_open_ycb_068_clear_box", "reason": "The receptacle must be open before placement."},
+        {"key": "condition", "value": "links_free_of_pinch_ycb_059_chain", "reason": "The links must begin clear of a pinch hazard."},
+        {"key": "condition", "value": "reachable_ycb_059_chain", "reason": "The chain must be accessible without pulling against an anchor."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The proposed design needs controlled grasp and placement of the chain."},
+        {"key": "capability", "value": "deformable_manipulation", "reason": "Flexible chain handling requires deformable-object manipulation."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Visual inspection is needed to confirm that no link is pinched or entangled."},
+        {"key": "role", "value": "home_user", "reason": "This is non-food household workshop storage."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["All of ycb_059_chain is inside ycb_068_clear_box, no link is pinched by the box edge, and the box remains stable."],
+        "setup": ["Lay ycb_059_chain slack and untangled on the workshop surface, open ycb_068_clear_box, and leave the lid and surrounding area clear."],
+        "reset": ["Remove ycb_059_chain from ycb_068_clear_box, restore its slack untangled layout, and reopen the empty box."],
+        "quality_checks": ["Inspect each visible chain end and link boundary for pinching, confirm the chain is fully contained, and check box stability."],
+        "failure_modes": ["Chain snags or tangles at the opening, a link is trapped under the rim, chain is dropped, or the box tips."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_060_washers",
+      "task_id": "task_ycb_060_washers",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_workshop", "reason": "The task uses the shared non-food workshop context."},
+        {"key": "object", "value": "ycb_060_washers", "reason": "The washer set is the focus item."},
+        {"key": "object", "value": "washer_group", "reason": "The group defines the declared hardware category."},
+        {"key": "object", "value": "washer_sorting_zone", "reason": "The marked zone is the destination."},
+        {"key": "condition", "value": "initial_multiple_washers_present", "reason": "The task requires the full washer set rather than a single isolated item."},
+        {"key": "condition", "value": "initial_mixed_by_orientation_ycb_060_washers", "reason": "The set starts in a mixed arrangement."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_060_washers_workshop_surface", "reason": "The washer set starts on the workshop surface."},
+        {"key": "condition", "value": "initial_reachable_ycb_060_washers", "reason": "The washer set must be reachable for sorting."},
+        {"key": "condition", "value": "grouping_rule_declared_washer_group", "reason": "The sorting rule must be explicit."},
+        {"key": "condition", "value": "initial_reachable_washer_group", "reason": "The declared washer group must be reachable for organization."},
+        {"key": "condition", "value": "clear_washer_sorting_zone", "reason": "The destination must be available."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The washers must be picked and placed without scattering."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The set and final grouping must be checked for omissions."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised household hardware organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["Every washer in ycb_060_washers is in washer_group within washer_sorting_zone, with no washer omitted or left unstable."],
+        "setup": ["Spread the ycb_060_washers in a marked mixed arrangement on the workshop surface, declare the grouping rule, and clear washer_sorting_zone."],
+        "reset": ["Count and remove all ycb_060_washers from the sorting zone, then restore the marked mixed arrangement."],
+        "quality_checks": ["Count the washers before and after, check that no washer rolled off the surface, and verify the declared orientation or category rule."],
+        "failure_modes": ["Washer omitted or misclassified, washer rolls into an inaccessible area, multiple washers are dropped, or the final group is unstable."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_061_foam_brick",
+      "task_id": "task_ycb_061_foam_brick",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The foam brick is handled in the shared construction play context."},
+        {"key": "object", "value": "ycb_061_foam_brick", "reason": "The foam brick is the focus item."},
+        {"key": "object", "value": "foam_block_group", "reason": "Related building pieces provide the organization context."},
+        {"key": "object", "value": "building_zone", "reason": "The marked zone receives the foam brick."},
+        {"key": "condition", "value": "initial_multiple_related_items", "reason": "Related building items must be present."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_061_foam_brick_play_table", "reason": "The foam brick starts on the play table."},
+        {"key": "condition", "value": "initial_reachable_ycb_061_foam_brick", "reason": "The focus brick must be reachable for handling."},
+        {"key": "condition", "value": "initial_reachable_foam_block_group", "reason": "The declared foam block group must be reachable for organization."},
+        {"key": "condition", "value": "clear_building_zone", "reason": "The destination must be clear."},
+        {"key": "condition", "value": "grouping_rule_declared_foam_block_group", "reason": "The grouping rule must be declared before review."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The foam brick must be placed without excessive compression."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised organization of play materials."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_061_foam_brick is in building_zone with the related foam_block_group, and the group remains stable without new compression damage."],
+        "setup": ["Place ycb_061_foam_brick among related building pieces on the play table, mark building_zone, and keep the play surface free of sharp or heavy items."],
+        "reset": ["Remove ycb_061_foam_brick from building_zone, restore the original mixed arrangement, and inspect the foam for deformation."],
+        "quality_checks": ["Check that the correct foam brick is grouped, the group is stable, and no edge or face of ycb_061_foam_brick was crushed."],
+        "failure_modes": ["Foam brick is misgrouped, excessive force causes deformation, the group topples, or another item is displaced."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_062_dice",
+      "task_id": "task_ycb_062_dice",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The die is prepared on the shared play context."},
+        {"key": "object", "value": "ycb_062_dice", "reason": "The die is the transport theme."},
+        {"key": "object", "value": "game_storage_surface", "reason": "The source surface holds the die initially."},
+        {"key": "object", "value": "play_table", "reason": "The play table is the destination surface."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_062_dice_game_storage_surface", "reason": "The die starts on the game storage surface."},
+        {"key": "condition", "value": "clear_play_table", "reason": "The destination must be clear."},
+        {"key": "condition", "value": "game_setup_zone_marked", "reason": "The intended placement region must be observable."},
+        {"key": "condition", "value": "initial_reachable_ycb_062_dice", "reason": "The die must be reachable for transport."},
+        {"key": "condition", "value": "initial_reachable_play_table", "reason": "The play-table destination must be reachable."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The die must be lifted and set down without an uncontrolled roll."},
+        {"key": "role", "value": "home_user", "reason": "This is a household game setup action."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_062_dice rests stably in the marked game setup zone on play_table and remains visible to the player."],
+        "setup": ["Place ycb_062_dice on game_storage_surface, mark a clear play-table setup zone, and prohibit tossing or rolling during collection."],
+        "reset": ["Return ycb_062_dice to game_storage_surface and clear the marked play-table zone."],
+        "quality_checks": ["Confirm the correct die was moved, its final pose is stable and visible, and no other game item was displaced."],
+        "failure_modes": ["Die rolls off the table, is placed outside the setup zone, is dropped, or collides with another game item."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_063_marbles",
+      "task_id": "task_ycb_063_marbles",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The marbles are handled in the shared play context."},
+        {"key": "object", "value": "ycb_063_marbles", "reason": "The marble set is the fragile storage theme."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The clear box is the protected receptacle."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_063_marbles_play_table", "reason": "The marble set starts on the play table."},
+        {"key": "condition", "value": "initial_open_ycb_068_clear_box", "reason": "The receptacle must be open."},
+        {"key": "condition", "value": "impact_protected_ycb_068_clear_box", "reason": "Padding or an equivalent impact-protected setup is required."},
+        {"key": "condition", "value": "no_loose_debris_ycb_068_clear_box", "reason": "The receptacle must not contain debris that could damage or hide marbles."},
+        {"key": "condition", "value": "initial_reachable_ycb_063_marbles", "reason": "The fragile marble set must be reachable for controlled placement."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The marbles require controlled grasp and placement."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The complete set and damage state must be checked."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised storage of fragile game pieces."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["All ycb_063_marbles are fully inside ycb_068_clear_box with no visible impact damage, and the box is stable."],
+        "setup": ["Place the counted ycb_063_marbles on the play table, use a padded or otherwise impact-protected open ycb_068_clear_box, and remove loose debris."],
+        "reset": ["Carefully retrieve every ycb_063_marble from ycb_068_clear_box, restore the counted starting set on the table, and leave the box open."],
+        "quality_checks": ["Count the marbles, inspect for cracks or chips, confirm full containment, and verify that no marble can escape the stable box."],
+        "failure_modes": ["Marble is dropped or bounced, a marble is omitted, the box tips, or a chip/crack is introduced."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_064_rope",
+      "task_id": "task_ycb_064_rope",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_storage_shelf", "reason": "The rope uses the shared non-food household storage context."},
+        {"key": "object", "value": "ycb_064_rope", "reason": "This rope individual is the storage theme."},
+        {"key": "object", "value": "ycb_storage_shelf_fixture", "reason": "The physical storage fixture is the declared destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_064_rope_utility_surface", "reason": "The rope starts on a utility surface."},
+        {"key": "condition", "value": "loosely_coiled_ycb_064_rope", "reason": "The rope starts in a safe loose coil rather than around a person."},
+        {"key": "condition", "value": "storage_space_available", "reason": "The shelf must have enough space for the rope."},
+        {"key": "condition", "value": "walkway_clear_of_rope", "reason": "No rope loop may create a trip hazard."},
+        {"key": "condition", "value": "initial_ambient_storage_policy_confirmed", "reason": "Ambient non-food storage is the declared handling policy."},
+        {"key": "condition", "value": "initial_reachable_ycb_064_rope", "reason": "The rope must be reachable for controlled storage."},
+        {"key": "condition", "value": "initial_reachable_ycb_storage_shelf_fixture", "reason": "The physical storage fixture must be reachable for placement."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The current capability vocabulary represents controlled grasp and storage handling."},
+        {"key": "capability", "value": "deformable_manipulation", "reason": "Flexible rope placement requires deformable-object handling."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Visual inspection is needed to confirm that no loop or entanglement remains."},
+        {"key": "role", "value": "home_user", "reason": "This is non-food household organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_064_rope is contained on the storage shelf with no loose loop extending into the walkway and no new entanglement."],
+        "setup": ["Lay ycb_064_rope dry and loosely coiled on the utility surface, clear the shared storage shelf, and keep people outside the transfer path."],
+        "reset": ["Remove ycb_064_rope from storage, restore the loose coil on the utility surface, and verify the walkway remains clear."],
+        "quality_checks": ["Check both rope ends, shelf containment, absence of a hanging loop, and absence of a knot or snag introduced during storage."],
+        "failure_modes": ["Rope snags on the shelf, a loop hangs into the walkway, the rope becomes tangled, or the object is dropped."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_065_cups",
+      "task_id": "task_ycb_065_cups",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The nesting task uses the shared activity-table context."},
+        {"key": "object", "value": "ycb_065_cups", "reason": "The nesting cup set is the focus item."},
+        {"key": "object", "value": "cup_stack", "reason": "The stack is the organization target."},
+        {"key": "object", "value": "cup_storage_zone", "reason": "The marked destination zone receives the nested set."},
+        {"key": "condition", "value": "initial_multiple_related_items", "reason": "The cup set must contain multiple related items for nesting."},
+        {"key": "condition", "value": "cups_separated_ycb_065_cups", "reason": "The cups must begin separated to make nesting observable."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_065_cups_play_table", "reason": "The cups start on the play table."},
+        {"key": "condition", "value": "nesting_order_declared_ycb_065_cups", "reason": "The intended nesting order must be declared."},
+        {"key": "condition", "value": "clear_cup_storage_zone", "reason": "The destination must be clear."},
+        {"key": "condition", "value": "initial_reachable_ycb_065_cups", "reason": "The cup set must be reachable for nesting."},
+        {"key": "condition", "value": "initial_reachable_cup_stack", "reason": "The declared stack destination must be reachable."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The set needs grasp, alignment, and stable placement."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Cup order and stability must be checked."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised organization of a household cup set."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["The cups in ycb_065_cups are nested in the declared order and form a stable stack inside cup_storage_zone."],
+        "setup": ["Separate and count ycb_065_cups on the play table, declare the largest-to-smallest nesting order, and clear cup_storage_zone."],
+        "reset": ["Separate ycb_065_cups, restore the starting arrangement on the play table, and leave cup_storage_zone empty."],
+        "quality_checks": ["Verify the nesting order, stable base, no rim obstruction, and no crack or deformation in ycb_065_cups."],
+        "failure_modes": ["Cup order is reversed, a cup is omitted, rims collide, the stack tips, or a cup is damaged."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_066_blank_credit_card",
+      "task_id": "task_ycb_066_blank_credit_card",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_workshop", "reason": "The card is handled in the shared non-food workshop context."},
+        {"key": "object", "value": "ycb_066_blank_credit_card", "reason": "The blank card is the storage theme."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The clear box is the storage receptacle."},
+        {"key": "condition", "value": "initial_flat_ycb_066_blank_credit_card", "reason": "The card starts flat."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_066_blank_credit_card_workshop_surface", "reason": "The card starts on the workshop surface."},
+        {"key": "condition", "value": "initial_open_ycb_068_clear_box", "reason": "The receptacle must be open."},
+        {"key": "condition", "value": "clear_receptacle_ycb_068_clear_box", "reason": "The clear box must have room for the card."},
+        {"key": "condition", "value": "initial_reachable_ycb_066_blank_credit_card", "reason": "The non-functional card must be reachable for placement."},
+        {"key": "condition", "value": "non_payment_training_asset", "reason": "Use a non-functional blank or replica card; no payment activity is permitted."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The card needs flat, low-force placement."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The card must remain flat and retrievable."},
+        {"key": "role", "value": "home_user", "reason": "This is storage of a non-functional training asset."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["The non-functional ycb_066_blank_credit_card is fully inside ycb_068_clear_box, remains flat and retrievable, and no financial action occurs."],
+        "setup": ["Use a blank non-functional ycb_066_blank_credit_card on the workshop surface, open an empty ycb_068_clear_box, and keep the card away from payment terminals."],
+        "reset": ["Remove ycb_066_blank_credit_card from ycb_068_clear_box, restore it flat on the workshop surface, and reopen the box."],
+        "quality_checks": ["Check card identity, flatness, full containment, easy retrieval, and the absence of any real credential or payment interaction."],
+        "failure_modes": ["Card bends or jams, card is placed in the wrong container, card is not fully contained, or the setup is mistaken for a payment task."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_067_rope",
+      "task_id": "task_ycb_067_rope",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The rope handover uses the shared non-food play context."},
+        {"key": "object", "value": "ycb_067_rope", "reason": "This second rope individual is the handover theme."},
+        {"key": "object", "value": "adult_user", "reason": "A ready adult recipient is required."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_067_rope_play_table", "reason": "The rope starts on the play table."},
+        {"key": "condition", "value": "initial_recipient_present", "reason": "The recipient must be present."},
+        {"key": "condition", "value": "recipient_ready_adult_user", "reason": "The recipient must signal readiness."},
+        {"key": "condition", "value": "ends_visible_ycb_067_rope", "reason": "The rope ends must remain observable."},
+        {"key": "condition", "value": "no_loop_around_recipient", "reason": "The setup must exclude wrapping or entanglement around the person."},
+        {"key": "condition", "value": "initial_reachable_ycb_067_rope", "reason": "The rope must be reachable for the declared handover template."},
+        {"key": "condition", "value": "initial_safe_grasp_ycb_067_rope", "reason": "A safe rope section must be available for handover."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The rope must be acquired and presented in a controlled pose."},
+        {"key": "capability", "value": "deformable_manipulation", "reason": "Flexible rope handling requires deformable-object manipulation."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Visual inspection is needed to confirm no pinch or entanglement around the recipient."},
+        {"key": "capability", "value": "human_handover", "reason": "The goal is transfer to a person."},
+        {"key": "role", "value": "home_user", "reason": "This is a supervised household handover."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["adult_user securely holds ycb_067_rope after robot release, with both rope ends visible and no loop around the recipient."],
+        "setup": ["Lay ycb_067_rope loose and untangled on the play table, have adult_user ready, and keep the rope away from the recipient's neck, limbs, and walking path."],
+        "reset": ["Have adult_user release ycb_067_rope, return it loose to the play table, and restore the clear handover zone."],
+        "quality_checks": ["Verify the recipient grasped a safe section before release, no loop formed around the person, and no rope end snagged."],
+        "failure_modes": ["Rope loop contacts the recipient, premature release, rope drop, end snag, or unsafe approach."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_068_clear_box",
+      "task_id": "task_ycb_068_clear_box",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_storage_shelf", "reason": "The clear box uses the shared household storage context."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The clear box is the stored object."},
+        {"key": "object", "value": "ycb_storage_shelf_fixture", "reason": "The physical storage fixture is the destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_068_clear_box_utility_surface", "reason": "The box starts on the utility surface."},
+        {"key": "condition", "value": "empty_or_contents_secured_ycb_068_clear_box", "reason": "Contents must not spill during transport."},
+        {"key": "condition", "value": "storage_space_available", "reason": "The shelf must have room for the box."},
+        {"key": "condition", "value": "initial_ambient_storage_policy_confirmed", "reason": "Ambient non-food storage is the declared handling policy."},
+        {"key": "condition", "value": "reachable_ycb_068_clear_box", "reason": "The box must be accessible."},
+        {"key": "condition", "value": "initial_reachable_ycb_storage_shelf_fixture", "reason": "The physical storage fixture must be reachable for placement."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The box must be lifted and placed stably."},
+        {"key": "role", "value": "home_user", "reason": "This is non-food household storage."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_068_clear_box is upright and stable inside the household storage shelf without overhang or obstruction."],
+        "setup": ["Use an empty ycb_068_clear_box or secure all contents below its rim, place it on the utility surface, and clear the storage shelf."],
+        "reset": ["Remove ycb_068_clear_box from the shelf, restore it on the utility surface, and return any secured contents to the starting state."],
+        "quality_checks": ["Check that the box is fully supported, upright, stable, and does not block adjacent storage access."],
+        "failure_modes": ["Box tips, contents shift or spill, box overhangs the shelf, or the wrong storage location is used."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_069_box_lid",
+      "task_id": "task_ycb_069_box_lid",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_workshop", "reason": "The closure task uses the shared non-food workshop context."},
+        {"key": "object", "value": "ycb_069_box_lid", "reason": "The box lid is the manipulated object."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The lid must close its matching clear box."},
+        {"key": "condition", "value": "initial_open_ycb_068_clear_box", "reason": "The box begins open."},
+        {"key": "condition", "value": "closure_attached_ycb_069_box_lid", "reason": "The matching lid must be available and compatible."},
+        {"key": "condition", "value": "contents_below_rim_ycb_068_clear_box", "reason": "Contents must be below the closure line."},
+        {"key": "condition", "value": "hands_clear_of_pinch_zone", "reason": "The closure path must be safe for the operator."},
+        {"key": "condition", "value": "initial_reachable_ycb_069_box_lid", "reason": "The lid must be reachable for controlled closure."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The lid needs controlled alignment and handling."},
+        {"key": "capability", "value": "articulated_closure", "reason": "The task explicitly closes a container."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised household storage closeout."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_069_box_lid is fully seated on ycb_068_clear_box, the box is closed, and no contents are pinched."],
+        "setup": ["Place ycb_068_clear_box open on the workshop surface with contents below the rim, place matching ycb_069_box_lid nearby, and keep hands clear of the pinch zone."],
+        "reset": ["Reopen ycb_068_clear_box, remove ycb_069_box_lid without prying, and restore both parts to their starting positions."],
+        "quality_checks": ["Inspect the lid perimeter, seating or latch engagement, box corners, and contents for pinching or damage."],
+        "failure_modes": ["Lid is misaligned, closure is incomplete, contents are pinched, or excess force damages ycb_069_box_lid or the box."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_070_colored_wood_blocks",
+      "task_id": "task_ycb_070_colored_wood_blocks",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The block set uses the shared play context."},
+        {"key": "object", "value": "ycb_070_colored_wood_blocks", "reason": "The colored wood block set is the focus item."},
+        {"key": "object", "value": "colored_block_group", "reason": "The group records the color-sorting target."},
+        {"key": "object", "value": "color_sort_zones", "reason": "The marked zones define the destinations."},
+        {"key": "condition", "value": "mixed_by_color_ycb_070_colored_wood_blocks", "reason": "The blocks begin mixed by color."},
+        {"key": "condition", "value": "initial_multiple_related_items", "reason": "Multiple blocks are required for meaningful sorting."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_070_colored_wood_blocks_play_table", "reason": "The set starts on the play table."},
+        {"key": "condition", "value": "clear_color_sort_zones", "reason": "All color destinations must be available."},
+        {"key": "condition", "value": "grouping_rule_declared_colored_block_group", "reason": "The color rule must be declared before collection."},
+        {"key": "condition", "value": "initial_reachable_ycb_070_colored_wood_blocks", "reason": "The block set must be reachable for sorting."},
+        {"key": "condition", "value": "initial_reachable_colored_block_group", "reason": "The declared color-group destination must be reachable."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "Each block must be placed without toppling its neighbors."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Color classification and completeness require checking."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised organization of play materials."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["Every block in ycb_070_colored_wood_blocks is in its declared color_sort_zones group, with no block omitted and each group stable."],
+        "setup": ["Mix and count ycb_070_colored_wood_blocks on the play table, mark one color_sort_zones area per declared color, and keep the surface clear."],
+        "reset": ["Count all ycb_070_colored_wood_blocks, remix them on the play table, and empty every color zone."],
+        "quality_checks": ["Verify each block's color assignment and count, inspect for displaced neighboring blocks, and check group stability."],
+        "failure_modes": ["Block is misclassified or omitted, a zone is confused, blocks collide or topple, or a block is damaged."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_071_nine_hole_peg_test",
+      "task_id": "task_ycb_071_nine_hole_peg_test",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_workshop", "reason": "The apparatus uses the shared non-food workshop context."},
+        {"key": "object", "value": "ycb_071_nine_hole_peg_test", "reason": "The peg-test apparatus is the setup theme."},
+        {"key": "object", "value": "storage_surface", "reason": "The apparatus starts on this source surface."},
+        {"key": "object", "value": "assessment_station", "reason": "The marked assessment station is the destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_071_nine_hole_peg_test_storage_surface", "reason": "The apparatus starts on the storage surface."},
+        {"key": "condition", "value": "clear_assessment_station", "reason": "The destination must be clear."},
+        {"key": "condition", "value": "apparatus_secure_ycb_071_nine_hole_peg_test", "reason": "Loose parts must be secured before moving the apparatus."},
+        {"key": "condition", "value": "holes_unobstructed_ycb_071_nine_hole_peg_test", "reason": "The nine holes must remain usable and visible."},
+        {"key": "condition", "value": "initial_reachable_ycb_071_nine_hole_peg_test", "reason": "The apparatus must be reachable for transport."},
+        {"key": "condition", "value": "initial_reachable_assessment_station", "reason": "The assessment station must be reachable for placement."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The apparatus must be transported and placed stably."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Orientation and unobstructed holes must be verified."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised setup of an assessment apparatus."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_071_nine_hole_peg_test rests stably on assessment_station in a usable orientation with all nine holes visible and unobstructed."],
+        "setup": ["Place the secured ycb_071_nine_hole_peg_test on storage_surface, use a stable padded workshop surface, and clear assessment_station before transport."],
+        "reset": ["Remove ycb_071_nine_hole_peg_test from assessment_station, restore it on storage_surface, and return any secured parts to their start state."],
+        "quality_checks": ["Check apparatus orientation, all nine hole openings, support stability, and absence of collision or new damage."],
+        "failure_modes": ["Apparatus tips, holes are blocked, a part shifts or falls, the wrong orientation is used, or the unit collides with the station."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_072_toy_airplane",
+      "task_id": "task_ycb_072_toy_airplane",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The toy handover uses the shared play context."},
+        {"key": "object", "value": "ycb_072_toy_airplane", "reason": "The toy airplane is the handover theme."},
+        {"key": "object", "value": "child_player", "reason": "A ready child player with adult supervision is the recipient context."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_072_toy_airplane_play_table", "reason": "The airplane starts on the play table."},
+        {"key": "condition", "value": "initial_recipient_present", "reason": "The child player must be present."},
+        {"key": "condition", "value": "recipient_ready_child_player", "reason": "The recipient must be ready before release."},
+        {"key": "condition", "value": "wings_clear_ycb_072_toy_airplane", "reason": "The wings need clearance during the handover."},
+        {"key": "condition", "value": "adult_supervision_present", "reason": "The child-facing setup requires adult supervision."},
+        {"key": "condition", "value": "initial_reachable_ycb_072_toy_airplane", "reason": "The airplane must be reachable for the declared handover template."},
+        {"key": "condition", "value": "initial_safe_grasp_ycb_072_toy_airplane", "reason": "A safe body grasp must be available for handover."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The airplane must be grasped by a safe body region."},
+        {"key": "capability", "value": "human_handover", "reason": "The task ends with a controlled child handover."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised household play."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["child_player holds ycb_072_toy_airplane after the robot releases it, with no throwing motion and no wing damage."],
+        "setup": ["Place ycb_072_toy_airplane on the play table, keep its wings clear, have child_player ready with adult supervision, and prohibit throwing."],
+        "reset": ["Have child_player return ycb_072_toy_airplane to the play table and restore the clear supervised handover zone."],
+        "quality_checks": ["Verify the recipient grasped the airplane body before release, no wing was pinched, and no throw or drop occurred."],
+        "failure_modes": ["Premature release, drop, wing collision, unsafe child contact, or the airplane being thrown."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_073_lego_duplo",
+      "task_id": "task_ycb_073_lego_duplo",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The construction set uses the shared play context."},
+        {"key": "object", "value": "ycb_073_lego_duplo", "reason": "The Lego Duplo set is the focus item."},
+        {"key": "object", "value": "lego_construction_set", "reason": "The set defines the related-piece group."},
+        {"key": "object", "value": "construction_zone", "reason": "The supervised building area is the destination."},
+        {"key": "condition", "value": "initial_multiple_related_items", "reason": "The task requires multiple construction pieces."},
+        {"key": "condition", "value": "mixed_pieces_ycb_073_lego_duplo", "reason": "The pieces start mixed rather than already grouped."},
+        {"key": "condition", "value": "clear_construction_zone", "reason": "The destination must be clear."},
+        {"key": "condition", "value": "adult_supervision_present", "reason": "The small-piece play context requires adult supervision."},
+        {"key": "condition", "value": "initial_reachable_ycb_073_lego_duplo", "reason": "The construction pieces must be reachable for organization."},
+        {"key": "condition", "value": "initial_reachable_lego_construction_set", "reason": "The declared construction set must be reachable for organization."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "Pieces must be placed without scattering or forceful connection."},
+        {"key": "capability", "value": "visual_inspection", "reason": "All pieces must be located and checked."},
+        {"key": "role", "value": "home_user", "reason": "This is supervised household organization of a construction toy."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["All pieces in ycb_073_lego_duplo are grouped in construction_zone, visible or accounted for, and stable under adult supervision."],
+        "setup": ["Spread and count ycb_073_lego_duplo on the play table, clear construction_zone, and keep children supervised and away from loose pieces during setup."],
+        "reset": ["Count and remove every ycb_073_lego_duplo piece from construction_zone, restore the mixed table arrangement, and clear the floor."],
+        "quality_checks": ["Verify the piece count, no piece is left under the table, the group is stable, and no unsafe child-access condition is introduced."],
+        "failure_modes": ["Piece omitted or misgrouped, piece falls to the floor, pieces scatter, or supervision and small-piece controls are lost."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_074_t_shirt",
+      "task_id": "task_ycb_074_t_shirt",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_storage_shelf", "reason": "The shirt uses the shared non-food household storage context."},
+        {"key": "object", "value": "ycb_074_t_shirt", "reason": "The T-shirt is the storage theme."},
+        {"key": "object", "value": "ycb_068_clear_box", "reason": "The clear box is the storage receptacle."},
+        {"key": "condition", "value": "folded_ycb_074_t_shirt", "reason": "The shirt is pre-folded because folding is outside this task's skill inventory."},
+        {"key": "condition", "value": "dry_ycb_074_t_shirt", "reason": "The stored textile must be dry."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_074_t_shirt_folding_surface", "reason": "The shirt starts on the folding surface."},
+        {"key": "condition", "value": "initial_open_ycb_068_clear_box", "reason": "The receptacle must be open."},
+        {"key": "condition", "value": "initial_reachable_ycb_074_t_shirt", "reason": "The folded shirt must be reachable for placement."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The proposed design covers controlled handling and placement of the folded item."},
+        {"key": "role", "value": "home_user", "reason": "This is non-food household storage."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_074_t_shirt is fully inside ycb_068_clear_box, remains folded, and has no edge overhang or trapped seam."],
+        "setup": ["Use one clean, dry, pre-folded ycb_074_t_shirt on the folding surface, open ycb_068_clear_box, and keep the textile path free of sharp or chemical items."],
+        "reset": ["Remove ycb_074_t_shirt from ycb_068_clear_box, restore it folded on the folding surface, and reopen the empty box."],
+        "quality_checks": ["Check shirt identity, fold retention, full containment, fabric condition, and absence of an overhanging or pinched edge."],
+        "failure_modes": ["Shirt snags or unfolds, an edge remains outside, box tips, fabric is soiled, or the shirt contacts an unsafe sharp or chemical item."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_075_magazine",
+      "task_id": "task_ycb_075_magazine",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_dining_table", "reason": "The dining table is a sensible shared reading destination."},
+        {"key": "object", "value": "ycb_075_magazine", "reason": "The magazine is the transport theme."},
+        {"key": "object", "value": "kitchen_counter", "reason": "The magazine starts on the counter."},
+        {"key": "object", "value": "dining_table", "reason": "The dining table is the reading destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_075_magazine_kitchen_counter", "reason": "The magazine starts on the kitchen counter."},
+        {"key": "condition", "value": "pages_dry_ycb_075_magazine", "reason": "The paper item must stay dry."},
+        {"key": "condition", "value": "clear_dining_table", "reason": "The reading area must be clear."},
+        {"key": "condition", "value": "initial_reachable_ycb_075_magazine", "reason": "The magazine must be reachable for transport."},
+        {"key": "condition", "value": "initial_reachable_dining_table", "reason": "The reading destination must be reachable."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The magazine needs supported grasp and flat placement."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The cover-up final orientation must be checked."},
+        {"key": "role", "value": "home_user", "reason": "This is a household reading setup."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_075_magazine lies flat in the reading area on dining_table with the cover up, without bent pages or obstruction."],
+        "setup": ["Place dry ycb_075_magazine flat on kitchen_counter, clear the dining-table reading area, and keep food or liquids away from the paper."],
+        "reset": ["Return ycb_075_magazine flat to kitchen_counter, restore its original orientation, and clear the dining-table reading area."],
+        "quality_checks": ["Verify the correct magazine, cover-up orientation, page flatness, and no new crease, tear, or food contamination."],
+        "failure_modes": ["Magazine is dropped, pages catch or bend, it is placed on the wrong surface, or it contacts liquid or food."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_076_timer",
+      "task_id": "task_ycb_076_timer",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_kitchen_counter", "reason": "The kitchen counter is the timer's sensible placement context."},
+        {"key": "object", "value": "ycb_076_timer", "reason": "The timer is the transport theme."},
+        {"key": "object", "value": "dining_table", "reason": "The timer starts on the dining table."},
+        {"key": "object", "value": "kitchen_counter", "reason": "The kitchen counter is the destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_076_timer_dining_table", "reason": "The timer starts on the dining table."},
+        {"key": "condition", "value": "timer_powered_off_or_safe_ycb_076_timer", "reason": "The electronic device must be off or otherwise safely paused before handling."},
+        {"key": "condition", "value": "display_intact_ycb_076_timer", "reason": "The display must be available for final verification."},
+        {"key": "condition", "value": "clear_kitchen_counter", "reason": "The destination must be clear of spills and obstacles."},
+        {"key": "condition", "value": "initial_reachable_ycb_076_timer", "reason": "The timer must be reachable for transport."},
+        {"key": "condition", "value": "initial_reachable_kitchen_counter", "reason": "The counter destination must be reachable."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The timer must be moved without pressing controls."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The display and off-state must be checked."},
+        {"key": "role", "value": "home_user", "reason": "This is a bounded kitchen-preparation setup action."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["ycb_076_timer is stable on kitchen_counter with its display visible, remains not running, and its setting is unchanged."],
+        "setup": ["Place ycb_076_timer on dining_table in an off or safely paused state, confirm its display is intact, clear kitchen_counter, and do not press buttons during setup."],
+        "reset": ["Return ycb_076_timer to dining_table, restore the off or safely paused state and original setting, and clear kitchen_counter."],
+        "quality_checks": ["Check display visibility, timer state and setting before and after, body stability, and absence of accidental button activation."],
+        "failure_modes": ["Timer starts or changes setting, display is occluded or damaged, device is dropped, or the counter contains a spill or electrical hazard."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    },
+    {
+      "id": "planning_task_ycb_077_rubiks_cube",
+      "task_id": "task_ycb_077_rubiks_cube",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_playroom", "reason": "The puzzle handover uses the shared play context."},
+        {"key": "object", "value": "ycb_077_rubiks_cube", "reason": "The Rubik's Cube is the handover theme."},
+        {"key": "object", "value": "puzzle_player", "reason": "A ready puzzle player is the recipient."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_077_rubiks_cube_play_table", "reason": "The cube starts on the play table."},
+        {"key": "condition", "value": "initial_recipient_present", "reason": "The player must be present."},
+        {"key": "condition", "value": "recipient_ready_puzzle_player", "reason": "The player must be ready before release."},
+        {"key": "condition", "value": "clear_handover_zone", "reason": "The transfer path must be clear."},
+        {"key": "condition", "value": "initial_reachable_ycb_077_rubiks_cube", "reason": "The cube must be reachable for the declared handover template."},
+        {"key": "condition", "value": "initial_safe_grasp_ycb_077_rubiks_cube", "reason": "A safe grasp region must be available before handover."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The cube must be grasped without forcing its moving faces."},
+        {"key": "capability", "value": "human_handover", "reason": "The goal is a safe transfer to the player."},
+        {"key": "role", "value": "home_user", "reason": "This is a supervised household puzzle handover."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": ["puzzle_player holds ycb_077_rubiks_cube after the robot releases it, with the cube intact and no forced turn during transfer."],
+        "setup": ["Place ycb_077_rubiks_cube stable on the play table, have puzzle_player ready, and clear the handover zone; do not require a particular solved state."],
+        "reset": ["Have puzzle_player return ycb_077_rubiks_cube to the play table and restore the clear handover zone."],
+        "quality_checks": ["Verify the player grasped the cube before release, all cube faces remain intact, and no accidental twist or drop occurred."],
+        "failure_modes": ["Premature release, cube drop, unsafe hand contact, forced face rotation, or collision with another puzzle item."],
+        "consumables": [],
+        "time_estimates": {"setup_minutes": null, "execution_minutes": null, "reset_minutes": null, "review_minutes": null}
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_task_ycb_053_mini_soccer_ball_task_suitability",
+      "subject_id": "task_ycb_053_mini_soccer_ball",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: store the mini soccer ball in a clear box.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_053_mini_soccer_ball.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_053_mini_soccer_ball_population_frequency",
+      "subject_id": "task_ycb_053_mini_soccer_ball",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_053_mini_soccer_ball_robot_execution",
+      "subject_id": "task_ycb_053_mini_soccer_ball",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_053_mini_soccer_ball_asset_compatibility",
+      "subject_id": "task_ycb_053_mini_soccer_ball",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or asset configuration for the mini soccer ball and clear box is attached.",
+      "limitations": "YCB identity alone does not validate receptacle geometry, physics, or interaction support."
+    },
+    {
+      "id": "claim_task_ycb_054_softball_task_suitability",
+      "subject_id": "task_ycb_054_softball",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: hand the softball to a player.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_054_softball.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_054_softball_population_frequency",
+      "subject_id": "task_ycb_054_softball",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_054_softball_robot_execution",
+      "subject_id": "task_ycb_054_softball",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_054_softball_asset_compatibility",
+      "subject_id": "task_ycb_054_softball",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot, human-handover, or ball asset configuration is attached.",
+      "limitations": "YCB identity does not validate handover geometry, contact safety, or recipient interaction."
+    },
+    {
+      "id": "claim_task_ycb_055_baseball_task_suitability",
+      "subject_id": "task_ycb_055_baseball",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: organize the baseball with other sports balls.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_055_baseball.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_055_baseball_population_frequency",
+      "subject_id": "task_ycb_055_baseball",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_055_baseball_robot_execution",
+      "subject_id": "task_ycb_055_baseball",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_055_baseball_asset_compatibility",
+      "subject_id": "task_ycb_055_baseball",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No ball-group scene or asset configuration is attached.",
+      "limitations": "YCB identity does not validate the grouping layout, visual separability, or placement support."
+    },
+    {
+      "id": "claim_task_ycb_056_tennis_ball_task_suitability",
+      "subject_id": "task_ycb_056_tennis_ball",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: retrieve the tennis ball from a clear box.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_056_tennis_ball.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_056_tennis_ball_population_frequency",
+      "subject_id": "task_ycb_056_tennis_ball",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_056_tennis_ball_robot_execution",
+      "subject_id": "task_ycb_056_tennis_ball",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_056_tennis_ball_asset_compatibility",
+      "subject_id": "task_ycb_056_tennis_ball",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No clear-box closure or tennis-ball asset configuration is attached.",
+      "limitations": "YCB identity does not validate occlusion, opening access, closure behavior, or release support."
+    },
+    {
+      "id": "claim_task_ycb_057_racquetball_task_suitability",
+      "subject_id": "task_ycb_057_racquetball",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: recover the dropped racquetball to the play table.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_057_racquetball.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_057_racquetball_population_frequency",
+      "subject_id": "task_ycb_057_racquetball",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_057_racquetball_robot_execution",
+      "subject_id": "task_ycb_057_racquetball",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_057_racquetball_asset_compatibility",
+      "subject_id": "task_ycb_057_racquetball",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No fallen-ball, floor-mat, or play-table asset configuration is attached.",
+      "limitations": "YCB identity does not validate recovery reachability, rolling physics, or floor-contact hygiene."
+    },
+    {
+      "id": "claim_task_ycb_058_golf_ball_task_suitability",
+      "subject_id": "task_ycb_058_golf_ball",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: put the golf ball in the clear box.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_058_golf_ball.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_058_golf_ball_population_frequency",
+      "subject_id": "task_ycb_058_golf_ball",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_058_golf_ball_robot_execution",
+      "subject_id": "task_ycb_058_golf_ball",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_058_golf_ball_asset_compatibility",
+      "subject_id": "task_ycb_058_golf_ball",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No small-ball and clear-box asset configuration is attached.",
+      "limitations": "YCB identity does not validate small-object containment, opening clearance, or rolling behavior."
+    },
+    {
+      "id": "claim_task_ycb_059_chain_task_suitability",
+      "subject_id": "task_ycb_059_chain",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: place the chain in the clear box without pinching a link.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_059_chain.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_059_chain_population_frequency",
+      "subject_id": "task_ycb_059_chain",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_059_chain_robot_execution",
+      "subject_id": "task_ycb_059_chain",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_059_chain_asset_compatibility",
+      "subject_id": "task_ycb_059_chain",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No flexible-chain or clear-box asset configuration is attached.",
+      "limitations": "YCB identity does not validate link geometry, self-contact, pinching, or containment behavior."
+    },
+    {
+      "id": "claim_task_ycb_060_washers_task_suitability",
+      "subject_id": "task_ycb_060_washers",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: sort the washers into the declared hardware group.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_060_washers.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_060_washers_population_frequency",
+      "subject_id": "task_ycb_060_washers",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_060_washers_robot_execution",
+      "subject_id": "task_ycb_060_washers",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_060_washers_asset_compatibility",
+      "subject_id": "task_ycb_060_washers",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No washer-set or sorting-zone asset configuration is attached.",
+      "limitations": "YCB identity does not validate small-part visibility, counting, or sorting layout support."
+    },
+    {
+      "id": "claim_task_ycb_061_foam_brick_task_suitability",
+      "subject_id": "task_ycb_061_foam_brick",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: arrange the foam brick with the building blocks.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_061_foam_brick.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_061_foam_brick_population_frequency",
+      "subject_id": "task_ycb_061_foam_brick",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_061_foam_brick_robot_execution",
+      "subject_id": "task_ycb_061_foam_brick",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_061_foam_brick_asset_compatibility",
+      "subject_id": "task_ycb_061_foam_brick",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No foam-brick or related-building-piece asset configuration is attached.",
+      "limitations": "YCB identity does not validate compliant deformation, contact force, or group stability."
+    },
+    {
+      "id": "claim_task_ycb_062_dice_task_suitability",
+      "subject_id": "task_ycb_062_dice",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: bring the die from storage to the play table.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_062_dice.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_062_dice_population_frequency",
+      "subject_id": "task_ycb_062_dice",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_062_dice_robot_execution",
+      "subject_id": "task_ycb_062_dice",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_062_dice_asset_compatibility",
+      "subject_id": "task_ycb_062_dice",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No die, storage-surface, or play-table asset configuration is attached.",
+      "limitations": "YCB identity does not validate rolling behavior, setup-zone visibility, or stable placement."
+    },
+    {
+      "id": "claim_task_ycb_063_marbles_task_suitability",
+      "subject_id": "task_ycb_063_marbles",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: place the marbles in a protected clear box.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_063_marbles.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_063_marbles_population_frequency",
+      "subject_id": "task_ycb_063_marbles",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_063_marbles_robot_execution",
+      "subject_id": "task_ycb_063_marbles",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_063_marbles_asset_compatibility",
+      "subject_id": "task_ycb_063_marbles",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No marble, padding, or clear-box asset configuration is attached.",
+      "limitations": "YCB identity does not validate impact physics, small-object containment, or damage observability."
+    },
+    {
+      "id": "claim_task_ycb_064_rope_task_suitability",
+      "subject_id": "task_ycb_064_rope",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: store the rope in the household storage shelf.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_064_rope.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_064_rope_population_frequency",
+      "subject_id": "task_ycb_064_rope",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_064_rope_robot_execution",
+      "subject_id": "task_ycb_064_rope",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_064_rope_asset_compatibility",
+      "subject_id": "task_ycb_064_rope",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No rope, shelf, or storage-boundary asset configuration is attached.",
+      "limitations": "YCB identity does not validate flexible-object containment, entanglement, or trip-hazard behavior."
+    },
+    {
+      "id": "claim_task_ycb_065_cups_task_suitability",
+      "subject_id": "task_ycb_065_cups",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: nest the cups into a stable stack.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_065_cups.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_065_cups_population_frequency",
+      "subject_id": "task_ycb_065_cups",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_065_cups_robot_execution",
+      "subject_id": "task_ycb_065_cups",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_065_cups_asset_compatibility",
+      "subject_id": "task_ycb_065_cups",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No nesting-cup geometry or activity-table asset configuration is attached.",
+      "limitations": "YCB identity does not validate nesting clearances, rim contact, or stack stability."
+    },
+    {
+      "id": "claim_task_ycb_066_blank_credit_card_task_suitability",
+      "subject_id": "task_ycb_066_blank_credit_card",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: store the blank credit card in the clear box.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_066_blank_credit_card.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_066_blank_credit_card_population_frequency",
+      "subject_id": "task_ycb_066_blank_credit_card",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_066_blank_credit_card_robot_execution",
+      "subject_id": "task_ycb_066_blank_credit_card",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_066_blank_credit_card_asset_compatibility",
+      "subject_id": "task_ycb_066_blank_credit_card",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No non-functional card or clear-box asset configuration is attached.",
+      "limitations": "YCB identity does not validate flat-card handling, bending risk, or privacy-safe training setup."
+    },
+    {
+      "id": "claim_task_ycb_067_rope_task_suitability",
+      "subject_id": "task_ycb_067_rope",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: hand the second rope to a person.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_067_rope.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_067_rope_population_frequency",
+      "subject_id": "task_ycb_067_rope",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_067_rope_robot_execution",
+      "subject_id": "task_ycb_067_rope",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_067_rope_asset_compatibility",
+      "subject_id": "task_ycb_067_rope",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No rope, recipient, or handover-zone asset configuration is attached.",
+      "limitations": "YCB identity does not validate flexible-object handover geometry or human safety constraints."
+    },
+    {
+      "id": "claim_task_ycb_068_clear_box_task_suitability",
+      "subject_id": "task_ycb_068_clear_box",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: store the clear box on the household storage shelf.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_068_clear_box.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_068_clear_box_population_frequency",
+      "subject_id": "task_ycb_068_clear_box",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_068_clear_box_robot_execution",
+      "subject_id": "task_ycb_068_clear_box",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_068_clear_box_asset_compatibility",
+      "subject_id": "task_ycb_068_clear_box",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No box, shelf, or secured-contents asset configuration is attached.",
+      "limitations": "YCB identity does not validate box mass, support, placement clearance, or contents stability."
+    },
+    {
+      "id": "claim_task_ycb_069_box_lid_task_suitability",
+      "subject_id": "task_ycb_069_box_lid",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: close the clear box with its lid.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_069_box_lid.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_069_box_lid_population_frequency",
+      "subject_id": "task_ycb_069_box_lid",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_069_box_lid_robot_execution",
+      "subject_id": "task_ycb_069_box_lid",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_069_box_lid_asset_compatibility",
+      "subject_id": "task_ycb_069_box_lid",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No box-lid fit, closure, or contents asset configuration is attached.",
+      "limitations": "YCB identity does not validate seating tolerance, latch behavior, or pinch-risk geometry."
+    },
+    {
+      "id": "claim_task_ycb_070_colored_wood_blocks_task_suitability",
+      "subject_id": "task_ycb_070_colored_wood_blocks",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: sort the colored wood blocks by color.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_070_colored_wood_blocks.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_070_colored_wood_blocks_population_frequency",
+      "subject_id": "task_ycb_070_colored_wood_blocks",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_070_colored_wood_blocks_robot_execution",
+      "subject_id": "task_ycb_070_colored_wood_blocks",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_070_colored_wood_blocks_asset_compatibility",
+      "subject_id": "task_ycb_070_colored_wood_blocks",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No colored-block set or sorting-zone asset configuration is attached.",
+      "limitations": "YCB identity does not validate color visibility, block count, or zone layout."
+    },
+    {
+      "id": "claim_task_ycb_071_nine_hole_peg_test_task_suitability",
+      "subject_id": "task_ycb_071_nine_hole_peg_test",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: set the nine-hole peg test on the assessment station.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_071_nine_hole_peg_test.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_071_nine_hole_peg_test_population_frequency",
+      "subject_id": "task_ycb_071_nine_hole_peg_test",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_071_nine_hole_peg_test_robot_execution",
+      "subject_id": "task_ycb_071_nine_hole_peg_test",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_071_nine_hole_peg_test_asset_compatibility",
+      "subject_id": "task_ycb_071_nine_hole_peg_test",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No peg-test apparatus, station, or secured-parts asset configuration is attached.",
+      "limitations": "YCB identity does not validate apparatus support, hole visibility, or loose-part behavior."
+    },
+    {
+      "id": "claim_task_ycb_072_toy_airplane_task_suitability",
+      "subject_id": "task_ycb_072_toy_airplane",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: hand the toy airplane to the player.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_072_toy_airplane.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_072_toy_airplane_population_frequency",
+      "subject_id": "task_ycb_072_toy_airplane",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_072_toy_airplane_robot_execution",
+      "subject_id": "task_ycb_072_toy_airplane",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_072_toy_airplane_asset_compatibility",
+      "subject_id": "task_ycb_072_toy_airplane",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No toy-airplane, recipient, or supervised-handover asset configuration is attached.",
+      "limitations": "YCB identity does not validate body grasp regions, wing clearance, or child-facing handover safety."
+    },
+    {
+      "id": "claim_task_ycb_073_lego_duplo_task_suitability",
+      "subject_id": "task_ycb_073_lego_duplo",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: organize the Lego Duplo pieces in the construction zone.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_073_lego_duplo.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_073_lego_duplo_population_frequency",
+      "subject_id": "task_ycb_073_lego_duplo",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_073_lego_duplo_robot_execution",
+      "subject_id": "task_ycb_073_lego_duplo",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_073_lego_duplo_asset_compatibility",
+      "subject_id": "task_ycb_073_lego_duplo",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No Duplo-piece, construction-zone, or supervised-play asset configuration is attached.",
+      "limitations": "YCB identity does not validate piece count, small-part visibility, or child-access safety."
+    },
+    {
+      "id": "claim_task_ycb_074_t_shirt_task_suitability",
+      "subject_id": "task_ycb_074_t_shirt",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: store the folded T-shirt in the clear box.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_074_t_shirt.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_074_t_shirt_population_frequency",
+      "subject_id": "task_ycb_074_t_shirt",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_074_t_shirt_robot_execution",
+      "subject_id": "task_ycb_074_t_shirt",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_074_t_shirt_asset_compatibility",
+      "subject_id": "task_ycb_074_t_shirt",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No textile, folded-state, or clear-box asset configuration is attached.",
+      "limitations": "YCB identity does not validate deformable cloth handling, seam pinching, or containment."
+    },
+    {
+      "id": "claim_task_ycb_075_magazine_task_suitability",
+      "subject_id": "task_ycb_075_magazine",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: bring the magazine to the dining table for reading.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_075_magazine.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_075_magazine_population_frequency",
+      "subject_id": "task_ycb_075_magazine",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_075_magazine_robot_execution",
+      "subject_id": "task_ycb_075_magazine",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_075_magazine_asset_compatibility",
+      "subject_id": "task_ycb_075_magazine",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No magazine, dry-surface, or reading-zone asset configuration is attached.",
+      "limitations": "YCB identity does not validate page stiffness, grasp support, or paper-contact protection."
+    },
+    {
+      "id": "claim_task_ycb_076_timer_task_suitability",
+      "subject_id": "task_ycb_076_timer",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: position the timer on the kitchen counter.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_076_timer.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_076_timer_population_frequency",
+      "subject_id": "task_ycb_076_timer",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_076_timer_robot_execution",
+      "subject_id": "task_ycb_076_timer",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_076_timer_asset_compatibility",
+      "subject_id": "task_ycb_076_timer",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No timer power-state, display, or counter asset configuration is attached.",
+      "limitations": "YCB identity does not validate button safety, display observability, or electrical-state behavior."
+    },
+    {
+      "id": "claim_task_ycb_077_rubiks_cube_task_suitability",
+      "subject_id": "task_ycb_077_rubiks_cube",
+      "claim_type": "task_suitability",
+      "statement": "This is a proposed candidate for collection design review: hand the Rubik's Cube to the puzzle player.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB coverage round 1 proposal for ycb_077_rubiks_cube.",
+      "limitations": "The cited catalog-wide design source establishes proposal provenance only; it does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_077_rubiks_cube_population_frequency",
+      "subject_id": "task_ycb_077_rubiks_cube",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No target population, time-use coding, or observation protocol is attached to this YCB proposal.",
+      "limitations": "Catalog membership, template reuse, and a design proposal do not measure population frequency."
+    },
+    {
+      "id": "claim_task_ycb_077_rubiks_cube_robot_execution",
+      "subject_id": "task_ycb_077_rubiks_cube",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, run, or evaluated demonstration is attached.",
+      "limitations": "The task and collection card describe a proposed trial, not a robot execution result."
+    },
+    {
+      "id": "claim_task_ycb_077_rubiks_cube_asset_compatibility",
+      "subject_id": "task_ycb_077_rubiks_cube",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No cube, recipient, or handover-zone asset configuration is attached.",
+      "limitations": "YCB identity does not validate grasp geometry, face-motion constraints, or human handover safety."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_ycb_playroom",
+      "node_type": "SceneType",
+      "name_en": "Playroom activity table",
+      "name_ja": "遊びの活動台",
+      "description": "A clear, non-food table for games, sports equipment, and toys.",
+      "tags": ["home", "play", "non_food"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "scene_ycb_workshop",
+      "node_type": "SceneType",
+      "name_en": "Household workshop",
+      "name_ja": "家庭用作業台",
+      "description": "A clear non-food work surface for small hardware, flexible items, and apparatus.",
+      "tags": ["home", "workshop", "non_food"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "scene_ycb_storage_shelf",
+      "node_type": "SceneType",
+      "name_en": "Household storage shelf",
+      "name_ja": "家庭用収納棚",
+      "description": "A non-food shelf or bin area for putting away household items.",
+      "tags": ["home", "storage", "non_food"],
+      "review_status": "proposed"
+    }
+  ],
+  "templates": [
+    {
+      "id": "template_ycb_place_in_receptacle",
+      "node_type": "TaskTemplate",
+      "name_en": "Place a YCB item in a clear receptacle",
+      "name_ja": "YCB物体を透明な入れ物へ入れる",
+      "verb": "place",
+      "roles": {"theme": "portable_item", "destination": "receptacle"},
+      "compatible_scenes": [
+        "scene_shopping_cart",
+        "scene_trash_sorting_area",
+        "scene_home_kitchen",
+        "scene_pantry",
+        "scene_ycb_playroom",
+        "scene_ycb_workshop",
+        "scene_ycb_storage_shelf"
+      ],
+      "preconditions": ["reachable(theme)", "open(destination)"],
+      "goals": ["inside(theme, destination)", "stable(theme)"],
+      "skills": ["skill_grasp", "skill_lift", "skill_place", "skill_release", "skill_verify"],
+      "failure_modes": ["miss_receptacle", "damage_contents", "wrong_receptacle"],
+      "safety_tags": ["receptacle", "non_food_storage"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_handover_object",
+      "node_type": "TaskTemplate",
+      "name_en": "Hand a YCB object to another agent",
+      "name_ja": "YCB物体を別の相手へ手渡す",
+      "verb": "handover",
+      "roles": {"theme": "handover_object", "recipient": "person"},
+      "compatible_scenes": [
+        "scene_dining_table",
+        "scene_home_kitchen",
+        "scene_restaurant_table",
+        "scene_kitchen_counter",
+        "scene_ycb_playroom"
+      ],
+      "preconditions": ["reachable(theme)", "recipient_present", "safe_grasp(theme)"],
+      "goals": ["held_by(theme, recipient)", "theme_released_by(robot)"],
+      "skills": ["skill_locate", "skill_approach", "skill_grasp", "skill_handover", "skill_release"],
+      "failure_modes": ["drop_object", "recipient_not_ready", "collision_with_hand"],
+      "safety_tags": ["human_proximity", "handover"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_organize_related_objects",
+      "node_type": "TaskTemplate",
+      "name_en": "Organize related YCB objects",
+      "name_ja": "関連するYCB物体を整頓する",
+      "verb": "organize",
+      "roles": {"theme": "object_group", "focus": "focus_object", "destination": "organization_area"},
+      "compatible_scenes": [
+        "scene_home_kitchen",
+        "scene_dining_table",
+        "scene_pantry",
+        "scene_restaurant_table",
+        "scene_ycb_playroom",
+        "scene_ycb_workshop",
+        "scene_ycb_storage_shelf"
+      ],
+      "preconditions": ["multiple_related_items", "reachable(theme)"],
+      "goals": ["grouped_by_use(theme)", "stable(theme)"],
+      "skills": ["skill_locate", "skill_grasp", "skill_place", "skill_align", "skill_release", "skill_verify"],
+      "failure_modes": ["mix_categories", "block_access", "unstable_stack"],
+      "safety_tags": ["organization", "non_food_sorting"],
+      "notes": "For these YCB instances, theme names the resulting group or primary arrangement, focus names the catalog object being moved, and destination names the marked organization area; task-specific goals refine grouping, nesting, or sorting semantics.",
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_retrieve_from_storage",
+      "node_type": "TaskTemplate",
+      "name_en": "Retrieve a YCB object from storage",
+      "name_ja": "収納場所からYCB物体を取り出す",
+      "verb": "retrieve",
+      "roles": {"theme": "stored_object", "source": "storage"},
+      "compatible_scenes": [
+        "scene_refrigerator",
+        "scene_pantry",
+        "scene_home_kitchen",
+        "scene_ycb_storage_shelf"
+      ],
+      "preconditions": ["inside(theme, source)", "reachable(source)"],
+      "goals": ["held_by(theme, robot)", "outside(theme, source)", "closed(source)"],
+      "skills": ["skill_locate", "skill_open", "skill_reach", "skill_grasp", "skill_lift", "skill_close", "skill_verify"],
+      "failure_modes": ["occluded_object", "drop_object", "door_left_open", "collision_with_shelf"],
+      "safety_tags": ["storage_access", "door_collision"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_recover_dropped_object",
+      "node_type": "TaskTemplate",
+      "name_en": "Recover a dropped YCB object",
+      "name_ja": "落ちたYCB物体を安全に戻す",
+      "verb": "recover",
+      "roles": {"theme": "dropped_object", "destination": "safe_surface"},
+      "compatible_scenes": [
+        "scene_home_kitchen",
+        "scene_dining_table",
+        "scene_kitchen_counter",
+        "scene_supermarket_shelf",
+        "scene_ycb_playroom",
+        "scene_ycb_workshop"
+      ],
+      "preconditions": ["fallen(theme)", "reachable(theme)"],
+      "goals": ["held_by(theme, robot)", "on_top_of(theme, destination)", "safe(theme)"],
+      "skills": ["skill_locate", "skill_approach", "skill_grasp", "skill_recover", "skill_place", "skill_release", "skill_verify"],
+      "failure_modes": ["push_under_furniture", "grasp_contaminated_surface", "drop_again"],
+      "safety_tags": ["recovery", "hygiene"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_store_in_ambient_storage",
+      "node_type": "TaskTemplate",
+      "name_en": "Store a YCB object on an ambient storage shelf",
+      "name_ja": "YCB物体を常温収納棚へ保管する",
+      "verb": "store",
+      "roles": {"theme": "stored_object", "destination": "storage_shelf"},
+      "compatible_scenes": [
+        "scene_home_kitchen",
+        "scene_kitchen_counter",
+        "scene_pantry",
+        "scene_ycb_storage_shelf"
+      ],
+      "preconditions": ["reachable(theme)", "ambient_storage_policy_confirmed"],
+      "goals": ["inside(theme, destination)", "upright(theme)", "stable(theme)"],
+      "skills": ["skill_locate", "skill_approach", "skill_grasp", "skill_lift", "skill_navigate_or_reach", "skill_place", "skill_release", "skill_verify"],
+      "failure_modes": ["drop_object", "unstable_placement", "wrong_storage_policy"],
+      "safety_tags": ["ambient_storage", "non_food_storage"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_close_container",
+      "node_type": "TaskTemplate",
+      "name_en": "Close a YCB storage container",
+      "name_ja": "YCB収納容器を閉める",
+      "verb": "close",
+      "roles": {"theme": "container", "part": "closure"},
+      "compatible_scenes": [
+        "scene_home_kitchen",
+        "scene_dining_table",
+        "scene_restaurant_kitchen",
+        "scene_restaurant_table",
+        "scene_ycb_workshop",
+        "scene_ycb_storage_shelf"
+      ],
+      "preconditions": ["open(theme)", "closure_attached(part)"],
+      "goals": ["closed(theme)", "lid_seated(part)"],
+      "skills": ["skill_grasp", "skill_close", "skill_verify"],
+      "failure_modes": ["cross_thread", "incomplete_close", "squeeze_contents"],
+      "safety_tags": ["closure", "pinch_risk"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_transport_object",
+      "node_type": "TaskTemplate",
+      "name_en": "Transport a YCB object between surfaces",
+      "name_ja": "YCB物体を面から面へ運ぶ",
+      "verb": "transport",
+      "roles": {"theme": "portable_object", "source": "source_surface", "destination": "target_surface"},
+      "compatible_scenes": [
+        "scene_home_kitchen",
+        "scene_dining_table",
+        "scene_kitchen_counter",
+        "scene_restaurant_kitchen",
+        "scene_restaurant_table",
+        "scene_ycb_playroom",
+        "scene_ycb_workshop",
+        "scene_ycb_storage_shelf"
+      ],
+      "preconditions": ["on_top_of(theme, source)", "reachable(theme)", "reachable(destination)"],
+      "goals": ["on_top_of(theme, destination)", "stable(theme)"],
+      "skills": ["skill_locate", "skill_approach", "skill_grasp", "skill_lift", "skill_navigate_or_reach", "skill_place", "skill_release", "skill_verify"],
+      "failure_modes": ["drop_object", "collision", "wrong_destination", "unstable_placement"],
+      "safety_tags": ["transport", "non_food_workspace"],
+      "review_status": "proposed"
+    }
+  ]
+}

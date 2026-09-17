@@ -10,6 +10,7 @@ The maintained product documentation is English-first. The repository's top page
 - [Evidence and claim policy](evidence_policy.md) — claim-scoped support and explicit unknown frequency.
 - [Mustard walkthrough](walkthrough.md) — a concrete exploration-to-collection path.
 - [Mustard expansion](mustard-expansion.md) — three 20-node proposed-design loops and their explicit links.
+- [YCB catalog coverage](ycb-coverage.md) — object-specific task proposals, generation provenance, and cross-object graph checks.
 
 ## Migration from 0.1
 

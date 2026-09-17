@@ -1,0 +1,2927 @@
+{
+  "scenes": [
+    {
+      "id": "scene_ycb_tool_workshop",
+      "node_type": "SceneType",
+      "name_en": "Controlled tool workshop",
+      "name_ja": "管理された工具作業場",
+      "description": "A supervised workbench with a stable surface, padded recovery zone, tool storage, and marked human handover area.",
+      "tags": ["workshop", "tools", "safety", "proposed_design"],
+      "granularity": "station",
+      "review_status": "proposed"
+    }
+  ],
+  "templates": [
+    {
+      "id": "template_ycb_safe_handover",
+      "node_type": "TaskTemplate",
+      "name_en": "Hand a tool safely to another person",
+      "name_ja": "工具を安全に人へ手渡す",
+      "verb": "handover",
+      "roles": {"theme": "handover_tool", "recipient": "person", "handover_orientation": "optional_orientation_constraint"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "reachable(theme)",
+        "recipient_present",
+        "safe_grasp(theme)",
+        "deenergized_if_powered(theme)"
+      ],
+      "goals": [
+        "held_by(theme, recipient)",
+        "theme_released_by(robot)",
+        "safe_orientation(theme)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "drop_object",
+        "recipient_not_ready",
+        "unsafe_orientation",
+        "powered_activation"
+      ],
+      "safety_tags": ["human_proximity", "handover", "tool_safety"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_store_tool",
+      "node_type": "TaskTemplate",
+      "name_en": "Store a tool in a designated tray",
+      "name_ja": "工具を指定トレーに収納する",
+      "verb": "store",
+      "roles": {"theme": "stored_tool", "destination": "tool_storage"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "reachable(theme)",
+        "storage_available(destination)",
+        "safe_to_store(theme)"
+      ],
+      "goals": [
+        "inside(theme, destination)",
+        "stable(theme)",
+        "safe(theme)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "drop_object",
+        "wrong_storage",
+        "unstable_placement",
+        "exposed_tip"
+      ],
+      "safety_tags": ["tool_storage", "small_parts"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_organize_tool_group",
+      "node_type": "TaskTemplate",
+      "name_en": "Organize a tool with its related group",
+      "name_ja": "工具を関連する道具群と整頓する",
+      "verb": "organize",
+      "roles": {"theme": "focus_tool", "group": "tool_group", "destination": "organization_area", "partner": "optional_matching_part"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "multiple_related_items",
+        "reachable(theme)",
+        "destination_available"
+      ],
+      "goals": [
+        "grouped_by_use(group)",
+        "stable(group)",
+        "accessible(theme)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "mix_categories",
+        "block_access",
+        "unstable_stack",
+        "place_outside_organization_area"
+      ],
+      "safety_tags": ["organization", "tool_storage"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_unlock_padlock",
+      "node_type": "TaskTemplate",
+      "name_en": "Open a padlock with its matched key",
+      "name_ja": "合う鍵で南京錠を開ける",
+      "verb": "unlock",
+      "roles": {"theme": "padlock", "key": "matched_key", "target": "secured_fixture"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "closed(theme)",
+        "matched_key(key, theme)",
+        "key_inserted(key, theme)",
+        "reachable(theme)"
+      ],
+      "goals": [
+        "open(theme)",
+        "key_retained(key)",
+        "shackle_released(theme)",
+        "stable(target)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_open",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "wrong_key",
+        "drop_key",
+        "jam_mechanism",
+        "move_fixture"
+      ],
+      "safety_tags": ["lock_handling", "small_parts"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_position_tool",
+      "node_type": "TaskTemplate",
+      "name_en": "Position a tool for the next operation",
+      "name_ja": "次の作業に向けて工具を配置する",
+      "verb": "transport",
+      "roles": {"theme": "portable_tool", "source": "source_surface", "destination": "work_surface"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "on_top_of(theme, source)",
+        "reachable(theme)",
+        "reachable(destination)"
+      ],
+      "goals": [
+        "on_top_of(theme, destination)",
+        "stable(theme)",
+        "ready_for_use(theme)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_navigate_or_reach",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "drop_object",
+        "wrong_destination",
+        "unstable_placement",
+        "block_work_area"
+      ],
+      "safety_tags": ["transport", "tool_staging"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_recover_tool",
+      "node_type": "TaskTemplate",
+      "name_en": "Recover a fallen tool onto a safe surface",
+      "name_ja": "倒れた工具を安全な面へ回収する",
+      "verb": "recover",
+      "roles": {"theme": "fallen_tool", "destination": "safe_surface"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "fallen(theme)",
+        "reachable(theme)",
+        "safety_zone_clear"
+      ],
+      "goals": [
+        "on_top_of(theme, destination)",
+        "stable(theme)",
+        "safe(theme)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_recover",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "push_object_out_of_reach",
+        "grasp_unsafe_part",
+        "drop_again",
+        "contact_person"
+      ],
+      "safety_tags": ["recovery", "tool_safety"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_secure_clamp",
+      "node_type": "TaskTemplate",
+      "name_en": "Secure a protected workpiece with a clamp",
+      "name_ja": "クランプで保護した加工物を固定する",
+      "verb": "secure",
+      "roles": {"theme": "clamp", "workpiece": "protected_workpiece"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "open(theme)",
+        "workpiece_positioned(workpiece)",
+        "jaws_aligned(theme, workpiece)",
+        "reachable(theme)"
+      ],
+      "goals": [
+        "closed(theme)",
+        "clamped(theme, workpiece)",
+        "stable(workpiece)"
+      ],
+      "skills": ["skill_grasp", "skill_close", "skill_verify"],
+      "failure_modes": [
+        "pinch_hazard",
+        "jaw_misalignment",
+        "damage_workpiece",
+        "clamp_slips"
+      ],
+      "safety_tags": ["spring_tool", "pinch_hazard", "protected_workpiece"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_recap_writing_tool",
+      "node_type": "TaskTemplate",
+      "name_en": "Recap a writing tool after use",
+      "name_ja": "使用後に筆記具へキャップをする",
+      "verb": "close",
+      "roles": {"theme": "writing_tool", "closure": "cap", "support": "optional_support_surface"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "open(theme)",
+        "closure_attached(closure, theme)",
+        "reachable(theme)"
+      ],
+      "goals": [
+        "closed(theme)",
+        "closure_retained(closure)",
+        "tip_covered(theme)"
+      ],
+      "skills": ["skill_grasp", "skill_close", "skill_verify"],
+      "failure_modes": [
+        "drop_cap",
+        "incomplete_close",
+        "damage_tip",
+        "ink_transfer"
+      ],
+      "safety_tags": ["writing_tool", "closure"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_align_tool",
+      "node_type": "TaskTemplate",
+      "name_en": "Face a tool in its organizer",
+      "name_ja": "工具をオーガナイザー内で正面に揃える",
+      "verb": "align",
+      "roles": {"theme": "display_tool", "destination": "tool_organizer"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "on_display(theme, destination)",
+        "reachable(theme)"
+      ],
+      "goals": [
+        "label_front(theme)",
+        "on_display(theme, destination)",
+        "stable(theme)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_orient",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "knock_adjacent_item",
+        "wrong_orientation",
+        "drop_item",
+        "block_access"
+      ],
+      "safety_tags": ["organization", "display"],
+      "review_status": "proposed"
+    },
+    {
+      "id": "template_ycb_sort_fastener",
+      "node_type": "TaskTemplate",
+      "name_en": "Sort a fastener into its labeled cup",
+      "name_ja": "留め具をラベル付きカップへ分別する",
+      "verb": "sort",
+      "roles": {"theme": "fastener", "destination": "fastener_cup", "category": "fastener_category", "matching_part": "optional_matching_fastener"},
+      "compatible_scenes": ["scene_ycb_tool_workshop"],
+      "preconditions": [
+        "reachable(theme)",
+        "destination_available",
+        "counted_set(theme)",
+        "category_known(theme)"
+      ],
+      "goals": [
+        "inside(theme, destination)",
+        "category_correct(theme, destination)",
+        "stable(destination)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_sort",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "spill_small_parts",
+        "wrong_category",
+        "count_mismatch",
+        "unstable_cup"
+      ],
+      "safety_tags": ["small_parts", "sorting"],
+      "review_status": "proposed"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_ycb_round1_power_drill",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_safe_handover",
+      "name_en": "Hand a de-energized power drill to a worker",
+      "name_ja": "電源を遮断した電動ドリルを作業者へ手渡す",
+      "intent_id": "intent_handover",
+      "object_id": "ycb_035_power_drill",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_035_power_drill",
+        "recipient": "adult_diy_worker",
+        "handover_orientation": "handle_first"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_035_power_drill, workshop_bench)",
+        "reachable(ycb_035_power_drill)",
+        "recipient_present",
+        "power_disabled(ycb_035_power_drill)",
+        "trigger_locked(ycb_035_power_drill)"
+      ],
+      "goal_state": [
+        "held_by(ycb_035_power_drill, adult_diy_worker)",
+        "theme_released_by(robot)",
+        "power_disabled(ycb_035_power_drill)",
+        "safe_orientation(ycb_035_power_drill)"
+      ],
+      "instruction_variants": [
+        "Hand the powered-off drill to the worker handle-first.",
+        "Pass the de-energized power drill without activating its trigger.",
+        "電源を切った電動ドリルを、トリガーを作動させずに作業者へ手渡してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_wood_block",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_tool_group",
+      "name_en": "Organize a wood block with matching construction pieces",
+      "name_ja": "木ブロックを同種の組み立て部品と整頓する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_036_wood_block",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_036_wood_block",
+        "group": "construction_block_group",
+        "destination": "construction_parts_area"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_036_wood_block, workshop_bench)",
+        "multiple_related_items",
+        "reachable(ycb_036_wood_block)"
+      ],
+      "goal_state": [
+        "grouped_by_use(construction_block_group)",
+        "on_top_of(ycb_036_wood_block, construction_parts_area)",
+        "stable(construction_block_group)"
+      ],
+      "instruction_variants": [
+        "Put the wood block with the other construction pieces in their marked area.",
+        "Organize the wood block with the matching building parts.",
+        "木ブロックを、同じ組み立て部品と指定場所に整頓してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_scissors",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_safe_handover",
+      "name_en": "Hand closed scissors handle-first to a person",
+      "name_ja": "閉じたはさみを刃先から離して人へ手渡す",
+      "intent_id": "intent_handover",
+      "object_id": "ycb_037_scissors",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_037_scissors",
+        "recipient": "adult_diy_worker",
+        "handover_orientation": "handle_first"
+      },
+      "state_ids": ["state_closed", "state_on_surface"],
+      "initial_state": [
+        "closed(ycb_037_scissors)",
+        "on_top_of(ycb_037_scissors, workshop_bench)",
+        "reachable(ycb_037_scissors)",
+        "recipient_present",
+        "blades_guarded(ycb_037_scissors)",
+        "tips_away_from_recipient"
+      ],
+      "goal_state": [
+        "held_by(ycb_037_scissors, adult_diy_worker)",
+        "theme_released_by(robot)",
+        "handle_first(ycb_037_scissors)",
+        "blades_guarded(ycb_037_scissors)"
+      ],
+      "instruction_variants": [
+        "Pass the closed scissors handle-first with the blades away from the person.",
+        "Hand over the guarded scissors without opening them.",
+        "閉じたはさみを刃先が相手に向かないよう、持ち手から手渡してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_padlock",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_unlock_padlock",
+      "name_en": "Open a padlock with its matched key",
+      "name_ja": "合う鍵で南京錠を開ける",
+      "intent_id": "intent_retrieve",
+      "object_id": "ycb_038_padlock",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_038_padlock",
+        "key": "ycb_039_keys",
+        "target": "hasp_fixture"
+      },
+      "state_ids": ["state_closed"],
+      "initial_state": [
+        "closed(ycb_038_padlock)",
+        "key_inserted(ycb_039_keys, ycb_038_padlock)",
+        "matched_key(ycb_039_keys, ycb_038_padlock)",
+        "on_top_of(ycb_038_padlock, workshop_bench)",
+        "reachable(ycb_038_padlock)"
+      ],
+      "goal_state": [
+        "open(ycb_038_padlock)",
+        "shackle_released(ycb_038_padlock)",
+        "key_retained(ycb_039_keys)",
+        "stable(hasp_fixture)"
+      ],
+      "instruction_variants": [
+        "Unlock the padlock with the matched key.",
+        "Open the padlock while keeping the key under control.",
+        "合う鍵を使って南京錠を開け、鍵を落とさないでください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_open",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_keys",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_store_tool",
+      "name_en": "Store the key set in a designated key tray",
+      "name_ja": "鍵束を指定の鍵トレーに収納する",
+      "intent_id": "intent_store",
+      "object_id": "ycb_039_keys",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_039_keys",
+        "destination": "key_tray"
+      },
+      "state_ids": ["state_on_surface", "state_inside_receptacle"],
+      "initial_state": [
+        "on_top_of(ycb_039_keys, workshop_bench)",
+        "reachable(ycb_039_keys)",
+        "destination_open",
+        "key_set_intact(ycb_039_keys)"
+      ],
+      "goal_state": [
+        "inside(ycb_039_keys, key_tray)",
+        "all_keys_contained(ycb_039_keys, key_tray)",
+        "stable(ycb_039_keys)"
+      ],
+      "instruction_variants": [
+        "Put the complete key set in the designated key tray.",
+        "Store all of the keys together in the key tray.",
+        "鍵束をすべて指定の鍵トレーに入れてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_large_marker",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_recap_writing_tool",
+      "name_en": "Recap the large marker after labeling",
+      "name_ja": "ラベル書きの後に太いマーカーへキャップをする",
+      "intent_id": "intent_store",
+      "object_id": "ycb_040_large_marker",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_040_large_marker",
+        "closure": "large_marker_cap",
+        "support": "labeling_card"
+      },
+      "state_ids": ["state_open", "state_on_surface"],
+      "initial_state": [
+        "open(ycb_040_large_marker)",
+        "closure_attached(large_marker_cap, ycb_040_large_marker)",
+        "on_top_of(ycb_040_large_marker, workshop_bench)",
+        "labeling_card_present"
+      ],
+      "goal_state": [
+        "closed(ycb_040_large_marker)",
+        "closure_retained(large_marker_cap)",
+        "tip_covered(ycb_040_large_marker)",
+        "stable(ycb_040_large_marker)"
+      ],
+      "instruction_variants": [
+        "Cap the large marker after labeling the card.",
+        "Close the large marker so its tip is covered.",
+        "ラベルを書き終えたら、太いマーカーにキャップをしてください。"
+      ],
+      "skills": ["skill_grasp", "skill_close", "skill_verify"],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_small_marker",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_align_tool",
+      "name_en": "Face the small marker label outward in its organizer",
+      "name_ja": "細いマーカーのラベルをオーガナイザーの外向きに揃える",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_041_small_marker",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_041_small_marker",
+        "destination": "writing_tool_rack"
+      },
+      "state_ids": ["state_label_back", "state_on_surface"],
+      "initial_state": [
+        "on_display(ycb_041_small_marker, writing_tool_rack)",
+        "label_back(ycb_041_small_marker)",
+        "reachable(ycb_041_small_marker)"
+      ],
+      "goal_state": [
+        "label_front(ycb_041_small_marker)",
+        "on_display(ycb_041_small_marker, writing_tool_rack)",
+        "stable(ycb_041_small_marker)"
+      ],
+      "instruction_variants": [
+        "Turn the small marker so its label faces outward in the writing-tool rack.",
+        "Face the small marker forward without disturbing its neighbors.",
+        "細いマーカーのラベルを外向きにし、隣の筆記具を動かさずに揃えてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_orient",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_adjustable_wrench",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_tool_group",
+      "name_en": "Organize the adjustable wrench with fastening tools",
+      "name_ja": "モンキーレンチを締結工具と整頓する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_042_adjustable_wrench",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_042_adjustable_wrench",
+        "group": "fastening_tool_group",
+        "destination": "fastening_tool_rack"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_042_adjustable_wrench, workshop_bench)",
+        "multiple_related_items",
+        "reachable(ycb_042_adjustable_wrench)"
+      ],
+      "goal_state": [
+        "grouped_by_use(fastening_tool_group)",
+        "on_top_of(ycb_042_adjustable_wrench, fastening_tool_rack)",
+        "stable(fastening_tool_group)",
+        "accessible(ycb_042_adjustable_wrench)"
+      ],
+      "instruction_variants": [
+        "Place the adjustable wrench with the other fastening tools on the rack.",
+        "Organize the adjustable wrench so its jaw is accessible for the next use.",
+        "モンキーレンチを他の締結工具とラックに整頓し、あごを取り出しやすくしてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_phillips_screwdriver",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_safe_handover",
+      "name_en": "Hand a Phillips screwdriver handle-first to a worker",
+      "name_ja": "プラスドライバーを持ち手から作業者へ手渡す",
+      "intent_id": "intent_handover",
+      "object_id": "ycb_043_phillips_screwdriver",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_043_phillips_screwdriver",
+        "recipient": "adult_diy_worker",
+        "handover_orientation": "handle_first"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_043_phillips_screwdriver, workshop_bench)",
+        "reachable(ycb_043_phillips_screwdriver)",
+        "recipient_present",
+        "tip_guarded(ycb_043_phillips_screwdriver)",
+        "handle_first_path_clear"
+      ],
+      "goal_state": [
+        "held_by(ycb_043_phillips_screwdriver, adult_diy_worker)",
+        "theme_released_by(robot)",
+        "handle_first(ycb_043_phillips_screwdriver)",
+        "tip_away_from_recipient(ycb_043_phillips_screwdriver)"
+      ],
+      "instruction_variants": [
+        "Hand the Phillips screwdriver to the worker handle-first.",
+        "Pass the screwdriver with its pointed tip away from the recipient.",
+        "プラスドライバーの先端を相手から離し、持ち手から作業者へ手渡してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_flat_screwdriver",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_store_tool",
+      "name_en": "Store the flat screwdriver in a protective tool tray",
+      "name_ja": "マイナスドライバーを保護用工具トレーに収納する",
+      "intent_id": "intent_store",
+      "object_id": "ycb_044_flat_screwdriver",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_044_flat_screwdriver",
+        "destination": "protective_tool_tray"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_044_flat_screwdriver, workshop_bench)",
+        "reachable(ycb_044_flat_screwdriver)",
+        "destination_open",
+        "tip_guard_available(ycb_044_flat_screwdriver)"
+      ],
+      "goal_state": [
+        "inside(ycb_044_flat_screwdriver, protective_tool_tray)",
+        "tip_protected(ycb_044_flat_screwdriver)",
+        "stable(ycb_044_flat_screwdriver)"
+      ],
+      "instruction_variants": [
+        "Put the flat screwdriver in the protective tray with its tip guarded.",
+        "Store the flat-head screwdriver safely after use.",
+        "使用後のマイナスドライバーを先端を保護して工具トレーに収納してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_nails",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_sort_fastener",
+      "name_en": "Sort the nails into a labeled hardware cup",
+      "name_ja": "くぎをラベル付き金具カップへ分別する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_045_nails",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_045_nails",
+        "destination": "nail_cup",
+        "category": "nails"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_045_nails, fastener_sorting_tray)",
+        "reachable(ycb_045_nails)",
+        "destination_open",
+        "counted_set(ycb_045_nails)",
+        "shallow_tray_present"
+      ],
+      "goal_state": [
+        "inside(ycb_045_nails, nail_cup)",
+        "category_correct(ycb_045_nails, nail_cup)",
+        "all_nails_contained(ycb_045_nails)",
+        "stable(nail_cup)"
+      ],
+      "instruction_variants": [
+        "Sort the counted nails into the labeled nail cup without spilling them.",
+        "Move all nails from the shallow tray into their hardware cup.",
+        "数えたくぎをこぼさず、ラベル付きのくぎカップへ分別してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_sort",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_plastic_bolt",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_sort_fastener",
+      "name_en": "Place the plastic bolt with its matching nut in the fastener cup",
+      "name_ja": "プラスチックボルトを対応するナットと留め具カップに入れる",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_046_plastic_bolt",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_046_plastic_bolt",
+        "destination": "plastic_fastener_cup",
+        "matching_part": "ycb_047_plastic_nut",
+        "category": "plastic_bolt"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_046_plastic_bolt, fastener_sorting_tray)",
+        "reachable(ycb_046_plastic_bolt)",
+        "destination_open",
+        "matching_nut_present(ycb_047_plastic_nut)",
+        "counted_set(ycb_046_plastic_bolt)"
+      ],
+      "goal_state": [
+        "inside(ycb_046_plastic_bolt, plastic_fastener_cup)",
+        "paired_with(ycb_046_plastic_bolt, ycb_047_plastic_nut)",
+        "category_correct(ycb_046_plastic_bolt, plastic_fastener_cup)",
+        "stable(plastic_fastener_cup)"
+      ],
+      "instruction_variants": [
+        "Put the plastic bolt in the cup with its matching nut.",
+        "Sort the plastic bolt into the labeled plastic-fastener cup and keep the pair together.",
+        "プラスチックボルトを対応するナットと一緒に、ラベル付きカップへ分別してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_sort",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_plastic_nut",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_tool_group",
+      "name_en": "Pair the plastic nut with its matching bolt in a parts tray",
+      "name_ja": "プラスチックナットを対応するボルトと部品トレーで組にする",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_047_plastic_nut",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_047_plastic_nut",
+        "group": "plastic_fastener_pair",
+        "partner": "ycb_046_plastic_bolt",
+        "destination": "fastener_pair_tray"
+      },
+      "state_ids": ["state_on_surface"],
+      "initial_state": [
+        "on_top_of(ycb_047_plastic_nut, fastener_sorting_tray)",
+        "near(ycb_046_plastic_bolt, fastener_sorting_tray)",
+        "multiple_related_items",
+        "reachable(ycb_047_plastic_nut)"
+      ],
+      "goal_state": [
+        "paired_with(ycb_047_plastic_nut, ycb_046_plastic_bolt)",
+        "grouped_by_use(plastic_fastener_pair)",
+        "on_top_of(ycb_047_plastic_nut, fastener_pair_tray)",
+        "stable(plastic_fastener_pair)"
+      ],
+      "instruction_variants": [
+        "Organize the plastic nut with its matching bolt in the pair tray.",
+        "Keep the plastic fastener pair together in the labeled parts tray.",
+        "プラスチックナットを対応するボルトと組にして、部品トレーに整頓してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_hammer",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_recover_tool",
+      "name_en": "Recover a fallen hammer onto a padded safe surface",
+      "name_ja": "倒れたハンマーをクッション付きの安全な面へ回収する",
+      "intent_id": "intent_recover_from_error",
+      "object_id": "ycb_048_hammer",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_048_hammer",
+        "destination": "padded_recovery_surface"
+      },
+      "state_ids": ["state_fallen"],
+      "initial_state": [
+        "fallen(ycb_048_hammer)",
+        "on_top_of(ycb_048_hammer, low_padded_surface)",
+        "reachable(ycb_048_hammer)",
+        "safety_zone_clear"
+      ],
+      "goal_state": [
+        "on_top_of(ycb_048_hammer, padded_recovery_surface)",
+        "stable(ycb_048_hammer)",
+        "safe_orientation(ycb_048_hammer)",
+        "handle_clear(ycb_048_hammer)"
+      ],
+      "instruction_variants": [
+        "Recover the fallen hammer onto the padded safe surface.",
+        "Pick up the hammer without swinging it and place it in the recovery zone.",
+        "倒れたハンマーを振り回さずに回収し、安全なクッション面へ置いてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_recover",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_small_clamp",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_secure_clamp",
+      "name_en": "Secure a protected fabric sample with the small clamp",
+      "name_ja": "小型クランプで保護した布サンプルを固定する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_049_small_clamp",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_049_small_clamp",
+        "workpiece": "protected_fabric_sample"
+      },
+      "state_ids": ["state_open", "state_on_surface"],
+      "initial_state": [
+        "open(ycb_049_small_clamp)",
+        "workpiece_positioned(protected_fabric_sample)",
+        "jaws_aligned(ycb_049_small_clamp, protected_fabric_sample)",
+        "on_top_of(ycb_049_small_clamp, workshop_bench)",
+        "reachable(ycb_049_small_clamp)"
+      ],
+      "goal_state": [
+        "closed(ycb_049_small_clamp)",
+        "clamped(ycb_049_small_clamp, protected_fabric_sample)",
+        "stable(protected_fabric_sample)",
+        "sample_undamaged(protected_fabric_sample)"
+      ],
+      "instruction_variants": [
+        "Close the small clamp on the protected fabric sample.",
+        "Secure the fabric sample without pinching it or shifting the fixture.",
+        "保護した布サンプルを傷めたり治具を動かしたりせず、小型クランプで固定してください。"
+      ],
+      "skills": ["skill_grasp", "skill_close", "skill_verify"],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_medium_clamp",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_position_tool",
+      "name_en": "Position the medium clamp on the marked work surface",
+      "name_ja": "中型クランプを印の付いた作業面へ配置する",
+      "intent_id": "intent_transport",
+      "object_id": "ycb_050_medium_clamp",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_050_medium_clamp",
+        "source": "tool_staging_tray",
+        "destination": "marked_work_surface"
+      },
+      "state_ids": ["state_open", "state_on_surface"],
+      "initial_state": [
+        "open(ycb_050_medium_clamp)",
+        "on_top_of(ycb_050_medium_clamp, tool_staging_tray)",
+        "reachable(ycb_050_medium_clamp)",
+        "destination_available",
+        "spring_relaxed(ycb_050_medium_clamp)"
+      ],
+      "goal_state": [
+        "on_top_of(ycb_050_medium_clamp, marked_work_surface)",
+        "stable(ycb_050_medium_clamp)",
+        "ready_for_use(ycb_050_medium_clamp)",
+        "jaws_accessible(ycb_050_medium_clamp)"
+      ],
+      "instruction_variants": [
+        "Move the medium clamp from the staging tray to the marked work surface.",
+        "Place the unloaded medium clamp with its jaws accessible for the next operation.",
+        "中型クランプを作業用トレーから印の付いた作業面へ、あごを使える向きで移してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_lift",
+        "skill_navigate_or_reach",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_large_clamp",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_organize_tool_group",
+      "name_en": "Organize the large clamp with the other clamps in a padded rack",
+      "name_ja": "大型クランプを他のクランプとクッション付きラックに整頓する",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_051_large_clamp",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_051_large_clamp",
+        "group": "clamp_set",
+        "destination": "padded_clamp_rack"
+      },
+      "state_ids": ["state_open", "state_on_surface"],
+      "initial_state": [
+        "open(ycb_051_large_clamp)",
+        "spring_relaxed(ycb_051_large_clamp)",
+        "on_top_of(ycb_051_large_clamp, workshop_bench)",
+        "multiple_related_items",
+        "reachable(ycb_051_large_clamp)"
+      ],
+      "goal_state": [
+        "grouped_by_use(clamp_set)",
+        "stored_in(ycb_051_large_clamp, padded_clamp_rack)",
+        "stable(clamp_set)",
+        "spring_relaxed(ycb_051_large_clamp)"
+      ],
+      "instruction_variants": [
+        "Store the large clamp with the other clamps in the padded rack.",
+        "Organize the large clamp so its spring is unloaded and it does not block the other tools.",
+        "大型クランプをばねに負荷をかけず、他の工具をふさがないようクランプラックに整頓してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    },
+    {
+      "id": "task_ycb_round1_extra_large_clamp",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_safe_handover",
+      "name_en": "Hand the unloaded extra-large clamp to a worker",
+      "name_ja": "負荷をかけていない特大クランプを作業者へ手渡す",
+      "intent_id": "intent_handover",
+      "object_id": "ycb_052_extra_large_clamp",
+      "scene_id": "scene_ycb_tool_workshop",
+      "bindings": {
+        "theme": "ycb_052_extra_large_clamp",
+        "recipient": "adult_diy_worker",
+        "handover_orientation": "handles_first"
+      },
+      "state_ids": ["state_open", "state_on_surface"],
+      "initial_state": [
+        "open(ycb_052_extra_large_clamp)",
+        "spring_relaxed(ycb_052_extra_large_clamp)",
+        "on_top_of(ycb_052_extra_large_clamp, workshop_bench)",
+        "reachable(ycb_052_extra_large_clamp)",
+        "recipient_present",
+        "jaws_pointed_away_from_recipient"
+      ],
+      "goal_state": [
+        "held_by(ycb_052_extra_large_clamp, adult_diy_worker)",
+        "theme_released_by(robot)",
+        "spring_relaxed(ycb_052_extra_large_clamp)",
+        "safe_orientation(ycb_052_extra_large_clamp)"
+      ],
+      "instruction_variants": [
+        "Hand the unloaded extra-large clamp to the worker handles-first.",
+        "Pass the extra-large clamp with its jaws pointed away and without compressing the spring.",
+        "負荷をかけていない特大クランプを、あごを相手から離して持ち手から作業者へ手渡してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_handover",
+        "skill_release",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "review_status": "proposed",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round1"
+    }
+  ],
+  "planning": [
+    {
+      "id": "planning_ycb_round1_power_drill",
+      "task_id": "task_ycb_round1_power_drill",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The task uses the supervised workshop handover zone."},
+        {"key": "object", "value": "ycb_035_power_drill", "reason": "The YCB power drill is the item being transferred."},
+        {"key": "object", "value": "adult_diy_worker", "reason": "A consenting recipient is required for the handover."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_035_power_drill_workshop_bench", "reason": "Required initial predicate: on_top_of(ycb_035_power_drill, workshop_bench)."},
+        {"key": "condition", "value": "initial_reachable_ycb_035_power_drill", "reason": "The drill must be reachable without entering the recipient's handover space."},
+        {"key": "condition", "value": "initial_recipient_present", "reason": "Required initial predicate: recipient_present."},
+        {"key": "condition", "value": "power_disabled", "reason": "The powered tool must be battery-removed, unplugged, or otherwise de-energized before collection."},
+        {"key": "condition", "value": "trigger_locked", "reason": "The trigger must be mechanically locked or covered to prevent activation."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must acquire and transfer the rigid drill body."},
+        {"key": "capability", "value": "human_handover", "reason": "The goal requires a controlled transfer to a person."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The robot or reviewer must verify safe orientation and de-energized setup."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is a supervised household DIY handover."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The adult_diy_worker has a stable grasp on the drill handle before the robot releases it.",
+          "The drill remains de-energized, trigger-locked, and pointed safely throughout the handover."
+        ],
+        "setup": [
+          "Use a battery-removed, unplugged, or otherwise nonfunctional drill and mechanically lock or cover its trigger.",
+          "Place the drill on the marked workbench with a consenting recipient in the handover zone; keep the chuck and bit pointed away from people."
+        ],
+        "reset": [
+          "Return the drill to the workbench, confirm it is de-energized, and restore the trigger lock.",
+          "Clear the handover zone and record any drop, premature release, or contact."
+        ],
+        "quality_checks": [
+          "Review that the recipient acquired the handle before robot release and that no finger entered the trigger path.",
+          "Verify no powered motion, trigger actuation, drop, or unintended person contact occurred."
+        ],
+        "failure_modes": [
+          "Trigger activation or powered motion.",
+          "Release before a stable recipient grasp.",
+          "Chuck, bit, or drill body contacts the recipient."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_wood_block",
+      "task_id": "task_ycb_round1_wood_block",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a stable bench and a marked construction-parts area."},
+        {"key": "object", "value": "ycb_036_wood_block", "reason": "The YCB wood block is the focus item to organize."},
+        {"key": "object", "value": "construction_block_group", "reason": "Matching construction pieces define the related group."},
+        {"key": "object", "value": "construction_parts_area", "reason": "A marked destination is needed to observe organization."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_036_wood_block_workshop_bench", "reason": "The block starts on the workshop bench."},
+        {"key": "condition", "value": "multiple_related_items", "reason": "The grouping goal cannot be observed without matching construction pieces."},
+        {"key": "condition", "value": "parts_area_available", "reason": "The marked construction-parts area must have room for a stable placement."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must move the rigid block without disturbing the group."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The related-item grouping and stable placement require visual verification."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is household construction-piece organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The YCB wood block is inside the marked construction_parts_area with the matching blocks, and no block is left outside the group.",
+          "The construction block group remains stable after release and the wood block does not obstruct retrieval of another piece."
+        ],
+        "setup": [
+          "Place the wood block and at least two matching construction pieces on the bench, with the marked construction_parts_area empty and reachable.",
+          "Use a level, non-sliding work surface and keep neighboring pieces separated enough to identify the focus block."
+        ],
+        "reset": [
+          "Remove all construction pieces from the marked area and return the YCB block to its starting bench location.",
+          "Restore the same count and spacing of matching pieces for the next trial."
+        ],
+        "quality_checks": [
+          "Check that the wood block is in the intended group rather than merely near an unrelated tool.",
+          "Check group stability, neighbor displacement, and clear access to the block."
+        ],
+        "failure_modes": [
+          "Block placed outside the construction-parts area.",
+          "Matching pieces mixed with unrelated tools.",
+          "Unstable stack or blocked access to a construction piece."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_scissors",
+      "task_id": "task_ycb_round1_scissors",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop contains a marked human handover zone."},
+        {"key": "object", "value": "ycb_037_scissors", "reason": "The YCB scissors are the item being transferred."},
+        {"key": "object", "value": "adult_diy_worker", "reason": "A consenting recipient is required."},
+        {"key": "condition", "value": "initial_closed_ycb_037_scissors", "reason": "The blades must start closed."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_037_scissors_workshop_bench", "reason": "The scissors start on the marked workbench."},
+        {"key": "condition", "value": "initial_reachable_ycb_037_scissors", "reason": "The scissors must be reachable without an unsafe approach."},
+        {"key": "condition", "value": "initial_recipient_present", "reason": "Required initial predicate: recipient_present."},
+        {"key": "condition", "value": "blades_guarded_or_closed", "reason": "The sharp blades must remain closed or physically guarded for the trial."},
+        {"key": "condition", "value": "handle_first_handover", "reason": "The recipient must receive the handles, not the blades."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must grasp and orient the scissors."},
+        {"key": "capability", "value": "human_handover", "reason": "The goal requires a controlled transfer to a person."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Blade closure and handle-first orientation must be checked."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is a supervised household tool handover."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The recipient has a stable grasp on the scissor handles before robot release.",
+          "The blades remain closed or guarded and point away from the recipient throughout the transfer."
+        ],
+        "setup": [
+          "Use closed scissors with a blade guard or a blunt training replica; place them on the bench with the handles accessible.",
+          "Use a consenting recipient, keep the blade path clear of every person, and define a no-contact handover zone."
+        ],
+        "reset": [
+          "Return the scissors closed and guarded to the bench; inspect that the blades and handles are undamaged.",
+          "Clear the recipient zone and restore the same handle-first approach orientation."
+        ],
+        "quality_checks": [
+          "Verify the recipient grasped the handles before release and that the blades never crossed the recipient's hand path.",
+          "Record any blade opening, tip contact, drop, or collision with nearby tools."
+        ],
+        "failure_modes": [
+          "Scissors open during approach or handover.",
+          "Robot releases before the recipient has the handles.",
+          "Blade or tip contacts a person or neighboring object."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_padlock",
+      "task_id": "task_ycb_round1_padlock",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a stable bench and a secured lock fixture."},
+        {"key": "object", "value": "ycb_038_padlock", "reason": "The YCB padlock is the lock being opened."},
+        {"key": "object", "value": "ycb_039_keys", "reason": "A matched key is needed to open the padlock."},
+        {"key": "object", "value": "hasp_fixture", "reason": "The fixed hasp makes shackle release observable."},
+        {"key": "condition", "value": "initial_closed_ycb_038_padlock", "reason": "The padlock must start closed."},
+        {"key": "condition", "value": "matching_key_available", "reason": "Only the matched key should be used for this candidate."},
+        {"key": "condition", "value": "key_inserted", "reason": "The key starts inserted so the opening interaction is scoped."},
+        {"key": "condition", "value": "fixture_stable", "reason": "The hasp fixture must not move while torque is applied."},
+        {"key": "condition", "value": "initial_reachable_ycb_038_padlock", "reason": "The lock must be reachable with a clear key-turning workspace."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must hold the lock and key."},
+        {"key": "capability", "value": "articulated_closure", "reason": "The robot must apply the opening motion to the lock closure."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Key identity, shackle release, and fixture stability require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is a supervised household lock-handling task."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The matched key opens the padlock and the shackle visibly releases from the hasp.",
+          "The key remains controlled and the hasp fixture stays in place after opening."
+        ],
+        "setup": [
+          "Use an unloaded padlock on a fixed, padded hasp fixture; identify the matched key and insert it before the trial.",
+          "Keep fingers and nonessential objects clear of the shackle and key-turn arc."
+        ],
+        "reset": [
+          "Close and relock the padlock on the fixture, remove the key, and return it to the designated key position.",
+          "Check that the shackle, key, and fixture show no damage or binding before the next trial."
+        ],
+        "quality_checks": [
+          "Verify that the matched key was used and that the shackle released rather than the fixture moving.",
+          "Check that the key was not dropped, twisted beyond the lock stop, or left trapped in the mechanism."
+        ],
+        "failure_modes": [
+          "Wrong key or key dropped.",
+          "Lock mechanism jams or is over-torqued.",
+          "Fixture shifts or the shackle fails to release."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_keys",
+      "task_id": "task_ycb_round1_keys",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop includes a designated small-item storage tray."},
+        {"key": "object", "value": "ycb_039_keys", "reason": "The YCB key set is the item to store."},
+        {"key": "object", "value": "key_tray", "reason": "The key tray is the observable storage destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_039_keys_workshop_bench", "reason": "The key set starts on the workbench."},
+        {"key": "condition", "value": "initial_reachable_ycb_039_keys", "reason": "The key set must be reachable without sweeping other small parts."},
+        {"key": "condition", "value": "destination_open", "reason": "The key tray must accept the complete key set."},
+        {"key": "condition", "value": "key_set_intact", "reason": "All keys and the ring must remain together during storage."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must move the rigid key set into the tray."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Containment of every key and tray stability require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is household tool and key organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The complete YCB key set is inside the key_tray, with no key or ring left on the workbench.",
+          "The tray and key set are stable and the keys remain available for later retrieval."
+        ],
+        "setup": [
+          "Place the intact key set on a level workbench beside an open, low-sided key_tray with a clear approach.",
+          "Use a tethered or oversized training key set when evaluating small-item handling; keep the original set contained if it is not used."
+        ],
+        "reset": [
+          "Remove the entire key set from the tray and return it to the marked starting area.",
+          "Confirm the ring and each key are present before restoring the open tray."
+        ],
+        "quality_checks": [
+          "Count or visually verify every key and the ring inside the tray.",
+          "Check that no key bounced outside the tray and that the tray was not pushed into another tool."
+        ],
+        "failure_modes": [
+          "A key or ring remains outside the tray.",
+          "Small parts spill or become occluded under another tool.",
+          "Tray tips, slides, or blocks access to the keys."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_large_marker",
+      "task_id": "task_ycb_round1_large_marker",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a stable writing bench and a labeling card."},
+        {"key": "object", "value": "ycb_040_large_marker", "reason": "The YCB large marker is the writing tool to recap."},
+        {"key": "object", "value": "large_marker_cap", "reason": "The attached cap is the closure to seat."},
+        {"key": "object", "value": "labeling_card", "reason": "The card supplies the post-labeling context for the task."},
+        {"key": "condition", "value": "initial_open_ycb_040_large_marker", "reason": "The marker starts uncapped so recap is observable."},
+        {"key": "condition", "value": "closure_attached", "reason": "The cap must be retained and available for closure."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_040_large_marker_workshop_bench", "reason": "The marker starts on the writing bench."},
+        {"key": "condition", "value": "labeling_card_present", "reason": "A completed labeling card establishes the after-use context."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must hold and seat the cap."},
+        {"key": "capability", "value": "articulated_closure", "reason": "The cap closure requires controlled insertion or pressing."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Cap seating and tip coverage must be verified."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is a supervised household labeling task."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The large marker cap is fully seated and retained, with the writing tip no longer exposed.",
+          "The capped marker remains stable on the bench and leaves no fresh ink transfer on the labeling card or fixture."
+        ],
+        "setup": [
+          "Place an uncapped, intact large marker beside a completed labeling card; keep its cap attached or immediately accessible.",
+          "Use a capped writing-tool fixture and non-slip bench, and keep fingers clear of the marker tip while seating the cap."
+        ],
+        "reset": [
+          "Uncap the marker without damaging the tip, return it to the marked bench position, and restore the card.",
+          "Check that the cap remains attached and that the bench has no ink residue requiring cleanup."
+        ],
+        "quality_checks": [
+          "Inspect the cap-to-body seam for complete seating and confirm the tip is covered from all viewing angles.",
+          "Check the labeling card, marker label, and bench for unintended ink transfer."
+        ],
+        "failure_modes": [
+          "Cap dropped or only partially seated.",
+          "Marker tip damaged or left exposed.",
+          "Ink transferred to the card, bench, or robot gripper."
+        ],
+        "consumables": ["labeling card"],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_small_marker",
+      "task_id": "task_ycb_round1_small_marker",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop includes a writing-tool rack for front-facing alignment."},
+        {"key": "object", "value": "ycb_041_small_marker", "reason": "The YCB small marker is the focus item."},
+        {"key": "object", "value": "writing_tool_rack", "reason": "The rack provides the display position and neighboring-tool constraints."},
+        {"key": "condition", "value": "on_display_ycb_041_small_marker_writing_tool_rack", "reason": "The marker starts in the writing-tool rack."},
+        {"key": "condition", "value": "label_back_ycb_041_small_marker", "reason": "The label starts facing away so reorientation is observable."},
+        {"key": "condition", "value": "initial_reachable_ycb_041_small_marker", "reason": "The marker must be reachable without dislodging neighboring tools."},
+        {"key": "condition", "value": "rack_space_available", "reason": "The rack must have sufficient clearance for rotation and release."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must grasp and rotate the marker."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Label orientation, rack containment, and neighbor stability require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is household writing-tool organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The small marker label faces outward while the marker remains fully supported in the writing_tool_rack.",
+          "Adjacent writing tools remain in their original slots and the small marker is stable after release."
+        ],
+        "setup": [
+          "Place the capped small marker label-back in the rack with two neighboring writing tools and enough clearance to rotate it.",
+          "Use a non-slip rack on a level bench and mark the desired outward-facing orientation."
+        ],
+        "reset": [
+          "Rotate the small marker back to label-back without moving its neighbors.",
+          "Restore the original slot occupancy and confirm the rack remains stable."
+        ],
+        "quality_checks": [
+          "Check the label-front orientation from the designated viewing direction.",
+          "Check for neighbor displacement, marker tip exposure, and any marker or rack instability."
+        ],
+        "failure_modes": [
+          "Marker remains label-back or is placed outside its rack slot.",
+          "Neighboring tools are knocked out of alignment.",
+          "Marker rolls, tips, or exposes its writing tip."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_adjustable_wrench",
+      "task_id": "task_ycb_round1_adjustable_wrench",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a fastening-tool rack and stable bench."},
+        {"key": "object", "value": "ycb_042_adjustable_wrench", "reason": "The YCB adjustable wrench is the focus tool."},
+        {"key": "object", "value": "fastening_tool_group", "reason": "Related fastening tools define the organization group."},
+        {"key": "object", "value": "fastening_tool_rack", "reason": "The rack is the marked destination for the wrench."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_042_adjustable_wrench_workshop_bench", "reason": "The wrench starts on the bench."},
+        {"key": "condition", "value": "multiple_related_items", "reason": "The grouping goal requires other fastening tools."},
+        {"key": "condition", "value": "rack_stable", "reason": "The rack must support the wrench without tipping."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must move the rigid wrench into the rack."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Group membership, jaw accessibility, and rack stability require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is household tool organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The adjustable wrench is supported in the fastening_tool_rack with the other fastening tools.",
+          "Its adjustable jaw remains accessible and the organized group is stable after release."
+        ],
+        "setup": [
+          "Place the wrench and at least two fastening tools on the bench beside a stable rack with a dedicated wrench position.",
+          "Set the wrench to a neutral jaw opening and keep the rack free of sharp or powered tools during the trial."
+        ],
+        "reset": [
+          "Remove the wrench from the rack and return it to the marked bench position.",
+          "Restore the related fastening tools and neutral jaw opening without changing the rack."
+        ],
+        "quality_checks": [
+          "Verify the wrench is grouped with fastening tools rather than mixed into an unrelated storage slot.",
+          "Check that the wrench can be retrieved without moving another tool and that the rack did not shift."
+        ],
+        "failure_modes": [
+          "Wrench placed in the wrong rack or outside the organization area.",
+          "Jaw or handle blocks access to neighboring tools.",
+          "Rack tips or the wrench is left unstable."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_phillips_screwdriver",
+      "task_id": "task_ycb_round1_phillips_screwdriver",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop contains a marked handle-first handover zone."},
+        {"key": "object", "value": "ycb_043_phillips_screwdriver", "reason": "The YCB Phillips screwdriver is the item being transferred."},
+        {"key": "object", "value": "adult_diy_worker", "reason": "A consenting recipient is required."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_043_phillips_screwdriver_workshop_bench", "reason": "The screwdriver starts on the workbench."},
+        {"key": "condition", "value": "initial_reachable_ycb_043_phillips_screwdriver", "reason": "The screwdriver must be reachable with its tip path controlled."},
+        {"key": "condition", "value": "initial_recipient_present", "reason": "Required initial predicate: recipient_present."},
+        {"key": "condition", "value": "tip_guarded", "reason": "Use a blunt training tool, cap, or other physical protection for the pointed tip."},
+        {"key": "condition", "value": "handle_first_path_clear", "reason": "The recipient's approach path to the handle must be unobstructed."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must grasp and orient the screwdriver."},
+        {"key": "capability", "value": "human_handover", "reason": "The goal requires a controlled transfer to a person."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Tip protection and handle-first orientation require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is a supervised household repair handover."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The worker has a stable grasp on the Phillips screwdriver handle before robot release.",
+          "The pointed tip remains guarded or directed away from the recipient for the entire transfer."
+        ],
+        "setup": [
+          "Use a blunt training screwdriver or physically cap the Phillips tip; place it handle-accessible on the marked bench.",
+          "Use a consenting recipient, define a clear handover corridor, and keep all hands out of the tip path."
+        ],
+        "reset": [
+          "Return the screwdriver to the bench with its tip guarded and restore the handover corridor.",
+          "Inspect the handle, shaft, guard, and nearby surface for damage or unintended contact."
+        ],
+        "quality_checks": [
+          "Verify handle-first orientation and recipient grasp timing before release.",
+          "Record any tip exposure, tip contact, drop, or collision with another tool."
+        ],
+        "failure_modes": [
+          "Pointed tip is exposed toward the recipient.",
+          "Robot releases before the handle is securely held.",
+          "Screwdriver contacts a person or drops into the work area."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_flat_screwdriver",
+      "task_id": "task_ycb_round1_flat_screwdriver",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a protective tool tray."},
+        {"key": "object", "value": "ycb_044_flat_screwdriver", "reason": "The YCB flat screwdriver is the item to store."},
+        {"key": "object", "value": "protective_tool_tray", "reason": "The tray is the observable safe-storage destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_044_flat_screwdriver_workshop_bench", "reason": "The screwdriver starts on the workbench."},
+        {"key": "condition", "value": "initial_reachable_ycb_044_flat_screwdriver", "reason": "The screwdriver must be reachable without exposing its tip to a person."},
+        {"key": "condition", "value": "destination_open", "reason": "The protective tray must have an open slot for the tool."},
+        {"key": "condition", "value": "tip_guard_available", "reason": "A cap, sheath, or tray geometry must protect the pointed tip after placement."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must move the rigid screwdriver into the tray."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Containment and tip protection require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is household repair-tool storage."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The flat screwdriver is fully supported inside the protective_tool_tray with its tip covered or isolated.",
+          "The tray remains stable and the screwdriver cannot roll or fall out after release."
+        ],
+        "setup": [
+          "Place the flat screwdriver on the bench with a fitted tip guard or an open tray slot that physically shields the tip.",
+          "Keep the marked storage slot separate from people and from powered or sharp tools that could snag the screwdriver."
+        ],
+        "reset": [
+          "Remove the screwdriver from the tray, restore its guard, and return it to the marked bench position.",
+          "Check the tray slot and tool tip for damage before the next trial."
+        ],
+        "quality_checks": [
+          "Inspect that the full tool, including its tip, is contained in the intended tray position.",
+          "Check for exposed-tip contact, tray displacement, rolling, or interference with neighboring tools."
+        ],
+        "failure_modes": [
+          "Tip remains exposed or contacts a person or fixture.",
+          "Screwdriver is only partially supported or rolls out of the tray.",
+          "Wrong tray slot is used or nearby tools are displaced."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_nails",
+      "task_id": "task_ycb_round1_nails",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a shallow sorting tray and labeled hardware cups."},
+        {"key": "object", "value": "ycb_045_nails", "reason": "The YCB nail set is the small fastener set to sort."},
+        {"key": "object", "value": "fastener_sorting_tray", "reason": "The tray keeps the sharp small parts contained before sorting."},
+        {"key": "object", "value": "nail_cup", "reason": "The labeled cup is the observable nail destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_045_nails_fastener_sorting_tray", "reason": "The nails start contained in the shallow sorting tray."},
+        {"key": "condition", "value": "initial_reachable_ycb_045_nails", "reason": "The set must be reachable without sweeping nails into the work area."},
+        {"key": "condition", "value": "destination_open", "reason": "The nail cup must be upright and open."},
+        {"key": "condition", "value": "counted_fastener_set", "reason": "A fixed count makes missing or spilled nails observable."},
+        {"key": "condition", "value": "shallow_tray_present", "reason": "The tray provides a bounded handling area for sharp small parts."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must transfer the rigid nails or their contained set."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Count, category, and containment require visual verification."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is supervised household hardware organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "Every counted nail is inside the labeled nail_cup and no nail remains outside the bounded handling area.",
+          "The nail cup is upright and stable, with no nail point exposed toward a person."
+        ],
+        "setup": [
+          "Use a counted, inert or blunt training nail set in a shallow tray; keep the tray on a non-slip bench and the cup upright.",
+          "Keep hands and people out of the nail path, and do not mix the nails with other fastener categories."
+        ],
+        "reset": [
+          "Count and return every nail to the shallow sorting tray, then restore the empty upright nail cup.",
+          "Confirm no loose nail remains on the bench or under the tray before the next trial."
+        ],
+        "quality_checks": [
+          "Count the nails in the cup and inspect the surrounding bench for escaped or hidden pieces.",
+          "Check cup stability, category correctness, and that no sharp point is exposed toward the operator."
+        ],
+        "failure_modes": [
+          "Nails spill, go missing, or remain outside the cup.",
+          "Nails are mixed with a different fastener category.",
+          "Cup tips or a nail point enters a person's workspace."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_plastic_bolt",
+      "task_id": "task_ycb_round1_plastic_bolt",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a bounded fastener-sorting area."},
+        {"key": "object", "value": "ycb_046_plastic_bolt", "reason": "The YCB plastic bolt is the focus fastener."},
+        {"key": "object", "value": "ycb_047_plastic_nut", "reason": "The matching plastic nut must remain paired with the bolt."},
+        {"key": "object", "value": "plastic_fastener_cup", "reason": "The labeled cup is the observable destination."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_046_plastic_bolt_fastener_sorting_tray", "reason": "The bolt starts in the bounded sorting tray."},
+        {"key": "condition", "value": "matching_nut_present", "reason": "The paired-bolt goal requires the matching nut to be present."},
+        {"key": "condition", "value": "destination_open", "reason": "The plastic-fastener cup must be open and stable."},
+        {"key": "condition", "value": "counted_fastener_set", "reason": "A fixed bolt count makes loss or cross-sorting observable."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must move the small rigid bolt into the cup."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Matching-part identity and cup containment require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is supervised household fastener organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The plastic bolt is inside the plastic_fastener_cup with its matching plastic nut and no bolt is left in the sorting tray.",
+          "The cup is stable and the bolt-nut pair is visibly identifiable without mixing with another category."
+        ],
+        "setup": [
+          "Place the plastic bolt and its matching plastic nut in a shallow, bounded sorting tray beside an upright labeled cup.",
+          "Use a non-slip tray and keep all other fastener categories outside the active area."
+        ],
+        "reset": [
+          "Remove both plastic fasteners from the cup and return them to their marked positions in the sorting tray.",
+          "Restore an empty, upright cup and verify that no small part remains under or beside the tray."
+        ],
+        "quality_checks": [
+          "Verify the bolt and matching nut are together in the intended cup and that the category label is correct.",
+          "Check for dropped parts, cup movement, and cross-mixing with other fasteners."
+        ],
+        "failure_modes": [
+          "Bolt or nut is lost, left outside the cup, or paired with the wrong part.",
+          "Plastic fasteners are mixed with nails or another category.",
+          "Cup tips or the small parts bounce outside the bounded area."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_plastic_nut",
+      "task_id": "task_ycb_round1_plastic_nut",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a bounded fastener-pair organization area."},
+        {"key": "object", "value": "ycb_047_plastic_nut", "reason": "The YCB plastic nut is the focus fastener."},
+        {"key": "object", "value": "ycb_046_plastic_bolt", "reason": "The matching plastic bolt defines the pair."},
+        {"key": "object", "value": "fastener_pair_tray", "reason": "The tray is the marked destination for the paired parts."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_047_plastic_nut_fastener_sorting_tray", "reason": "The nut starts in the sorting tray."},
+        {"key": "condition", "value": "near_ycb_046_plastic_bolt", "reason": "The matching bolt must be available for pairing."},
+        {"key": "condition", "value": "multiple_related_items", "reason": "The organization goal requires the bolt and nut to be distinguished from other parts."},
+        {"key": "condition", "value": "pair_tray_available", "reason": "The marked pair tray must have room for both fasteners."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must move and align the small rigid nut."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Pair identity, placement, and tray stability require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is supervised household fastener organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The plastic nut and its matching bolt occupy the same marked fastener_pair_tray area, with the nut visibly paired to that bolt.",
+          "The pair is stable and separated from unrelated fasteners after release."
+        ],
+        "setup": [
+          "Place the plastic nut, matching bolt, and at least one unrelated fastener in a shallow sorting tray beside an empty pair tray.",
+          "Use a non-slip surface, sufficient lighting for part identification, and no loose parts outside the bounded area."
+        ],
+        "reset": [
+          "Separate the plastic nut and bolt and return each to its marked sorting-tray position.",
+          "Clear unrelated parts from the pair tray and verify the tray is stable for the next trial."
+        ],
+        "quality_checks": [
+          "Check that the nut is paired with the correct bolt rather than merely placed nearby.",
+          "Check pair-tray containment, unrelated-part separation, and whether either fastener rolled away."
+        ],
+        "failure_modes": [
+          "Nut paired with the wrong bolt or left without its mate.",
+          "Small parts spill or are mixed with unrelated fasteners.",
+          "Pair tray shifts or leaves a fastener unstable."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_hammer",
+      "task_id": "task_ycb_round1_hammer",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a padded recovery surface and a clear safety zone."},
+        {"key": "object", "value": "ycb_048_hammer", "reason": "The YCB hammer is the fallen tool to recover."},
+        {"key": "object", "value": "padded_recovery_surface", "reason": "A padded surface limits impact during recovery."},
+        {"key": "condition", "value": "fallen_ycb_048_hammer", "reason": "The hammer must start fallen for recovery to be observable."},
+        {"key": "condition", "value": "initial_reachable_ycb_048_hammer", "reason": "The hammer must be reachable without pushing it farther away."},
+        {"key": "condition", "value": "safety_zone_clear", "reason": "No person may be in the hammer's swing or recovery path."},
+        {"key": "condition", "value": "padded_surface_present", "reason": "The destination must absorb an accidental contact."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must grasp and reposition the rigid hammer."},
+        {"key": "capability", "value": "visual_inspection", "reason": "The head, handle, and safe final orientation require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is supervised household tool recovery."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The hammer is fully supported on the padded_recovery_surface with its handle clear and its head in a stable safe orientation.",
+          "The hammer is recovered without swinging, striking, dropping again, or entering a person's workspace."
+        ],
+        "setup": [
+          "Use a static, unloaded hammer on a low padded surface and clear all people and fragile objects from the recovery zone.",
+          "Place the handle where it can be acquired without contacting the striking head or sweeping across the bench."
+        ],
+        "reset": [
+          "Return the hammer to the same fallen pose on the low padded surface and clear the recovery destination.",
+          "Inspect the hammer, padding, and bench for damage or unintended contact marks."
+        ],
+        "quality_checks": [
+          "Verify the hammer rests stably on the padded destination and that its handle is not blocking a person or tool path.",
+          "Review the trajectory for a controlled recovery rather than a swing, slide, or second drop."
+        ],
+        "failure_modes": [
+          "Hammer swings, strikes the bench, or enters a person's space.",
+          "Hammer is dropped again or pushed out of reach.",
+          "Hammer rests unstable or blocks access to the recovery zone."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_small_clamp",
+      "task_id": "task_ycb_round1_small_clamp",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop contains a stable fixture and a protected sample zone."},
+        {"key": "object", "value": "ycb_049_small_clamp", "reason": "The YCB small clamp is the tool being closed."},
+        {"key": "object", "value": "protected_fabric_sample", "reason": "The protected sample makes clamping and damage observable."},
+        {"key": "condition", "value": "initial_open_ycb_049_small_clamp", "reason": "The small clamp must start open."},
+        {"key": "condition", "value": "workpiece_positioned", "reason": "The fabric sample must be fixed in the fixture before clamping."},
+        {"key": "condition", "value": "jaws_aligned", "reason": "The clamp jaws must be aligned over the protected sample."},
+        {"key": "condition", "value": "fixture_stable", "reason": "The workbench fixture must not move under spring force."},
+        {"key": "condition", "value": "spring_force_controlled", "reason": "The trial must use a controlled, unloaded spring closure with fingers outside the jaws."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must position the clamp and workpiece."},
+        {"key": "capability", "value": "articulated_closure", "reason": "The robot must close the clamp jaws in a controlled way."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Jaw alignment, secure contact, and sample condition require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is a supervised household fastening setup."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The small clamp is closed on the protected fabric sample, and the sample remains in its marked position without visible damage.",
+          "The clamp and fixture remain stable after release, with no finger or gripper trapped between the spring jaws."
+        ],
+        "setup": [
+          "Use a low-force training setup with a padded fabric sample secured in a stable fixture; keep the small clamp jaws and spring unloaded before the trial.",
+          "Mark the jaw contact area and keep all hands, cables, and fragile objects outside the pinch zone."
+        ],
+        "reset": [
+          "Open the small clamp, remove the fabric sample, and restore the marked sample position.",
+          "Check the jaws, spring, padding, and fixture for damage before reloading the safe setup."
+        ],
+        "quality_checks": [
+          "Inspect jaw alignment, clamp closure, sample position, and sample surface for compression or tearing.",
+          "Verify the fixture did not shift and that the spring closure did not cause a pinch or uncontrolled release."
+        ],
+        "failure_modes": [
+          "Fingers or gripper enter the pinch zone.",
+          "Jaws are misaligned, clamp slips, or the fixture moves.",
+          "Fabric sample is torn, creased beyond the rubric, or left unsecured."
+        ],
+        "consumables": ["protected fabric sample"],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_medium_clamp",
+      "task_id": "task_ycb_round1_medium_clamp",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a staging tray and a marked work surface."},
+        {"key": "object", "value": "ycb_050_medium_clamp", "reason": "The YCB medium clamp is the tool to position."},
+        {"key": "object", "value": "tool_staging_tray", "reason": "The tray is the source surface."},
+        {"key": "object", "value": "marked_work_surface", "reason": "The marked work surface is the destination."},
+        {"key": "condition", "value": "initial_open_ycb_050_medium_clamp", "reason": "The unloaded clamp starts open and ready for placement."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_050_medium_clamp_tool_staging_tray", "reason": "The medium clamp starts in the staging tray."},
+        {"key": "condition", "value": "initial_reachable_ycb_050_medium_clamp", "reason": "The clamp must be reachable with its spring and jaws controlled."},
+        {"key": "condition", "value": "destination_available", "reason": "The marked work surface must have room for the medium clamp."},
+        {"key": "condition", "value": "spring_relaxed", "reason": "The clamp must remain unloaded while it is transported."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must lift and place the rigid clamp."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Destination, stability, and jaw accessibility require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is supervised household tool staging."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The medium clamp rests fully on the marked_work_surface inside its placement boundary.",
+          "The clamp is stable, spring-relaxed, and positioned so its jaws are accessible for the next operation."
+        ],
+        "setup": [
+          "Place the unloaded, open medium clamp in a stable tool_staging_tray and clear a marked destination on the workbench.",
+          "Keep the clamp's spring and jaws free of fabric, cables, fingers, and neighboring tools during transport."
+        ],
+        "reset": [
+          "Return the medium clamp to the same open, unloaded pose in the staging tray.",
+          "Clear the marked work surface and verify that no tool was displaced during the trial."
+        ],
+        "quality_checks": [
+          "Check that the entire clamp is within the destination boundary and that the jaws remain accessible.",
+          "Check for sliding, tipping, spring compression, collision, or obstruction of the work surface."
+        ],
+        "failure_modes": [
+          "Clamp placed outside the marked area or left unstable.",
+          "Spring compresses unexpectedly or jaws catch a person, cable, or neighboring tool.",
+          "Clamp blocks the next-operation workspace."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_large_clamp",
+      "task_id": "task_ycb_round1_large_clamp",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a padded rack sized for the clamp group."},
+        {"key": "object", "value": "ycb_051_large_clamp", "reason": "The YCB large clamp is the focus tool to organize."},
+        {"key": "object", "value": "clamp_set", "reason": "Other clamps define the related organization group."},
+        {"key": "object", "value": "padded_clamp_rack", "reason": "The rack provides supported storage for the large clamp."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_051_large_clamp_workshop_bench", "reason": "The large clamp starts on the workbench."},
+        {"key": "condition", "value": "initial_open_ycb_051_large_clamp", "reason": "The jaws start open and visibly accessible."},
+        {"key": "condition", "value": "multiple_related_items", "reason": "The grouping goal requires other clamps in the set."},
+        {"key": "condition", "value": "rack_stable", "reason": "The padded rack must support the large clamp without tipping."},
+        {"key": "condition", "value": "spring_relaxed", "reason": "The large spring clamp must be stored unloaded."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must move the large rigid clamp into the rack."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Group membership, spring state, and rack stability require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is supervised household clamp organization."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The large clamp is supported in the padded_clamp_rack with the other clamps and does not block retrieval of a neighboring clamp.",
+          "The large clamp remains open and spring-relaxed, and the complete clamp group is stable after release."
+        ],
+        "setup": [
+          "Place the large clamp and at least two other clamps on the bench beside an empty, padded, size-appropriate rack.",
+          "Keep every clamp unloaded with its jaws clear, and secure the rack to a non-slip work surface."
+        ],
+        "reset": [
+          "Remove the large clamp from the rack and return it open to the marked bench position.",
+          "Restore the other clamps and verify the rack padding and supports have not shifted."
+        ],
+        "quality_checks": [
+          "Verify the large clamp is grouped with the other clamps and fully supported by the rack.",
+          "Check spring relaxation, jaw clearance, neighbor access, rack stability, and absence of pinch contact."
+        ],
+        "failure_modes": [
+          "Large clamp placed in the wrong rack or left unsupported.",
+          "Spring is compressed, jaws catch a neighboring tool, or a pinch zone is exposed.",
+          "Rack tips or blocks access to the other clamps."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round1_extra_large_clamp",
+      "task_id": "task_ycb_round1_extra_large_clamp",
+      "requirements": [
+        {"key": "scene_id", "value": "scene_ycb_tool_workshop", "reason": "The workshop provides a marked handover corridor for the large spring tool."},
+        {"key": "object", "value": "ycb_052_extra_large_clamp", "reason": "The YCB extra-large clamp is the item being transferred."},
+        {"key": "object", "value": "adult_diy_worker", "reason": "A consenting recipient is required for the handover."},
+        {"key": "condition", "value": "initial_open_ycb_052_extra_large_clamp", "reason": "The clamp starts open with its jaws visible."},
+        {"key": "condition", "value": "spring_relaxed", "reason": "The extra-large clamp must be unloaded during transfer."},
+        {"key": "condition", "value": "initial_on_top_of_ycb_052_extra_large_clamp_workshop_bench", "reason": "The clamp starts on the workbench."},
+        {"key": "condition", "value": "initial_reachable_ycb_052_extra_large_clamp", "reason": "The clamp must be reachable without entering the recipient's space."},
+        {"key": "condition", "value": "initial_recipient_present", "reason": "Required initial predicate: recipient_present."},
+        {"key": "condition", "value": "jaws_pointed_away_from_recipient", "reason": "The spring jaws must remain pointed away during handover."},
+        {"key": "capability", "value": "rigid_manipulation", "reason": "The robot must grasp and orient the large clamp."},
+        {"key": "capability", "value": "human_handover", "reason": "The goal requires a controlled transfer to a person."},
+        {"key": "capability", "value": "visual_inspection", "reason": "Jaw direction, spring state, and recipient grasp require inspection."},
+        {"key": "role", "value": "home_user", "reason": "The proposed activity is a supervised household tool handover."}
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The worker has a stable grasp on the extra-large clamp handles before the robot releases it.",
+          "The clamp remains spring-relaxed with its jaws pointed away from the recipient throughout the transfer."
+        ],
+        "setup": [
+          "Use an unloaded extra-large clamp with padded or guarded jaws; place it on the marked bench with handles accessible.",
+          "Use a consenting recipient, clear the handover corridor, and keep all fingers away from the spring and jaw pinch zones."
+        ],
+        "reset": [
+          "Return the clamp open and spring-relaxed to the bench with the jaws pointed away from people.",
+          "Clear the recipient zone and inspect handles, spring, jaws, padding, and bench for damage."
+        ],
+        "quality_checks": [
+          "Verify the recipient grasped the handles before release and that the clamp stayed in the declared safe orientation.",
+          "Check that no spring compression, jaw snap, drop, or person contact occurred."
+        ],
+        "failure_modes": [
+          "Spring compresses or jaws snap during the handover.",
+          "Robot releases before a stable grasp on the handles.",
+          "Jaws or clamp body contact the recipient or the clamp is dropped."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_task_ycb_round1_power_drill_task_suitability",
+      "subject_id": "task_ycb_round1_power_drill",
+      "claim_type": "task_suitability",
+      "statement": "This de-energized power-drill handover is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_035_power_drill.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_power_drill_population_frequency",
+      "subject_id": "task_ycb_round1_power_drill",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific power-drill handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_power_drill_robot_execution",
+      "subject_id": "task_ycb_round1_power_drill",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific power-drill handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed procedure and safety setup are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round1_power_drill_asset_compatibility",
+      "subject_id": "task_ycb_round1_power_drill",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific power-drill handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a de-energized setup do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_wood_block_task_suitability",
+      "subject_id": "task_ycb_round1_wood_block",
+      "claim_type": "task_suitability",
+      "statement": "Organizing the wood block with matching construction pieces is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_036_wood_block.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_wood_block_population_frequency",
+      "subject_id": "task_ycb_round1_wood_block",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific wood-block organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_wood_block_robot_execution",
+      "subject_id": "task_ycb_round1_wood_block",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific wood-block organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed organization design is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_wood_block_asset_compatibility",
+      "subject_id": "task_ycb_round1_wood_block",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific wood-block organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed parts area do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_scissors_task_suitability",
+      "subject_id": "task_ycb_round1_scissors",
+      "claim_type": "task_suitability",
+      "statement": "Handing closed, guarded scissors handle-first is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_037_scissors.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_scissors_population_frequency",
+      "subject_id": "task_ycb_round1_scissors",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific safe-scissors handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_scissors_robot_execution",
+      "subject_id": "task_ycb_round1_scissors",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific safe-scissors handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed safety setup is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_scissors_asset_compatibility",
+      "subject_id": "task_ycb_round1_scissors",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific safe-scissors handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or guarded-scissors asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a guarded setup do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_padlock_task_suitability",
+      "subject_id": "task_ycb_round1_padlock",
+      "claim_type": "task_suitability",
+      "statement": "Opening the padlock with its matched key on a fixed hasp is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_038_padlock.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_padlock_population_frequency",
+      "subject_id": "task_ycb_round1_padlock",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific padlock-opening task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_padlock_robot_execution",
+      "subject_id": "task_ycb_round1_padlock",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific padlock-opening task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed lock fixture and interaction are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round1_padlock_asset_compatibility",
+      "subject_id": "task_ycb_round1_padlock",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific padlock-opening task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or lock-fixture asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a fixed hasp proposal do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_keys_task_suitability",
+      "subject_id": "task_ycb_round1_keys",
+      "claim_type": "task_suitability",
+      "statement": "Storing the complete key set in a designated tray is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_039_keys.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_keys_population_frequency",
+      "subject_id": "task_ycb_round1_keys",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific key-set storage task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_keys_robot_execution",
+      "subject_id": "task_ycb_round1_keys",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific key-set storage task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed tray and containment check are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round1_keys_asset_compatibility",
+      "subject_id": "task_ycb_round1_keys",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific key-set storage task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or small-item tray asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed key tray do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_large_marker_task_suitability",
+      "subject_id": "task_ycb_round1_large_marker",
+      "claim_type": "task_suitability",
+      "statement": "Recapping the large marker after labeling is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_040_large_marker.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_large_marker_population_frequency",
+      "subject_id": "task_ycb_round1_large_marker",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific large-marker recapping task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_large_marker_robot_execution",
+      "subject_id": "task_ycb_round1_large_marker",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific large-marker recapping task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed cap-seating design is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_large_marker_asset_compatibility",
+      "subject_id": "task_ycb_round1_large_marker",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific large-marker recapping task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or writing-tool asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed labeling setup do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_small_marker_task_suitability",
+      "subject_id": "task_ycb_round1_small_marker",
+      "claim_type": "task_suitability",
+      "statement": "Facing the small marker label outward in its organizer is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_041_small_marker.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_small_marker_population_frequency",
+      "subject_id": "task_ycb_round1_small_marker",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific small-marker alignment task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_small_marker_robot_execution",
+      "subject_id": "task_ycb_round1_small_marker",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific small-marker alignment task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed organizer and alignment check are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round1_small_marker_asset_compatibility",
+      "subject_id": "task_ycb_round1_small_marker",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific small-marker alignment task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or writing-tool rack asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed rack do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_adjustable_wrench_task_suitability",
+      "subject_id": "task_ycb_round1_adjustable_wrench",
+      "claim_type": "task_suitability",
+      "statement": "Organizing the adjustable wrench with fastening tools is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_042_adjustable_wrench.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_adjustable_wrench_population_frequency",
+      "subject_id": "task_ycb_round1_adjustable_wrench",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific adjustable-wrench organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_adjustable_wrench_robot_execution",
+      "subject_id": "task_ycb_round1_adjustable_wrench",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific adjustable-wrench organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed tool rack and organization check are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round1_adjustable_wrench_asset_compatibility",
+      "subject_id": "task_ycb_round1_adjustable_wrench",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific adjustable-wrench organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or tool-rack asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed rack do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_phillips_screwdriver_task_suitability",
+      "subject_id": "task_ycb_round1_phillips_screwdriver",
+      "claim_type": "task_suitability",
+      "statement": "Handing the Phillips screwdriver handle-first with its tip controlled is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_043_phillips_screwdriver.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_phillips_screwdriver_population_frequency",
+      "subject_id": "task_ycb_round1_phillips_screwdriver",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific Phillips-screwdriver handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_phillips_screwdriver_robot_execution",
+      "subject_id": "task_ycb_round1_phillips_screwdriver",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific Phillips-screwdriver handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed tip guard and handover design are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round1_phillips_screwdriver_asset_compatibility",
+      "subject_id": "task_ycb_round1_phillips_screwdriver",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific Phillips-screwdriver handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or guarded-screwdriver asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed guarded setup do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_flat_screwdriver_task_suitability",
+      "subject_id": "task_ycb_round1_flat_screwdriver",
+      "claim_type": "task_suitability",
+      "statement": "Storing the flat screwdriver in a protective tray is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_044_flat_screwdriver.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_flat_screwdriver_population_frequency",
+      "subject_id": "task_ycb_round1_flat_screwdriver",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific flat-screwdriver storage task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_flat_screwdriver_robot_execution",
+      "subject_id": "task_ycb_round1_flat_screwdriver",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific flat-screwdriver storage task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed protective tray and storage check are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round1_flat_screwdriver_asset_compatibility",
+      "subject_id": "task_ycb_round1_flat_screwdriver",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific flat-screwdriver storage task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or protective-tray asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed tip guard do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_nails_task_suitability",
+      "subject_id": "task_ycb_round1_nails",
+      "claim_type": "task_suitability",
+      "statement": "Sorting the nails into a labeled hardware cup is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_045_nails.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_nails_population_frequency",
+      "subject_id": "task_ycb_round1_nails",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific nail-sorting task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_nails_robot_execution",
+      "subject_id": "task_ycb_round1_nails",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific nail-sorting task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed bounded sorting setup is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_nails_asset_compatibility",
+      "subject_id": "task_ycb_round1_nails",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific nail-sorting task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or small-fastener asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a bounded tray proposal do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_plastic_bolt_task_suitability",
+      "subject_id": "task_ycb_round1_plastic_bolt",
+      "claim_type": "task_suitability",
+      "statement": "Sorting the plastic bolt with its matching nut into a labeled cup is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_046_plastic_bolt.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_plastic_bolt_population_frequency",
+      "subject_id": "task_ycb_round1_plastic_bolt",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific plastic-bolt sorting task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_plastic_bolt_robot_execution",
+      "subject_id": "task_ycb_round1_plastic_bolt",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific plastic-bolt sorting task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed paired-cup design is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_plastic_bolt_asset_compatibility",
+      "subject_id": "task_ycb_round1_plastic_bolt",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific plastic-bolt sorting task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or fastener-cup asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed parts tray do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_plastic_nut_task_suitability",
+      "subject_id": "task_ycb_round1_plastic_nut",
+      "claim_type": "task_suitability",
+      "statement": "Pairing the plastic nut with its matching bolt in a parts tray is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_047_plastic_nut.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_plastic_nut_population_frequency",
+      "subject_id": "task_ycb_round1_plastic_nut",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific plastic-nut pairing task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_plastic_nut_robot_execution",
+      "subject_id": "task_ycb_round1_plastic_nut",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific plastic-nut pairing task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed paired-parts setup is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_plastic_nut_asset_compatibility",
+      "subject_id": "task_ycb_round1_plastic_nut",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific plastic-nut pairing task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or paired-fastener tray asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed parts tray do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_hammer_task_suitability",
+      "subject_id": "task_ycb_round1_hammer",
+      "claim_type": "task_suitability",
+      "statement": "Recovering a fallen hammer onto a padded safe surface is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_048_hammer.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_hammer_population_frequency",
+      "subject_id": "task_ycb_round1_hammer",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific fallen-hammer recovery task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_hammer_robot_execution",
+      "subject_id": "task_ycb_round1_hammer",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific fallen-hammer recovery task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed padded recovery setup is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_hammer_asset_compatibility",
+      "subject_id": "task_ycb_round1_hammer",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific fallen-hammer recovery task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or padded-recovery asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a padded surface proposal do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_small_clamp_task_suitability",
+      "subject_id": "task_ycb_round1_small_clamp",
+      "claim_type": "task_suitability",
+      "statement": "Securing a protected fabric sample with the small clamp is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_049_small_clamp.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_small_clamp_population_frequency",
+      "subject_id": "task_ycb_round1_small_clamp",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific small-clamp securing task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_small_clamp_robot_execution",
+      "subject_id": "task_ycb_round1_small_clamp",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific small-clamp securing task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed protected-sample fixture is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_small_clamp_asset_compatibility",
+      "subject_id": "task_ycb_round1_small_clamp",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific small-clamp securing task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or spring-clamp fixture asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a protected-sample proposal do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_medium_clamp_task_suitability",
+      "subject_id": "task_ycb_round1_medium_clamp",
+      "claim_type": "task_suitability",
+      "statement": "Positioning the medium clamp on a marked work surface is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_050_medium_clamp.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_medium_clamp_population_frequency",
+      "subject_id": "task_ycb_round1_medium_clamp",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific medium-clamp staging task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_medium_clamp_robot_execution",
+      "subject_id": "task_ycb_round1_medium_clamp",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific medium-clamp staging task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed unloaded-clamp placement is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_medium_clamp_asset_compatibility",
+      "subject_id": "task_ycb_round1_medium_clamp",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific medium-clamp staging task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or clamp-staging asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a marked work surface proposal do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_large_clamp_task_suitability",
+      "subject_id": "task_ycb_round1_large_clamp",
+      "claim_type": "task_suitability",
+      "statement": "Organizing the large clamp with other clamps in a padded rack is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_051_large_clamp.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_large_clamp_population_frequency",
+      "subject_id": "task_ycb_round1_large_clamp",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific large-clamp organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_large_clamp_robot_execution",
+      "subject_id": "task_ycb_round1_large_clamp",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific large-clamp organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed padded-rack design is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_large_clamp_asset_compatibility",
+      "subject_id": "task_ycb_round1_large_clamp",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific large-clamp organization task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or padded-rack asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed rack do not validate a particular task asset."
+    },
+    {
+      "id": "claim_task_ycb_round1_extra_large_clamp_task_suitability",
+      "subject_id": "task_ycb_round1_extra_large_clamp",
+      "claim_type": "task_suitability",
+      "statement": "Handing the unloaded extra-large clamp to a worker is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": ["evidence_ycb_task_design"],
+      "scope": "YCB round 1 design seed for ycb_052_extra_large_clamp.",
+      "limitations": "This LLM design proposal does not establish population frequency, robot execution, or asset compatibility."
+    },
+    {
+      "id": "claim_task_ycb_round1_extra_large_clamp_population_frequency",
+      "subject_id": "task_ycb_round1_extra_large_clamp",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific extra-large-clamp handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No defined population or observation protocol for this specific YCB task.",
+      "limitations": "No direct frequency measurement is attached."
+    },
+    {
+      "id": "claim_task_ycb_round1_extra_large_clamp_robot_execution",
+      "subject_id": "task_ycb_round1_extra_large_clamp",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific extra-large-clamp handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform or run is attached to this YCB task.",
+      "limitations": "A proposed safe handover design is not an execution result."
+    },
+    {
+      "id": "claim_task_ycb_round1_extra_large_clamp_asset_compatibility",
+      "subject_id": "task_ycb_round1_extra_large_clamp",
+      "claim_type": "asset_compatibility",
+      "statement": "Asset compatibility for this specific extra-large-clamp handover task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator or large-clamp handover asset configuration is attached to this YCB task.",
+      "limitations": "YCB identity and a proposed safe setup do not validate a particular task asset."
+    }
+  ]
+}

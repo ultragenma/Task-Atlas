@@ -13,6 +13,7 @@
     "dev": "node --watch backend/server.js",
     "validate": "node scripts/validate_seed_data.js",
     "validate:research": "node scripts/validate_research.js",
+    "coverage:ycb": "node scripts/report_ycb_coverage.js",
     "test": "node --test",
     "check": "npm run validate && npm run validate:research && npm test"
   }

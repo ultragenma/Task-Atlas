@@ -33,6 +33,7 @@ const CAPABILITIES = new Set([
   "rigid_manipulation",
   "articulated_closure",
   "deformable_squeezing",
+  "deformable_manipulation",
   "material_flow",
   "visual_inspection",
   "human_handover",
@@ -506,6 +507,11 @@ function validateData(data = defaultData()) {
     for (const skill of task.skills || [])
       if (!maps.skills.has(skill))
         errors.push(`${task.id}: unknown skill ${skill}`);
+    if (typeof task.id === "string" && task.id.startsWith("task_ycb_") && maps.templates.has(task.template_id)) {
+      const roles = maps.templates.get(task.template_id).roles || {};
+      for (const role of Object.keys(task.bindings || {}))
+        if (!Object.hasOwn(roles, role)) errors.push(`${task.id}: undeclared template role ${role}`);
+    }
     if ("scores" in task)
       errors.push(`${task.id}: obsolete scores are not allowed`);
   }

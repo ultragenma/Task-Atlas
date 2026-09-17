@@ -17,6 +17,7 @@ It does not present a fixed task hierarchy, a required action sequence, a univer
 - Frequency that is directly observed, explicitly derived, or unknown. Unknown is preserved rather than estimated.
 - Collection cards containing the setup, reset, quality checks, consumables, failure modes, required resources, context assumptions, and unresolved requirements needed for a real trial.
 - A three-loop mustard expansion with 20 new task or scene nodes per loop and explicit cross-loop relationship rationales.
+- [Catalog-wide YCB task proposals](docs/ycb-coverage.md), connected through shared scenes, intents, skills, and templates, with proposed collection cards and explicit unknown claims.
 
 The [foundation contract](docs/foundation-contract.md) defines the `0.2` data and HTTP interface. It is the authoritative specification for context semantics, assessments, planning records, claims, and exports.
 
