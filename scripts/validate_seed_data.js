@@ -2,6 +2,7 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const { loadTaskBatches } = require("../backend/app/seed-batches");
 
 const ROOT = path.resolve(__dirname, "..");
 const SEED_DIR = path.join(ROOT, "data", "seeds");
@@ -152,17 +153,18 @@ function mapCollection(name, rows, errors) {
 }
 function defaultData() {
   const load = (name) => readJson(path.join(SEED_DIR, name));
+  const batches = loadTaskBatches(SEED_DIR);
   return {
     objects: load("objects.json"),
-    scenes: load("scenes.json"),
+    scenes: [...load("scenes.json"), ...batches.scenes],
     states: load("states.json"),
     intents: load("intents.json"),
     skills: load("skills.json"),
-    templates: load("task_templates.json"),
-    tasks: load("mustard_tasks.json"),
+    templates: [...load("task_templates.json"), ...batches.templates],
+    tasks: [...load("mustard_tasks.json"), ...batches.tasks],
     evidence: load("evidence.json"),
-    planning: load("task_planning.json"),
-    claims: load("claims.json"),
+    planning: [...load("task_planning.json"), ...batches.planning],
+    claims: [...load("claims.json"), ...batches.claims],
     expansionLoops: load("expansion_loops.json"),
     expansionRelations: load("expansion_relations.json"),
   };

@@ -1002,12 +1002,14 @@ test("API and exports keep claims unranked and evidence claim-specific", async (
   }
   assertNoObsoleteFields(taskExport);
   assert.ok(taskExport.data.length > 0);
-  for (const collection of ["planning", "claims", "sources"])
+  for (const collection of ["planning", "claims", "sources", "task_templates", "scenes"])
     assert.ok(
       Array.isArray(taskExport[collection]),
       `JSON export includes ${collection}`,
     );
   const sourceIds = new Set(taskExport.sources.map((source) => source.id));
+  const templateIds = new Set(taskExport.task_templates.map((template) => template.id));
+  assert.ok(taskExport.data.every((task) => templateIds.has(task.template_id)), "export resolves every task template, including catalog bundles");
   assert.ok(
     taskExport.claims.every((claim) =>
       claim.source_ids.every((sourceId) => sourceIds.has(sourceId)),

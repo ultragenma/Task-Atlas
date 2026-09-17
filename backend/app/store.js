@@ -7,6 +7,7 @@ const {
   deriveOptions,
 } = require("./assessment");
 const { syncSeedGraph } = require("./neo4j");
+const { loadTaskBatches } = require("./seed-batches");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const SEED_DIR = path.join(ROOT, "data", "seeds");
@@ -92,6 +93,8 @@ function createStore() {
       readSeed(filename),
     ]),
   );
+  const batches = loadTaskBatches(SEED_DIR);
+  for (const key of Object.keys(batches)) data[key === "templates" ? "taskTemplates" : key].push(...batches[key]);
   const graphSync = syncSeedGraph(data).catch((error) => ({ enabled: true, synced: false, error: error.message }));
   const maps = {
     objects: asMap(data.objects),
@@ -348,9 +351,9 @@ function createStore() {
         (item) => item.kind !== "satisfied",
       ),
       provenance: {
-        task_seed: "mustard_tasks.json",
-        planning_seed: "task_planning.json",
-        claims_seed: "claims.json",
+        task_seed: task.id.startsWith("task_ycb_") ? "ycb_batches/" : "mustard_tasks.json",
+        planning_seed: task.id.startsWith("task_ycb_") ? "ycb_batches/" : "task_planning.json",
+        claims_seed: task.id.startsWith("task_ycb_") ? "ycb_batches/" : "claims.json",
       },
       execution_caveat:
         "A ready planning assessment is not evidence that a robot or simulator has completed the task.",
@@ -521,6 +524,14 @@ function createStore() {
         addNode(nodes, nodeFromRecord(record));
         addEdge(edges, task.id, record?.id, relation);
       }
+    if (lens === "all" || lens === "context") {
+      for (const requirement of planningFor(task.id)?.requirements || []) {
+        if (requirement.key !== "object" || requirement.value === task.object_id) continue;
+        const node = resourceNode(requirement.value);
+        addNode(nodes, node);
+        addEdge(edges, task.id, node.id, "requires_resource");
+      }
+    }
     if (lens === "all" || lens === "execution")
       for (const skillId of task.skills || []) {
         addNode(nodes, nodeFromRecord(maps.skills.get(skillId)));
@@ -731,9 +742,38 @@ function createStore() {
       }
     return { center_id: nodeId, lens, nodes, edges, expanded: [] };
   }
+  function resourceNode(resourceId) {
+    const object = maps.objects.get(resourceId);
+    if (object) return nodeFromRecord(object);
+    return {
+      id: `resource:${resourceId}`,
+      node_type: "Resource",
+      resource_id: resourceId,
+      label: titleCase(resourceId),
+      name_en: titleCase(resourceId),
+    };
+  }
+  function addResourceDependents(graph, resourceId, lens, context) {
+    if (lens !== "all" && lens !== "context") return;
+    for (const plan of data.planning) {
+      const task = getTask(plan.task_id);
+      if (!task || task.object_id === resourceId) continue;
+      if (!plan.requirements.some((item) => item.key === "object" && item.value === resourceId)) continue;
+      addNode(graph.nodes, nodeFromRecord(task, taskSummary(task, context)));
+      addEdge(graph.edges, task.id, resourceNode(resourceId).id, "requires_resource");
+    }
+  }
   function neighbors(nodeId, lens, context) {
+    if (nodeId.startsWith("resource:")) {
+      const resourceId = nodeId.slice("resource:".length);
+      if (maps.objects.has(resourceId) || !data.planning.some((plan) => plan.requirements.some((item) => item.key === "object" && item.value === resourceId))) return null;
+      const graph = { center_id: nodeId, lens, nodes: [resourceNode(resourceId)], edges: [], expanded: [] };
+      addResourceDependents(graph, resourceId, lens, context);
+      return graph;
+    }
     if (maps.objects.has(nodeId)) {
       const graph = objectNeighborhood(nodeId, lens);
+      addResourceDependents(graph, nodeId, lens, context);
       if (lens === "all") {
         const taskIds = new Set(
           data.tasks

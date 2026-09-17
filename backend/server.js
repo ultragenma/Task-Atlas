@@ -241,6 +241,7 @@ function apiHandler(request, response, url) {
         claims: store.data.claims,
         sources: store.data.evidence,
         scenes: store.data.scenes,
+        task_templates: store.data.taskTemplates,
         expansion_loops: store.data.expansionLoops,
         expansion_relations: store.data.expansionRelations,
       },
