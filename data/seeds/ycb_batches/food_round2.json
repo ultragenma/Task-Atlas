@@ -1,0 +1,3581 @@
+{
+  "tasks": [
+    {
+      "id": "task_ycb_round2_chips_can",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_inspect_visible_seal",
+      "name_en": "Inspect the visible closure and label of a chips can",
+      "name_ja": "チップス缶の見える閉鎖状態とラベルを確認する",
+      "intent_id": "intent_inspect",
+      "object_id": "ycb_001_chips_can",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_001_chips_can",
+        "property": "closure_and_label_condition"
+      },
+      "state_ids": [
+        "state_sealed",
+        "state_closed",
+        "state_full",
+        "state_upright",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "sealed(ycb_001_chips_can)",
+        "closed(ycb_001_chips_can)",
+        "on_top_of(ycb_001_chips_can, kitchen_counter)",
+        "visible(ycb_001_chips_can)"
+      ],
+      "goal_state": [
+        "property_recorded(ycb_001_chips_can)",
+        "visible_seal_condition_recorded(ycb_001_chips_can)",
+        "package_label_recorded(ycb_001_chips_can)",
+        "sealed(ycb_001_chips_can)"
+      ],
+      "instruction_variants": [
+        "Inspect the visible closure and label of the chips can without opening it.",
+        "Record the chips can's visible package condition against the declared inspection criterion.",
+        "開封せずにチップス缶の見える閉鎖状態とラベルを確認して記録してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_master_chef_can",
+      "node_type": "TaskInstance",
+      "template_id": "open_container",
+      "name_en": "Open a Master Chef can with a safe opening fixture",
+      "name_ja": "安全な開封治具を使ってマスターシェフ缶を開ける",
+      "intent_id": "intent_prepare_food",
+      "object_id": "ycb_002_master_chef_can",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_002_master_chef_can",
+        "part": "master_chef_can_lid"
+      },
+      "state_ids": [
+        "state_sealed",
+        "state_closed",
+        "state_full",
+        "state_upright",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "sealed(ycb_002_master_chef_can)",
+        "closed(ycb_002_master_chef_can)",
+        "on_top_of(ycb_002_master_chef_can, kitchen_counter)",
+        "reachable(ycb_002_master_chef_can)"
+      ],
+      "goal_state": [
+        "open(ycb_002_master_chef_can)",
+        "closure_retained(master_chef_can_lid)",
+        "stable(ycb_002_master_chef_can)"
+      ],
+      "instruction_variants": [
+        "Open the Master Chef can using the marked safe opening fixture.",
+        "Open the can while keeping the lid or opening interface controlled.",
+        "指定の安全な開封治具を使ってマスターシェフ缶を開けてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_open",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_cracker_box",
+      "node_type": "TaskInstance",
+      "template_id": "open_container",
+      "name_en": "Open the cracker box for snack preparation",
+      "name_ja": "軽食の準備のためクラッカーボックスを開ける",
+      "intent_id": "intent_prepare_food",
+      "object_id": "ycb_003_cracker_box",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_003_cracker_box",
+        "part": "cracker_box_flap"
+      },
+      "state_ids": [
+        "state_sealed",
+        "state_closed",
+        "state_full",
+        "state_upright",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "sealed(ycb_003_cracker_box)",
+        "closed(ycb_003_cracker_box)",
+        "closure_retained(cracker_box_flap)",
+        "on_top_of(ycb_003_cracker_box, kitchen_counter)",
+        "reachable(ycb_003_cracker_box)"
+      ],
+      "goal_state": [
+        "open(ycb_003_cracker_box)",
+        "closure_retained(cracker_box_flap)",
+        "stable(ycb_003_cracker_box)"
+      ],
+      "instruction_variants": [
+        "Open the cracker box for snack preparation.",
+        "Open the retained box flap without tearing or dropping the package.",
+        "軽食の準備のためクラッカーボックスを開けてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_open",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_sugar_box",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_inspect_visible_seal",
+      "name_en": "Inspect the visible closure and label of a sugar box",
+      "name_ja": "砂糖箱の見える閉鎖状態とラベルを確認する",
+      "intent_id": "intent_inspect",
+      "object_id": "ycb_004_sugar_box",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_004_sugar_box",
+        "property": "closure_and_label_condition"
+      },
+      "state_ids": [
+        "state_sealed",
+        "state_closed",
+        "state_full",
+        "state_upright",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "sealed(ycb_004_sugar_box)",
+        "closed(ycb_004_sugar_box)",
+        "on_top_of(ycb_004_sugar_box, kitchen_counter)",
+        "visible(ycb_004_sugar_box)"
+      ],
+      "goal_state": [
+        "property_recorded(ycb_004_sugar_box)",
+        "visible_seal_condition_recorded(ycb_004_sugar_box)",
+        "package_label_recorded(ycb_004_sugar_box)",
+        "sealed(ycb_004_sugar_box)"
+      ],
+      "instruction_variants": [
+        "Inspect the sugar box closure and label without opening it.",
+        "Record the visible sugar-box package condition against the declared criterion.",
+        "開封せずに砂糖箱の閉鎖状態とラベルを確認して記録してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_tomato_soup_can",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_inspect_visible_seal",
+      "name_en": "Inspect a tomato soup can's visible package condition",
+      "name_ja": "トマトスープ缶の見える包装状態を確認する",
+      "intent_id": "intent_inspect",
+      "object_id": "ycb_005_tomato_soup_can",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_005_tomato_soup_can",
+        "property": "package_condition"
+      },
+      "state_ids": [
+        "state_sealed",
+        "state_closed",
+        "state_full",
+        "state_upright",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "sealed(ycb_005_tomato_soup_can)",
+        "closed(ycb_005_tomato_soup_can)",
+        "on_top_of(ycb_005_tomato_soup_can, kitchen_counter)",
+        "visible(ycb_005_tomato_soup_can)"
+      ],
+      "goal_state": [
+        "property_recorded(ycb_005_tomato_soup_can)",
+        "visible_seal_condition_recorded(ycb_005_tomato_soup_can)",
+        "package_condition_recorded(ycb_005_tomato_soup_can)",
+        "sealed(ycb_005_tomato_soup_can)"
+      ],
+      "instruction_variants": [
+        "Inspect the tomato soup can's visible package condition before preparation.",
+        "Record the visible seal and package condition without opening the can.",
+        "調理前にトマトスープ缶の見える包装状態を開封せず確認して記録してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_mustard_bottle",
+      "node_type": "TaskInstance",
+      "template_id": "clean_object_surface",
+      "name_en": "Wipe sticky residue from the outside of a mustard bottle",
+      "name_ja": "マスタードボトル外面のべたつく残留物を拭く",
+      "intent_id": "intent_clean",
+      "object_id": "ycb_006_mustard_bottle",
+      "scene_id": "scene_kitchen_counter",
+      "bindings": {
+        "theme": "ycb_006_mustard_bottle",
+        "tool": "food_safe_wipe"
+      },
+      "state_ids": [
+        "state_dirty",
+        "state_sticky",
+        "state_closed",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "dirty(ycb_006_mustard_bottle)",
+        "sticky(ycb_006_mustard_bottle)",
+        "closed(ycb_006_mustard_bottle)",
+        "on_top_of(ycb_006_mustard_bottle, kitchen_counter)",
+        "tool_available(food_safe_wipe)"
+      ],
+      "goal_state": [
+        "clean(ycb_006_mustard_bottle)",
+        "residue_removed(ycb_006_mustard_bottle)",
+        "wipe_complete(ycb_006_mustard_bottle)",
+        "closed(ycb_006_mustard_bottle)"
+      ],
+      "instruction_variants": [
+        "Wipe the sticky residue from the outside of the mustard bottle.",
+        "Clean the bottle exterior and nozzle area without opening or squeezing it.",
+        "マスタードボトルを開けたり絞ったりせず、外面のべたつきを拭き取ってください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_wipe",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_tuna_fish_can",
+      "node_type": "TaskInstance",
+      "template_id": "separate_container_parts",
+      "name_en": "Separate a tuna can lid for safe sorting",
+      "name_ja": "安全な分別のためツナ缶のふたを分ける",
+      "intent_id": "intent_discard",
+      "object_id": "ycb_007_tuna_fish_can",
+      "scene_id": "scene_trash_sorting_area",
+      "bindings": {
+        "theme": "ycb_007_tuna_fish_can",
+        "part": "tuna_can_lid"
+      },
+      "state_ids": [
+        "state_empty",
+        "state_closed",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "empty(ycb_007_tuna_fish_can)",
+        "closed(ycb_007_tuna_fish_can)",
+        "detachable(tuna_can_lid, ycb_007_tuna_fish_can)",
+        "on_top_of(ycb_007_tuna_fish_can, sorting_surface)",
+        "reachable(ycb_007_tuna_fish_can)"
+      ],
+      "goal_state": [
+        "separated(ycb_007_tuna_fish_can, tuna_can_lid)",
+        "parts_ready_for_sorting(ycb_007_tuna_fish_can)",
+        "safe(tuna_can_lid)"
+      ],
+      "instruction_variants": [
+        "Separate the empty tuna can lid for safe sorting.",
+        "Detach or stage the lid only within the guarded sorting setup.",
+        "空のツナ缶のふたを安全な分別のために分けてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_open",
+        "skill_separate",
+        "skill_sort",
+        "skill_verify"
+      ],
+      "granularity": "compound",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_pudding_box",
+      "node_type": "TaskInstance",
+      "template_id": "align_display_item",
+      "name_en": "Face a pudding box label forward on a supermarket shelf",
+      "name_ja": "スーパーの棚でプリン箱のラベルを正面に向ける",
+      "intent_id": "intent_organize",
+      "object_id": "ycb_008_pudding_box",
+      "scene_id": "scene_supermarket_shelf",
+      "bindings": {
+        "theme": "ycb_008_pudding_box",
+        "destination": "scene_supermarket_shelf"
+      },
+      "state_ids": [
+        "state_closed",
+        "state_full",
+        "state_upright",
+        "state_label_back",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "closed(ycb_008_pudding_box)",
+        "on_shelf(ycb_008_pudding_box, supermarket_shelf)",
+        "label_back(ycb_008_pudding_box)",
+        "reachable(ycb_008_pudding_box)"
+      ],
+      "goal_state": [
+        "label_front(ycb_008_pudding_box)",
+        "stable(ycb_008_pudding_box)",
+        "on_shelf(ycb_008_pudding_box, supermarket_shelf)"
+      ],
+      "instruction_variants": [
+        "Face the pudding box label forward on the supermarket shelf.",
+        "Align the pudding box for reading without moving the neighboring products.",
+        "プリン箱を周囲の商品を動かさずラベルが正面を向くように揃えてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_orient",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_gelatin_box",
+      "node_type": "TaskInstance",
+      "template_id": "open_container",
+      "name_en": "Open the gelatin box for a preparation setup",
+      "name_ja": "調理準備のためゼラチン箱を開ける",
+      "intent_id": "intent_prepare_food",
+      "object_id": "ycb_009_gelatin_box",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_009_gelatin_box",
+        "part": "gelatin_box_flap"
+      },
+      "state_ids": [
+        "state_sealed",
+        "state_closed",
+        "state_full",
+        "state_upright",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "sealed(ycb_009_gelatin_box)",
+        "closed(ycb_009_gelatin_box)",
+        "on_top_of(ycb_009_gelatin_box, kitchen_counter)",
+        "reachable(ycb_009_gelatin_box)"
+      ],
+      "goal_state": [
+        "open(ycb_009_gelatin_box)",
+        "closure_retained(gelatin_box_flap)",
+        "stable(ycb_009_gelatin_box)"
+      ],
+      "instruction_variants": [
+        "Open the gelatin box for the preparation setup.",
+        "Open the box flap while keeping the package stable and its contents contained.",
+        "調理準備のためゼラチン箱を安定させたまま開けてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_open",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_potted_meat_can",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_inspect_visible_seal",
+      "name_en": "Inspect a potted meat can's visible package condition",
+      "name_ja": "ポットミート缶の見える包装状態を確認する",
+      "intent_id": "intent_inspect",
+      "object_id": "ycb_010_potted_meat_can",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_010_potted_meat_can",
+        "property": "visible_package_condition"
+      },
+      "state_ids": [
+        "state_sealed",
+        "state_closed",
+        "state_full",
+        "state_upright",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "sealed(ycb_010_potted_meat_can)",
+        "closed(ycb_010_potted_meat_can)",
+        "on_top_of(ycb_010_potted_meat_can, kitchen_counter)",
+        "visible(ycb_010_potted_meat_can)"
+      ],
+      "goal_state": [
+        "property_recorded(ycb_010_potted_meat_can)",
+        "visible_seal_condition_recorded(ycb_010_potted_meat_can)",
+        "package_condition_recorded(ycb_010_potted_meat_can)",
+        "sealed(ycb_010_potted_meat_can)"
+      ],
+      "instruction_variants": [
+        "Inspect the potted meat can's visible package condition before opening.",
+        "Record the visible closure and package condition without exposing a sharp edge.",
+        "開封前にポットミート缶の見える包装状態を確認し、鋭い縁を露出させず記録してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_banana",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_recover_dropped_food_to_tray",
+      "name_en": "Recover a dropped banana onto a quarantine tray",
+      "name_ja": "落ちたバナナを隔離トレーへ回収する",
+      "intent_id": "intent_recover_from_error",
+      "object_id": "ycb_011_banana",
+      "scene_id": "scene_kitchen_counter",
+      "bindings": {
+        "theme": "ycb_011_banana",
+        "destination": "clean_food_tray"
+      },
+      "state_ids": [
+        "state_fallen",
+        "state_dirty",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "fallen(ycb_011_banana)",
+        "on_top_of(ycb_011_banana, controlled_drop_surface)",
+        "reachable(ycb_011_banana)",
+        "visible(ycb_011_banana)",
+        "destination_available(clean_food_tray)"
+      ],
+      "goal_state": [
+        "on_top_of(ycb_011_banana, clean_food_tray)",
+        "released_by(ycb_011_banana, robot)",
+        "safe(ycb_011_banana)",
+        "quarantined(ycb_011_banana)"
+      ],
+      "instruction_variants": [
+        "Recover the dropped banana onto the quarantine tray.",
+        "Pick up the banana and isolate it on the marked tray for inspection.",
+        "落ちたバナナを拾い、確認用の隔離トレーに置いてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_approach",
+        "skill_grasp",
+        "skill_recover",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "granularity": "compound",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_strawberry",
+      "node_type": "TaskInstance",
+      "template_id": "organize_related_objects",
+      "name_en": "Organize a strawberry with other berries for serving",
+      "name_ja": "いちごを他のベリー類と配膳用に整える",
+      "intent_id": "intent_serve_food",
+      "object_id": "ycb_012_strawberry",
+      "scene_id": "scene_dining_table",
+      "bindings": {
+        "theme": "ycb_012_strawberry",
+        "destination": "berry_serving_area"
+      },
+      "state_ids": [
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "on_top_of(ycb_012_strawberry, dining_table)",
+        "multiple_related_items(berry_group)",
+        "reachable(ycb_012_strawberry)"
+      ],
+      "goal_state": [
+        "grouped_by_use(ycb_012_strawberry)",
+        "stable(ycb_012_strawberry)",
+        "accessible(berry_serving_area)"
+      ],
+      "instruction_variants": [
+        "Organize the strawberry with the other berries in the serving area.",
+        "Arrange the strawberry with the marked berry group without stacking or crushing it.",
+        "いちごを重ねたりつぶしたりせず、他のベリー類と配膳場所に整えてください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_grasp",
+        "skill_place",
+        "skill_align",
+        "skill_release",
+        "skill_verify"
+      ],
+      "granularity": "compound",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_apple",
+      "node_type": "TaskInstance",
+      "template_id": "clean_object_surface",
+      "name_en": "Wipe a visible residue from an apple's exterior",
+      "name_ja": "りんご外面の見える残留物を拭き取る",
+      "intent_id": "intent_clean",
+      "object_id": "ycb_013_apple",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_013_apple",
+        "tool": "food_safe_wipe"
+      },
+      "state_ids": [
+        "state_dirty",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "dirty(ycb_013_apple)",
+        "on_top_of(ycb_013_apple, kitchen_counter)",
+        "reachable(ycb_013_apple)",
+        "tool_available(food_safe_wipe)"
+      ],
+      "goal_state": [
+        "clean(ycb_013_apple)",
+        "residue_removed(ycb_013_apple)",
+        "wipe_complete(ycb_013_apple)"
+      ],
+      "instruction_variants": [
+        "Wipe the visible residue from the outside of the apple.",
+        "Clean the marked apple surface with the approved food-safe wipe.",
+        "指定の食品用ワイプでりんご外面の見える残留物を拭き取ってください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_wipe",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_lemon",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_inspect_food_condition",
+      "name_en": "Record the visible skin condition of a lemon",
+      "name_ja": "レモンの見える皮の状態を記録する",
+      "intent_id": "intent_inspect",
+      "object_id": "ycb_014_lemon",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_014_lemon",
+        "property": "visible_skin_condition"
+      },
+      "state_ids": [
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "on_top_of(ycb_014_lemon, kitchen_counter)",
+        "visible(ycb_014_lemon)"
+      ],
+      "goal_state": [
+        "property_recorded(ycb_014_lemon)",
+        "visible_condition_recorded(ycb_014_lemon)",
+        "declared_criterion_recorded(ycb_014_lemon)"
+      ],
+      "instruction_variants": [
+        "Inspect and record the lemon's visible skin condition.",
+        "Compare the lemon exterior with the declared visual criterion without cutting it.",
+        "レモンを切らずに見える皮の状態を確認し、指定基準とともに記録してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_peach",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_inspect_food_condition",
+      "name_en": "Record a peach's visible bruise condition",
+      "name_ja": "ももの見える傷みの状態を記録する",
+      "intent_id": "intent_inspect",
+      "object_id": "ycb_015_peach",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_015_peach",
+        "property": "visible_bruise_condition"
+      },
+      "state_ids": [
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "on_top_of(ycb_015_peach, kitchen_counter)",
+        "visible(ycb_015_peach)",
+        "no_stack_pressure(ycb_015_peach)"
+      ],
+      "goal_state": [
+        "property_recorded(ycb_015_peach)",
+        "visible_condition_recorded(ycb_015_peach)",
+        "bruise_criterion_recorded(ycb_015_peach)"
+      ],
+      "instruction_variants": [
+        "Inspect and record the peach's visible bruise condition.",
+        "Check the peach against the marked bruise criterion without pressing it.",
+        "ももを押さずに見える傷みの状態を指定基準とともに記録してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_pear",
+      "node_type": "TaskInstance",
+      "template_id": "clean_object_surface",
+      "name_en": "Wipe a visible residue from a pear's exterior",
+      "name_ja": "洋なし外面の見える残留物を拭き取る",
+      "intent_id": "intent_clean",
+      "object_id": "ycb_016_pear",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_016_pear",
+        "tool": "food_safe_wipe"
+      },
+      "state_ids": [
+        "state_dirty",
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "dirty(ycb_016_pear)",
+        "on_top_of(ycb_016_pear, kitchen_counter)",
+        "reachable(ycb_016_pear)",
+        "tool_available(food_safe_wipe)"
+      ],
+      "goal_state": [
+        "clean(ycb_016_pear)",
+        "residue_removed(ycb_016_pear)",
+        "wipe_complete(ycb_016_pear)"
+      ],
+      "instruction_variants": [
+        "Wipe the visible residue from the pear's exterior.",
+        "Clean the pear with the approved food-safe wipe without applying pressure that bruises it.",
+        "指定の食品用ワイプで洋なし外面の残留物を傷めずに拭き取ってください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_wipe",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_orange",
+      "node_type": "TaskInstance",
+      "template_id": "place_in_receptacle",
+      "name_en": "Stage an orange in a preparation bowl",
+      "name_ja": "オレンジを調理準備用ボウルに入れる",
+      "intent_id": "intent_prepare_food",
+      "object_id": "ycb_017_orange",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_017_orange",
+        "destination": "peeling_bowl"
+      },
+      "state_ids": [
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "on_top_of(ycb_017_orange, kitchen_counter)",
+        "reachable(ycb_017_orange)",
+        "open(peeling_bowl)"
+      ],
+      "goal_state": [
+        "inside(ycb_017_orange, peeling_bowl)",
+        "stable(ycb_017_orange)",
+        "accessible(peeling_bowl)"
+      ],
+      "instruction_variants": [
+        "Place the orange in the preparation bowl for the next food-preparation stage.",
+        "Stage the orange inside the marked bowl without assuming peeling or juice behavior.",
+        "次の調理準備のため、オレンジを指定のボウルに安定して入れてください。"
+      ],
+      "skills": [
+        "skill_grasp",
+        "skill_lift",
+        "skill_place",
+        "skill_release",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    },
+    {
+      "id": "task_ycb_round2_plum",
+      "node_type": "TaskInstance",
+      "template_id": "template_ycb_inspect_food_condition",
+      "name_en": "Record a plum's visible skin condition before serving",
+      "name_ja": "配膳前にプラムの見える皮の状態を記録する",
+      "intent_id": "intent_inspect",
+      "object_id": "ycb_018_plum",
+      "scene_id": "scene_home_kitchen",
+      "bindings": {
+        "theme": "ycb_018_plum",
+        "property": "visible_skin_condition"
+      },
+      "state_ids": [
+        "state_on_surface"
+      ],
+      "initial_state": [
+        "on_top_of(ycb_018_plum, kitchen_counter)",
+        "visible(ycb_018_plum)"
+      ],
+      "goal_state": [
+        "property_recorded(ycb_018_plum)",
+        "visible_condition_recorded(ycb_018_plum)",
+        "declared_criterion_recorded(ycb_018_plum)"
+      ],
+      "instruction_variants": [
+        "Inspect and record the plum's visible skin condition before serving.",
+        "Compare the plum with the declared visual criterion without squeezing or cutting it.",
+        "配膳前にプラムを絞ったり切ったりせず、見える皮の状態を指定基準とともに記録してください。"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "granularity": "atomic",
+      "review_status": "proposed",
+      "notes": "The skills field is an unordered capability inventory; this round 2 candidate is a proposed design and has no execution result.",
+      "generated_by": "llm",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "generation_version": "ycb_coverage_round2"
+    }
+  ],
+  "planning": [
+    {
+      "id": "planning_ycb_round2_chips_can",
+      "task_id": "task_ycb_round2_chips_can",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_001_chips_can",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "inspection_surface",
+          "reason": "A clean marked surface is needed to present the chips can for inspection."
+        },
+        {
+          "key": "condition",
+          "value": "initial_sealed_ycb_001_chips_can",
+          "reason": "The chips can starts sealed because this is a non-opening inspection."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_001_chips_can",
+          "reason": "The can starts closed while its visible closure is inspected."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_001_chips_can_kitchen_counter",
+          "reason": "The can starts on the marked kitchen-counter inspection surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_visible_ycb_001_chips_can",
+          "reason": "The closure and label must be visible for the declared check."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The package inspection surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The package check is framed as a household food-preparation context."
+        },
+        {
+          "key": "contents",
+          "value": "full",
+          "reason": "The candidate is a stocked chips package, while its actual contents remain unverified."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The correct chips can remains sealed and closed with its visible closure and label in view.",
+          "A record states the observed visible closure and label condition against the declared criterion, without asserting edibility."
+        ],
+        "setup": [
+          "Place the closed YCB chips can on a clean marked kitchen-counter inspection surface with the closure and label unobstructed.",
+          "Use a clean inert package or replica presentation if needed; do not open the can or infer contents behavior from the catalog model."
+        ],
+        "reset": [
+          "Return the chips can to the same sealed, closed, label-visible start pose.",
+          "Clear the inspection surface without using chemicals near the food-package presentation."
+        ],
+        "quality_checks": [
+          "Verify object identity, closure visibility, label visibility, sealed state, and a recorded visual result.",
+          "Check that the record is limited to the declared visible criterion and does not claim food safety or frequency."
+        ],
+        "failure_modes": [
+          "Closure or label is occluded and the result is recorded as if visible.",
+          "The can is opened, dropped, or confused with another package.",
+          "The package presentation contacts a chemical or contaminated surface."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_master_chef_can",
+      "task_id": "task_ycb_round2_master_chef_can",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_002_master_chef_can",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "master_chef_can_lid",
+          "reason": "The can lid is the declared closure part for the opening interaction."
+        },
+        {
+          "key": "object",
+          "value": "safe_opening_fixture",
+          "reason": "A guarded fixture is required to expose no sharp edge during the proposed trial."
+        },
+        {
+          "key": "condition",
+          "value": "initial_sealed_ycb_002_master_chef_can",
+          "reason": "The can starts sealed before the opening interaction."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_002_master_chef_can",
+          "reason": "The can starts closed and stable on the work surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_002_master_chef_can_kitchen_counter",
+          "reason": "The can starts on the marked kitchen-counter support."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_002_master_chef_can",
+          "reason": "The can must be reachable without reaching over an unsafe edge."
+        },
+        {
+          "key": "condition",
+          "value": "safe_opening_fixture_available",
+          "reason": "The proposed setup requires a guarded opening interface rather than an assumed YCB function."
+        },
+        {
+          "key": "condition",
+          "value": "no_sharp_hazard",
+          "reason": "Any opened-can edge must remain covered, blunted, or represented by a safe replica."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The opening workspace must be clean and isolated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "articulated_closure",
+          "reason": "The proposed interaction requires operating the declared closure or detachable part."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The opening candidate is framed as household food preparation."
+        },
+        {
+          "key": "contents",
+          "value": "full",
+          "reason": "The can is presented as a stocked package, without asserting the behavior of its contents."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The Master Chef can's declared closure is open, controlled, and retained as specified by the fixture.",
+          "The can is stable on the marked work surface with no exposed sharp hazard or uncontrolled residue."
+        ],
+        "setup": [
+          "Present the sealed Master Chef can on a clear counter with a guarded, approved opening fixture and a marked lid-retention area.",
+          "Use a non-sharp mock closure or an inert replica if the YCB asset cannot support opening; do not infer a functional can opener or contents from the model."
+        ],
+        "reset": [
+          "Return the can to a closed, sealed-safe starting configuration and remove the lid or fixture from the work area.",
+          "Cover or isolate any exposed edge before resetting another trial."
+        ],
+        "quality_checks": [
+          "Check closure-open state, lid control, can stability, edge protection, and absence of loose material.",
+          "Record any part of the opening interface represented only by the fixture or replica."
+        ],
+        "failure_modes": [
+          "The lid detaches, exposes a sharp edge, or the can tips.",
+          "The fixture slips or the can is opened outside the marked area.",
+          "Unverified contents or residue are treated as edible or safe without a declared protocol."
+        ],
+        "consumables": [
+          "Guarded lid cover or inert opening-interface replica"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_cracker_box",
+      "task_id": "task_ycb_round2_cracker_box",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_003_cracker_box",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "cracker_box_flap",
+          "reason": "The retained box flap is the closure part to be opened."
+        },
+        {
+          "key": "object",
+          "value": "food_safe_opening_surface",
+          "reason": "A clean surface is needed for the opened package."
+        },
+        {
+          "key": "condition",
+          "value": "initial_sealed_ycb_003_cracker_box",
+          "reason": "The box starts sealed before the preparation interaction."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_003_cracker_box",
+          "reason": "The box starts closed."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closure_retained_cracker_box_flap",
+          "reason": "The flap starts attached to the box."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_003_cracker_box_kitchen_counter",
+          "reason": "The box starts on the marked clean counter."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_003_cracker_box",
+          "reason": "The box must be reachable without pulling it from the edge."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The opened-package surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "articulated_closure",
+          "reason": "The proposed interaction requires operating the declared closure or detachable part."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The box-opening candidate is framed as household snack preparation."
+        },
+        {
+          "key": "contents",
+          "value": "full",
+          "reason": "The box is presented as a stocked package, without assuming actual cracker contents."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The cracker box flap is open and retained, and the box remains stable on the marked counter.",
+          "No cardboard tear, loose packaging, or uncontained contents appears outside the designated opening area."
+        ],
+        "setup": [
+          "Place a closed cracker box on a clean marked counter with its retained flap accessible.",
+          "Use a clean empty package or inert box replica if needed; do not assume the YCB model represents a usable food package or flap mechanism."
+        ],
+        "reset": [
+          "Close and reseal the flap, return the box to the original counter mark, and remove any loose packaging.",
+          "Restore the opening surface without mixing food replicas with cleaning materials."
+        ],
+        "quality_checks": [
+          "Verify flap opening, attachment, box stability, package identity, and counter cleanliness.",
+          "Check that no opening force tore the box or exposed an uncontrolled edge."
+        ],
+        "failure_modes": [
+          "Flap tears, detaches, or the box is dropped.",
+          "The box opens outside the marked area or loose contents scatter.",
+          "A replica package is treated as evidence of edible contents or box functionality."
+        ],
+        "consumables": [
+          "Clean inert cracker-box replica if required"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_sugar_box",
+      "task_id": "task_ycb_round2_sugar_box",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_004_sugar_box",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "inspection_surface",
+          "reason": "A clean marked surface is needed to present the sugar box for inspection."
+        },
+        {
+          "key": "condition",
+          "value": "initial_sealed_ycb_004_sugar_box",
+          "reason": "The box starts sealed for a visual-only inspection."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_004_sugar_box",
+          "reason": "The box remains closed while its visible closure is checked."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_004_sugar_box_kitchen_counter",
+          "reason": "The box starts on the marked kitchen-counter inspection surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_visible_ycb_004_sugar_box",
+          "reason": "The closure and label must be visible for the declared check."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The package inspection surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The package check is framed as household dry-food preparation."
+        },
+        {
+          "key": "contents",
+          "value": "full",
+          "reason": "The candidate is a stocked sugar package, while actual contents remain unverified."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The sugar box remains sealed and closed with its visible closure and label unobstructed.",
+          "A record captures the observed visible package condition against the declared criterion without asserting edibility."
+        ],
+        "setup": [
+          "Place the closed sugar box on a clean marked counter with closure and label fully visible.",
+          "Use an inert package or replica presentation if needed; do not open the box or infer material properties from the catalog record."
+        ],
+        "reset": [
+          "Return the sugar box to the sealed, closed starting pose.",
+          "Clear the counter using a food-safe method and keep household chemicals out of the inspection area."
+        ],
+        "quality_checks": [
+          "Verify object identity, closure visibility, label visibility, sealed state, and recorded criterion result.",
+          "Check that the inspection record does not claim contents, edibility, or human frequency."
+        ],
+        "failure_modes": [
+          "Closure or label is occluded and the result is recorded as visible.",
+          "The box is opened, crushed, or confused with another package.",
+          "The food-package presentation contacts a chemical or contaminated surface."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_tomato_soup_can",
+      "task_id": "task_ycb_round2_tomato_soup_can",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_005_tomato_soup_can",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "inspection_surface",
+          "reason": "A clean marked surface is needed to present the soup can for visual inspection."
+        },
+        {
+          "key": "condition",
+          "value": "initial_sealed_ycb_005_tomato_soup_can",
+          "reason": "The soup can starts sealed for a non-opening check."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_005_tomato_soup_can",
+          "reason": "The can remains closed during inspection."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_005_tomato_soup_can_kitchen_counter",
+          "reason": "The can starts on the marked kitchen-counter surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_visible_ycb_005_tomato_soup_can",
+          "reason": "The visible seal and package surface must be unobstructed."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The package inspection surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The package check is framed as household meal preparation."
+        },
+        {
+          "key": "contents",
+          "value": "full",
+          "reason": "The candidate is a stocked soup package, while actual contents and edibility remain unknown."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The correct tomato soup can remains sealed and closed with the visible package surface unobstructed.",
+          "A record captures the observed visible condition against a declared criterion; it does not certify contents or edibility."
+        ],
+        "setup": [
+          "Place the sealed tomato soup can on a clean marked counter with label and seal visible.",
+          "Use an inert or replica can if needed; do not introduce an opener, sharp edge, or chemical into this visual-only setup."
+        ],
+        "reset": [
+          "Return the can to the same sealed and closed inspection pose.",
+          "Clear the counter and isolate any intentionally altered replica from food use."
+        ],
+        "quality_checks": [
+          "Verify the correct can, visible seal, visible label, closed state, and recorded visual criterion.",
+          "Check that no conclusion about edibility or internal contents was inferred from the inspection."
+        ],
+        "failure_modes": [
+          "Seal damage or package deformation is hidden, misread, or recorded without visibility.",
+          "The can is opened unintentionally or an opener enters the visual-only setup.",
+          "The package contacts a contaminated surface or chemical."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_mustard_bottle",
+      "task_id": "task_ycb_round2_mustard_bottle",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_kitchen_counter",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_006_mustard_bottle",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "food_safe_wipe",
+          "reason": "A designated food-safe wipe is the tool for removing exterior residue."
+        },
+        {
+          "key": "condition",
+          "value": "initial_dirty_ycb_006_mustard_bottle",
+          "reason": "Visible residue is present on the bottle exterior at the start."
+        },
+        {
+          "key": "condition",
+          "value": "initial_sticky_ycb_006_mustard_bottle",
+          "reason": "The residue is represented as sticky for the wiping criterion."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_006_mustard_bottle",
+          "reason": "The bottle stays closed so cleaning does not become a dispensing task."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_006_mustard_bottle_kitchen_counter",
+          "reason": "The bottle starts on the marked kitchen-counter support."
+        },
+        {
+          "key": "condition",
+          "value": "initial_tool_available_food_safe_wipe",
+          "reason": "The designated wipe must be available before contact."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The bottle exterior and cleanup surface must be handled with a food-safe protocol."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "wiping",
+          "reason": "The proposed cleaning interaction requires controlled contact with a wiping tool."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The cleanup candidate is framed as household kitchen maintenance."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "Visible sticky residue is removed from the mustard bottle exterior and nozzle area, and the closed bottle remains stable.",
+          "The wipe does not spread residue onto the counter or contact unrelated food."
+        ],
+        "setup": [
+          "Place the closed mustard bottle on a clear kitchen-counter mark with a small washable inert residue and a clean food-safe wipe.",
+          "Use a replica residue if actual mustard is not approved; do not infer squeezing, flow, or material behavior from this wiping task, and keep chemicals away."
+        ],
+        "reset": [
+          "Return the bottle closed to the start mark and apply the same controlled residue only if the next trial requires it.",
+          "Discard or clean the wipe under the declared food-safe protocol and clean the counter."
+        ],
+        "quality_checks": [
+          "Inspect the bottle exterior, nozzle, cap closure, counter, and wipe for residual or spread material.",
+          "Verify that the record concerns surface cleanliness only, not dispensing or edibility."
+        ],
+        "failure_modes": [
+          "Residue is spread to the counter or remains on the nozzle.",
+          "The bottle is opened, squeezed, dropped, or its label is damaged.",
+          "The wipe carries a chemical or non-food material into the food-contact area."
+        ],
+        "consumables": [
+          "Food-safe wipe",
+          "Approved washable inert residue"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_tuna_fish_can",
+      "task_id": "task_ycb_round2_tuna_fish_can",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_trash_sorting_area",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_007_tuna_fish_can",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "tuna_can_lid",
+          "reason": "The lid is the detachable part being separated."
+        },
+        {
+          "key": "object",
+          "value": "metal_recycling_bin",
+          "reason": "The separated can parts need a declared metal-sorting destination."
+        },
+        {
+          "key": "condition",
+          "value": "initial_empty_ycb_007_tuna_fish_can",
+          "reason": "Only an empty can is eligible for this sorting preparation."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_007_tuna_fish_can",
+          "reason": "The can starts closed before the part-separation interaction."
+        },
+        {
+          "key": "condition",
+          "value": "initial_detachable_tuna_can_lid",
+          "reason": "The setup declares that the lid can be separated under the trial protocol."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_007_tuna_fish_can_sorting_surface",
+          "reason": "The can starts on the marked sorting surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_007_tuna_fish_can",
+          "reason": "The can must be reachable without reaching over an exposed edge."
+        },
+        {
+          "key": "condition",
+          "value": "no_sharp_hazard",
+          "reason": "Any lid edge must be blunted, covered, or represented by a safe replica."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "articulated_closure",
+          "reason": "The proposed interaction requires operating the declared closure or detachable part."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The part-separation candidate is framed as household waste sorting."
+        },
+        {
+          "key": "contents",
+          "value": "empty",
+          "reason": "The can must be empty before any part-separation setup."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The tuna can and its lid are visibly separated and staged for the declared metal-sorting route.",
+          "The separated lid has no accessible sharp hazard in the collection setup."
+        ],
+        "setup": [
+          "Present an empty tuna can on a guarded sorting surface with a covered or blunt-edged lid representation and an available metal bin.",
+          "Use a safe replica or edge cover when the physical can would expose sharp metal; keep food, cleaners, and unrelated waste out of the separation area."
+        ],
+        "reset": [
+          "Restore the can and lid to the closed starting configuration or replace the safe replica.",
+          "Clear the sorting surface and re-establish the no-sharp-hazard condition."
+        ],
+        "quality_checks": [
+          "Verify empty state, part separation, lid containment, waste-route label, and edge protection.",
+          "Check that no sharp edge, food residue, or chemical container was introduced."
+        ],
+        "failure_modes": [
+          "The lid edge is exposed, breaks unpredictably, or contacts the gripper.",
+          "Can parts are mixed with the wrong waste stream or left partly attached.",
+          "A non-empty or contaminated can is treated as eligible for sorting."
+        ],
+        "consumables": [
+          "Covered lid edge or blunt-edged can-part replica"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_pudding_box",
+      "task_id": "task_ycb_round2_pudding_box",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_supermarket_shelf",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_008_pudding_box",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "supermarket_shelf",
+          "reason": "The marked shelf slot is the retail display resource."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_008_pudding_box",
+          "reason": "The package remains closed during shelf alignment."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_shelf_ycb_008_pudding_box_supermarket_shelf",
+          "reason": "The box begins in its assigned shelf slot."
+        },
+        {
+          "key": "condition",
+          "value": "initial_label_back_ycb_008_pudding_box",
+          "reason": "The starting display orientation is label-back."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_008_pudding_box",
+          "reason": "The box must be reachable without reaching through adjacent products."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The retail package display must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "staff",
+          "reason": "Facing a retail product is framed as a supermarket staff activity."
+        },
+        {
+          "key": "contents",
+          "value": "full",
+          "reason": "The pudding box is represented as a stocked retail package without assuming its contents."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The pudding box remains in its assigned shelf slot with the front label facing the customer view.",
+          "The box and neighboring products are stable, readable, and not displaced."
+        ],
+        "setup": [
+          "Place the closed pudding box label-back in a marked supermarket shelf slot with safe clearance around adjacent products.",
+          "Use an inert package or replica contents if needed; keep the display free of cleaners and do not infer package function from the asset."
+        ],
+        "reset": [
+          "Rotate the pudding box back to label-back and restore the original shelf spacing.",
+          "Return any moved neighboring product to its marked pose."
+        ],
+        "quality_checks": [
+          "Verify label-front orientation, shelf contact, stability, object identity, and adjacent-item clearance.",
+          "Check that the box was not opened, creased, or placed in a different slot."
+        ],
+        "failure_modes": [
+          "The label remains unreadable or the box is placed outside its slot.",
+          "A neighboring product falls, is blocked, or is rotated unintentionally.",
+          "The package is dropped, crushed, or exposed to a chemical."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_gelatin_box",
+      "task_id": "task_ycb_round2_gelatin_box",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_009_gelatin_box",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "gelatin_box_flap",
+          "reason": "The retained box flap is the closure part to be opened."
+        },
+        {
+          "key": "object",
+          "value": "food_safe_opening_surface",
+          "reason": "The opened package needs a clean, bounded preparation surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_sealed_ycb_009_gelatin_box",
+          "reason": "The box starts sealed before opening."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_009_gelatin_box",
+          "reason": "The box starts closed."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_009_gelatin_box_kitchen_counter",
+          "reason": "The box starts on the marked kitchen counter."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_009_gelatin_box",
+          "reason": "The box must be reachable without pushing it to the edge."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The opening surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "articulated_closure",
+          "reason": "The proposed interaction requires operating the declared closure or detachable part."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The opening candidate is framed as household preparation."
+        },
+        {
+          "key": "contents",
+          "value": "full",
+          "reason": "The package is presented as stocked without assuming gelatin material behavior."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The gelatin box flap is open and retained, and the box is stable on the marked preparation surface.",
+          "No powder, insert, or loose package material leaves the bounded setup area."
+        ],
+        "setup": [
+          "Place the closed gelatin box on a clean marked counter with its flap accessible and the preparation surface bounded.",
+          "Use an empty package or inert replica if needed; do not assume loose gelatin, flow, or food function, and keep cleaning chemicals away."
+        ],
+        "reset": [
+          "Close and reseal the gelatin box, return it to the counter start mark, and remove any loose insert or replica material.",
+          "Restore the preparation surface to a clean state."
+        ],
+        "quality_checks": [
+          "Verify flap opening, retention, box stability, package identity, and bounded contents.",
+          "Check that no cardboard tear or chemical contamination was introduced."
+        ],
+        "failure_modes": [
+          "Flap tears, box tips, or package material spills.",
+          "The box is opened outside the marked food-safe area.",
+          "Replica material is treated as evidence of real gelatin or edibility."
+        ],
+        "consumables": [
+          "Clean inert gelatin-box replica if required"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_potted_meat_can",
+      "task_id": "task_ycb_round2_potted_meat_can",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_010_potted_meat_can",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "inspection_surface",
+          "reason": "A clean marked surface is needed to present the can for inspection."
+        },
+        {
+          "key": "condition",
+          "value": "initial_sealed_ycb_010_potted_meat_can",
+          "reason": "The can starts sealed for a visual-only check."
+        },
+        {
+          "key": "condition",
+          "value": "initial_closed_ycb_010_potted_meat_can",
+          "reason": "The can remains closed during inspection."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_010_potted_meat_can_kitchen_counter",
+          "reason": "The can starts on the marked kitchen-counter surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_visible_ycb_010_potted_meat_can",
+          "reason": "The visible closure and package surface must be unobstructed."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The inspection surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "condition",
+          "value": "no_sharp_hazard",
+          "reason": "No opener or exposed edge is permitted in this visual-only inspection."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The package check is framed as household food handling."
+        },
+        {
+          "key": "contents",
+          "value": "full",
+          "reason": "The can is presented as stocked, while contents and edibility remain unknown."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The potted meat can remains sealed and closed with its visible package condition recorded.",
+          "The inspection is limited to the declared visible criterion and leaves no exposed sharp edge."
+        ],
+        "setup": [
+          "Place the sealed can on a clean marked counter with label and closure visible and no opener present.",
+          "Use an inert or protected-edge replica if needed; do not infer internal contents, edibility, or opening behavior from the catalog asset."
+        ],
+        "reset": [
+          "Return the can to its sealed, closed starting pose and clear the inspection surface.",
+          "Quarantine any intentionally altered replica instead of returning it to food use."
+        ],
+        "quality_checks": [
+          "Verify object identity, visible closure, closed state, edge safety, and the recorded visible criterion.",
+          "Check that no claim about edibility or internal contents was made from the visual check."
+        ],
+        "failure_modes": [
+          "The closure is occluded or an exposed edge appears during inspection.",
+          "The can is opened, dropped, or confused with another package.",
+          "The can contacts a contaminated surface or chemical."
+        ],
+        "consumables": [],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_banana",
+      "task_id": "task_ycb_round2_banana",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_kitchen_counter",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_011_banana",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "clean_food_tray",
+          "reason": "The clean tray is the receiving and quarantine surface for the recovered banana."
+        },
+        {
+          "key": "condition",
+          "value": "initial_fallen_ycb_011_banana",
+          "reason": "The task starts from a controlled fallen banana pose."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_011_banana_controlled_drop_surface",
+          "reason": "The dropped banana stays within the marked recovery surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_011_banana",
+          "reason": "The banana must be reachable without pushing it farther away."
+        },
+        {
+          "key": "condition",
+          "value": "initial_visible_ycb_011_banana",
+          "reason": "Recovery and quarantine inspection require visibility."
+        },
+        {
+          "key": "condition",
+          "value": "initial_destination_available_clean_food_tray",
+          "reason": "The tray must be empty, clean, and stable before recovery."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "Use a controlled clean protocol and quarantine any real fruit after a drop."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The recovery candidate is framed as a household food-handling error response."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The banana is fully supported on the clean tray, released by the robot, and visibly marked as quarantined.",
+          "The banana is not returned to edible service merely because it was recovered."
+        ],
+        "setup": [
+          "Use a clean controlled drop surface, an empty clean tray, and an inert or approved banana replica; keep the recovery area free of cleaners and sharp tools.",
+          "If a real banana contacts an uncontrolled floor or contaminated surface, define quarantine rather than reuse before collection."
+        ],
+        "reset": [
+          "Return the replica banana to the marked fallen pose and empty the tray.",
+          "Clean and inspect the tray and drop surface before the next recovery trial."
+        ],
+        "quality_checks": [
+          "Verify banana identity, full tray support, robot release, quarantine marking, and no edge exposure.",
+          "Check that recovery did not spread contamination or crush the banana."
+        ],
+        "failure_modes": [
+          "Banana is pushed out of reach, dropped again, crushed, or left partly outside the tray.",
+          "A real dropped banana is mixed back into edible food without inspection.",
+          "The clean tray contacts a dirty surface or cleaning chemical."
+        ],
+        "consumables": [
+          "Inert or approved banana replica",
+          "Clean food tray liner",
+          "Food-safe cleaning material"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_strawberry",
+      "task_id": "task_ycb_round2_strawberry",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_dining_table",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_012_strawberry",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "berry_group",
+          "reason": "Other berries define the object-specific serving group."
+        },
+        {
+          "key": "object",
+          "value": "berry_serving_area",
+          "reason": "The marked area is the destination for the grouped berries."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_012_strawberry_dining_table",
+          "reason": "The strawberry starts on the marked dining-table surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_multiple_related_items_berry_group",
+          "reason": "A berry group must be present for meaningful organization."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_012_strawberry",
+          "reason": "The strawberry must be reachable without dragging it through other fruit."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The serving area and berry group must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The berry arrangement is framed as household serving preparation."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The strawberry is grouped with the marked berries in the serving area, remains stable, and stays accessible.",
+          "No berry is stacked under pressure or moved into contact with a non-food material."
+        ],
+        "setup": [
+          "Place a clean strawberry or approved soft-fruit replica on the dining table with at least two related berry replicas and a marked serving area.",
+          "Keep the group clear of cleaners, sharp tools, heavy objects, and any material not approved for food contact."
+        ],
+        "reset": [
+          "Return the strawberry to its original dining-table mark and restore the berry group.",
+          "Clear and clean the serving area using a food-safe method."
+        ],
+        "quality_checks": [
+          "Verify berry grouping, strawberry identity, stable support, access to the serving area, and absence of compression.",
+          "Check that the arrangement did not spread juice, residue, or contamination."
+        ],
+        "failure_modes": [
+          "Strawberry is stacked, crushed, dropped, or grouped with the wrong category.",
+          "Another berry is knocked over or the serving area becomes inaccessible.",
+          "Fruit contacts a cleaner, sharp tool, or contaminated surface."
+        ],
+        "consumables": [
+          "Clean strawberry or approved soft-fruit replica",
+          "Food-safe cleaning material"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_apple",
+      "task_id": "task_ycb_round2_apple",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_013_apple",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "food_safe_wipe",
+          "reason": "The approved wipe is the tool for the apple exterior-cleaning interaction."
+        },
+        {
+          "key": "condition",
+          "value": "initial_dirty_ycb_013_apple",
+          "reason": "A visible, controlled residue is present at the start."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_013_apple_kitchen_counter",
+          "reason": "The apple starts on the marked counter surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_013_apple",
+          "reason": "The apple must be reachable without rolling it to the edge."
+        },
+        {
+          "key": "condition",
+          "value": "initial_tool_available_food_safe_wipe",
+          "reason": "The designated food-safe wipe must be available."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The apple and cleanup surface require a declared food-safe protocol."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "wiping",
+          "reason": "The proposed cleaning interaction requires controlled contact with a wiping tool."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The exterior-cleaning candidate is framed as household kitchen maintenance."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The marked apple exterior has no visible trial residue and the apple remains stable on the counter.",
+          "The wipe does not transfer residue to the counter or an unrelated food item."
+        ],
+        "setup": [
+          "Place a clean apple or approved apple replica on a marked counter with a small washable inert residue and a designated food-safe wipe.",
+          "Do not use a chemical cleaner or infer edibility from the wipe result; keep the apple away from sharp tools and non-food materials."
+        ],
+        "reset": [
+          "Return the apple to the start mark and apply the controlled residue only if another trial requires it.",
+          "Clean or replace the wipe and restore the counter under the declared food-safe protocol."
+        ],
+        "quality_checks": [
+          "Inspect the apple surface, counter, and wipe for residue removal and unintended transfer.",
+          "Verify that the result describes exterior cleanliness only and not food safety or edibility."
+        ],
+        "failure_modes": [
+          "Residue remains, spreads, or the apple is dropped or damaged.",
+          "The wipe contacts a chemical or unrelated food surface.",
+          "The apple is treated as edible solely because a visual residue was removed."
+        ],
+        "consumables": [
+          "Food-safe wipe",
+          "Approved washable inert residue"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_lemon",
+      "task_id": "task_ycb_round2_lemon",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_014_lemon",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "inspection_surface",
+          "reason": "The lemon needs a clean marked surface for the visual inspection."
+        },
+        {
+          "key": "object",
+          "value": "visual_acceptance_criterion",
+          "reason": "A declared visual criterion is required for recording the inspection result."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_014_lemon_kitchen_counter",
+          "reason": "The lemon starts on the marked kitchen-counter surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_visible_ycb_014_lemon",
+          "reason": "The lemon skin must be visible for the criterion check."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The inspection surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The visual fruit check is framed as household preparation."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The lemon remains on the marked surface and its visible skin condition is recorded against the declared criterion.",
+          "The record makes no claim about internal contents, edibility, or population frequency."
+        ],
+        "setup": [
+          "Place a clean lemon or approved citrus replica on a clean marked counter with an unobstructed view and a written visual criterion.",
+          "Do not cut, squeeze, wash with chemicals, or mix the lemon with non-food materials during this visual-only task."
+        ],
+        "reset": [
+          "Return the lemon to its marked position and remove the criterion card from the next trial area.",
+          "Clean the inspection surface using a food-safe method."
+        ],
+        "quality_checks": [
+          "Verify lemon identity, full skin visibility, criterion selection, and a recorded observation.",
+          "Check that the inspection stays visual and does not imply internal or edible condition."
+        ],
+        "failure_modes": [
+          "Skin is occluded, the criterion is missing, or the record is made without visible evidence.",
+          "The lemon is cut, squeezed, dropped, or contaminated.",
+          "A visual observation is reported as a food-safety or edibility result."
+        ],
+        "consumables": [
+          "Visual acceptance criterion card"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_peach",
+      "task_id": "task_ycb_round2_peach",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_015_peach",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "inspection_surface",
+          "reason": "The peach needs a clean marked surface for non-contact visual inspection."
+        },
+        {
+          "key": "object",
+          "value": "visual_acceptance_criterion",
+          "reason": "A declared bruise criterion is needed to interpret the visible observation."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_015_peach_kitchen_counter",
+          "reason": "The peach starts on the marked counter surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_visible_ycb_015_peach",
+          "reason": "The peach surface must be visible for the bruise check."
+        },
+        {
+          "key": "condition",
+          "value": "initial_no_stack_pressure_ycb_015_peach",
+          "reason": "The starting setup excludes pressure from other objects."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The inspection surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The bruise check is framed as household fruit preparation."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The peach remains supported without added pressure and its visible bruise condition is recorded against the declared criterion.",
+          "The trial does not infer internal quality or edibility from the visible observation."
+        ],
+        "setup": [
+          "Place a clean peach or compliant peach replica on a clear counter with a non-contact viewing angle and a written bruise criterion.",
+          "Keep heavy objects, pressure sources, knives, and cleaners away from the peach; do not press or cut it."
+        ],
+        "reset": [
+          "Return the peach to the same counter pose and remove the criterion card.",
+          "Inspect the surface for unintended contact and clean the workspace before another trial."
+        ],
+        "quality_checks": [
+          "Verify peach identity, complete visible surface view, absence of added pressure, criterion selection, and recorded result.",
+          "Check that no new bruise or tear was caused by setup or inspection."
+        ],
+        "failure_modes": [
+          "The peach is pressed, bruised, cut, dropped, or partially occluded.",
+          "The criterion is missing or a visual observation is presented as an edibility judgment.",
+          "The peach contacts a cleaner, sharp tool, or contaminated surface."
+        ],
+        "consumables": [
+          "Visual acceptance criterion card"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_pear",
+      "task_id": "task_ycb_round2_pear",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_016_pear",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "food_safe_wipe",
+          "reason": "The approved wipe is the tool for the pear exterior-cleaning interaction."
+        },
+        {
+          "key": "condition",
+          "value": "initial_dirty_ycb_016_pear",
+          "reason": "A visible, controlled residue is present on the pear at the start."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_016_pear_kitchen_counter",
+          "reason": "The pear starts on the marked counter."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_016_pear",
+          "reason": "The pear must be reachable without rolling it to the edge."
+        },
+        {
+          "key": "condition",
+          "value": "initial_tool_available_food_safe_wipe",
+          "reason": "The designated food-safe wipe must be available."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The fruit and cleanup surface require a declared food-safe protocol."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "wiping",
+          "reason": "The proposed cleaning interaction requires controlled contact with a wiping tool."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The exterior-cleaning candidate is framed as household food preparation."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The visible trial residue is removed from the pear exterior and the pear remains stable without a new bruise.",
+          "The wipe does not spread residue onto the counter or another food item."
+        ],
+        "setup": [
+          "Place a clean pear or approved pear replica on a marked counter with a small washable inert residue and a food-safe wipe.",
+          "Keep pressure sources, knives, cleaners, and unrelated materials away; do not infer edibility from surface wiping."
+        ],
+        "reset": [
+          "Return the pear to the start mark and reapply the controlled residue only when required for the next trial.",
+          "Clean or replace the wipe and restore the counter using the declared food-safe protocol."
+        ],
+        "quality_checks": [
+          "Inspect the pear surface, counter, and wipe for residue removal, transfer, and bruise-free handling.",
+          "Verify that the result describes exterior cleanliness only."
+        ],
+        "failure_modes": [
+          "Residue remains, spreads, or the pear is bruised, dropped, or rolled away.",
+          "The wipe contacts a chemical or unrelated food surface.",
+          "Surface cleanliness is reported as proof of edibility."
+        ],
+        "consumables": [
+          "Food-safe wipe",
+          "Approved washable inert residue"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_orange",
+      "task_id": "task_ycb_round2_orange",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_017_orange",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "peeling_bowl",
+          "reason": "The open bowl is the marked preparation receptacle for the orange."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_017_orange_kitchen_counter",
+          "reason": "The orange starts on the marked counter source."
+        },
+        {
+          "key": "condition",
+          "value": "initial_reachable_ycb_017_orange",
+          "reason": "The orange must be reachable without rolling it to the edge."
+        },
+        {
+          "key": "condition",
+          "value": "initial_open_peeling_bowl",
+          "reason": "The receiving preparation bowl must be open and stable."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The orange and preparation bowl must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "rigid_manipulation",
+          "reason": "The object-specific interaction requires controlled acquisition and placement of the rigid or supported item."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The bowl-staging candidate is framed as household food preparation."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The orange is fully supported inside the marked preparation bowl, the bowl is stable, and access remains clear.",
+          "The trial does not require or claim peeling, squeezing, juice flow, or edibility."
+        ],
+        "setup": [
+          "Place a clean orange or approved citrus replica on the counter beside an empty, open, stable preparation bowl.",
+          "Keep knives, cleaners, and other incompatible materials outside the bowl and preparation area."
+        ],
+        "reset": [
+          "Remove the orange from the bowl and return it to the counter start mark.",
+          "Empty, clean, and dry the bowl using a food-safe method."
+        ],
+        "quality_checks": [
+          "Verify orange identity, full bowl support, bowl stability, access, and absence of rolling or damage.",
+          "Check that no material or functional assumption beyond staging was recorded."
+        ],
+        "failure_modes": [
+          "Orange is dropped, only partly supported, or rolls out of the bowl.",
+          "The bowl tips or becomes inaccessible.",
+          "Fruit contacts a knife, cleaner, or contaminated surface."
+        ],
+        "consumables": [
+          "Clean orange or approved citrus replica",
+          "Food-safe cleaning material"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    },
+    {
+      "id": "planning_ycb_round2_plum",
+      "task_id": "task_ycb_round2_plum",
+      "requirements": [
+        {
+          "key": "scene_id",
+          "value": "scene_home_kitchen",
+          "reason": "The candidate is scoped to its declared scene context."
+        },
+        {
+          "key": "object",
+          "value": "ycb_018_plum",
+          "reason": "The YCB object is the object-specific subject of this candidate."
+        },
+        {
+          "key": "object",
+          "value": "inspection_surface",
+          "reason": "The plum needs a clean marked surface for visual inspection."
+        },
+        {
+          "key": "object",
+          "value": "visual_acceptance_criterion",
+          "reason": "A declared visual criterion is required for the inspection record."
+        },
+        {
+          "key": "condition",
+          "value": "initial_on_top_of_ycb_018_plum_kitchen_counter",
+          "reason": "The plum starts on the marked counter surface."
+        },
+        {
+          "key": "condition",
+          "value": "initial_visible_ycb_018_plum",
+          "reason": "The plum skin must be visible for the declared criterion."
+        },
+        {
+          "key": "condition",
+          "value": "food_safe",
+          "reason": "The inspection surface must be clean and separated from chemicals."
+        },
+        {
+          "key": "capability",
+          "value": "visual_inspection",
+          "reason": "The object state, placement, or acceptance criterion must be checked visually."
+        },
+        {
+          "key": "role",
+          "value": "home_user",
+          "reason": "The visual fruit check is framed as household serving preparation."
+        }
+      ],
+      "procedures": [],
+      "collection": {
+        "success_criteria": [
+          "The plum remains supported on the marked surface and its visible skin condition is recorded against the declared criterion.",
+          "The record does not infer internal quality, edibility, or population frequency from the visible check."
+        ],
+        "setup": [
+          "Place a clean plum or approved plum replica on a clean marked counter with an unobstructed viewing angle and a written visual criterion.",
+          "Do not squeeze, cut, wash with chemicals, or mix the plum with non-food materials during this visual-only task."
+        ],
+        "reset": [
+          "Return the plum to its marked position and remove the criterion card.",
+          "Clean the inspection surface with a food-safe method before another trial."
+        ],
+        "quality_checks": [
+          "Verify plum identity, full skin visibility, criterion selection, stable support, and recorded observation.",
+          "Check that the inspection caused no new damage and was not reported as an edibility decision."
+        ],
+        "failure_modes": [
+          "Skin is occluded, the criterion is missing, or the record is made without visible evidence.",
+          "The plum is squeezed, cut, dropped, or contaminated.",
+          "A visual observation is presented as proof of food safety or edibility."
+        ],
+        "consumables": [
+          "Visual acceptance criterion card"
+        ],
+        "time_estimates": {
+          "setup_minutes": null,
+          "execution_minutes": null,
+          "reset_minutes": null,
+          "review_minutes": null
+        }
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_task_ycb_round2_chips_can_task_suitability",
+      "subject_id": "task_ycb_round2_chips_can",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 chips-can task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Inspect the visible closure and label of a chips can.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_chips_can_population_frequency",
+      "subject_id": "task_ycb_round2_chips_can",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific chips-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_chips_can_robot_execution",
+      "subject_id": "task_ycb_round2_chips_can",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific chips-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_chips_can_asset_compatibility",
+      "subject_id": "task_ycb_round2_chips_can",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the chips-can asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_master_chef_can_task_suitability",
+      "subject_id": "task_ycb_round2_master_chef_can",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 master-chef-can task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Open a Master Chef can with a safe opening fixture.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_master_chef_can_population_frequency",
+      "subject_id": "task_ycb_round2_master_chef_can",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific master-chef-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_master_chef_can_robot_execution",
+      "subject_id": "task_ycb_round2_master_chef_can",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific master-chef-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_master_chef_can_asset_compatibility",
+      "subject_id": "task_ycb_round2_master_chef_can",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the master-chef-can asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_cracker_box_task_suitability",
+      "subject_id": "task_ycb_round2_cracker_box",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 cracker-box task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Open the cracker box for snack preparation.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_cracker_box_population_frequency",
+      "subject_id": "task_ycb_round2_cracker_box",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific cracker-box task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_cracker_box_robot_execution",
+      "subject_id": "task_ycb_round2_cracker_box",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific cracker-box task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_cracker_box_asset_compatibility",
+      "subject_id": "task_ycb_round2_cracker_box",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the cracker-box asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_sugar_box_task_suitability",
+      "subject_id": "task_ycb_round2_sugar_box",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 sugar-box task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Inspect the visible closure and label of a sugar box.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_sugar_box_population_frequency",
+      "subject_id": "task_ycb_round2_sugar_box",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific sugar-box task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_sugar_box_robot_execution",
+      "subject_id": "task_ycb_round2_sugar_box",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific sugar-box task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_sugar_box_asset_compatibility",
+      "subject_id": "task_ycb_round2_sugar_box",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the sugar-box asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_tomato_soup_can_task_suitability",
+      "subject_id": "task_ycb_round2_tomato_soup_can",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 tomato-soup-can task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Inspect a tomato soup can's visible package condition.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_tomato_soup_can_population_frequency",
+      "subject_id": "task_ycb_round2_tomato_soup_can",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific tomato-soup-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_tomato_soup_can_robot_execution",
+      "subject_id": "task_ycb_round2_tomato_soup_can",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific tomato-soup-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_tomato_soup_can_asset_compatibility",
+      "subject_id": "task_ycb_round2_tomato_soup_can",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the tomato-soup-can asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_mustard_bottle_task_suitability",
+      "subject_id": "task_ycb_round2_mustard_bottle",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 mustard-bottle task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Wipe sticky residue from the outside of a mustard bottle.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_mustard_bottle_population_frequency",
+      "subject_id": "task_ycb_round2_mustard_bottle",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific mustard-bottle task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_mustard_bottle_robot_execution",
+      "subject_id": "task_ycb_round2_mustard_bottle",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific mustard-bottle task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_mustard_bottle_asset_compatibility",
+      "subject_id": "task_ycb_round2_mustard_bottle",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the mustard-bottle asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_tuna_fish_can_task_suitability",
+      "subject_id": "task_ycb_round2_tuna_fish_can",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 tuna-fish-can task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Separate a tuna can lid for safe sorting.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_tuna_fish_can_population_frequency",
+      "subject_id": "task_ycb_round2_tuna_fish_can",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific tuna-fish-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_tuna_fish_can_robot_execution",
+      "subject_id": "task_ycb_round2_tuna_fish_can",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific tuna-fish-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_tuna_fish_can_asset_compatibility",
+      "subject_id": "task_ycb_round2_tuna_fish_can",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the tuna-fish-can asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_pudding_box_task_suitability",
+      "subject_id": "task_ycb_round2_pudding_box",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 pudding-box task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Face a pudding box label forward on a supermarket shelf.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_pudding_box_population_frequency",
+      "subject_id": "task_ycb_round2_pudding_box",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific pudding-box task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_pudding_box_robot_execution",
+      "subject_id": "task_ycb_round2_pudding_box",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific pudding-box task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_pudding_box_asset_compatibility",
+      "subject_id": "task_ycb_round2_pudding_box",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the pudding-box asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_gelatin_box_task_suitability",
+      "subject_id": "task_ycb_round2_gelatin_box",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 gelatin-box task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Open the gelatin box for a preparation setup.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_gelatin_box_population_frequency",
+      "subject_id": "task_ycb_round2_gelatin_box",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific gelatin-box task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_gelatin_box_robot_execution",
+      "subject_id": "task_ycb_round2_gelatin_box",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific gelatin-box task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_gelatin_box_asset_compatibility",
+      "subject_id": "task_ycb_round2_gelatin_box",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the gelatin-box asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_potted_meat_can_task_suitability",
+      "subject_id": "task_ycb_round2_potted_meat_can",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 potted-meat-can task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Inspect a potted meat can's visible package condition.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_potted_meat_can_population_frequency",
+      "subject_id": "task_ycb_round2_potted_meat_can",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific potted-meat-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_potted_meat_can_robot_execution",
+      "subject_id": "task_ycb_round2_potted_meat_can",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific potted-meat-can task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_potted_meat_can_asset_compatibility",
+      "subject_id": "task_ycb_round2_potted_meat_can",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the potted-meat-can asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_banana_task_suitability",
+      "subject_id": "task_ycb_round2_banana",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 banana task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Recover a dropped banana onto a quarantine tray.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_banana_population_frequency",
+      "subject_id": "task_ycb_round2_banana",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific banana task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_banana_robot_execution",
+      "subject_id": "task_ycb_round2_banana",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific banana task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_banana_asset_compatibility",
+      "subject_id": "task_ycb_round2_banana",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the banana asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_strawberry_task_suitability",
+      "subject_id": "task_ycb_round2_strawberry",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 strawberry task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Organize a strawberry with other berries for serving.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_strawberry_population_frequency",
+      "subject_id": "task_ycb_round2_strawberry",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific strawberry task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_strawberry_robot_execution",
+      "subject_id": "task_ycb_round2_strawberry",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific strawberry task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_strawberry_asset_compatibility",
+      "subject_id": "task_ycb_round2_strawberry",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the strawberry asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_apple_task_suitability",
+      "subject_id": "task_ycb_round2_apple",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 apple task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Wipe a visible residue from an apple's exterior.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_apple_population_frequency",
+      "subject_id": "task_ycb_round2_apple",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific apple task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_apple_robot_execution",
+      "subject_id": "task_ycb_round2_apple",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific apple task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_apple_asset_compatibility",
+      "subject_id": "task_ycb_round2_apple",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the apple asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_lemon_task_suitability",
+      "subject_id": "task_ycb_round2_lemon",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 lemon task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Record the visible skin condition of a lemon.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_lemon_population_frequency",
+      "subject_id": "task_ycb_round2_lemon",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific lemon task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_lemon_robot_execution",
+      "subject_id": "task_ycb_round2_lemon",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific lemon task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_lemon_asset_compatibility",
+      "subject_id": "task_ycb_round2_lemon",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the lemon asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_peach_task_suitability",
+      "subject_id": "task_ycb_round2_peach",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 peach task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Record a peach's visible bruise condition.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_peach_population_frequency",
+      "subject_id": "task_ycb_round2_peach",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific peach task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_peach_robot_execution",
+      "subject_id": "task_ycb_round2_peach",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific peach task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_peach_asset_compatibility",
+      "subject_id": "task_ycb_round2_peach",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the peach asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_pear_task_suitability",
+      "subject_id": "task_ycb_round2_pear",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 pear task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Wipe a visible residue from a pear's exterior.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_pear_population_frequency",
+      "subject_id": "task_ycb_round2_pear",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific pear task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_pear_robot_execution",
+      "subject_id": "task_ycb_round2_pear",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific pear task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_pear_asset_compatibility",
+      "subject_id": "task_ycb_round2_pear",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the pear asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_orange_task_suitability",
+      "subject_id": "task_ycb_round2_orange",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 orange task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Stage an orange in a preparation bowl.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_orange_population_frequency",
+      "subject_id": "task_ycb_round2_orange",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific orange task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_orange_robot_execution",
+      "subject_id": "task_ycb_round2_orange",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific orange task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_orange_asset_compatibility",
+      "subject_id": "task_ycb_round2_orange",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the orange asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    },
+    {
+      "id": "claim_task_ycb_round2_plum_task_suitability",
+      "subject_id": "task_ycb_round2_plum",
+      "claim_type": "task_suitability",
+      "statement": "This YCB round 2 plum task is a proposed candidate for collection design review.",
+      "status": "proposed",
+      "value": null,
+      "unit": null,
+      "source_ids": [
+        "evidence_ycb_task_design"
+      ],
+      "scope": "YCB round 2 coverage proposal for Record a plum's visible skin condition before serving.",
+      "limitations": "This design proposal does not establish population frequency, robot execution, or compatibility of a particular asset."
+    },
+    {
+      "id": "claim_task_ycb_round2_plum_population_frequency",
+      "subject_id": "task_ycb_round2_plum",
+      "claim_type": "population_frequency",
+      "statement": "Population frequency for this specific plum task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No population definition or observation protocol is attached to this generated task proposal.",
+      "limitations": "Catalog metadata and a proposed design cannot quantify how often people perform this specific task."
+    },
+    {
+      "id": "claim_task_ycb_round2_plum_robot_execution",
+      "subject_id": "task_ycb_round2_plum",
+      "claim_type": "robot_execution",
+      "statement": "Robot execution for this specific plum task is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No robot platform, trial, or evaluated run is attached.",
+      "limitations": "The unordered skill inventory and collection card are not execution results."
+    },
+    {
+      "id": "claim_task_ycb_round2_plum_asset_compatibility",
+      "subject_id": "task_ycb_round2_plum",
+      "claim_type": "asset_compatibility",
+      "statement": "Compatibility of the plum asset and task setup with a particular simulator or robot is unknown.",
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_ids": [],
+      "scope": "No simulator asset configuration or physical validation is attached.",
+      "limitations": "YCB catalog identity does not establish the functional, material, safety, or scene capabilities required by this task."
+    }
+  ],
+  "templates": [
+    {
+      "id": "template_ycb_inspect_food_condition",
+      "node_type": "TaskTemplate",
+      "name_en": "Inspect a visible food-object condition",
+      "name_ja": "食品物体の見える状態を確認する",
+      "verb": "inspect",
+      "roles": {
+        "theme": "food_object",
+        "property": "visible_condition"
+      },
+      "compatible_scenes": [
+        "scene_home_kitchen",
+        "scene_dining_table",
+        "scene_kitchen_counter"
+      ],
+      "preconditions": [
+        "visible(theme)"
+      ],
+      "goals": [
+        "property_recorded(theme)",
+        "visible_condition_recorded(theme)",
+        "declared_criterion_recorded(theme)"
+      ],
+      "skills": [
+        "skill_locate",
+        "skill_inspect",
+        "skill_verify"
+      ],
+      "failure_modes": [
+        "occluded_surface",
+        "missing_criterion",
+        "unintended_contact"
+      ],
+      "safety_tags": [
+        "inspection",
+        "food_handling"
+      ],
+      "review_status": "proposed"
+    }
+  ]
+}

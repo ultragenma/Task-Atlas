@@ -19,6 +19,18 @@ Examples include matching a lid to its container, grouping fasteners, preparing 
 
 ## Generation and review
 
+The second round adds another distinct goal for every catalog object: 77 additional
+tasks, plans, and sets of four claims in the `*_round2.json` bundles. Across both
+rounds this is 154 new proposed tasks; together with the 68 existing mustard tasks,
+the atlas contains 222 task definitions. These are collection proposals, not
+demonstrations or measured successes.
+
+The second round emphasizes inspection, alignment, assembly preparation, and
+object-specific interactions: seating screwdriver tips, fitting a peg into a
+checked hole, routing a rope, reading a timer, connecting compatible Duplo pieces,
+and checking kitchen surfaces or packaging. Repeated goals across rounds are
+rejected by the coverage test.
+
 The generation brief assigns disjoint object groups to `gpt-5.6-luna` workers with `max` reasoning effort. Each worker reads the historical handoff and current foundation contract, then proposes an object-specific goal with observable initial and success conditions. Records include English and Japanese names, required objects and capabilities, setup, reset, quality checks, failure modes, and unmeasured time estimates. A later round must introduce a different goal or context for the object, not merely paraphrase its first task.
 
 Review checks object identity, reference validity, goal specificity, explicit prerequisites, collection reset, and concept-level connections. Fragile objects, sharp tools, powered tools, chemicals, and food replicas need appropriate declared setup conditions; a catalog model does not establish functional or material behavior. Procedures are optional, and skill lists are unordered capability inventories.
