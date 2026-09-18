@@ -48,3 +48,8 @@ Required objects also connect directly through `requires_resource` edges in the 
 Run `npm run check` to validate references, schemas, planning, claims, catalog coverage, graph navigation, and collection-card access. Counts indicate catalog coverage only; they are not evidence of collected demonstrations or successful robot execution.
 
 Run `npm run coverage:ycb` for a machine-readable inventory of each catalog object, its task IDs and titles, scenes, intents, and generation rounds. It exits with a nonzero status if any catalog object has no task.
+
+The report also lists `required_catalog_objects` for each task and summarizes
+cross-object dependencies by round. These are explicit collection prerequisites
+from planning records. Shared scene/skill links and fixture resources are not
+counted as catalog-partner edges, and edge counts do not measure task quality.
